@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_CART" Id="{9fd11ec1-6f9c-4a32-a27f-6e39cedd7563}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_CART
+VAR_INPUT
+	stCART: ST_CART;
+END_VAR
+VAR_OUTPUT
+END_VAR
+
+VAR
+	inner_counter: INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Action Name="A_STEP" Id="{14523dd1-b206-4535-943a-bfd0c09ba5ec}">
+      <Implementation>
+        <ST><![CDATA[IF stCART.position < 12 THEN
+	stCART.position:= stCART.position+1;
+	stCART.posX:=posArrX[stCART.position];
+	stCART.posY:=posArrY[stCART.position];
+ELSE
+	stCART.position:= 1;
+	stCART.posX:=posArrX[stCART.position];
+	stCART.posY:=posArrY[stCART.position];
+	
+END_IF
+
+]]></ST>
+      </Implementation>
+    </Action>
+    <LineIds Name="FB_CART">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_CART.A_STEP">
+      <LineId Id="3" Count="0" />
+      <LineId Id="1" Count="0" />
+      <LineId Id="7" Count="1" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="14" Count="1" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="6" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

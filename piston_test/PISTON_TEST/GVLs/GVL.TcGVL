@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL" Id="{7f0b71c9-3b96-49cc-b550-51f310230bab}">
+    <Declaration><![CDATA[//{attribute 'qualified_only'}
+VAR_GLOBAL
+	stPISTON_PARAM: ARRAY[1..10] OF  ST_PISTON;
+	fbPiston: ARRAY[1..10] OF FB_NEW_PISTON;
+	fbCART: ARRAY[1..6] OF FB_CART;
+	posArrX:ARRAY[1..12] OF INT:=[350,550,800,1050,1300,1575,1300,1050,800,550,350,100];
+	posArrY:ARRAY[1..12] OF INT:=[493,493,493,493, 493, 635, 783 ,783, 783,783,783,635];
+	
+	eMAIN_STATE: E_MAIN_STATE:= E_MAIN_STATE.uninit;
+	eSTATION1_STATE: E_STATION_STATE:=E_STATION_STATE.uninit;
+	eSTATION2_STATE: E_STATION_STATE:=E_STATION_STATE.uninit;
+	eSTATION3_STATE: E_STATION_STATE:=E_STATION_STATE.uninit;
+	eCONVAYOR_STATE: E_CONVAYOR_STATE:=E_CONVAYOR_STATE.uninit;
+	
+	bSTART: BOOL:=FALSE;// start main state machine
+	bS1_RUNNING: BOOL:=FALSE; // station 1 is running
+	bS2_RUNNING: BOOL:=FALSE; // station 2 is running
+	bCONV_INPOS: BOOL:=FALSE; // convayor in position
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

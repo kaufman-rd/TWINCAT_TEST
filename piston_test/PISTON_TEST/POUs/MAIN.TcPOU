@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{53f75a9f-ce5b-4537-a8c7-41cbbfdb1ac5}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	
+	iNUMBER1 : INT:=2;
+	sNAME1 : STRING(255):='23_5B';
+	Trigger : BOOL;
+	rtrigSTART: R_TRIG;
+	
+	
+END_VAR
+
+
+   
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[PISTONS_CYCLE();
+CONVAYOR();
+STATION1();
+STATION2();
+rtrigSTART(CLK:= bSTART, Q=> );
+
+
+//MAIN_STATE_MACHINE:
+CASE eMAIN_STATE OF
+	E_MAIN_STATE.uninit://uninit
+		IF rtrigSTART.Q THEN
+			eMAIN_STATE:=E_MAIN_STATE.do_actions;
+		END_IF
+	
+	E_MAIN_STATE.do_actions:
+		IF eSTATION1_STATE = E_STATION_STATE.idle THEN
+			eSTATION1_STATE := E_STATION_STATE.do_action1;
+		END_IF
+		IF eSTATION2_STATE = E_STATION_STATE.idle THEN
+			eSTATION2_STATE := E_STATION_STATE.do_action1;
+		END_IF
+		
+		IF eSTATION1_STATE = E_STATION_STATE.done AND eSTATION2_STATE = E_STATION_STATE.done THEN
+			eSTATION1_STATE := E_STATION_STATE.idle;
+			eSTATION2_STATE := E_STATION_STATE.idle;
+			eMAIN_STATE:=E_MAIN_STATE.move_next;
+		END_IF
+		
+	E_MAIN_STATE.move_next: 
+		IF eCONVAYOR_STATE = E_CONVAYOR_STATE.idle THEN
+			eCONVAYOR_STATE := E_CONVAYOR_STATE.do_move;
+		END_IF
+		IF eCONVAYOR_STATE = E_CONVAYOR_STATE.done THEN
+			eCONVAYOR_STATE := E_CONVAYOR_STATE.idle;
+			eMAIN_STATE:=E_MAIN_STATE.do_actions;
+		END_IF
+
+
+END_CASE
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="56" Count="0" />
+      <LineId Id="69" Count="0" />
+      <LineId Id="54" Count="0" />
+      <LineId Id="195" Count="0" />
+      <LineId Id="83" Count="0" />
+      <LineId Id="106" Count="0" />
+      <LineId Id="134" Count="0" />
+      <LineId Id="98" Count="0" />
+      <LineId Id="82" Count="0" />
+      <LineId Id="84" Count="0" />
+      <LineId Id="152" Count="0" />
+      <LineId Id="162" Count="1" />
+      <LineId Id="92" Count="0" />
+      <LineId Id="161" Count="0" />
+      <LineId Id="154" Count="0" />
+      <LineId Id="166" Count="1" />
+      <LineId Id="191" Count="1" />
+      <LineId Id="190" Count="0" />
+      <LineId Id="193" Count="0" />
+      <LineId Id="168" Count="1" />
+      <LineId Id="194" Count="0" />
+      <LineId Id="170" Count="0" />
+      <LineId Id="165" Count="0" />
+      <LineId Id="151" Count="0" />
+      <LineId Id="90" Count="0" />
+      <LineId Id="171" Count="5" />
+      <LineId Id="96" Count="0" />
+      <LineId Id="87" Count="0" />
+      <LineId Id="86" Count="0" />
+      <LineId Id="85" Count="0" />
+      <LineId Id="44" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

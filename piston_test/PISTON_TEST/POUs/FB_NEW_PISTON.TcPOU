@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_NEW_PISTON" Id="{103ce51c-b586-4a9e-935e-2be8c1d3f70d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_NEW_PISTON
+VAR_INPUT
+	
+	stPISTON:   ST_PISTON;
+	bCMD_OPEN: BOOL;
+	bSEN_OPEN: BOOL;
+	bSEN_CLOSE: BOOL;
+END_VAR
+VAR_OUTPUT
+	PistonStatus:ePistonStatus;
+	bVALVE_OPEN: BOOL;
+	bVALVE_CLOSE: BOOL;
+	
+	
+END_VAR
+VAR
+	timerOpening:ton;
+	timerClosing:ton;
+	timeoutOpening:ton;
+	timeoutClosing:ton;
+	bSTARTUP: BOOL:=FALSE;
+	
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF NOT bSTARTUP THEN
+	bCMD_OPEN:=stPISTON.bOPEN_BY_DEFAULT;
+	bSTARTUP:=TRUE;
+END_IF
+
+timerOpening(IN:= bVALVE_OPEN, PT:=INT_TO_TIME(stPISTON.openTime)*1000 , Q=> , ET=> );
+timerClosing(IN:= NOT bVALVE_OPEN, PT:=INT_TO_TIME(stPISTON.closeTime)*1000 , Q=> , ET=> );
+timeoutOpening(IN:= bVALVE_OPEN AND NOT bSEN_OPEN, PT:= stPISTON.timeoutOpen, Q=> , ET=> );
+timeoutClosing(IN:= NOT bVALVE_OPEN AND NOT bSEN_CLOSE, PT:= stPISTON.timeoutClose, Q=> , ET=> );
+bVALVE_OPEN:= bCMD_OPEN;
+bVALVE_CLOSE:= NOT bCMD_OPEN;
+
+
+CASE stPISTON.ePISTON_TYPE OF
+	0://NO_SENSORS
+		IF bVALVE_OPEN AND NOT timerOpening.Q THEN
+			PistonStatus:=ePistonStatus.OPENING;
+		ELSIF bVALVE_OPEN AND timerOpening.Q THEN
+			PistonStatus:=ePistonStatus.OPENED;
+		ELSIF bVALVE_CLOSE AND NOT timerClosing.Q THEN
+			PistonStatus:=ePistonStatus.CLOSING;
+		ELSIF bVALVE_CLOSE AND timerClosing.Q THEN
+			PistonStatus:=ePistonStatus.CLOSED;
+		END_IF
+		
+ 
+	
+	1://only open sensor
+	
+		IF bVALVE_OPEN AND NOT bSEN_OPEN THEN
+			PistonStatus:=ePistonStatus.OPENING;
+		ELSIF bVALVE_OPEN AND bSEN_OPEN THEN
+			PistonStatus:=ePistonStatus.OPENED;
+		ELSIF bVALVE_CLOSE AND NOT timerClosing.Q THEN
+			PistonStatus:=ePistonStatus.CLOSING;
+		ELSIF bVALVE_CLOSE AND timerClosing.Q THEN
+			PistonStatus:=ePistonStatus.CLOSED;
+		END_IF
+	
+	2:// only close sensor
+		IF bVALVE_OPEN AND NOT timerOpening.Q THEN
+			PistonStatus:=ePistonStatus.OPENING;
+		ELSIF bVALVE_OPEN AND timerOpening.Q THEN
+			PistonStatus:=ePistonStatus.OPENED;
+		ELSIF bVALVE_CLOSE AND NOT bSEN_CLOSE THEN
+			PistonStatus:=ePistonStatus.CLOSING;
+		ELSIF bVALVE_CLOSE AND bSEN_CLOSE THEN
+			PistonStatus:=ePistonStatus.CLOSED;
+		END_IF
+	
+	
+	3://both sensors
+		IF bVALVE_OPEN AND NOT bSEN_OPEN THEN
+			PistonStatus:=ePistonStatus.OPENING;
+		ELSIF bVALVE_OPEN AND bSEN_OPEN THEN
+			PistonStatus:=ePistonStatus.OPENED;
+		ELSIF bVALVE_CLOSE AND NOT bSEN_CLOSE THEN
+			PistonStatus:=ePistonStatus.CLOSING;
+		ELSIF bVALVE_CLOSE AND bSEN_CLOSE THEN
+			PistonStatus:=ePistonStatus.CLOSED;
+		END_IF
+	
+END_CASE
+
+IF (timeoutClosing.Q OR timeoutOpening.Q) AND stPISTON.ePISTON_TYPE>0  THEN
+	PistonStatus:=ePistonStatus.ERROR;
+END_IF]]></ST>
+    </Implementation>
+    <Action Name="A_CLOSE" Id="{445c1d90-1cac-4e57-b5b0-98b5b66b350e}">
+      <Implementation>
+        <ST><![CDATA[bCMD_OPEN:=FALSE;]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="A_OPEN" Id="{3cd0eff9-6206-4bfb-b1a8-efdd601fff3d}">
+      <Implementation>
+        <ST><![CDATA[bCMD_OPEN:=TRUE;]]></ST>
+      </Implementation>
+    </Action>
+    <LineIds Name="FB_NEW_PISTON">
+      <LineId Id="129" Count="0" />
+      <LineId Id="133" Count="0" />
+      <LineId Id="136" Count="0" />
+      <LineId Id="134" Count="0" />
+      <LineId Id="130" Count="0" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="72" Count="1" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="96" Count="1" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="48" Count="1" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="60" Count="0" />
+      <LineId Id="58" Count="0" />
+      <LineId Id="61" Count="0" />
+      <LineId Id="57" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="32" Count="1" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="62" Count="7" />
+      <LineId Id="34" Count="2" />
+      <LineId Id="85" Count="2" />
+      <LineId Id="80" Count="4" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="37" Count="2" />
+      <LineId Id="89" Count="2" />
+      <LineId Id="88" Count="0" />
+      <LineId Id="92" Count="3" />
+      <LineId Id="40" Count="1" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="99" Count="0" />
+      <LineId Id="98" Count="0" />
+      <LineId Id="100" Count="1" />
+    </LineIds>
+    <LineIds Name="FB_NEW_PISTON.A_CLOSE">
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_NEW_PISTON.A_OPEN">
+      <LineId Id="1" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

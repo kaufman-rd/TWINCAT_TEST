@@ -1,0 +1,43 @@
+{
+  "parameters": [
+    {
+      "name": "data-tchmi-fb_piston",
+      "displayName": "FB_Piston",
+      "allowSymbolExpressionsInObject": false,
+      "visible": true,
+      "type": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON",
+      "category": "",
+      "description": "",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "propertyName": "FB_Piston",
+      "propertySetterName": "setFB_Piston",
+      "propertyGetterName": "getFB_Piston",
+      "refTo": ""
+    },
+    {
+      "name": "data-tchmi-title",
+      "displayName": "title",
+      "allowSymbolExpressionsInObject": false,
+      "visible": true,
+      "type": "tchmi:general#/definitions/String",
+      "category": "",
+      "description": "",
+      "defaultValue": "piston...",
+      "defaultValueInternal": "piston...",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "propertyName": "title",
+      "propertySetterName": "setTitle",
+      "propertyGetterName": "getTitle",
+      "refTo": ""
+    }
+  ],
+  "virtualRights": [],
+  "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.12.760.37/runtimes/native1.12-tchmi/Schema/UserControlConfig.Schema.json",
+  "description": ""
+}

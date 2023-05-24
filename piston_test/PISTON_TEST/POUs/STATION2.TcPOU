@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="STATION2" Id="{0a3315b2-61c0-4450-961e-215e0d8b923c}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM STATION2
+VAR
+	tDelay: TON;
+	bDELAY: BOOL:=FALSE;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[tDelay(IN:=bDELAY);
+CASE eSTATION2_STATE OF
+	E_STATION_STATE.uninit:
+		eSTATION2_STATE:= E_STATION_STATE.idle;
+
+	E_STATION_STATE.idle:
+		bS2_RUNNING:=FALSE;
+			
+
+	E_STATION_STATE.do_action1://delay and open piston1,2
+		tDELAY.PT:=T#1S;
+		bDELAY:=TRUE;
+		IF tDELAY.Q THEN
+			bDELAY:=FALSE;
+			fbPISTON[4].A_OPEN();
+			fbPISTON[5].A_OPEN();
+		END_IF
+		
+		IF fbPISTON[4].PistonStatus= ePistonStatus.OPENED  AND fbPISTON[5].PistonStatus= ePistonStatus.OPENED THEN
+			eSTATION2_STATE:=E_STATION_STATE.do_action2;
+		END_IF
+		
+	E_STATION_STATE.do_action2://delay and close pistons 1,2
+		tDELAY.PT:=T#2S;		
+		bDELAY:=TRUE;
+		IF tDELAY.Q THEN
+			bDELAY:=FALSE;
+			fbPISTON[4].A_CLOSE();
+			fbPISTON[5].A_CLOSE();
+		END_IF
+		IF fbPISTON[4].PistonStatus= ePistonStatus.CLOSED  AND fbPISTON[5].PistonStatus= ePistonStatus.CLOSED THEN
+			eSTATION2_STATE:=E_STATION_STATE.do_action3;
+		END_IF
+	
+	E_STATION_STATE.do_action3://delay
+		tDELAY.PT:=T#2S;
+		bDELAY:=TRUE;
+		IF tDELAY.Q THEN
+			bDELAY:=FALSE;
+			eSTATION2_STATE:=E_STATION_STATE.done;
+		END_IF
+		
+	
+	E_STATION_STATE.done:
+		bS2_RUNNING:=FALSE;
+
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="STATION2">
+      <LineId Id="8" Count="38" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="48" Count="1" />
+      <LineId Id="72" Count="3" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="UpdateTimeStamp" Id="{3ebf2d11-b075-4b1e-bfc5-6a6be67fc618}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION UpdateTimeStamp 
+VAR_INPUT
+	stUser : REFERENCE TO ST_USER;
+END_VAR
+VAR
+	fbGETSYSTEMTIME : GETSYSTEMTIME;
+	
+	stFileTime : T_FILETIME;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+fbGETSYSTEMTIME(timeLoDW =>stFileTime.dwLowDateTime ,
+				timeHiDW =>stFileTime.dwHighDateTime );
+				
+stUser.dtTIME_STAMP:= FILETIME_TO_DT(fileTime := stFileTime); 
+
+				
+
+				
+				
+	]]></ST>
+    </Implementation>
+    <LineIds Name="UpdateTimeStamp">
+      <LineId Id="13" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="22" Count="2" />
+      <LineId Id="20" Count="1" />
+      <LineId Id="16" Count="1" />
+      <LineId Id="14" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

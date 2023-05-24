@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="STATION1" Id="{118c21d3-d07f-48b2-af87-ee9537ae1c73}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM STATION1
+VAR
+
+	tDelay: TON;
+	bDELAY: BOOL:=FALSE;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[tDelay(IN:=bDELAY);
+CASE eSTATION1_STATE OF
+	E_STATION_STATE.uninit:
+		eSTATION1_STATE:= E_STATION_STATE.idle;
+
+	E_STATION_STATE.idle:
+		bS1_RUNNING:=FALSE;
+			
+
+	E_STATION_STATE.do_action1://delay and open piston1,2
+		tDELAY.PT:=T#1S;
+		bDELAY:=TRUE;
+		IF tDELAY.Q THEN
+			bDELAY:=FALSE;
+			fbPISTON[1].A_OPEN();
+			fbPISTON[2].A_OPEN();
+		END_IF
+		
+		IF fbPISTON[1].PistonStatus= ePistonStatus.OPENED  AND fbPISTON[2].PistonStatus= ePistonStatus.OPENED THEN
+			eSTATION1_STATE:=E_STATION_STATE.do_action2;
+		END_IF
+		
+	E_STATION_STATE.do_action2://delay and close pistons 1,2
+		tDELAY.PT:=T#2S;		
+		bDELAY:=TRUE;
+		IF tDELAY.Q THEN
+			bDELAY:=FALSE;
+			fbPISTON[1].A_CLOSE();
+			fbPISTON[2].A_CLOSE();
+		END_IF
+		IF fbPISTON[1].PistonStatus= ePistonStatus.CLOSED  AND fbPISTON[2].PistonStatus= ePistonStatus.CLOSED THEN
+			eSTATION1_STATE:=E_STATION_STATE.do_action3;
+		END_IF
+	
+	E_STATION_STATE.do_action3://delay and open piston 3
+		tDELAY.PT:=T#2S;
+		bDELAY:=TRUE;
+		IF tDELAY.Q THEN
+			bDELAY:=FALSE;
+			fbPISTON[3].A_OPEN();
+		END_IF
+		
+		IF fbPISTON[3].PistonStatus= ePistonStatus.OPENED THEN
+			eSTATION1_STATE:=E_STATION_STATE.do_action4;
+		END_IF
+	
+	E_STATION_STATE.do_action4://delay and close pistons 1,2
+		tDELAY.PT:=T#2S;		
+		bDELAY:=TRUE;
+		IF tDELAY.Q THEN
+			bDELAY:=FALSE;
+			fbPISTON[3].A_CLOSE();
+		END_IF
+		IF fbPISTON[3].PistonStatus= ePistonStatus.CLOSED  THEN
+			eSTATION1_STATE:=E_STATION_STATE.do_action5;
+		END_IF
+		
+	E_STATION_STATE.do_action5://delay 
+		tDELAY.PT:=T#2S;
+		bDELAY:=TRUE;
+		IF tDELAY.Q THEN
+			bDELAY:=FALSE;
+			eSTATION1_STATE:=E_STATION_STATE.done;
+		END_IF
+	
+	E_STATION_STATE.done:
+		bS1_RUNNING:=FALSE;
+
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="STATION1">
+      <LineId Id="10" Count="0" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="14" Count="1" />
+      <LineId Id="62" Count="0" />
+      <LineId Id="94" Count="0" />
+      <LineId Id="66" Count="1" />
+      <LineId Id="69" Count="0" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="68" Count="0" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="72" Count="0" />
+      <LineId Id="63" Count="1" />
+      <LineId Id="73" Count="0" />
+      <LineId Id="65" Count="0" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="95" Count="0" />
+      <LineId Id="76" Count="3" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="80" Count="1" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="82" Count="0" />
+      <LineId Id="100" Count="5" />
+      <LineId Id="107" Count="3" />
+      <LineId Id="99" Count="0" />
+      <LineId Id="112" Count="0" />
+      <LineId Id="123" Count="0" />
+      <LineId Id="113" Count="4" />
+      <LineId Id="119" Count="2" />
+      <LineId Id="87" Count="0" />
+      <LineId Id="122" Count="0" />
+      <LineId Id="111" Count="0" />
+      <LineId Id="83" Count="0" />
+      <LineId Id="96" Count="0" />
+      <LineId Id="84" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="86" Count="0" />
+      <LineId Id="36" Count="1" />
+      <LineId Id="85" Count="0" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="12" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

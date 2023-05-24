@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="CONVAYOR" Id="{230d7160-cfd8-4561-bda5-963e513f3cc2}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM CONVAYOR
+VAR
+	bMOVE:BOOL :=FALSE;
+	bSTARTUP: BOOL:=FALSE;
+	rtrigNext: R_TRIG;
+	counter: INT;
+	tNext: TON;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[FOR counter:=1 TO 6 BY 1 DO
+	fbCART[counter]();
+END_FOR;
+
+tNext(IN:=bMOVE , PT:=T#1S , Q=> , ET=> );
+
+CASE eCONVAYOR_STATE OF
+	E_CONVAYOR_STATE.uninit:
+		A_SETUP();
+		eCONVAYOR_STATE:=E_CONVAYOR_STATE.idle;
+	
+	E_CONVAYOR_STATE.idle:
+		bMOVE:=FALSE;
+		bCONV_INPOS:=TRUE;
+	
+	E_CONVAYOR_STATE.do_move:
+		IF bCONV_INPOS THEN		 
+			A_CARTS_STEP();
+		END_IF
+		bMOVE:=TRUE;
+		bCONV_INPOS:=FALSE;
+		IF tNext.Q THEN
+			A_CARTS_STEP();
+			eCONVAYOR_STATE:=E_CONVAYOR_STATE.done;
+		END_IF
+	
+	E_CONVAYOR_STATE.done:
+		bMOVE:=FALSE;
+		bCONV_INPOS:=TRUE;
+	
+END_CASE
+	
+
+
+
+
+
+
+	
+
+
+
+]]></ST>
+    </Implementation>
+    <Action Name="A_CARTS_STEP" Id="{7a1e55b7-d701-499d-a448-d86c230d8eaf}">
+      <Implementation>
+        <ST><![CDATA[FOR counter:=1 TO 6 BY 1 DO
+	fbCART[counter].A_STEP();
+END_FOR;]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="A_SETUP" Id="{743a8297-84d8-4da3-9839-4637b3eb1bf1}">
+      <Implementation>
+        <ST><![CDATA[	bSTARTUP:=TRUE;
+	fbCART[1].stCART.position:=1;
+	fbCART[1].stCART.color:=1;
+	fbCART[1].stCART.nNAME:='CART1';
+	fbCART[1].stCART.posX:=posArrX[1];
+	fbCART[1].stCART.posY:=posArrY[1];
+	
+	fbCART[2].stCART.position:=3;
+	fbCART[2].stCART.color:=2;
+	fbCART[2].stCART.nNAME:='CART2';
+	fbCART[2].stCART.posX:=posArrX[3];
+	fbCART[2].stCART.posY:=posArrY[3];
+	
+	fbCART[3].stCART.position:=5;
+	fbCART[3].stCART.color:=3;
+	fbCART[3].stCART.nNAME:='CART3';
+	fbCART[3].stCART.posX:=posArrX[5];
+	fbCART[3].stCART.posY:=posArrY[5];
+	
+	fbCART[4].stCART.position:=7;
+	fbCART[4].stCART.color:=4;
+	fbCART[4].stCART.nNAME:='CART4';
+	fbCART[4].stCART.posX:=posArrX[7];
+	fbCART[4].stCART.posY:=posArrY[7];
+	
+	fbCART[5].stCART.position:=9;
+	fbCART[5].stCART.color:=5;
+	fbCART[5].stCART.nNAME:='CART5';
+	fbCART[5].stCART.posX:=posArrX[9];
+	fbCART[5].stCART.posY:=posArrY[9];
+	
+	fbCART[6].stCART.position:=11;
+	fbCART[6].stCART.color:=6;
+	fbCART[6].stCART.nNAME:='CART6';
+	fbCART[6].stCART.posX:=posArrX[11];
+	fbCART[6].stCART.posY:=posArrY[11];]]></ST>
+      </Implementation>
+    </Action>
+    <LineIds Name="CONVAYOR">
+      <LineId Id="129" Count="1" />
+      <LineId Id="127" Count="1" />
+      <LineId Id="145" Count="0" />
+      <LineId Id="144" Count="0" />
+      <LineId Id="6" Count="0" />
+      <LineId Id="79" Count="0" />
+      <LineId Id="82" Count="0" />
+      <LineId Id="120" Count="0" />
+      <LineId Id="81" Count="0" />
+      <LineId Id="118" Count="1" />
+      <LineId Id="163" Count="0" />
+      <LineId Id="132" Count="1" />
+      <LineId Id="179" Count="0" />
+      <LineId Id="182" Count="1" />
+      <LineId Id="134" Count="0" />
+      <LineId Id="167" Count="0" />
+      <LineId Id="164" Count="0" />
+      <LineId Id="175" Count="0" />
+      <LineId Id="165" Count="1" />
+      <LineId Id="168" Count="2" />
+      <LineId Id="192" Count="0" />
+      <LineId Id="141" Count="0" />
+      <LineId Id="80" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="54" Count="0" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="56" Count="0" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="57" Count="1" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="45" Count="0" />
+    </LineIds>
+    <LineIds Name="CONVAYOR.A_CARTS_STEP">
+      <LineId Id="2" Count="1" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="CONVAYOR.A_SETUP">
+      <LineId Id="2" Count="34" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
