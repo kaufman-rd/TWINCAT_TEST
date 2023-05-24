@@ -5,7 +5,7 @@
 VAR
 	
 	iNUMBER1 : INT:=2;
-	sNAME1 : STRING(255):='23_5B';
+	sNAME1 : STRING(255):='24_5B';
 	Trigger : BOOL;
 	rtrigSTART: R_TRIG;
 	
