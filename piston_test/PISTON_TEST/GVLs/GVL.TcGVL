@@ -19,6 +19,8 @@ VAR_GLOBAL
 	bS1_RUNNING: BOOL:=FALSE; // station 1 is running
 	bS2_RUNNING: BOOL:=FALSE; // station 2 is running
 	bCONV_INPOS: BOOL:=FALSE; // convayor in position
+	
+	bPAUSE_MAIN: BOOL:=FALSE;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

@@ -10,6 +10,7 @@ TYPE E_MAIN_STATE :
 	do_actions,
 	move_next,
 	done,
+	pause,
 	error
 );
 END_TYPE

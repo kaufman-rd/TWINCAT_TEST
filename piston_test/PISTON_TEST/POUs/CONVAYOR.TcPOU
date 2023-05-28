@@ -41,6 +41,9 @@ CASE eCONVAYOR_STATE OF
 		bMOVE:=FALSE;
 		bCONV_INPOS:=TRUE;
 	
+	E_CONVAYOR_STATE.pause:
+	//paused
+	
 END_CASE
 	
 
@@ -102,49 +105,5 @@ END_FOR;]]></ST>
 	fbCART[6].stCART.posY:=posArrY[11];]]></ST>
       </Implementation>
     </Action>
-    <LineIds Name="CONVAYOR">
-      <LineId Id="129" Count="1" />
-      <LineId Id="127" Count="1" />
-      <LineId Id="145" Count="0" />
-      <LineId Id="144" Count="0" />
-      <LineId Id="6" Count="0" />
-      <LineId Id="79" Count="0" />
-      <LineId Id="82" Count="0" />
-      <LineId Id="120" Count="0" />
-      <LineId Id="81" Count="0" />
-      <LineId Id="118" Count="1" />
-      <LineId Id="163" Count="0" />
-      <LineId Id="132" Count="1" />
-      <LineId Id="179" Count="0" />
-      <LineId Id="182" Count="1" />
-      <LineId Id="134" Count="0" />
-      <LineId Id="167" Count="0" />
-      <LineId Id="164" Count="0" />
-      <LineId Id="175" Count="0" />
-      <LineId Id="165" Count="1" />
-      <LineId Id="168" Count="2" />
-      <LineId Id="192" Count="0" />
-      <LineId Id="141" Count="0" />
-      <LineId Id="80" Count="0" />
-      <LineId Id="36" Count="0" />
-      <LineId Id="5" Count="0" />
-      <LineId Id="46" Count="0" />
-      <LineId Id="54" Count="0" />
-      <LineId Id="47" Count="0" />
-      <LineId Id="56" Count="0" />
-      <LineId Id="59" Count="0" />
-      <LineId Id="57" Count="1" />
-      <LineId Id="52" Count="0" />
-      <LineId Id="51" Count="0" />
-      <LineId Id="45" Count="0" />
-    </LineIds>
-    <LineIds Name="CONVAYOR.A_CARTS_STEP">
-      <LineId Id="2" Count="1" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="CONVAYOR.A_SETUP">
-      <LineId Id="2" Count="34" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

@@ -53,15 +53,11 @@ CASE eSTATION2_STATE OF
 	
 	E_STATION_STATE.done:
 		bS2_RUNNING:=FALSE;
+		
+	E_STATION_STATE.pause:
+		//paused
 
 END_CASE]]></ST>
     </Implementation>
-    <LineIds Name="STATION2">
-      <LineId Id="8" Count="38" />
-      <LineId Id="76" Count="0" />
-      <LineId Id="48" Count="1" />
-      <LineId Id="72" Count="3" />
-      <LineId Id="5" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

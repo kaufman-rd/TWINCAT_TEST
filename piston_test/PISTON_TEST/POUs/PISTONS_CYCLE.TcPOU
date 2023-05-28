@@ -52,45 +52,31 @@ END_VAR
 	stPISTON_PARAM[5].timeoutClose:=T#3S;
 	stPISTON_PARAM[5].ePISTON_TYPE:= 0;
 	
-	stPISTON_PARAM[6].nNAME:='B3';
+	stPISTON_PARAM[6].nNAME:='C1';
 	stPISTON_PARAM[6].bOPEN_BY_DEFAULT:=FALSE;
 	stPISTON_PARAM[6].openTime:=1;
 	stPISTON_PARAM[6].closeTime:=1;
 	stPISTON_PARAM[6].timeoutOpen:=T#3S;
 	stPISTON_PARAM[6].timeoutClose:=T#3S;
 	stPISTON_PARAM[6].ePISTON_TYPE:= 0;
-	FOR counter:=1 TO 6 BY 1 DO
+	
+	stPISTON_PARAM[7].nNAME:='C2';
+	stPISTON_PARAM[7].bOPEN_BY_DEFAULT:=FALSE;
+	stPISTON_PARAM[7].openTime:=1;
+	stPISTON_PARAM[7].closeTime:=1;
+	stPISTON_PARAM[7].timeoutOpen:=T#3S;
+	stPISTON_PARAM[7].timeoutClose:=T#3S;
+	stPISTON_PARAM[7].ePISTON_TYPE:= 0;
+	
+	FOR counter:=1 TO 7 BY 1 DO
 		fbPiston[counter](stPISTON:=stPISTON_PARAM[counter]);
 	END_FOR;
 	
 	bSTARTUP:=TRUE;
 END_IF
-FOR counter:=1 TO 6 BY 1 DO
+FOR counter:=1 TO 7 BY 1 DO
 	fbPiston[counter]();
 END_FOR;]]></ST>
     </Implementation>
-    <LineIds Name="PISTONS_CYCLE">
-      <LineId Id="5" Count="0" />
-      <LineId Id="94" Count="0" />
-      <LineId Id="72" Count="21" />
-      <LineId Id="65" Count="0" />
-      <LineId Id="96" Count="0" />
-      <LineId Id="109" Count="5" />
-      <LineId Id="108" Count="0" />
-      <LineId Id="115" Count="0" />
-      <LineId Id="117" Count="5" />
-      <LineId Id="116" Count="0" />
-      <LineId Id="123" Count="0" />
-      <LineId Id="125" Count="5" />
-      <LineId Id="124" Count="0" />
-      <LineId Id="144" Count="1" />
-      <LineId Id="131" Count="0" />
-      <LineId Id="141" Count="0" />
-      <LineId Id="99" Count="0" />
-      <LineId Id="63" Count="0" />
-      <LineId Id="30" Count="0" />
-      <LineId Id="142" Count="0" />
-      <LineId Id="32" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

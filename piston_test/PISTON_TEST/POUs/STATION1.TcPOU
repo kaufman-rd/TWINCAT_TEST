@@ -76,57 +76,11 @@ CASE eSTATION1_STATE OF
 	
 	E_STATION_STATE.done:
 		bS1_RUNNING:=FALSE;
+		
+	E_STATION_STATE.pause:
+		//paused
 
 END_CASE]]></ST>
     </Implementation>
-    <LineIds Name="STATION1">
-      <LineId Id="10" Count="0" />
-      <LineId Id="5" Count="0" />
-      <LineId Id="11" Count="0" />
-      <LineId Id="16" Count="0" />
-      <LineId Id="19" Count="0" />
-      <LineId Id="18" Count="0" />
-      <LineId Id="21" Count="0" />
-      <LineId Id="24" Count="0" />
-      <LineId Id="14" Count="1" />
-      <LineId Id="62" Count="0" />
-      <LineId Id="94" Count="0" />
-      <LineId Id="66" Count="1" />
-      <LineId Id="69" Count="0" />
-      <LineId Id="74" Count="0" />
-      <LineId Id="68" Count="0" />
-      <LineId Id="70" Count="0" />
-      <LineId Id="72" Count="0" />
-      <LineId Id="63" Count="1" />
-      <LineId Id="73" Count="0" />
-      <LineId Id="65" Count="0" />
-      <LineId Id="75" Count="0" />
-      <LineId Id="95" Count="0" />
-      <LineId Id="76" Count="3" />
-      <LineId Id="42" Count="0" />
-      <LineId Id="80" Count="1" />
-      <LineId Id="44" Count="0" />
-      <LineId Id="82" Count="0" />
-      <LineId Id="100" Count="5" />
-      <LineId Id="107" Count="3" />
-      <LineId Id="99" Count="0" />
-      <LineId Id="112" Count="0" />
-      <LineId Id="123" Count="0" />
-      <LineId Id="113" Count="4" />
-      <LineId Id="119" Count="2" />
-      <LineId Id="87" Count="0" />
-      <LineId Id="122" Count="0" />
-      <LineId Id="111" Count="0" />
-      <LineId Id="83" Count="0" />
-      <LineId Id="96" Count="0" />
-      <LineId Id="84" Count="0" />
-      <LineId Id="27" Count="0" />
-      <LineId Id="86" Count="0" />
-      <LineId Id="36" Count="1" />
-      <LineId Id="85" Count="0" />
-      <LineId Id="38" Count="0" />
-      <LineId Id="13" Count="0" />
-      <LineId Id="12" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
