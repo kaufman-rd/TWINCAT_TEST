@@ -74,7 +74,7 @@ END_VAR
 	
 	bSTARTUP:=TRUE;
 END_IF
-FOR counter:=1 TO 7 BY 1 DO
+FOR counter:=1 TO iNUMBER_OF_PISTONS BY 1 DO
 	fbPiston[counter]();
 END_FOR;]]></ST>
     </Implementation>

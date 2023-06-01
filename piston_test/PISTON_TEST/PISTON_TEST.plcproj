@@ -15,6 +15,7 @@
     <Implicit_KindOfTask>{fb68b6b3-1cf9-4cfc-b903-e1faaa90d116}</Implicit_KindOfTask>
     <Implicit_Jitter_Distribution>{e9d72296-2969-4e52-b077-410254fd9b9a}</Implicit_Jitter_Distribution>
     <LibraryReferences>{748d1fb1-8d95-4960-9b81-587e2c9fa3d7}</LibraryReferences>
+    <Released>false</Released>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="DUTs\ePistonStatus.TcDUT">

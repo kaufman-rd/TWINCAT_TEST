@@ -100,9 +100,18 @@ CASE stPISTON.ePISTON_TYPE OF
 	
 END_CASE
 
-IF (timeoutClosing.Q OR timeoutOpening.Q) AND stPISTON.ePISTON_TYPE>0  THEN
+IF timeoutOpening.Q AND (stPISTON.ePISTON_TYPE = E_PISTON_TYPE.ONLY_OPEN OR stPISTON.ePISTON_TYPE = E_PISTON_TYPE.BOTH)  THEN
 	PistonStatus:=ePistonStatus.ERROR;
-END_IF]]></ST>
+END_IF
+IF timeoutClosing.Q  AND (stPISTON.ePISTON_TYPE = E_PISTON_TYPE.ONLY_CLOSE OR stPISTON.ePISTON_TYPE = E_PISTON_TYPE.BOTH)  THEN
+	PistonStatus:=ePistonStatus.ERROR;
+END_IF
+
+
+
+
+
+]]></ST>
     </Implementation>
     <Action Name="A_CLOSE" Id="{445c1d90-1cac-4e57-b5b0-98b5b66b350e}">
       <Implementation>

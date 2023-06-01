@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # TcXaeShell Solution File, Format Version 11.00
 VisualStudioVersion = 15.0.28307.1300
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{B1E792BE-AA5F-4E3C-8C82-674BF9C0715B}") = "piston_test", "piston_test\piston_test.tsproj", "{65C73525-1D7A-4EAF-8BFA-2B138ED5FFA1}"
+Project("{B1E792BE-AA5F-4E3C-8C82-674BF9C0715B}") = "TAMAR_22mm", "piston_test\TAMAR_22mm.tsproj", "{65C73525-1D7A-4EAF-8BFA-2B138ED5FFA1}"
 EndProject
 Project("{FE7A1B72-C5B7-4D7C-BB7D-76384D4DE8E1}") = "TcHmiPiston", "TcHmiPiston\TcHmiPiston.hmiproj", "{00C257B8-3CBC-46A7-A552-3B0636F6CDAF}"
 EndProject

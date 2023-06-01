@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.44" ClassName="CNestedPlcProjDef">
 	<Project GUID="{AD6E4C48-5E61-47B3-958D-58FBAEF446F5}" Name="PISTON_TEST" PrjFilePath="..\..\PISTON_TEST\PISTON_TEST.plcproj" TmcFilePath="..\..\PISTON_TEST\PISTON_TEST.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PISTON_TEST\PISTON_TEST.tmc" TmcHash="{874B4B15-2FDF-949B-049C-D40744B813E1}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PISTON_TEST\PISTON_TEST.tmc" TmcHash="{0AA77EF3-A977-AA3D-ADF2-54B94249BC9D}">
 			<Name>PISTON_TEST Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Contexts>
