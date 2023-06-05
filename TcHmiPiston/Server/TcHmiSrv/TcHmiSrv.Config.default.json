@@ -737,7 +737,8 @@
                 1,
                 2,
                 3,
-                4
+                4,
+                5
             ],
             "options": [
                 {
@@ -759,6 +760,10 @@
                 {
                     "label": "ERROR",
                     "value": 4
+                },
+                {
+                    "label": "PAUSE",
+                    "value": 5
                 }
             ],
             "type": "integer"
@@ -3429,6 +3434,16 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.GVL.fbPiston.7": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::fbPiston[7]",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON"
+            },
+            "USEMAPPING": true
+        },
         "RefreshDefinitions": {
             "ACCESS": 3,
             "DOMAIN": "TcHmiSrv",
@@ -4367,6 +4382,7 @@
                 "PLC1.GVL.fbPiston.4": 3,
                 "PLC1.GVL.fbPiston.5": 3,
                 "PLC1.GVL.fbPiston.6": 3,
+                "PLC1.GVL.fbPiston.7": 3,
                 "PLC1.GVL.stPISTON_PARAM": 3,
                 "PLC1.MAIN.fbNewPiston": 3,
                 "PLC1.MAIN.fbNewPiston.PistonStatus": 3,

@@ -282,7 +282,7 @@
 
 
 </div>
-<div id="TcHmiTextblock_4" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="15.0" data-tchmi-height-unit="%" data-tchmi-left="0.0" data-tchmi-left-unit="%" data-tchmi-text="%pp%PISTON::stPISTON::nNAME%/pp%" data-tchmi-top="0" data-tchmi-top-unit="%" data-tchmi-width="100.0" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-zindex="4" data-tchmi-text-font-size-unit="%" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-font-size="150">
+<div id="TcHmiTextblock_4" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="15.0" data-tchmi-height-unit="%" data-tchmi-left="0.0" data-tchmi-left-unit="%" data-tchmi-text="%pp%PISTON::stPISTON::nNAME%/pp%" data-tchmi-top="0" data-tchmi-top-unit="%" data-tchmi-width="100.0" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-zindex="4" data-tchmi-text-font-size-unit="%" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-font-size="100">
 
 <script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
 {

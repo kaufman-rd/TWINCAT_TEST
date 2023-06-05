@@ -40,31 +40,14 @@ CASE eSUPPLY OF
 			fbPISTON[2].A_CLOSE();
 		END_IF
 		IF fbPISTON[1].PistonStatus= ePistonStatus.CLOSED  AND fbPISTON[2].PistonStatus= ePistonStatus.CLOSED THEN
-			eSUPPLY:=E_STATION_STATE.do_action3;
+			eSUPPLY:=E_STATION_STATE.do_action5;
 		END_IF
 	
 	E_STATION_STATE.do_action3://delay and open piston 3
-		tDELAY.PT:=T#2S;
-		bDELAY:=TRUE;
-		IF tDELAY.Q THEN
-			bDELAY:=FALSE;
-			fbPISTON[3].A_OPEN();
-		END_IF
-		
-		IF fbPISTON[3].PistonStatus= ePistonStatus.OPENED THEN
-			eSUPPLY:=E_STATION_STATE.do_action4;
-		END_IF
+		//...
 	
 	E_STATION_STATE.do_action4://delay and close pistons 1,2
-		tDELAY.PT:=T#2S;		
-		bDELAY:=TRUE;
-		IF tDELAY.Q THEN
-			bDELAY:=FALSE;
-			fbPISTON[3].A_CLOSE();
-		END_IF
-		IF fbPISTON[3].PistonStatus= ePistonStatus.CLOSED  THEN
-			eSUPPLY:=E_STATION_STATE.do_action5;
-		END_IF
+		//...
 		
 	E_STATION_STATE.do_action5://delay 
 		tDELAY.PT:=T#2S;

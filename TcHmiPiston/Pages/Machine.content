@@ -55,9 +55,9 @@
 </div>
 <div id="UC_NEW_PISTON_2" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="124" data-tchmi-height-unit="px" data-tchmi-left="93" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/UC_NEW_PISTON.usercontrol" data-tchmi-top="529" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-piston="%s%PLC1.GVL.fbPiston.1%/s%" data-tchmi-zindex="1">
 </div>
-<div id="UC_NEW_PISTON_3" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="126" data-tchmi-height-unit="px" data-tchmi-left="93" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/UC_NEW_PISTON.usercontrol" data-tchmi-top="393" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-piston="%s%PLC1.GVL.fbPiston.2%/s%" data-tchmi-zindex="1">
+<div id="UC_NEW_PISTON_3" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="126" data-tchmi-height-unit="px" data-tchmi-left="389" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/UC_NEW_PISTON.usercontrol" data-tchmi-top="34" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-piston="%s%PLC1.GVL.fbPiston.2%/s%" data-tchmi-zindex="1">
 </div>
-<div id="UC_NEW_PISTON_4" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="120" data-tchmi-height-unit="px" data-tchmi-left="390" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/UC_NEW_PISTON.usercontrol" data-tchmi-top="34" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-piston="%s%PLC1.GVL.fbPiston.0%/s%" data-tchmi-zindex="2">
+<div id="UC_NEW_PISTON_4" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="120" data-tchmi-height-unit="px" data-tchmi-left="93" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/UC_NEW_PISTON.usercontrol" data-tchmi-top="393" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-piston="%s%PLC1.GVL.fbPiston.0%/s%" data-tchmi-zindex="2">
 </div>
 <div id="UC_NEW_PISTON_5" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="126" data-tchmi-height-unit="px" data-tchmi-left="500" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/UC_NEW_PISTON.usercontrol" data-tchmi-top="34" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-piston="%s%PLC1.GVL.fbPiston.3%/s%" data-tchmi-zindex="2">
 </div>
@@ -507,12 +507,96 @@
 }
 </script>
 </div>
-<div id="TcHmiRectangle_15" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="44" data-tchmi-height-unit="px" data-tchmi-left="414" data-tchmi-left-unit="px" data-tchmi-top="180" data-tchmi-top-unit="px" data-tchmi-width="163" data-tchmi-width-unit="px" data-tchmi-zindex="2">
+<div id="TcHmiRectangle_15" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="44" data-tchmi-height-unit="px" data-tchmi-left="413" data-tchmi-left-unit="px" data-tchmi-top="180" data-tchmi-top-unit="px" data-tchmi-width="163" data-tchmi-width-unit="px" data-tchmi-zindex="2">
 
 <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
 {
   "color": "rgba(183, 177, 177, 1)"
 }
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%s%PLC1.GVL.fbPiston.2::PistonStatus%/s%",
+    "actions": [
+      {
+        "objectType": "SwitchCase",
+        "active": true,
+        "compare": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:server#/definitions/PLC1.ePistonStatus",
+          "symbolExpression": "%s%PLC1.GVL.fbPiston.2::PistonStatus%/s%"
+        },
+        "cases": [
+          {
+            "caseValue": {
+              "objectType": "StaticValue",
+              "valueType": "tchmi:server#/definitions/PLC1.ePistonStatus",
+              "value": 1
+            },
+            "actions": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%TcHmiRectangle_15::Left%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/MeasurementValue",
+                  "value": 414.0
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%TcHmiRectangle_15::Top%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/MeasurementValue",
+                  "value": 180.0
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "caseValue": {
+              "objectType": "StaticValue",
+              "valueType": "tchmi:server#/definitions/PLC1.ePistonStatus",
+              "value": 0
+            },
+            "actions": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%TcHmiRectangle_15::Left%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/MeasurementValue",
+                  "value": 414.0
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%TcHmiRectangle_15::Top%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/MeasurementValue",
+                  "value": 220.0
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]
 </script>
 </div>
 <div id="TcHmiRectangle_16" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="44" data-tchmi-height-unit="px" data-tchmi-left="479" data-tchmi-left-unit="px" data-tchmi-top="223" data-tchmi-top-unit="px" data-tchmi-width="34" data-tchmi-width-unit="px" data-tchmi-zindex="2">
@@ -520,6 +604,181 @@
 {
   "color": "rgba(183, 177, 177, 1)"
 }
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%s%PLC1.GVL.fbPiston.3::PistonStatus%/s%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:server#/definitions/PLC1.ePistonStatus",
+                  "symbolExpression": "%s%PLC1.GVL.fbPiston.3::PistonStatus%/s%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/PLC1.ePistonStatus",
+                  "value": 1
+                },
+                "compareOperator": "==",
+                "logic": null
+              },
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:server#/definitions/PLC1.ePistonStatus",
+                  "symbolExpression": "%s%PLC1.GVL.fbPiston.4::PistonStatus%/s%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/PLC1.ePistonStatus",
+                  "value": 1
+                },
+                "compareOperator": "==",
+                "logic": "AND"
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%TcHmiRectangle_16::Top%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/MeasurementValue",
+                  "value": 223.0
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": []
+          }
+        ],
+        "asyncWait": true
+      },
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:server#/definitions/PLC1.ePistonStatus",
+                  "symbolExpression": "%s%PLC1.GVL.fbPiston.3::PistonStatus%/s%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/PLC1.ePistonStatus",
+                  "value": 0
+                },
+                "compareOperator": "==",
+                "logic": null
+              },
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:server#/definitions/PLC1.ePistonStatus",
+                  "symbolExpression": "%s%PLC1.GVL.fbPiston.4::PistonStatus%/s%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/PLC1.ePistonStatus",
+                  "value": 0
+                },
+                "compareOperator": "!=",
+                "logic": "AND"
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%TcHmiRectangle_16::Top%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/MeasurementValue",
+                  "value": 263.0
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": []
+          }
+        ],
+        "asyncWait": true
+      },
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:server#/definitions/PLC1.ePistonStatus",
+                  "symbolExpression": "%s%PLC1.GVL.fbPiston.3::PistonStatus%/s%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/PLC1.ePistonStatus",
+                  "value": 0
+                },
+                "compareOperator": "==",
+                "logic": null
+              },
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:server#/definitions/PLC1.ePistonStatus",
+                  "symbolExpression": "%s%PLC1.GVL.fbPiston.4::PistonStatus%/s%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/PLC1.ePistonStatus",
+                  "value": 0
+                },
+                "compareOperator": "==",
+                "logic": "AND"
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%TcHmiRectangle_16::Top%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/MeasurementValue",
+                  "value": 303.0
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": []
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]
 </script>
 </div>
 <div id="TcHmiTextblock_13" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="475" data-tchmi-left-unit="px" data-tchmi-text="Pull Plate" data-tchmi-top="192" data-tchmi-top-unit="px" data-tchmi-width="45" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-zindex="6">
@@ -540,7 +799,7 @@
 </div>
 <div id="TcHmiTextblock_14" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="910" data-tchmi-left-unit="px" data-tchmi-text="Pull Plate" data-tchmi-top="192" data-tchmi-top-unit="px" data-tchmi-width="47" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-zindex="6">
 </div>
-<div id="UC_NEW_PISTON_15" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="126" data-tchmi-height-unit="px" data-tchmi-left="1348" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/UC_NEW_PISTON.usercontrol" data-tchmi-top="829" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-piston="%s%PLC1.GVL.fbPiston.6%/s%" data-tchmi-zindex="2">
+<div id="UC_NEW_PISTON_15" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="126" data-tchmi-height-unit="px" data-tchmi-left="1348" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/UC_NEW_PISTON.usercontrol" data-tchmi-top="829" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-piston="%s%PLC1.GVL.fbPiston.7%/s%" data-tchmi-zindex="2">
 </div>
 <div id="TcHmiTextblock_15" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="1324" data-tchmi-left-unit="px" data-tchmi-text="Clean Station" data-tchmi-top="800" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-zindex="2">
 <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">

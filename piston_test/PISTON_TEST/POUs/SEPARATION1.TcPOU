@@ -17,32 +17,43 @@ CASE eSEPARATE1 OF
 		bS2_RUNNING:=FALSE;
 			
 
-	E_STATION_STATE.do_action1://delay and open piston1,2
+	E_STATION_STATE.do_action1://delay and open piston3
+		tDELAY.PT:=T#1S;
+		bDELAY:=TRUE;
+		IF tDELAY.Q THEN
+			bDELAY:=FALSE;
+			fbPISTON[3].A_OPEN();
+		END_IF
+		
+		IF fbPISTON[3].PistonStatus= ePistonStatus.OPENED THEN
+			eSEPARATE1:=E_STATION_STATE.do_action2;
+		END_IF
+		
+		E_STATION_STATE.do_action2://delay and open piston4
 		tDELAY.PT:=T#1S;
 		bDELAY:=TRUE;
 		IF tDELAY.Q THEN
 			bDELAY:=FALSE;
 			fbPISTON[4].A_OPEN();
-			fbPISTON[5].A_OPEN();
 		END_IF
 		
-		IF fbPISTON[4].PistonStatus= ePistonStatus.OPENED  AND fbPISTON[5].PistonStatus= ePistonStatus.OPENED THEN
-			eSEPARATE1:=E_STATION_STATE.do_action2;
+		IF fbPISTON[4].PistonStatus= ePistonStatus.OPENED THEN
+			eSEPARATE1:=E_STATION_STATE.do_action3;
 		END_IF
-		
-	E_STATION_STATE.do_action2://delay and close pistons 1,2
+	
+	E_STATION_STATE.do_action3://delay and close pistons 4 and 3
 		tDELAY.PT:=T#2S;		
 		bDELAY:=TRUE;
 		IF tDELAY.Q THEN
 			bDELAY:=FALSE;
 			fbPISTON[4].A_CLOSE();
-			fbPISTON[5].A_CLOSE();
+			fbPISTON[3].A_CLOSE();
 		END_IF
-		IF fbPISTON[4].PistonStatus= ePistonStatus.CLOSED  AND fbPISTON[5].PistonStatus= ePistonStatus.CLOSED THEN
-			eSEPARATE1:=E_STATION_STATE.do_action3;
+		IF fbPISTON[4].PistonStatus= ePistonStatus.CLOSED AND fbPISTON[3].PistonStatus= ePistonStatus.CLOSED THEN
+			eSEPARATE1:=E_STATION_STATE.do_action4;
 		END_IF
 	
-	E_STATION_STATE.do_action3://delay
+	E_STATION_STATE.do_action4://delay
 		tDELAY.PT:=T#2S;
 		bDELAY:=TRUE;
 		IF tDELAY.Q THEN
