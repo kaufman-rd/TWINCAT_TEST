@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <POU Name="STATION1" Id="{118c21d3-d07f-48b2-af87-ee9537ae1c73}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM STATION1
+  <POU Name="SUPPLY" Id="{118c21d3-d07f-48b2-af87-ee9537ae1c73}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM SUPPLY
 VAR
 
 	tDelay: TON;
@@ -10,9 +10,9 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[tDelay(IN:=bDELAY);
-CASE eSTATION1_STATE OF
+CASE eSUPPLY OF
 	E_STATION_STATE.uninit:
-		eSTATION1_STATE:= E_STATION_STATE.idle;
+		eSUPPLY:= E_STATION_STATE.idle;
 
 	E_STATION_STATE.idle:
 		bS1_RUNNING:=FALSE;
@@ -28,7 +28,7 @@ CASE eSTATION1_STATE OF
 		END_IF
 		
 		IF fbPISTON[1].PistonStatus= ePistonStatus.OPENED  AND fbPISTON[2].PistonStatus= ePistonStatus.OPENED THEN
-			eSTATION1_STATE:=E_STATION_STATE.do_action2;
+			eSUPPLY:=E_STATION_STATE.do_action2;
 		END_IF
 		
 	E_STATION_STATE.do_action2://delay and close pistons 1,2
@@ -40,7 +40,7 @@ CASE eSTATION1_STATE OF
 			fbPISTON[2].A_CLOSE();
 		END_IF
 		IF fbPISTON[1].PistonStatus= ePistonStatus.CLOSED  AND fbPISTON[2].PistonStatus= ePistonStatus.CLOSED THEN
-			eSTATION1_STATE:=E_STATION_STATE.do_action3;
+			eSUPPLY:=E_STATION_STATE.do_action3;
 		END_IF
 	
 	E_STATION_STATE.do_action3://delay and open piston 3
@@ -52,7 +52,7 @@ CASE eSTATION1_STATE OF
 		END_IF
 		
 		IF fbPISTON[3].PistonStatus= ePistonStatus.OPENED THEN
-			eSTATION1_STATE:=E_STATION_STATE.do_action4;
+			eSUPPLY:=E_STATION_STATE.do_action4;
 		END_IF
 	
 	E_STATION_STATE.do_action4://delay and close pistons 1,2
@@ -63,7 +63,7 @@ CASE eSTATION1_STATE OF
 			fbPISTON[3].A_CLOSE();
 		END_IF
 		IF fbPISTON[3].PistonStatus= ePistonStatus.CLOSED  THEN
-			eSTATION1_STATE:=E_STATION_STATE.do_action5;
+			eSUPPLY:=E_STATION_STATE.do_action5;
 		END_IF
 		
 	E_STATION_STATE.do_action5://delay 
@@ -71,7 +71,7 @@ CASE eSTATION1_STATE OF
 		bDELAY:=TRUE;
 		IF tDELAY.Q THEN
 			bDELAY:=FALSE;
-			eSTATION1_STATE:=E_STATION_STATE.done;
+			eSUPPLY:=E_STATION_STATE.done;
 		END_IF
 	
 	E_STATION_STATE.done:

@@ -46,6 +46,48 @@
             "startOffset": 1,
             "type": "array"
         },
+        "PLC1.E_CONVAYOR_STATE": {
+            "attributes": {
+                "generate_implicit_init_function": "",
+                "qualified_only": "",
+                "strict": ""
+            },
+            "enum": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "options": [
+                {
+                    "label": "uninit",
+                    "value": 0
+                },
+                {
+                    "label": "idle",
+                    "value": 1
+                },
+                {
+                    "label": "do_move",
+                    "value": 2
+                },
+                {
+                    "label": "done",
+                    "value": 3
+                },
+                {
+                    "label": "pause",
+                    "value": 4
+                },
+                {
+                    "label": "error",
+                    "value": 5
+                }
+            ],
+            "type": "integer"
+        },
         "PLC1.E_MAIN_STATE": {
             "attributes": {
                 "generate_implicit_init_function": "",
@@ -3203,6 +3245,40 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.GVL.bCONV_MAIN_INPOS": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::bCONV_MAIN_INPOS",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "comment": "convayor in position"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.bCONV_SUPPLY_INPOS": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::bCONV_SUPPLY_INPOS",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "comment": "convayor in position"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "PLC1.GVL.bPAUSE_MAIN": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -3220,6 +3296,16 @@
             "MAPPING": "PLC1::GVL::bSTART",
             "SCHEMA": {
                 "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.eMAIN_CONVAYOR_STATE": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::eMAIN_CONVAYOR_STATE",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.E_CONVAYOR_STATE"
             },
             "USEMAPPING": true
         },
@@ -3250,6 +3336,16 @@
             "MAPPING": "PLC1::GVL::eSTATION2_STATE",
             "SCHEMA": {
                 "$ref": "tchmi:server#/definitions/PLC1.E_STATION_STATE"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.eSUPPLY_CONVAYOR_STATE": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::eSUPPLY_CONVAYOR_STATE",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.E_CONVAYOR_STATE"
             },
             "USEMAPPING": true
         },
@@ -4254,11 +4350,15 @@
                 "Logout": 3,
                 "PLC1.CONVAYOR.bTRIGGER": 3,
                 "PLC1.GVL.bCONV_INPOS": 3,
+                "PLC1.GVL.bCONV_MAIN_INPOS": 3,
+                "PLC1.GVL.bCONV_SUPPLY_INPOS": 3,
                 "PLC1.GVL.bPAUSE_MAIN": 3,
                 "PLC1.GVL.bSTART": 3,
+                "PLC1.GVL.eMAIN_CONVAYOR_STATE": 3,
                 "PLC1.GVL.eMAIN_STATE": 3,
                 "PLC1.GVL.eSTATION1_STATE": 3,
                 "PLC1.GVL.eSTATION2_STATE": 3,
+                "PLC1.GVL.eSUPPLY_CONVAYOR_STATE": 3,
                 "PLC1.GVL.fbCART": 3,
                 "PLC1.GVL.fbPiston.0": 3,
                 "PLC1.GVL.fbPiston.1": 3,

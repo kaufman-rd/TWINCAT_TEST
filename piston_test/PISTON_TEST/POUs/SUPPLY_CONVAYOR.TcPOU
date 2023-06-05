@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="SUPPLY_CONVAYOR" Id="{eda0e613-4119-4a2f-b321-c37443d08c24}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM SUPPLY_CONVAYOR
+VAR
+	bMOVE:BOOL :=FALSE;
+	bSTARTUP: BOOL:=FALSE;
+	rtrigNext: R_TRIG;
+	counter: INT;
+	tNext: TON;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[FOR counter:=1 TO 6 BY 1 DO
+	fbCART[counter]();
+END_FOR;
+
+tNext(IN:=bMOVE , PT:=T#1S , Q=> , ET=> );
+
+
+CASE eSUPPLY_CONVAYOR_STATE OF
+	E_CONVAYOR_STATE.uninit: 
+		eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.idle;
+	
+	E_CONVAYOR_STATE.idle:
+		bMOVE:=FALSE;
+		bCONV_SUPPLY_INPOS:=TRUE;
+	
+	E_CONVAYOR_STATE.do_move:
+		IF bCONV_SUPPLY_INPOS THEN		 
+			//fff
+		END_IF
+		bMOVE:=TRUE;
+		bCONV_SUPPLY_INPOS:=FALSE;
+		IF tNext.Q THEN
+			eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.done;
+		END_IF
+	
+	E_CONVAYOR_STATE.done:
+		bMOVE:=FALSE;
+		bCONV_SUPPLY_INPOS:=TRUE;
+	
+	E_CONVAYOR_STATE.pause:
+	//paused
+	
+END_CASE]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

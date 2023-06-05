@@ -1,7 +1,7 @@
 <div id="Desktop" data-tchmi-type="TcHmi.Controls.System.TcHmiView" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width-mode="Value" data-tchmi-min-width="100" data-tchmi-min-width-unit="%" data-tchmi-height-mode="Value" data-tchmi-min-height="100" data-tchmi-min-height-unit="%" data-tchmi-creator-viewport-width="1024" data-tchmi-creator-viewport-height="768" data-tchmi-width="1920" data-tchmi-height="1080">
 <div id="TcHmiRegion" data-tchmi-type="TcHmi.Controls.System.TcHmiRegion" data-tchmi-height="1019" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="60" data-tchmi-top-unit="px" data-tchmi-width="1920" data-tchmi-width-unit="px" data-tchmi-target-content="Pages/C_Main.content">
 </div>
-<div id="TcHmiNavigation" data-tchmi-type="TcHmi.Controls.BaseTemplate.TcHmiNavigation" data-tchmi-height="60" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="60" data-tchmi-top-unit="px" data-tchmi-width="1024" data-tchmi-width-unit="px" data-tchmi-target-region="%ctrl%TcHmiRegion%/ctrl%" data-tchmi-navigation-orientation="Horizontal">
+<div id="TcHmiNavigation" data-tchmi-type="TcHmi.Controls.BaseTemplate.TcHmiNavigation" data-tchmi-height="60" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="-1" data-tchmi-top-unit="px" data-tchmi-width="1920" data-tchmi-width-unit="px" data-tchmi-target-region="%ctrl%TcHmiRegion%/ctrl%" data-tchmi-navigation-orientation="Horizontal">
 
 <script data-tchmi-target-attribute="data-tchmi-navigation-structure" type="application/json">
 [
@@ -18,37 +18,6 @@
     "content": "Pages/C_Page1.content"
   }
 ]
-</script>
-</div>
-<div id="TcHmiNavigationBar" data-tchmi-type="TcHmi.Controls.ResponsiveNavigation.TcHmiNavigationBar" data-tchmi-height="60" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="1920" data-tchmi-width-unit="px" data-tchmi-nav-target-region-control-symbol="%ctrl%TcHmiRegion%/ctrl%" data-tchmi-nav-content-control-symbol="%ctrl%TcHmiNavigationContent%/ctrl%" data-tchmi-listen-window-resize="true">
-
-<script data-tchmi-target-attribute="data-tchmi-menu-source-data" type="application/json">
-[
-  {
-    "name": "Main",
-    "page": "Pages/C_Main.content",
-    "imageWidthUnit": "px",
-    "imageHeightUnit": "px"
-  },
-  {
-    "name": "Page 1",
-    "page": "Pages/C_Page1.content",
-    "imageWidthUnit": "px",
-    "imageHeightUnit": "px"
-  }
-]
-</script>
-
-<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
-{
-  "color": "rgba(192, 192, 192, 1)"
-}
-</script>
-
-<script data-tchmi-target-attribute="data-tchmi-highlight-color" type="application/json">
-{
-  "color": "rgba(255, 0, 0, 1)"
-}
 </script>
 </div>
 <div id="TcHmiNavigationContent" data-tchmi-type="TcHmi.Controls.ResponsiveNavigation.TcHmiNavigationContent" data-tchmi-height="350" data-tchmi-height-mode="Content" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="60" data-tchmi-top-unit="px" data-tchmi-width="1920" data-tchmi-width-unit="px">

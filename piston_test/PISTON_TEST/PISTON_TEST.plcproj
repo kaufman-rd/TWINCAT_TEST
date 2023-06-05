@@ -49,7 +49,7 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\CONVAYOR.TcPOU">
+    <Compile Include="POUs\MAIN_CONVAYOR.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\FB_CART.TcPOU">
@@ -64,10 +64,13 @@
     <Compile Include="POUs\PISTONS_CYCLE.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\STATION1.TcPOU">
+    <Compile Include="POUs\SUPPLY.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\STATION2.TcPOU">
+    <Compile Include="POUs\SEPARATION1.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\SUPPLY_CONVAYOR.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\UpdateTimeStamp.TcPOU">
