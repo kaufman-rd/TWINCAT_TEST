@@ -8,13 +8,15 @@ VAR
 	rtrigNext: R_TRIG;
 	counter: INT;
 	tNext: TON;
+	tDelay: TON;
+	bDELAY: BOOL:=FALSE;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[FOR counter:=1 TO 6 BY 1 DO
 	fbCART[counter]();
 END_FOR;
-
+tDelay(IN:=bDELAY);
 tNext(IN:=bMOVE , PT:=T#1S , Q=> , ET=> );
 
 CASE eMAIN_CONVAYOR_STATE OF
@@ -23,23 +25,38 @@ CASE eMAIN_CONVAYOR_STATE OF
 		eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.idle;
 	
 	E_CONVAYOR_STATE.idle:
+		bDELAY:=FALSE;
 		bMOVE:=FALSE;
 		bCONV_MAIN_INPOS:=TRUE;
 	
-	E_CONVAYOR_STATE.do_move:
+	E_CONVAYOR_STATE.do_move: // open advance piston and update carts
 		IF bCONV_MAIN_INPOS THEN		 
 			A_CARTS_STEP();
+			fbPISTON[7].A_OPEN();
+			bCONV_MAIN_INPOS:=FALSE;
 		END_IF
 		bMOVE:=TRUE;
 		bCONV_MAIN_INPOS:=FALSE;
-		IF tNext.Q THEN
+		IF fbPISTON[7].PistonStatus= ePistonStatus.OPENED THEN
 			A_CARTS_STEP();
-			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.done;
+			bMOVE:=FALSE;
+			bCONV_MAIN_INPOS:=TRUE;
+			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.st1;
 		END_IF
 	
+	E_CONVAYOR_STATE.st1://delay and close advansed piston
+		tDELAY.PT:=T#0.6S;
+		bDELAY:=TRUE;
+		IF tDelay.Q THEN
+			fbPISTON[7].A_CLOSE();
+			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.done;
+		END_IF
+		IF fbPISTON[7].PistonStatus= ePistonStatus.CLOSED THEN
+			//...
+		END_IF		
+	
 	E_CONVAYOR_STATE.done:
-		bMOVE:=FALSE;
-		bCONV_MAIN_INPOS:=TRUE;
+		//...
 	
 	E_CONVAYOR_STATE.pause:
 	//paused

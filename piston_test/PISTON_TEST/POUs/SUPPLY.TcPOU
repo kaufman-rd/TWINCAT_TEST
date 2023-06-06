@@ -15,11 +15,12 @@ CASE eSUPPLY OF
 		eSUPPLY:= E_STATION_STATE.idle;
 
 	E_STATION_STATE.idle:
-		bS1_RUNNING:=FALSE;
+		sup_RUNNING:=FALSE;
 			
 
 	E_STATION_STATE.do_action1://delay and open piston1,2
-		tDELAY.PT:=T#1S;
+	sup_RUNNING:=TRUE;		
+	tDELAY.PT:=T#0.3S;
 		bDELAY:=TRUE;
 		IF tDELAY.Q THEN
 			bDELAY:=FALSE;
@@ -32,7 +33,7 @@ CASE eSUPPLY OF
 		END_IF
 		
 	E_STATION_STATE.do_action2://delay and close pistons 1,2
-		tDELAY.PT:=T#2S;		
+		tDELAY.PT:=T#0.5S;		
 		bDELAY:=TRUE;
 		IF tDELAY.Q THEN
 			bDELAY:=FALSE;
@@ -50,7 +51,7 @@ CASE eSUPPLY OF
 		//...
 		
 	E_STATION_STATE.do_action5://delay 
-		tDELAY.PT:=T#2S;
+		tDELAY.PT:=T#0.5S;
 		bDELAY:=TRUE;
 		IF tDELAY.Q THEN
 			bDELAY:=FALSE;
@@ -58,7 +59,7 @@ CASE eSUPPLY OF
 		END_IF
 	
 	E_STATION_STATE.done:
-		bS1_RUNNING:=FALSE;
+		sup_RUNNING:=FALSE;
 		
 	E_STATION_STATE.pause:
 		//paused

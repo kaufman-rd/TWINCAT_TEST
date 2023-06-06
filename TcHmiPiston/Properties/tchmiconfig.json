@@ -67,6 +67,9 @@
     },
     {
       "url": "Controls/UC_CART.usercontrol"
+    },
+    {
+      "url": "Controls/PULLER.usercontrol"
     }
   ],
   "content": [

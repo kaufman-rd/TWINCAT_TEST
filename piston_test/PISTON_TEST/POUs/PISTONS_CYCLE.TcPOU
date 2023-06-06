@@ -14,56 +14,56 @@ END_VAR
 	
 	stPISTON_PARAM[1].nNAME:='SUPPLY 1';
 	stPISTON_PARAM[1].bOPEN_BY_DEFAULT:=FALSE;
-	stPISTON_PARAM[1].openTime:=1;
-	stPISTON_PARAM[1].closeTime:=1;
+	stPISTON_PARAM[1].openTime:=0.5;
+	stPISTON_PARAM[1].closeTime:=0.5;
 	stPISTON_PARAM[1].timeoutOpen:=T#3S;
 	stPISTON_PARAM[1].timeoutClose:=T#3S;
 	stPISTON_PARAM[1].ePISTON_TYPE:= 0;
 
 	stPISTON_PARAM[2].nNAME:='SUPPLY2';
 	stPISTON_PARAM[2].bOPEN_BY_DEFAULT:=FALSE;
-	stPISTON_PARAM[2].openTime:=1;
-	stPISTON_PARAM[2].closeTime:=1;
+	stPISTON_PARAM[2].openTime:=0.5;
+	stPISTON_PARAM[2].closeTime:=0.5;
 	stPISTON_PARAM[2].timeoutOpen:=T#5S;
 	stPISTON_PARAM[2].timeoutClose:=T#5S;
 	stPISTON_PARAM[2].ePISTON_TYPE:= 0;
 
 	stPISTON_PARAM[3].nNAME:='SEPARATE1 UPDOWN';
 	stPISTON_PARAM[3].bOPEN_BY_DEFAULT:=FALSE;
-	stPISTON_PARAM[3].openTime:=1;
-	stPISTON_PARAM[3].closeTime:=1;
+	stPISTON_PARAM[3].openTime:=0.5;
+	stPISTON_PARAM[3].closeTime:=0.5;
 	stPISTON_PARAM[3].timeoutOpen:=T#3S;
 	stPISTON_PARAM[3].timeoutClose:=T#3S;
 	stPISTON_PARAM[3].ePISTON_TYPE:= 0;
 	
 	stPISTON_PARAM[4].nNAME:='SEPARATE1 GRIP';
 	stPISTON_PARAM[4].bOPEN_BY_DEFAULT:=FALSE;
-	stPISTON_PARAM[4].openTime:=1;
-	stPISTON_PARAM[4].closeTime:=1;
+	stPISTON_PARAM[4].openTime:=0.5;
+	stPISTON_PARAM[4].closeTime:=0.5;
 	stPISTON_PARAM[4].timeoutOpen:=T#3S;
 	stPISTON_PARAM[4].timeoutClose:=T#3S;
 	stPISTON_PARAM[4].ePISTON_TYPE:= 0;
 	
 	stPISTON_PARAM[5].nNAME:='SEPARATE2 UPDOWN';
 	stPISTON_PARAM[5].bOPEN_BY_DEFAULT:=FALSE;
-	stPISTON_PARAM[5].openTime:=1;
-	stPISTON_PARAM[5].closeTime:=1;
+	stPISTON_PARAM[5].openTime:=0.5;
+	stPISTON_PARAM[5].closeTime:=0.5;
 	stPISTON_PARAM[5].timeoutOpen:=T#3S;
 	stPISTON_PARAM[5].timeoutClose:=T#3S;
 	stPISTON_PARAM[5].ePISTON_TYPE:= 0;
 	
 	stPISTON_PARAM[6].nNAME:='SEPARATE2 GRIP';
 	stPISTON_PARAM[6].bOPEN_BY_DEFAULT:=FALSE;
-	stPISTON_PARAM[6].openTime:=1;
-	stPISTON_PARAM[6].closeTime:=1;
+	stPISTON_PARAM[6].openTime:=0.5;
+	stPISTON_PARAM[6].closeTime:=0.5;
 	stPISTON_PARAM[6].timeoutOpen:=T#3S;
 	stPISTON_PARAM[6].timeoutClose:=T#3S;
 	stPISTON_PARAM[6].ePISTON_TYPE:= 0;
 	
 	stPISTON_PARAM[7].nNAME:='ADVANCE';
 	stPISTON_PARAM[7].bOPEN_BY_DEFAULT:=FALSE;
-	stPISTON_PARAM[7].openTime:=1;
-	stPISTON_PARAM[7].closeTime:=1;
+	stPISTON_PARAM[7].openTime:=0.5;
+	stPISTON_PARAM[7].closeTime:=0.5;
 	stPISTON_PARAM[7].timeoutOpen:=T#3S;
 	stPISTON_PARAM[7].timeoutClose:=T#3S;
 	stPISTON_PARAM[7].ePISTON_TYPE:= 0;

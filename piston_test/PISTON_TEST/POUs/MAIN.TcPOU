@@ -13,8 +13,14 @@ VAR
 	temp_state:E_MAIN_STATE;
 	temp_supply_state:E_STATION_STATE;
 	temp_sep1_state:E_STATION_STATE;
+	temp_sep2_state:E_STATION_STATE;
+	temp_clean_state:E_STATION_STATE;
 	temp_conv_state:E_CONVAYOR_STATE;
+	temp_supconv_state:E_CONVAYOR_STATE;
 	
+	action_timeout: TON:=(PT:=T#7s);
+	move_timeout: TON;
+	bTIMEOUT:BOOL:=FALSE;
 END_VAR
 
 
@@ -27,30 +33,48 @@ MAIN_CONVAYOR();
 SUPPLY_CONVAYOR();
 SUPPLY();
 SEPARATION1();
+SEPARATION2();
+CLEAN();
+
 rtrigSTART(CLK:= bSTART, Q=> );
 rtrigPAUSE(CLK:= bPAUSE_MAIN, Q=> );
 ftrigRERUN(CLK:= bPAUSE_MAIN, Q=> );
-
+action_timeout(IN:=bTIMEOUT);
 
 //MAIN_STATE_MACHINE:
 CASE eMAIN_STATE OF
 	E_MAIN_STATE.uninit:
+		bTIMEOUT:=FALSE;
 		IF rtrigSTART.Q THEN
 			eMAIN_STATE:=E_MAIN_STATE.do_actions;
 		END_IF
 	
 	E_MAIN_STATE.do_actions:
+		bTIMEOUT:=TRUE;
 		IF eSUPPLY = E_STATION_STATE.idle THEN
 			eSUPPLY := E_STATION_STATE.do_action1;
 		END_IF
 		IF eSEPARATE1 = E_STATION_STATE.idle THEN
 			eSEPARATE1 := E_STATION_STATE.do_action1;
 		END_IF
+		IF eSEPARATE2 = E_STATION_STATE.idle THEN
+			eSEPARATE2 := E_STATION_STATE.do_action1;
+		END_IF
+		IF eCLEAN = E_STATION_STATE.idle THEN
+			eCLEAN := E_STATION_STATE.do_action1;
+		END_IF
 		
-		IF eSEPARATE1 = E_STATION_STATE.done AND eSUPPLY = E_STATION_STATE.done THEN
+		IF (eSEPARATE1 = E_STATION_STATE.done AND eSUPPLY = E_STATION_STATE.done AND eSEPARATE2 = E_STATION_STATE.done AND eCLEAN = E_STATION_STATE.done) THEN
 			eSUPPLY := E_STATION_STATE.idle;
 			eSEPARATE1 := E_STATION_STATE.idle;
+			eSEPARATE2 := E_STATION_STATE.idle;
+			eCLEAN := E_STATION_STATE.idle;
 			eMAIN_STATE:=E_MAIN_STATE.move_next;
+			bTIMEOUT:=FALSE;
+		END_IF
+		
+		IF action_timeout.Q THEN
+			eMAIN_STATE:=E_MAIN_STATE.error;
 		END_IF
 		
 	E_MAIN_STATE.move_next: 
@@ -67,6 +91,7 @@ CASE eMAIN_STATE OF
 		END_IF
 		
 	E_MAIN_STATE.pause: 
+		bTIMEOUT:=FALSE;
 		//paused
 		
 	E_MAIN_STATE.error: 
@@ -77,12 +102,17 @@ END_CASE
 IF rtrigPAUSE.Q THEN
 	temp_state:=eMAIN_STATE;
 	temp_supply_state:=eSUPPLY;
-	temp_sep1_state:=eSUPPLY;
+	temp_sep1_state:=eSEPARATE1;
+	temp_sep2_state:=eSEPARATE2;
+	temp_clean_state:=eSEPARATE2;
 	temp_conv_state:=eMAIN_CONVAYOR_STATE;
+	temp_supconv_state:=eMAIN_CONVAYOR_STATE;
 	eMAIN_STATE:=E_MAIN_STATE.pause;
 	eSUPPLY:=E_STATION_STATE.pause;
 	eSEPARATE1:=E_STATION_STATE.pause;
+	eSEPARATE2:=E_STATION_STATE.pause;
 	eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.pause;
+	eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.pause;
 	
 END_IF
 
@@ -90,7 +120,10 @@ IF ftrigRERUN.Q THEN
 	eMAIN_STATE:=temp_state;
 	eSUPPLY:=temp_supply_state;
 	eSEPARATE1:=temp_sep1_state;
+	eSEPARATE2:=temp_sep2_state;
+	eCLEAN:=temp_clean_state;
 	eMAIN_CONVAYOR_STATE:=temp_conv_state;
+	eSUPPLY_CONVAYOR_STATE:=temp_conv_state;
 END_IF
 ]]></ST>
     </Implementation>

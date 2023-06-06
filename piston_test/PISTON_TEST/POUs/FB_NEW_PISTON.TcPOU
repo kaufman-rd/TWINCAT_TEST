@@ -35,8 +35,8 @@ END_VAR
 	bSTARTUP:=TRUE;
 END_IF
 
-timerOpening(IN:= bVALVE_OPEN, PT:=INT_TO_TIME(stPISTON.openTime)*1000 , Q=> , ET=> );
-timerClosing(IN:= NOT bVALVE_OPEN, PT:=INT_TO_TIME(stPISTON.closeTime)*1000 , Q=> , ET=> );
+timerOpening(IN:= bVALVE_OPEN, PT:=REAL_TO_TIME(stPISTON.openTime)*1000 , Q=> , ET=> );
+timerClosing(IN:= NOT bVALVE_OPEN, PT:=REAL_TO_TIME(stPISTON.closeTime)*1000 , Q=> , ET=> );
 timeoutOpening(IN:= bVALVE_OPEN AND NOT bSEN_OPEN, PT:= stPISTON.timeoutOpen, Q=> , ET=> );
 timeoutClosing(IN:= NOT bVALVE_OPEN AND NOT bSEN_CLOSE, PT:= stPISTON.timeoutClose, Q=> , ET=> );
 IF bMANUAL THEN

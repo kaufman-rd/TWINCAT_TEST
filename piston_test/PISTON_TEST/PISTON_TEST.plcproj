@@ -49,6 +49,9 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\CLEAN.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\MAIN_CONVAYOR.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -62,6 +65,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PISTONS_CYCLE.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\SEPARATION2.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\SUPPLY.TcPOU">

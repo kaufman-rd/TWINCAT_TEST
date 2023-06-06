@@ -8,6 +8,11 @@ TYPE E_CONVAYOR_STATE :
 	uninit,
 	idle,
 	do_move,
+	st1,
+	st2,
+	st3,
+	st4,
+	st5,
 	done,
 	pause,
 	error

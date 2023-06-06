@@ -6,8 +6,8 @@ STRUCT
 	ePISTON_TYPE: E_PISTON_TYPE;
 	
 	nNAME: STRING;
-	openTime: INT:=5;
-	closeTime: INT:=5;
+	openTime: REAL:=5;
+	closeTime: REAL:=5;
 	timeoutOpen:  TIME:=T#5S;
 	timeoutClose: TIME:=T#5S;
 	bOPEN_BY_DEFAULT: BOOL:= FALSE;

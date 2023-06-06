@@ -48,6 +48,14 @@
       "frameworkUserControlConfig": "Controls\\UC_CART.usercontrol.json",
       "id": "tchmi:project#/definitions/UC_CART",
       "type": "object"
+    },
+    "PULLER": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "Controls\\PULLER.usercontrol.json",
+      "id": "tchmi:project#/definitions/PULLER",
+      "type": "object"
     }
   }
 }
