@@ -3,6 +3,13 @@
   <POU Name="MAIN_CONVAYOR" Id="{230d7160-cfd8-4561-bda5-963e513f3cc2}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN_CONVAYOR
 VAR
+	inc: INT:=0;
+	temp: INT;
+	state: INT:=0;
+	total_length: INT;
+	cart_space: INT;
+	cornerX: INT;
+	cornerY: INT;
 	bMOVE:BOOL :=FALSE;
 	bSTARTUP: BOOL:=FALSE;
 	rtrigNext: R_TRIG;
@@ -10,10 +17,15 @@ VAR
 	tNext: TON;
 	tDelay: TON;
 	bDELAY: BOOL:=FALSE;
+	first_run: BOOL:=FALSE;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[FOR counter:=1 TO 6 BY 1 DO
+      <ST><![CDATA[IF first_run THEN
+	A_set_cart_spaces();
+END_IF
+
+FOR counter:=1 TO 6 BY 1 DO
 	fbCART[counter]();
 END_FOR;
 tDelay(IN:=bDELAY);
@@ -80,6 +92,57 @@ END_CASE
         <ST><![CDATA[FOR counter:=1 TO 6 BY 1 DO
 	fbCART[counter].A_STEP();
 END_FOR;]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="A_set_cart_spaces" Id="{7d4d76aa-d053-4a28-a62b-1eb33cb8ead7}">
+      <Implementation>
+        <ST><![CDATA[total_length := (conv_height*2)+(conv_length*2);
+cart_space := total_length /num_of_carts;
+
+posArrX[inc]:= 0+X_OFFSET;
+posArrY[inc]:= 0+(conv_height/2)+Y_OFFSET;
+
+WHILE state = 0 DO
+	IF posArrY[inc]-cart_space < Y_OFFSET THEN
+		temp :=cart_space - (posArrY[inc]-Y_OFFSET);
+		posArrX[inc]:= temp+X_OFFSET;
+		posArrY[inc]:= 0+Y_OFFSET;
+		state:=1;
+	ELSE
+		posArrX[inc]:= 0+X_OFFSET;
+		posArrY[inc]:=posArrY[inc-1]- cart_space;
+		inc :=inc+1;
+	END_IF
+	
+END_WHILE
+
+WHILE state = 1 DO
+	IF posArrX[inc]+cart_space > (X_OFFSET+conv_length) THEN
+		temp :=cart_space - ((X_OFFSET+conv_length)-posArrX[inc]);
+		posArrX[inc]:= conv_length+X_OFFSET;
+		posArrY[inc]:= temp+Y_OFFSET;
+		state:=2;
+	ELSE
+		posArrX[inc]:= posArrX[inc-1]+cart_space;
+		posArrY[inc]:=Y_OFFSET;
+		inc :=inc+1;
+	END_IF
+	
+END_WHILE
+
+WHILE state = 2 DO
+	IF posArrY[inc]+cart_space > (Y_OFFSET+conv_height) THEN
+		temp :=cart_space - ((Y_OFFSET+conv_height)-posArrY[inc]);
+		posArrX[inc]:= (conv_length+X_OFFSET)-temp;
+		posArrY[inc]:= 0+Y_OFFSET+conv_height;
+		state:=3;
+	ELSE
+		posArrX[inc]:= posArrX[inc-1]-cart_space;
+		posArrY[inc]:=posArrY[inc-1]- cart_space;
+		inc :=inc+1;
+	END_IF
+	
+END_WHILE]]></ST>
       </Implementation>
     </Action>
     <Action Name="A_SETUP" Id="{743a8297-84d8-4da3-9839-4637b3eb1bf1}">
