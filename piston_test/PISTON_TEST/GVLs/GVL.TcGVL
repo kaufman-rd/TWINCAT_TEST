@@ -5,16 +5,16 @@
 VAR_GLOBAL
 	
 	iNUMBER_OF_PISTONS: INT:=8;
-	conv_length: INT:=1250;
+	conv_length: INT:=1150;
 	conv_height: INT:=290;
-	num_of_carts: INT:=18;
-	X_OFFSET: INT:=100;
-	Y_OFFSET: INT:=-188;
+	num_of_carts:INT:=18;
+	X_OFFSET: INT:=330;
+	Y_OFFSET: INT:=300;
 	stPISTON_PARAM: ARRAY[1..10] OF  ST_PISTON;
 	fbPiston: ARRAY[1..10] OF FB_NEW_PISTON;
-	fbCART: ARRAY[1..num_of_carts] OF FB_CART;
-	posArrX:ARRAY[1..num_of_carts] OF INT;
-	posArrY:ARRAY[1..num_of_carts] OF INT;
+	fbCART: ARRAY[1..18] OF FB_CART;
+	posArrX:ARRAY[1..36] OF INT;
+	posArrY:ARRAY[1..36] OF INT;
 	
 	eMAIN_STATE: E_MAIN_STATE:= E_MAIN_STATE.uninit;
 	eSUPPLY: E_STATION_STATE:=E_STATION_STATE.uninit;
@@ -32,6 +32,9 @@ VAR_GLOBAL
 	bCONV_MAIN_INPOS: BOOL:=FALSE; // convayor in position
 	bCONV_SUPPLY_INPOS: BOOL:=FALSE; // convayor in position
 	bPAUSE_MAIN: BOOL:=FALSE;
-END_VAR]]></Declaration>
+	
+	
+END_VAR
+]]></Declaration>
   </GVL>
 </TcPlcObject>

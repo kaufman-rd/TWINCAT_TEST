@@ -17,7 +17,7 @@ END_VAR
     </Implementation>
     <Action Name="A_STEP" Id="{14523dd1-b206-4535-943a-bfd0c09ba5ec}">
       <Implementation>
-        <ST><![CDATA[IF stCART.position < 12 THEN
+        <ST><![CDATA[IF stCART.position < num_of_carts THEN
 	stCART.position:= stCART.position+1;
 	stCART.posX:=posArrX[stCART.position];
 	stCART.posY:=posArrY[stCART.position];
@@ -31,20 +31,5 @@ END_IF
 ]]></ST>
       </Implementation>
     </Action>
-    <LineIds Name="FB_CART">
-      <LineId Id="9" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_CART.A_STEP">
-      <LineId Id="3" Count="0" />
-      <LineId Id="1" Count="0" />
-      <LineId Id="7" Count="1" />
-      <LineId Id="10" Count="0" />
-      <LineId Id="14" Count="1" />
-      <LineId Id="12" Count="0" />
-      <LineId Id="16" Count="0" />
-      <LineId Id="6" Count="0" />
-      <LineId Id="9" Count="0" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

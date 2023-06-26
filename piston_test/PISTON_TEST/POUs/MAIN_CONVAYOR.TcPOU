@@ -3,7 +3,7 @@
   <POU Name="MAIN_CONVAYOR" Id="{230d7160-cfd8-4561-bda5-963e513f3cc2}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN_CONVAYOR
 VAR
-	inc: INT:=0;
+	inc: INT:=1;
 	temp: INT;
 	state: INT:=0;
 	total_length: INT;
@@ -21,13 +21,18 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF first_run THEN
-	A_set_cart_spaces();
-END_IF
-
-FOR counter:=1 TO 6 BY 1 DO
+      <ST><![CDATA[FOR counter:=1 TO num_of_carts BY 1 DO
 	fbCART[counter]();
 END_FOR;
+
+IF NOT first_run THEN
+	A_set_cart_spaces();
+	A_SETUP();
+	first_run:=TRUE;
+END_IF
+
+
+
 tDelay(IN:=bDELAY);
 tNext(IN:=bMOVE , PT:=T#1S , Q=> , ET=> );
 
@@ -89,60 +94,89 @@ END_CASE
     </Implementation>
     <Action Name="A_CARTS_STEP" Id="{7a1e55b7-d701-499d-a448-d86c230d8eaf}">
       <Implementation>
-        <ST><![CDATA[FOR counter:=1 TO 6 BY 1 DO
+        <ST><![CDATA[FOR counter:=1 TO num_of_carts BY 1 DO
 	fbCART[counter].A_STEP();
 END_FOR;]]></ST>
       </Implementation>
     </Action>
     <Action Name="A_set_cart_spaces" Id="{7d4d76aa-d053-4a28-a62b-1eb33cb8ead7}">
       <Implementation>
-        <ST><![CDATA[total_length := (conv_height*2)+(conv_length*2);
-cart_space := total_length /num_of_carts;
+        <ST><![CDATA[ total_length := (conv_height*2)+(conv_length*2);
+cart_space := total_length /(num_of_carts*2);
 
 posArrX[inc]:= 0+X_OFFSET;
 posArrY[inc]:= 0+(conv_height/2)+Y_OFFSET;
 
-WHILE state = 0 DO
+
+WHILE state = 0 DO    //left1
 	IF posArrY[inc]-cart_space < Y_OFFSET THEN
 		temp :=cart_space - (posArrY[inc]-Y_OFFSET);
-		posArrX[inc]:= temp+X_OFFSET;
-		posArrY[inc]:= 0+Y_OFFSET;
+		posArrX[inc+1]:= temp+X_OFFSET;
+		posArrY[inc+1]:= 0+Y_OFFSET;
 		state:=1;
 	ELSE
-		posArrX[inc]:= 0+X_OFFSET;
-		posArrY[inc]:=posArrY[inc-1]- cart_space;
+		posArrX[inc+1]:= 0+X_OFFSET;
+		posArrY[inc+1]:=posArrY[inc]- cart_space;
 		inc :=inc+1;
 	END_IF
-	
 END_WHILE
+inc := inc+1;
 
-WHILE state = 1 DO
+WHILE state = 1 DO // top
 	IF posArrX[inc]+cart_space > (X_OFFSET+conv_length) THEN
 		temp :=cart_space - ((X_OFFSET+conv_length)-posArrX[inc]);
-		posArrX[inc]:= conv_length+X_OFFSET;
-		posArrY[inc]:= temp+Y_OFFSET;
+		posArrX[inc+1]:= conv_length+X_OFFSET;
+		posArrY[inc+1]:= temp+Y_OFFSET;
 		state:=2;
 	ELSE
-		posArrX[inc]:= posArrX[inc-1]+cart_space;
-		posArrY[inc]:=Y_OFFSET;
+		posArrX[inc+1]:= posArrX[inc]+cart_space;
+		posArrY[inc+1]:=Y_OFFSET;
 		inc :=inc+1;
 	END_IF
-	
 END_WHILE
+inc :=inc+1;	
 
-WHILE state = 2 DO
+WHILE state = 2 DO // right
 	IF posArrY[inc]+cart_space > (Y_OFFSET+conv_height) THEN
 		temp :=cart_space - ((Y_OFFSET+conv_height)-posArrY[inc]);
-		posArrX[inc]:= (conv_length+X_OFFSET)-temp;
-		posArrY[inc]:= 0+Y_OFFSET+conv_height;
+		posArrX[inc+1]:= (conv_length+X_OFFSET)-temp;
+		posArrY[inc+1]:= 0+Y_OFFSET+conv_height;
 		state:=3;
 	ELSE
-		posArrX[inc]:= posArrX[inc-1]-cart_space;
-		posArrY[inc]:=posArrY[inc-1]- cart_space;
+		posArrX[inc+1]:= 0+X_OFFSET+conv_length;
+		posArrY[inc+1]:=posArrY[inc]+ cart_space;
+		inc :=inc+1;
+	END_IF	
+END_WHILE
+inc :=inc+1;	
+
+WHILE state = 1 DO //bottom
+	IF  posArrX[inc]-cart_space < X_OFFSET THEN
+		temp :=cart_space - (posArrX[inc]-X_OFFSET);
+		posArrX[inc+1]:= X_OFFSET;
+		posArrY[inc+1]:= Y_OFFSET-temp;
+		state:=4;
+	ELSE
+		posArrX[inc+1]:= posArrX[inc]-cart_space;
+		posArrY[inc+1]:=Y_OFFSET;
 		inc :=inc+1;
 	END_IF
-	
-END_WHILE]]></ST>
+END_WHILE
+inc :=inc+1;
+
+WHILE state = 0 DO    //left2
+	IF posArrY[inc]-cart_space < ((conv_height/2)+Y_OFFSET) THEN
+		
+		state:=5;
+	ELSE
+		posArrX[inc+1]:= 0+X_OFFSET;
+		posArrY[inc+1]:=posArrY[inc]- cart_space;
+		inc :=inc+1;
+	END_IF
+END_WHILE
+
+
+]]></ST>
       </Implementation>
     </Action>
     <Action Name="A_SETUP" Id="{743a8297-84d8-4da3-9839-4637b3eb1bf1}">
@@ -150,39 +184,18 @@ END_WHILE]]></ST>
         <ST><![CDATA[	bSTARTUP:=TRUE;
 	fbCART[1].stCART.position:=1;
 	fbCART[1].stCART.color:=1;
-	fbCART[1].stCART.nNAME:='CART1';
+	fbCART[1].stCART.nNAME:=INT_TO_STRING(1000+counter);
 	fbCART[1].stCART.posX:=posArrX[1];
 	fbCART[1].stCART.posY:=posArrY[1];
-	
-	fbCART[2].stCART.position:=3;
-	fbCART[2].stCART.color:=2;
-	fbCART[2].stCART.nNAME:='CART2';
-	fbCART[2].stCART.posX:=posArrX[3];
-	fbCART[2].stCART.posY:=posArrY[3];
-	
-	fbCART[3].stCART.position:=5;
-	fbCART[3].stCART.color:=3;
-	fbCART[3].stCART.nNAME:='CART3';
-	fbCART[3].stCART.posX:=posArrX[5];
-	fbCART[3].stCART.posY:=posArrY[5];
-	
-	fbCART[4].stCART.position:=7;
-	fbCART[4].stCART.color:=4;
-	fbCART[4].stCART.nNAME:='CART4';
-	fbCART[4].stCART.posX:=posArrX[7];
-	fbCART[4].stCART.posY:=posArrY[7];
-	
-	fbCART[5].stCART.position:=9;
-	fbCART[5].stCART.color:=5;
-	fbCART[5].stCART.nNAME:='CART5';
-	fbCART[5].stCART.posX:=posArrX[9];
-	fbCART[5].stCART.posY:=posArrY[9];
-	
-	fbCART[6].stCART.position:=11;
-	fbCART[6].stCART.color:=6;
-	fbCART[6].stCART.nNAME:='CART6';
-	fbCART[6].stCART.posX:=posArrX[11];
-	fbCART[6].stCART.posY:=posArrY[11];]]></ST>
+		
+	FOR counter:=1 TO (num_of_carts-1) BY 1 DO
+		fbCART[counter+1].stCART.position:=counter;
+		fbCART[counter+1].stCART.color:=1;
+		fbCART[counter+1].stCART.nNAME:=INT_TO_STRING(1000+counter);
+		fbCART[counter+1].stCART.posX:=posArrX[37-((counter*2)+1)];
+		fbCART[counter+1].stCART.posY:=posArrY[37-((counter*2)+1)];
+	END_FOR;
+	]]></ST>
       </Implementation>
     </Action>
   </POU>
