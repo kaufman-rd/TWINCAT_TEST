@@ -597,7 +597,7 @@
                 "closeTime": {
                     "allOf": [
                         {
-                            "$ref": "tchmi:general#/definitions/INT"
+                            "$ref": "tchmi:general#/definitions/REAL"
                         },
                         {
                             "propertyOrder": 4
@@ -627,7 +627,7 @@
                 "openTime": {
                     "allOf": [
                         {
-                            "$ref": "tchmi:general#/definitions/INT"
+                            "$ref": "tchmi:general#/definitions/REAL"
                         },
                         {
                             "propertyOrder": 3
@@ -3384,6 +3384,46 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.GVL.fbPiston.10": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::fbPiston[10]",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.fbPiston.11": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::fbPiston[11]",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.fbPiston.12": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::fbPiston[12]",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.fbPiston.13": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::fbPiston[13]",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON"
+            },
+            "USEMAPPING": true
+        },
         "PLC1.GVL.fbPiston.2": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -3439,6 +3479,26 @@
             "DOMAIN": "ADS",
             "DYNAMIC": true,
             "MAPPING": "PLC1::GVL::fbPiston[7]",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.fbPiston.8": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::fbPiston[8]",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.fbPiston.9": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::fbPiston[9]",
             "SCHEMA": {
                 "$ref": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON"
             },
@@ -4377,12 +4437,18 @@
                 "PLC1.GVL.fbCART": 3,
                 "PLC1.GVL.fbPiston.0": 3,
                 "PLC1.GVL.fbPiston.1": 3,
+                "PLC1.GVL.fbPiston.10": 3,
+                "PLC1.GVL.fbPiston.11": 3,
+                "PLC1.GVL.fbPiston.12": 3,
+                "PLC1.GVL.fbPiston.13": 3,
                 "PLC1.GVL.fbPiston.2": 3,
                 "PLC1.GVL.fbPiston.3": 3,
                 "PLC1.GVL.fbPiston.4": 3,
                 "PLC1.GVL.fbPiston.5": 3,
                 "PLC1.GVL.fbPiston.6": 3,
                 "PLC1.GVL.fbPiston.7": 3,
+                "PLC1.GVL.fbPiston.8": 3,
+                "PLC1.GVL.fbPiston.9": 3,
                 "PLC1.GVL.stPISTON_PARAM": 3,
                 "PLC1.MAIN.fbNewPiston": 3,
                 "PLC1.MAIN.fbNewPiston.PistonStatus": 3,

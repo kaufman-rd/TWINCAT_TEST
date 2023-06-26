@@ -17,7 +17,7 @@ END_VAR
     </Implementation>
     <Action Name="A_STEP" Id="{14523dd1-b206-4535-943a-bfd0c09ba5ec}">
       <Implementation>
-        <ST><![CDATA[IF stCART.position < num_of_carts THEN
+        <ST><![CDATA[IF stCART.position < num_of_carts*2 THEN
 	stCART.position:= stCART.position+1;
 	stCART.posX:=posArrX[stCART.position];
 	stCART.posY:=posArrY[stCART.position];

@@ -56,6 +56,14 @@
       "frameworkUserControlConfig": "Controls\\PULLER.usercontrol.json",
       "id": "tchmi:project#/definitions/PULLER",
       "type": "object"
+    },
+    "SEPARATE": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "Controls\\SEPARATE.usercontrol.json",
+      "id": "tchmi:project#/definitions/SEPARATE",
+      "type": "object"
     }
   }
 }

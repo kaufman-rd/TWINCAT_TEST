@@ -102,10 +102,11 @@ END_FOR;]]></ST>
     <Action Name="A_set_cart_spaces" Id="{7d4d76aa-d053-4a28-a62b-1eb33cb8ead7}">
       <Implementation>
         <ST><![CDATA[ total_length := (conv_height*2)+(conv_length*2);
-cart_space := total_length /(num_of_carts*2);
-
+cart_space := total_length /((num_of_carts*2));
+inc:=1;
 posArrX[inc]:= 0+X_OFFSET;
 posArrY[inc]:= 0+(conv_height/2)+Y_OFFSET;
+
 
 
 WHILE state = 0 DO    //left1
@@ -150,28 +151,35 @@ WHILE state = 2 DO // right
 END_WHILE
 inc :=inc+1;	
 
-WHILE state = 1 DO //bottom
+WHILE state = 3 DO //bottom
 	IF  posArrX[inc]-cart_space < X_OFFSET THEN
 		temp :=cart_space - (posArrX[inc]-X_OFFSET);
 		posArrX[inc+1]:= X_OFFSET;
-		posArrY[inc+1]:= Y_OFFSET-temp;
+		posArrY[inc+1]:= Y_OFFSET+ conv_height-temp;
 		state:=4;
 	ELSE
 		posArrX[inc+1]:= posArrX[inc]-cart_space;
-		posArrY[inc+1]:=Y_OFFSET;
+		posArrY[inc+1]:=Y_OFFSET+conv_height;
 		inc :=inc+1;
+		
 	END_IF
 END_WHILE
+
+IF inc > 34 THEN
+	RETURN;
+END_IF
+
+
 inc :=inc+1;
 
-WHILE state = 0 DO    //left2
+WHILE state = 4 DO    //left2
 	IF posArrY[inc]-cart_space < ((conv_height/2)+Y_OFFSET) THEN
-		
 		state:=5;
 	ELSE
 		posArrX[inc+1]:= 0+X_OFFSET;
 		posArrY[inc+1]:=posArrY[inc]- cart_space;
 		inc :=inc+1;
+		
 	END_IF
 END_WHILE
 
@@ -184,16 +192,16 @@ END_WHILE
         <ST><![CDATA[	bSTARTUP:=TRUE;
 	fbCART[1].stCART.position:=1;
 	fbCART[1].stCART.color:=1;
-	fbCART[1].stCART.nNAME:=INT_TO_STRING(1000+counter);
+	fbCART[1].stCART.nNAME:=INT_TO_STRING(1001);
 	fbCART[1].stCART.posX:=posArrX[1];
 	fbCART[1].stCART.posY:=posArrY[1];
 		
 	FOR counter:=1 TO (num_of_carts-1) BY 1 DO
-		fbCART[counter+1].stCART.position:=counter;
+		fbCART[counter+1].stCART.position:=37-((counter*2));
 		fbCART[counter+1].stCART.color:=1;
-		fbCART[counter+1].stCART.nNAME:=INT_TO_STRING(1000+counter);
-		fbCART[counter+1].stCART.posX:=posArrX[37-((counter*2)+1)];
-		fbCART[counter+1].stCART.posY:=posArrY[37-((counter*2)+1)];
+		fbCART[counter+1].stCART.nNAME:=INT_TO_STRING(1000+counter+1);
+		fbCART[counter+1].stCART.posX:=posArrX[37-((counter*2))];
+		fbCART[counter+1].stCART.posY:=posArrY[37-((counter*2))];
 	END_FOR;
 	]]></ST>
       </Implementation>

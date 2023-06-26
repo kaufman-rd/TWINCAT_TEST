@@ -4,14 +4,14 @@
     <Declaration><![CDATA[ //{attribute 'qualified_only'}
 VAR_GLOBAL
 	
-	iNUMBER_OF_PISTONS: INT:=8;
+	iNUMBER_OF_PISTONS: INT:=15;
 	conv_length: INT:=1150;
 	conv_height: INT:=290;
 	num_of_carts:INT:=18;
-	X_OFFSET: INT:=330;
-	Y_OFFSET: INT:=300;
-	stPISTON_PARAM: ARRAY[1..10] OF  ST_PISTON;
-	fbPiston: ARRAY[1..10] OF FB_NEW_PISTON;
+	X_OFFSET: INT:=380;
+	Y_OFFSET: INT:=352;
+	stPISTON_PARAM: ARRAY[1..15] OF  ST_PISTON;
+	fbPiston: ARRAY[1..15] OF FB_NEW_PISTON;
 	fbCART: ARRAY[1..18] OF FB_CART;
 	posArrX:ARRAY[1..36] OF INT;
 	posArrY:ARRAY[1..36] OF INT;

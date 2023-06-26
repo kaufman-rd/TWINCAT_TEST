@@ -138,6 +138,13 @@
       <SubType>Content</SubType>
       <DependentUpon>Controls\PULLER.usercontrol</DependentUpon>
     </Content>
+    <Content Include="Controls\SEPARATE.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Controls\SEPARATE.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Controls\SEPARATE.usercontrol</DependentUpon>
+    </Content>
     <Content Include="Controls\UC_ARROW.usercontrol">
       <SubType>Content</SubType>
     </Content>
