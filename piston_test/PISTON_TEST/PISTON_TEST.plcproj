@@ -52,6 +52,9 @@
     <Compile Include="POUs\CLEAN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\FB_SEPARATE.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\MAIN_CONVAYOR.TcPOU">
       <SubType>Code</SubType>
     </Compile>

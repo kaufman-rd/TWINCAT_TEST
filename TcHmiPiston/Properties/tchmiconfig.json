@@ -57,6 +57,9 @@
       "url": "Controls/PULLER.usercontrol"
     },
     {
+      "url": "Controls/SEPARATE.usercontrol"
+    },
+    {
       "url": "Controls/UC_ARROW.usercontrol"
     },
     {
@@ -70,9 +73,6 @@
     },
     {
       "url": "Controls/UC_CART.usercontrol"
-    },
-    {
-      "url": "Controls/SEPARATE.usercontrol"
     }
   ],
   "content": [

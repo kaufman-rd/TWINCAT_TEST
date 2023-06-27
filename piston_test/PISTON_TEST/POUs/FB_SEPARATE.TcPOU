@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_SEPARATE" Id="{4b094dc6-1d4d-433f-882e-593773da02bc}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_SEPARATE
+VAR_INPUT
+	piston_updown:  FB_NEW_PISTON;
+	piston_colet:  FB_NEW_PISTON;
+	piston_puller:  FB_NEW_PISTON;
+	piston_tray:  FB_NEW_PISTON;
+	piston_pins:  FB_NEW_PISTON;
+	eState: REFERENCE TO E_STATION_STATE;
+END_VAR
+VAR_OUTPUT
+	bRUNNING:BOOL :=FALSE;
+END_VAR
+VAR
+	tDelay: TON;
+	bDELAY: BOOL:=FALSE;
+	E: INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[tDelay(IN:=bDELAY);
+
+CASE eState OF
+	E_STATION_STATE.uninit:
+		eState:= E_STATION_STATE.idle;
+
+	E_STATION_STATE.idle:
+		bRUNNING:=FALSE;
+			
+
+	E_STATION_STATE.do_action1://delay and lower device
+		bRUNNING:=TRUE;
+		tDELAY.PT:=T#0.3S;
+		bDELAY:=TRUE;
+		IF tDELAY.Q THEN
+			bDELAY:=FALSE;
+			piston_updown.A_OPEN();
+		END_IF
+		
+		IF piston_updown.PistonStatus= ePistonStatus.OPENED THEN
+			eState:=E_STATION_STATE.do_action2;
+		END_IF
+		
+		E_STATION_STATE.do_action2://delay and close colet
+		tDELAY.PT:=T#0.3S;
+		bDELAY:=TRUE;
+		IF tDELAY.Q THEN
+			bDELAY:=FALSE;
+			piston_colet.A_OPEN();
+		END_IF
+		
+		IF piston_colet.PistonStatus= ePistonStatus.OPENED THEN
+			eState:=E_STATION_STATE.do_action3;
+		END_IF
+	
+	E_STATION_STATE.do_action3://delay and pull while raising
+		tDELAY.PT:=T#0.5S;		
+		bDELAY:=TRUE;
+		IF tDELAY.Q THEN
+			bDELAY:=FALSE;
+			piston_updown.A_CLOSE();
+			piston_puller.A_OPEN();
+		END_IF
+		IF piston_updown.PistonStatus= ePistonStatus.CLOSED AND piston_puller.PistonStatus= ePistonStatus.OPENED THEN
+			eState:=E_STATION_STATE.do_action4;
+		END_IF
+	
+	E_STATION_STATE.do_action4://delay close puller and enter tray
+		tDELAY.PT:=T#0.5S;		
+		bDELAY:=TRUE;
+		IF tDELAY.Q THEN
+			bDELAY:=FALSE;
+			piston_puller.A_CLOSE();
+			piston_tray.A_OPEN();
+		END_IF
+		IF piston_puller.PistonStatus= ePistonStatus.CLOSED AND piston_tray.PistonStatus= ePistonStatus.OPENED THEN
+			eState:=E_STATION_STATE.do_action5;
+		END_IF
+
+	E_STATION_STATE.do_action5://release colet and push pins
+		tDELAY.PT:=T#0.5S;		
+		bDELAY:=TRUE;
+		IF tDELAY.Q THEN
+			bDELAY:=FALSE;
+			piston_colet.A_CLOSE();
+			piston_pins.A_OPEN();
+		END_IF
+		IF piston_colet.PistonStatus= ePistonStatus.CLOSED AND piston_pins.PistonStatus= ePistonStatus.OPENED THEN
+			eState:=E_STATION_STATE.do_action6;
+		END_IF
+		
+	E_STATION_STATE.do_action6://raise pins and close tray
+		tDELAY.PT:=T#0.5S;		
+		bDELAY:=TRUE;
+		IF tDELAY.Q THEN
+			bDELAY:=FALSE;
+			piston_pins.A_CLOSE();
+			piston_tray.A_CLOSE();
+		END_IF
+		IF piston_colet.PistonStatus= ePistonStatus.CLOSED AND piston_pins.PistonStatus= ePistonStatus.CLOSED THEN
+			eState:=E_STATION_STATE.do_action7;
+		END_IF	
+		
+	E_STATION_STATE.do_action7://delay
+		tDELAY.PT:=T#0.2S;
+		bDELAY:=TRUE;
+		IF tDELAY.Q THEN
+			bDELAY:=FALSE;
+			eState:=E_STATION_STATE.done;
+		END_IF
+		
+	
+	E_STATION_STATE.done:
+		bRUNNING:=FALSE;
+		
+	E_STATION_STATE.pause:
+		//paused
+
+END_CASE]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

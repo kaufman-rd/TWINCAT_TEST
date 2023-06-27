@@ -12,6 +12,10 @@ TYPE E_STATION_STATE :
 	do_action3,
 	do_action4,
 	do_action5,
+	do_action6,
+	do_action7,
+	do_action8,
+	do_action9,
 	done,
 	pause,
 	error
