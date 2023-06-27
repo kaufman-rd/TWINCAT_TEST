@@ -70,9 +70,6 @@
     <Compile Include="POUs\PISTONS_CYCLE.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\SEPARATION2.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\SUPPLY.TcPOU">
       <SubType>Code</SubType>
     </Compile>

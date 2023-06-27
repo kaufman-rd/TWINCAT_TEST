@@ -3,12 +3,12 @@
   <POU Name="FB_SEPARATE" Id="{4b094dc6-1d4d-433f-882e-593773da02bc}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SEPARATE
 VAR_INPUT
-	piston_updown:  FB_NEW_PISTON;
-	piston_colet:  FB_NEW_PISTON;
-	piston_puller:  FB_NEW_PISTON;
-	piston_tray:  FB_NEW_PISTON;
-	piston_pins:  FB_NEW_PISTON;
-	eState: REFERENCE TO E_STATION_STATE;
+	piston_updown: REFERENCE TO FB_NEW_PISTON;
+	piston_colet: REFERENCE TO FB_NEW_PISTON;
+	piston_puller: REFERENCE TO FB_NEW_PISTON;
+	piston_tray: REFERENCE TO FB_NEW_PISTON;
+	piston_pins: REFERENCE TO FB_NEW_PISTON;
+	eState: REFERENCE TO  E_STATION_STATE;
 END_VAR
 VAR_OUTPUT
 	bRUNNING:BOOL :=FALSE;
@@ -43,7 +43,7 @@ CASE eState OF
 			eState:=E_STATION_STATE.do_action2;
 		END_IF
 		
-		E_STATION_STATE.do_action2://delay and close colet
+	E_STATION_STATE.do_action2://delay and close colet
 		tDELAY.PT:=T#0.3S;
 		bDELAY:=TRUE;
 		IF tDELAY.Q THEN

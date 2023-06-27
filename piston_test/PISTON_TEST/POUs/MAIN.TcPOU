@@ -20,7 +20,7 @@ VAR
 	
 	fbSEPARATION1: FB_SEPARATE;		
 	
-	action_timeout: TON:=(PT:=T#7s);
+	action_timeout: TON:=(PT:=T#10s);
 	move_timeout: TON;
 	bTIMEOUT:BOOL:=FALSE;
 END_VAR
@@ -35,10 +35,10 @@ MAIN_CONVAYOR();
 SUPPLY_CONVAYOR();
 SUPPLY();
 fbSEPARATION1(piston_updown:=  fbPiston[3],
-			  piston_updown:=  fbPiston[4],
-			  piston_updown:=  fbPiston[5],
-			  piston_updown:=  fbPiston[6],
-			  piston_updown:=  fbPiston[7],
+			  piston_colet:=  fbPiston[4],
+			  piston_puller:=  fbPiston[5],
+			  piston_tray:=  fbPiston[6],
+			  piston_pins:=  fbPiston[7],
 			  eState:= eSEPARATE1 );		
 
 CLEAN();
