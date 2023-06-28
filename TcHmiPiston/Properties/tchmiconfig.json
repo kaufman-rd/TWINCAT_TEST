@@ -77,6 +77,13 @@
   ],
   "content": [
     {
+      "url": "Pages/Motors.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
       "url": "Pages/C_Page1.content",
       "preload": false,
       "keepAlive": false,
@@ -85,13 +92,6 @@
     },
     {
       "url": "Pages/Machine.content",
-      "preload": false,
-      "keepAlive": false,
-      "loadSync": false,
-      "preloadBindings": false
-    },
-    {
-      "url": "Pages/Motors.content",
       "preload": false,
       "keepAlive": false,
       "loadSync": false,
