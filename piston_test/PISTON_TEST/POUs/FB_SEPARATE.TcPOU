@@ -32,7 +32,7 @@ CASE eState OF
 
 	E_STATION_STATE.do_action1://delay and lower device
 		bRUNNING:=TRUE;
-		tDELAY.PT:=T#0.3S;
+		tDELAY.PT:=T#0.1S;
 		bDELAY:=TRUE;
 		IF tDELAY.Q THEN
 			bDELAY:=FALSE;
@@ -44,7 +44,7 @@ CASE eState OF
 		END_IF
 		
 	E_STATION_STATE.do_action2://delay and close colet
-		tDELAY.PT:=T#0.3S;
+		tDELAY.PT:=T#0.1S;
 		bDELAY:=TRUE;
 		IF tDELAY.Q THEN
 			bDELAY:=FALSE;
@@ -56,7 +56,7 @@ CASE eState OF
 		END_IF
 	
 	E_STATION_STATE.do_action3://delay and pull while raising
-		tDELAY.PT:=T#0.5S;		
+		tDELAY.PT:=T#0.2S;		
 		bDELAY:=TRUE;
 		IF tDELAY.Q THEN
 			bDELAY:=FALSE;
@@ -68,7 +68,7 @@ CASE eState OF
 		END_IF
 	
 	E_STATION_STATE.do_action4://delay close puller and enter tray
-		tDELAY.PT:=T#0.5S;		
+		tDELAY.PT:=T#0.2S;		
 		bDELAY:=TRUE;
 		IF tDELAY.Q THEN
 			bDELAY:=FALSE;
@@ -80,7 +80,7 @@ CASE eState OF
 		END_IF
 
 	E_STATION_STATE.do_action5://release colet and push pins
-		tDELAY.PT:=T#0.5S;		
+		tDELAY.PT:=T#0.2S;		
 		bDELAY:=TRUE;
 		IF tDELAY.Q THEN
 			bDELAY:=FALSE;
@@ -92,7 +92,7 @@ CASE eState OF
 		END_IF
 		
 	E_STATION_STATE.do_action6://raise pins and close tray
-		tDELAY.PT:=T#0.5S;		
+		tDELAY.PT:=T#0.2S;		
 		bDELAY:=TRUE;
 		IF tDELAY.Q THEN
 			bDELAY:=FALSE;
@@ -104,7 +104,7 @@ CASE eState OF
 		END_IF	
 		
 	E_STATION_STATE.do_action7://delay
-		tDELAY.PT:=T#0.2S;
+		tDELAY.PT:=T#0.1S;
 		bDELAY:=TRUE;
 		IF tDELAY.Q THEN
 			bDELAY:=FALSE;

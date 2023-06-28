@@ -73,9 +73,6 @@
     <Compile Include="POUs\SUPPLY.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\SEPARATION1.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\SUPPLY_CONVAYOR.TcPOU">
       <SubType>Code</SubType>
     </Compile>

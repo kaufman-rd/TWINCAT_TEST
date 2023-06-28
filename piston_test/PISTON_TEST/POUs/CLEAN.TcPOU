@@ -23,10 +23,10 @@ CASE eCLEAN OF
 		bDELAY:=TRUE;
 		IF tDELAY.Q THEN
 			bDELAY:=FALSE;
-			fbPISTON[8].A_OPEN();
+			fbPISTON[14].A_OPEN();
 		END_IF
 		
-		IF fbPISTON[8].PistonStatus= ePistonStatus.OPENED THEN
+		IF fbPISTON[14].PistonStatus= ePistonStatus.OPENED THEN
 			eCLEAN:=E_STATION_STATE.do_action2;
 		END_IF
 		
@@ -37,9 +37,9 @@ CASE eCLEAN OF
 		bDELAY:=TRUE;
 		IF tDELAY.Q THEN
 			bDELAY:=FALSE;
-			fbPISTON[8].A_CLOSE();
+			fbPISTON[14].A_CLOSE();
 		END_IF
-		IF fbPISTON[8].PistonStatus= ePistonStatus.CLOSED  THEN
+		IF fbPISTON[14].PistonStatus= ePistonStatus.CLOSED  THEN
 			eCLEAN:=E_STATION_STATE.do_action3;
 		END_IF
 	

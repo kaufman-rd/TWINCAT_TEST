@@ -19,8 +19,9 @@ VAR
 	temp_supconv_state:E_CONVAYOR_STATE;
 	
 	fbSEPARATION1: FB_SEPARATE;		
+	fbSEPARATION2: FB_SEPARATE;	
 	
-	action_timeout: TON:=(PT:=T#10s);
+	action_timeout: TON:=(PT:=T#20s);
 	move_timeout: TON;
 	bTIMEOUT:BOOL:=FALSE;
 END_VAR
@@ -39,8 +40,15 @@ fbSEPARATION1(piston_updown:=  fbPiston[3],
 			  piston_puller:=  fbPiston[5],
 			  piston_tray:=  fbPiston[6],
 			  piston_pins:=  fbPiston[7],
-			  eState:= eSEPARATE1 );		
-
+			  eState:= eSEPARATE1 );
+		
+fbSEPARATION2(piston_updown:=  fbPiston[8],
+			  piston_colet:=  fbPiston[9],
+			  piston_puller:=  fbPiston[10],
+			  piston_tray:=  fbPiston[11],
+			  piston_pins:=  fbPiston[12],
+			  eState:= eSEPARATE2 );	
+	
 CLEAN();
 
 rtrigSTART(CLK:= bSTART, Q=> );
@@ -64,13 +72,17 @@ CASE eMAIN_STATE OF
 		IF eSEPARATE1 = E_STATION_STATE.idle THEN
 			eSEPARATE1 := E_STATION_STATE.do_action1;
 		END_IF
+		IF eSEPARATE2 = E_STATION_STATE.idle THEN
+			eSEPARATE2 := E_STATION_STATE.do_action1;
+		END_IF
 		IF eCLEAN = E_STATION_STATE.idle THEN
 			eCLEAN := E_STATION_STATE.do_action1;
 		END_IF
 		
-		IF (eSEPARATE1 = E_STATION_STATE.done AND eSUPPLY = E_STATION_STATE.done  AND eCLEAN = E_STATION_STATE.done) THEN
+		IF (eSEPARATE1 = E_STATION_STATE.done AND eSEPARATE2 = E_STATION_STATE.done AND eSUPPLY = E_STATION_STATE.done  AND eCLEAN = E_STATION_STATE.done) THEN
 			eSUPPLY := E_STATION_STATE.idle;
 			eSEPARATE1 := E_STATION_STATE.idle;
+			eSEPARATE2 := E_STATION_STATE.idle;
 			eCLEAN := E_STATION_STATE.idle;
 			eMAIN_STATE:=E_MAIN_STATE.move_next;
 			bTIMEOUT:=FALSE;
@@ -107,7 +119,7 @@ IF rtrigPAUSE.Q THEN
 	temp_supply_state:=eSUPPLY;
 	temp_sep1_state:=eSEPARATE1;
 	temp_sep2_state:=eSEPARATE2;
-	temp_clean_state:=eSEPARATE2;
+	temp_clean_state:=eCLEAN;
 	temp_conv_state:=eMAIN_CONVAYOR_STATE;
 	temp_supconv_state:=eMAIN_CONVAYOR_STATE;
 	eMAIN_STATE:=E_MAIN_STATE.pause;

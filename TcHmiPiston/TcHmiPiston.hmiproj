@@ -190,7 +190,7 @@
     <Content Include="Imports\Images\ARROW_UP.png">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Pages\C_Main.content">
+    <Content Include="Pages\Motors.content">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Pages\C_Page1.content">

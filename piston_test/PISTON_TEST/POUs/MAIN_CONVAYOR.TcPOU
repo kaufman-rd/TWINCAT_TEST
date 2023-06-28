@@ -49,12 +49,12 @@ CASE eMAIN_CONVAYOR_STATE OF
 	E_CONVAYOR_STATE.do_move: // open advance piston and update carts
 		IF bCONV_MAIN_INPOS THEN		 
 			A_CARTS_STEP();
-			fbPISTON[11].A_OPEN();
+			fbPISTON[13].A_OPEN();
 			bCONV_MAIN_INPOS:=FALSE;
 		END_IF
 		bMOVE:=TRUE;
 		bCONV_MAIN_INPOS:=FALSE;
-		IF fbPISTON[11].PistonStatus= ePistonStatus.OPENED THEN
+		IF fbPISTON[13].PistonStatus= ePistonStatus.OPENED THEN
 			A_CARTS_STEP();
 			bMOVE:=FALSE;
 			bCONV_MAIN_INPOS:=TRUE;
@@ -65,10 +65,10 @@ CASE eMAIN_CONVAYOR_STATE OF
 		tDELAY.PT:=T#0.6S;
 		bDELAY:=TRUE;
 		IF tDelay.Q THEN
-			fbPISTON[11].A_CLOSE();
+			fbPISTON[13].A_CLOSE();
 			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.done;
 		END_IF
-		IF fbPISTON[11].PistonStatus= ePistonStatus.CLOSED THEN
+		IF fbPISTON[13].PistonStatus= ePistonStatus.CLOSED THEN
 			//...
 		END_IF		
 	

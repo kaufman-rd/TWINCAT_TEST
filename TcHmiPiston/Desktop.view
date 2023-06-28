@@ -1,20 +1,20 @@
 <div id="Desktop" data-tchmi-type="TcHmi.Controls.System.TcHmiView" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width-mode="Value" data-tchmi-min-width="100" data-tchmi-min-width-unit="%" data-tchmi-height-mode="Value" data-tchmi-min-height="100" data-tchmi-min-height-unit="%" data-tchmi-creator-viewport-width="1024" data-tchmi-creator-viewport-height="768" data-tchmi-width="1920" data-tchmi-height="1080">
 <div id="TcHmiRegion" data-tchmi-type="TcHmi.Controls.System.TcHmiRegion" data-tchmi-height="1019" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="60" data-tchmi-top-unit="px" data-tchmi-width="1920" data-tchmi-width-unit="px" data-tchmi-target-content="Pages/C_Main.content">
 </div>
-<div id="TcHmiNavigation" data-tchmi-type="TcHmi.Controls.BaseTemplate.TcHmiNavigation" data-tchmi-height="60" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="-1" data-tchmi-top-unit="px" data-tchmi-width="1920" data-tchmi-width-unit="px" data-tchmi-target-region="%ctrl%TcHmiRegion%/ctrl%" data-tchmi-navigation-orientation="Horizontal">
+<div id="TcHmiNavigation" data-tchmi-type="TcHmi.Controls.BaseTemplate.TcHmiNavigation" data-tchmi-height="60" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="1920" data-tchmi-width-unit="px" data-tchmi-target-region="%ctrl%TcHmiRegion%/ctrl%" data-tchmi-navigation-orientation="Horizontal">
 
 <script data-tchmi-target-attribute="data-tchmi-navigation-structure" type="application/json">
 [
-  {
-    "name": "MAIN",
-    "content": "Pages/C_Main.content"
-  },
   {
     "name": "Machine",
     "content": "Pages/Machine.content"
   },
   {
-    "name": "Page1",
+    "name": "Motors",
+    "content": "Pages/Motors.content"
+  },
+  {
+    "name": "Pistons",
     "content": "Pages/C_Page1.content"
   }
 ]
