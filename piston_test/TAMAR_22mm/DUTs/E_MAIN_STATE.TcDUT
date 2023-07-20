@@ -11,7 +11,8 @@ TYPE E_MAIN_STATE :
 	move_next,
 	done,
 	pause,
-	error
+	error,
+	estop
 );
 END_TYPE
 ]]></Declaration>

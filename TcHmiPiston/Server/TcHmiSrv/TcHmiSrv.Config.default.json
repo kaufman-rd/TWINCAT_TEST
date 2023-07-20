@@ -135,7 +135,8 @@
                 3,
                 4,
                 5,
-                6
+                6,
+                7
             ],
             "options": [
                 {
@@ -165,6 +166,10 @@
                 {
                     "label": "error",
                     "value": 6
+                },
+                {
+                    "label": "estop",
+                    "value": 7
                 }
             ],
             "type": "integer"
@@ -3354,6 +3359,46 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.GVL.b_E_STOP": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::b_E_STOP",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.b_sense_home1": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::b_sense_home1",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.b_sense_home2": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::b_sense_home2",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.b_sense_home3": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::b_sense_home3",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
         "PLC1.GVL.eMAIN_CONVAYOR_STATE": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -4480,6 +4525,10 @@
                 "PLC1.GVL.bINIT_MAIN": 3,
                 "PLC1.GVL.bPAUSE_MAIN": 3,
                 "PLC1.GVL.bSTART": 3,
+                "PLC1.GVL.b_E_STOP": 3,
+                "PLC1.GVL.b_sense_home1": 3,
+                "PLC1.GVL.b_sense_home2": 3,
+                "PLC1.GVL.b_sense_home3": 3,
                 "PLC1.GVL.eMAIN_CONVAYOR_STATE": 3,
                 "PLC1.GVL.eMAIN_STATE": 3,
                 "PLC1.GVL.eSTATION1_STATE": 3,

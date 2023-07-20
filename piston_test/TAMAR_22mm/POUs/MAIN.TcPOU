@@ -7,6 +7,7 @@ VAR
 	iNUMBER1 : INT:=2;
 	sNAME1 : STRING(255):='24_5A';
 	Trigger : BOOL;
+	rtrigE_STOP: R_TRIG;
 	rtrigSTART: R_TRIG;
 	rtrigPAUSE: R_TRIG;
 	rtrigINIT: R_TRIG;
@@ -54,6 +55,7 @@ fbSEPARATION2(piston_updown:=  fbPiston[8],
 	
 CLEAN();
 
+rtrigE_STOP(CLK:= b_E_STOP, Q=> );
 rtrigINIT(CLK:= bINIT_MAIN, Q=> );
 rtrigSTART(CLK:= bSTART, Q=> );
 rtrigPAUSE(CLK:= bPAUSE_MAIN, Q=> );
@@ -70,28 +72,32 @@ CASE eMAIN_STATE OF
 		eSEPARATE2 := E_STATION_STATE.unInit;
 		eCLEAN := E_STATION_STATE.unInit;
 		eMAIN_CONVAYOR_STATE := E_CONVAYOR_STATE.unInit;
+		eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.unInit;
 		eMAIN_STATE:=E_MAIN_STATE.idle;
 		
 	E_MAIN_STATE.idle:
 		IF rtrigSTART.Q THEN
-			eMAIN_STATE:=E_MAIN_STATE.do_actions;
+			IF b_sense_home1 AND NOT b_sense_home2 AND b_sense_home3 THEN 
+				eMAIN_STATE:=E_MAIN_STATE.do_actions;
+			END_IF
 		END_IF
 		
 	E_MAIN_STATE.do_actions:
 		bTIMEOUT:=TRUE;
-		IF eSUPPLY = E_STATION_STATE.idle THEN     
-			eSUPPLY := E_STATION_STATE.do_action1;
+		IF b_sense_home1 AND NOT b_sense_home2 AND b_sense_home3 THEN 
+			IF eSUPPLY = E_STATION_STATE.idle THEN     
+				eSUPPLY := E_STATION_STATE.do_action1;
+			END_IF
+			IF eSEPARATE1 = E_STATION_STATE.idle THEN
+				eSEPARATE1 := E_STATION_STATE.do_action1;
+			END_IF
+			IF eSEPARATE2 = E_STATION_STATE.idle THEN
+				eSEPARATE2 := E_STATION_STATE.do_action1;
+			END_IF
+			IF eCLEAN = E_STATION_STATE.idle THEN
+				eCLEAN := E_STATION_STATE.do_action1;
+			END_IF
 		END_IF
-		IF eSEPARATE1 = E_STATION_STATE.idle THEN
-			eSEPARATE1 := E_STATION_STATE.do_action1;
-		END_IF
-		IF eSEPARATE2 = E_STATION_STATE.idle THEN
-			eSEPARATE2 := E_STATION_STATE.do_action1;
-		END_IF
-		IF eCLEAN = E_STATION_STATE.idle THEN
-			eCLEAN := E_STATION_STATE.do_action1;
-		END_IF
-		
 		IF (eSEPARATE1 = E_STATION_STATE.done AND eSEPARATE2 = E_STATION_STATE.done AND eSUPPLY = E_STATION_STATE.done  AND eCLEAN = E_STATION_STATE.done) THEN
 			eSUPPLY := E_STATION_STATE.idle;
 			eSEPARATE1 := E_STATION_STATE.idle;
@@ -120,12 +126,32 @@ CASE eMAIN_STATE OF
 		
 	E_MAIN_STATE.pause: 
 		bTIMEOUT:=FALSE;
-		//paused
+		IF ftrigRERUN.Q THEN
+			eMAIN_STATE:=temp_state;
+			eSUPPLY:=temp_supply_state;
+			eSEPARATE1:=temp_sep1_state;
+			eSEPARATE2:=temp_sep2_state;
+			eCLEAN:=temp_clean_state;
+			eMAIN_CONVAYOR_STATE:=temp_conv_state;
+			eSUPPLY_CONVAYOR_STATE:=temp_conv_state;
+		END_IF
 		
-	E_MAIN_STATE.error: 
-		//error mode
+	E_MAIN_STATE.estop: 
+		eSUPPLY := E_STATION_STATE.error;
+		eSEPARATE1 := E_STATION_STATE.error;
+		eSEPARATE2 := E_STATION_STATE.error;
+		eCLEAN := E_STATION_STATE.error;
+		eMAIN_CONVAYOR_STATE := E_CONVAYOR_STATE.error;
+		eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.error;
+	
+	E_MAIN_STATE.error:
+		// error	
+
 END_CASE
 
+IF rtrigE_STOP.Q THEN
+	eMAIN_STATE:=E_MAIN_STATE.estop;
+END_IF
 
 IF rtrigINIT.Q THEN
 	eMAIN_STATE:=E_MAIN_STATE.uninit;
@@ -148,15 +174,7 @@ IF rtrigPAUSE.Q THEN
 	
 END_IF
 
-IF ftrigRERUN.Q THEN
-	eMAIN_STATE:=temp_state;
-	eSUPPLY:=temp_supply_state;
-	eSEPARATE1:=temp_sep1_state;
-	eSEPARATE2:=temp_sep2_state;
-	eCLEAN:=temp_clean_state;
-	eMAIN_CONVAYOR_STATE:=temp_conv_state;
-	eSUPPLY_CONVAYOR_STATE:=temp_conv_state;
-END_IF
+
 ]]></ST>
     </Implementation>
     <Action Name="A_ERROR_CHECK" Id="{31fa973b-2552-4508-9ddd-0d789e896870}">
