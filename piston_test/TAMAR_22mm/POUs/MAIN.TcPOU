@@ -9,6 +9,7 @@ VAR
 	Trigger : BOOL;
 	rtrigSTART: R_TRIG;
 	rtrigPAUSE: R_TRIG;
+	rtrigINIT: R_TRIG;
 	ftrigRERUN: F_TRIG;
 	temp_state:E_MAIN_STATE;
 	temp_supply_state:E_STATION_STATE;
@@ -53,6 +54,7 @@ fbSEPARATION2(piston_updown:=  fbPiston[8],
 	
 CLEAN();
 
+rtrigINIT(CLK:= bINIT_MAIN, Q=> );
 rtrigSTART(CLK:= bSTART, Q=> );
 rtrigPAUSE(CLK:= bPAUSE_MAIN, Q=> );
 ftrigRERUN(CLK:= bPAUSE_MAIN, Q=> );
@@ -62,10 +64,19 @@ action_timeout(IN:=bTIMEOUT);
 CASE eMAIN_STATE OF
 	E_MAIN_STATE.uninit:
 		bTIMEOUT:=FALSE;
+		bPAUSE_MAIN:=FALSE;
+		eSUPPLY := E_STATION_STATE.unInit;
+		eSEPARATE1 := E_STATION_STATE.unInit;
+		eSEPARATE2 := E_STATION_STATE.unInit;
+		eCLEAN := E_STATION_STATE.unInit;
+		eMAIN_CONVAYOR_STATE := E_CONVAYOR_STATE.unInit;
+		eMAIN_STATE:=E_MAIN_STATE.idle;
+		
+	E_MAIN_STATE.idle:
 		IF rtrigSTART.Q THEN
 			eMAIN_STATE:=E_MAIN_STATE.do_actions;
 		END_IF
-	
+		
 	E_MAIN_STATE.do_actions:
 		bTIMEOUT:=TRUE;
 		IF eSUPPLY = E_STATION_STATE.idle THEN     
@@ -113,8 +124,12 @@ CASE eMAIN_STATE OF
 		
 	E_MAIN_STATE.error: 
 		//error mode
-
 END_CASE
+
+
+IF rtrigINIT.Q THEN
+	eMAIN_STATE:=E_MAIN_STATE.uninit;
+END_IF
 
 IF rtrigPAUSE.Q THEN
 	temp_state:=eMAIN_STATE;

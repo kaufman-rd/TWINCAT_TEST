@@ -37,6 +37,7 @@ VAR_GLOBAL
 	bCONV_MAIN_INPOS: BOOL:=FALSE; // convayor in position
 	bCONV_SUPPLY_INPOS: BOOL:=FALSE; // convayor in position
 	bPAUSE_MAIN: BOOL:=FALSE;
+	bINIT_MAIN: BOOL:=FALSE;
 	
 	
 END_VAR

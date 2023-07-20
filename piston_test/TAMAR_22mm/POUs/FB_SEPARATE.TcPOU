@@ -26,6 +26,11 @@ END_VAR
 
 CASE eState OF
 	E_STATION_STATE.uninit:
+		piston_updown.A_DEFAULT();
+		piston_colet.A_DEFAULT();
+		piston_puller.A_DEFAULT();
+		piston_tray.A_DEFAULT();
+		piston_pins.A_DEFAULT();
 		eState:= E_STATION_STATE.idle;
 
 	E_STATION_STATE.idle:

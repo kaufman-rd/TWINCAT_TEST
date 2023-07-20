@@ -9,8 +9,8 @@ VAR_INPUT
 	bCMD_OPEN_SWR: BOOL;
 	bCMD_CLOSE_SWR: BOOL;
 	bCMD_OPEN: BOOL;
-	bSEN_OPEN: BOOL;
-	bSEN_CLOSE: BOOL;
+	bSEN_OPEN AT%I*: BOOL;
+	bSEN_CLOSE AT%I*: BOOL;
 END_VAR
 VAR_OUTPUT
 	PistonStatus:ePistonStatus;
@@ -116,6 +116,16 @@ END_IF
     <Action Name="A_CLOSE" Id="{445c1d90-1cac-4e57-b5b0-98b5b66b350e}">
       <Implementation>
         <ST><![CDATA[bCMD_OPEN_SWR:=FALSE;]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="A_DEFAULT" Id="{bf860e38-8780-47ac-ad74-e891a7c1d484}">
+      <Implementation>
+        <ST><![CDATA[
+IF stPISTON.bOPEN_BY_DEFAULT THEN
+	bCMD_OPEN_SWR:=TRUE;
+ELSE
+	bCMD_OPEN_SWR:=FALSE;
+END_IF]]></ST>
       </Implementation>
     </Action>
     <Action Name="A_OPEN" Id="{3cd0eff9-6206-4bfb-b1a8-efdd601fff3d}">

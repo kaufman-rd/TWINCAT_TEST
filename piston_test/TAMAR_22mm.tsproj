@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.44">
-	<Project ProjectGUID="{65C73525-1D7A-4EAF-8BFA-2B138ED5FFA1}" Target64Bit="true" ShowHideConfigurations="#x3c6">
+	<Project ProjectGUID="{65C73525-1D7A-4EAF-8BFA-2B138ED5FFA1}" TargetNetId="5.109.70.127.1.1" Target64Bit="true" ShowHideConfigurations="#x3c6">
 		<System>
 			<Settings MaxCpus="8"/>
 			<Licenses>
@@ -14,8 +14,18 @@
 				</Task>
 			</Tasks>
 		</System>
+		<Motion>
+			<NC File="NC.xti"/>
+		</Motion>
 		<Plc>
-			<Project File="PISTON_TEST.xti"/>
+			<Project File="TAMAR_22mm.xti"/>
 		</Plc>
+		<Io>
+			<Device File="Device 3 (EtherCAT).xti" Id="3"/>
+		</Io>
 	</Project>
+	<Mappings>
+		<MappingInfo Identifier="{00000000-0020-0304-1000-040320000403}" Id="#x02030010"/>
+		<MappingInfo Identifier="{00000000-0030-0304-1000-040331000403}" Id="#x02030020"/>
+	</Mappings>
 </TcSmProject>
