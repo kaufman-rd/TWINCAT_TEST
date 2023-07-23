@@ -38,10 +38,11 @@ VAR_GLOBAL
 	bCONV_SUPPLY_INPOS: BOOL:=FALSE; // convayor in position
 	bPAUSE_MAIN: BOOL:=FALSE;
 	bINIT_MAIN: BOOL:=FALSE;
-	b_sense_home1: BOOL;
-	b_sense_home2: BOOL;
-	b_sense_home3: BOOL;
 	b_E_STOP:BOOL:=FALSE;
+	b_RESET:BOOL:=FALSE;
+	b_sense_home1: BOOL:=TRUE;
+	b_sense_home2: BOOL;
+	b_sense_home3: BOOL:=TRUE;
 	
 END_VAR
 ]]></Declaration>

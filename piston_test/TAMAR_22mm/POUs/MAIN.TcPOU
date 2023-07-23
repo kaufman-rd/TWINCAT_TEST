@@ -7,6 +7,7 @@ VAR
 	iNUMBER1 : INT:=2;
 	sNAME1 : STRING(255):='24_5A';
 	Trigger : BOOL;
+	rtrigRESET: R_TRIG;
 	rtrigE_STOP: R_TRIG;
 	rtrigSTART: R_TRIG;
 	rtrigPAUSE: R_TRIG;
@@ -55,6 +56,7 @@ fbSEPARATION2(piston_updown:=  fbPiston[8],
 	
 CLEAN();
 
+rtrigRESET(CLK:= b_RESET, Q=> );
 rtrigE_STOP(CLK:= b_E_STOP, Q=> );
 rtrigINIT(CLK:= bINIT_MAIN, Q=> );
 rtrigSTART(CLK:= bSTART, Q=> );
@@ -148,6 +150,12 @@ CASE eMAIN_STATE OF
 		// error	
 
 END_CASE
+
+IF rtrigRESET.Q THEN
+	MAIN_CONVAYOR.A_set_cart_spaces();
+	MAIN_CONVAYOR.A_SETUP();
+	eMAIN_STATE:=E_MAIN_STATE.uninit;
+END_IF
 
 IF rtrigE_STOP.Q THEN
 	eMAIN_STATE:=E_MAIN_STATE.estop;

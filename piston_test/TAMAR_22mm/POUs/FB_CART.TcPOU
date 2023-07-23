@@ -6,6 +6,7 @@ VAR_INPUT
 	stCART: ST_CART;
 END_VAR
 VAR_OUTPUT
+	
 END_VAR
 
 VAR
@@ -19,16 +20,17 @@ END_VAR
       <Implementation>
         <ST><![CDATA[IF stCART.position < num_of_carts*2 THEN
 	IF stCART.position = supply_station_num THEN
-		stCART.color:=1;
-	END_IF 
-	IF stCART.position = separate1_station_num THEN
-		stCART.color:=2;
-	END_IF 
+			stCART.color:=1;
+	END_IF  
 	IF stCART.position = separate2_station_num THEN
-		stCART.color:=3;
+		IF stCART.color = 2 THEN
+			stCART.color:=3;
+		END_IF
 	END_IF 
 	IF stCART.position = clean_station_num THEN
-		stCART.color:=4;
+		IF stCART.color = 3 THEN
+			stCART.color:=1;
+		END_IF
 		total_ready:= total_ready+7;
 	END_IF 
 	stCART.position:= stCART.position+1;
