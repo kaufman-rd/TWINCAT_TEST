@@ -73,6 +73,9 @@
     },
     {
       "url": "Controls/UC_CART.usercontrol"
+    },
+    {
+      "url": "Controls/UC_MOTOR.usercontrol"
     }
   ],
   "content": [

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_Axis" Id="{1ec8daca-b967-496e-b296-4221933406bb}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Axis
+VAR_INPUT
+	sName:STRING;
+	Axis:Axis_ref;
+	bEnable:BOOL;
+	bReset:BOOL;
+	bSetPosition:BOOL;
+	Dist:REAL;
+	bMoveRel:BOOL;
+	rPos:LREAL;
+	rVel:LREAL;
+	bMoveABS:BOOL;
+	bJogPos:BOOL;
+	bJogNeg:BOOL;
+	
+END_VAR
+VAR_OUTPUT
+	rActPos:LREAL;
+	rActVel:LREAL;
+END_VAR
+VAR
+	
+	MoveAbsolute: MC_MoveAbsolute;
+	Power: MC_Power;
+	Reset: MC_Reset;
+	SetPosition: MC_SetPosition;
+	JOG: MC_Jog;
+	RELATIVE: MC_MoveRelative;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[rActPos:=Axis.NcToPlc.ActPos;
+rActVel:=Axis.NcToPlc.ActVelo;
+RELATIVE(
+	Axis:= Axis, 
+	Execute:=bMoveRel , 
+	Distance:= Dist, 
+	Velocity:=rVel , 
+	Acceleration:= , 
+	Deceleration:= , 
+	Jerk:= , 
+	BufferMode:= , 
+	Options:= , 
+	Done=> , 
+	Busy=> , 
+	Active=> , 
+	CommandAborted=> , 
+	Error=> , 
+	ErrorID=> );
+	
+JOG(
+	Axis:=Axis , 
+	JogForward:= bJogPos, 
+	JogBackwards:=bJogNeg , 
+	Mode:= , 
+	Position:=rPos , 
+	Velocity:= rVel, 
+	Acceleration:= , 
+	Deceleration:= , 
+	Jerk:= , 
+	Done=> , 
+	Busy=> , 
+	Active=> , 
+	CommandAborted=> , 
+	Error=> , 
+	ErrorID=> );
+
+Power(
+	Axis:= Axis, 
+	Enable:= bEnable, 
+	Enable_Positive:= bEnable, 
+	Enable_Negative:= bEnable, 
+	Override:= 100, 
+	BufferMode:= , 
+	Options:= , 
+	Status=> , 
+	Busy=> , 
+	Active=> , 
+	Error=> , 
+	ErrorID=> );
+	
+Reset(
+	Axis:= Axis, 
+	Execute:= bReset, 
+	Done=> , 
+	Busy=> , 
+	Error=> , 
+	ErrorID=> );
+	
+SetPosition(
+	Axis:= Axis, 
+	Execute:= bSetPosition, 
+	Position:= rPos, 
+	Mode:= , 
+	Options:= , 
+	Done=> , 
+	Busy=> , 
+	Error=> , 
+	ErrorID=> );
+
+MoveAbsolute(
+	Axis:= Axis, 
+	Execute:= bMoveABS, 
+	Position:= rPos, 
+	Velocity:= rVel, 
+	Acceleration:= , 
+	Deceleration:= , 
+	Jerk:= , 
+	BufferMode:= , 
+	Options:= , 
+	Done=> , 
+	Busy=> , 
+	Active=> , 
+	CommandAborted=> , 
+	Error=> , 
+	ErrorID=> );
+	
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

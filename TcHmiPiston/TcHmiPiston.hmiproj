@@ -27,7 +27,7 @@
     <HmiViewportUserScaleable>Default</HmiViewportUserScaleable>
     <HmiPostProcessing>True</HmiPostProcessing>
     <Name>TcHmiPiston</Name>
-    <HmiCommunicationRouterPort>10104</HmiCommunicationRouterPort>
+    <HmiCommunicationRouterPort>10107</HmiCommunicationRouterPort>
     <HmiCommunicationServerAuthPort>13000</HmiCommunicationServerAuthPort>
     <HmiInitial>1.12.760.37</HmiInitial>
     <HmiRecent>1.12.760.37</HmiRecent>
@@ -183,6 +183,13 @@
     <Content Include="Controls\UC_CART.usercontrol.json">
       <SubType>Content</SubType>
       <DependentUpon>Controls\UC_CART.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="Controls\UC_MOTOR.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Controls\UC_MOTOR.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Controls\UC_MOTOR.usercontrol</DependentUpon>
     </Content>
     <Content Include="Imports\Images\ARROW_DOWN.png">
       <SubType>Content</SubType>

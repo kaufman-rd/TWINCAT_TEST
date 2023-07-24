@@ -31,7 +31,7 @@ END_VAR
 		IF stCART.color = 3 THEN
 			stCART.color:=1;
 		END_IF
-		total_ready:= total_ready+7;
+		
 	END_IF 
 	stCART.position:= stCART.position+1;
 	stCART.posX:=posArrX[stCART.position];

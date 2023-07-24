@@ -169,6 +169,23 @@
       "propertySetterName": "setP_PINS",
       "propertyGetterName": "getP_PINS",
       "refTo": ""
+    },
+    {
+      "name": "data-tchmi-bullet_sensor",
+      "displayName": "BULLET_SENSOR",
+      "allowSymbolExpressionsInObject": false,
+      "visible": true,
+      "type": "tchmi:general#/definitions/BOOL",
+      "category": "",
+      "description": "",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "propertyName": "BULLET_SENSOR",
+      "propertySetterName": "setBULLET_SENSOR",
+      "propertyGetterName": "getBULLET_SENSOR",
+      "refTo": ""
     }
   ],
   "virtualRights": [],
