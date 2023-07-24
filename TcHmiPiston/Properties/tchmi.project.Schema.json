@@ -72,6 +72,14 @@
       "frameworkUserControlConfig": "Controls\\UC_MOTOR.usercontrol.json",
       "type": "object",
       "id": "tchmi:project#/definitions/UserControl1_0"
+    },
+    "UC_MOTOR": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "Controls\\UC_MOTOR.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/UC_MOTOR"
     }
   }
 }

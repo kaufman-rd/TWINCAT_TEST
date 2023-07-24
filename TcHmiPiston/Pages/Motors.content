@@ -6,4 +6,8 @@
   "color": "rgba(19, 210, 15, 1)"
 }
 </script>
+<div id="MAIN" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="580" data-tchmi-height-unit="px" data-tchmi-left="54" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/UC_MOTOR.usercontrol" data-tchmi-top="45" data-tchmi-top-unit="px" data-tchmi-width="689" data-tchmi-width-unit="px" data-tchmi-axis="%s%PLC1.GVL.Axis_MAIN%/s%">
+</div>
+<div id="MAIN_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="580" data-tchmi-height-unit="px" data-tchmi-left="804" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/UC_MOTOR.usercontrol" data-tchmi-top="46" data-tchmi-top-unit="px" data-tchmi-width="689" data-tchmi-width-unit="px" data-tchmi-axis="%s%PLC1.GVL.Axis_SUPPLY%/s%">
+</div>
 </div>

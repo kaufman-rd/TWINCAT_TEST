@@ -6,18 +6,25 @@ VAR_INPUT
 	sName:STRING;
 	Axis:Axis_ref;
 	bEnable:BOOL;
+	bHalt:BOOL;
 	bReset:BOOL;
 	bSetPosition:BOOL;
 	Dist:REAL;
 	bMoveRel:BOOL;
 	rPos:LREAL;
 	rVel:LREAL;
+	rAcc:LREAL;
+	rDec:LREAL;
+	jJerk:LREAL;
 	bMoveABS:BOOL;
 	bJogPos:BOOL;
 	bJogNeg:BOOL;
 	
 END_VAR
 VAR_OUTPUT
+	bBusy:BOOL;
+	bError:BOOL;
+	bInPos:BOOL;
 	rActPos:LREAL;
 	rActVel:LREAL;
 END_VAR
@@ -29,11 +36,30 @@ VAR
 	SetPosition: MC_SetPosition;
 	JOG: MC_Jog;
 	RELATIVE: MC_MoveRelative;
+	HALT: MC_Halt;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[rActPos:=Axis.NcToPlc.ActPos;
 rActVel:=Axis.NcToPlc.ActVelo;
+IF RELATIVE.Busy OR JOG.Busy OR moveAbsolute.busy THEN
+	bBusy:=TRUE;
+ELSE
+	bBusy:=FALSE;
+END_IF
+
+IF POWER.error THEN
+	bError:=TRUE;
+ELSE
+	bError:=FALSE;
+END_IF
+
+IF RELATIVE.Done OR JOG.Done OR moveAbsolute.Done THEN
+	bInPos:=TRUE;
+ELSE
+	bInPos:=FALSE;
+END_IF
+
 RELATIVE(
 	Axis:= Axis, 
 	Execute:=bMoveRel , 
@@ -102,6 +128,7 @@ SetPosition(
 	ErrorID=> );
 
 MoveAbsolute(
+	
 	Axis:= Axis, 
 	Execute:= bMoveABS, 
 	Position:= rPos, 
@@ -118,6 +145,19 @@ MoveAbsolute(
 	Error=> , 
 	ErrorID=> );
 	
+HALT(
+	Axis:= Axis, 
+	Execute:= bHalt, 
+	Deceleration:= , 
+	Jerk:= , 
+	BufferMode:= , 
+	Options:= , 
+	Done=> , 
+	Busy=> , 
+	Active=> , 
+	CommandAborted=> , 
+	Error=> , 
+	ErrorID=> );
 ]]></ST>
     </Implementation>
   </POU>

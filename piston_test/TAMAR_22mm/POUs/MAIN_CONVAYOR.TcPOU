@@ -14,6 +14,7 @@ VAR
 	bSTARTUP: BOOL:=FALSE;
 	rtrigNext: R_TRIG;
 	counter: INT;
+	counter1:INT;
 	tNext: TON;
 	tDelay: TON;
 	bDELAY: BOOL:=FALSE;
@@ -94,8 +95,8 @@ END_CASE
     </Implementation>
     <Action Name="A_CARTS_STEP" Id="{7a1e55b7-d701-499d-a448-d86c230d8eaf}">
       <Implementation>
-        <ST><![CDATA[FOR counter:=1 TO num_of_carts BY 1 DO
-	fbCART[counter].A_STEP();
+        <ST><![CDATA[FOR counter1:=1 TO num_of_carts BY 1 DO
+	fbCART[counter1].A_STEP();
 END_FOR;]]></ST>
       </Implementation>
     </Action>
