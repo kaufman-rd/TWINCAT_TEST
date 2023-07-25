@@ -3,6 +3,7 @@
   <POU Name="MAIN_CONVAYOR" Id="{230d7160-cfd8-4561-bda5-963e513f3cc2}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN_CONVAYOR
 VAR
+	bTest:BOOL;
 	inc: INT:=1;
 	temp: INT;
 	state: INT:=0;
@@ -97,7 +98,9 @@ END_CASE
       <Implementation>
         <ST><![CDATA[FOR counter1:=1 TO num_of_carts BY 1 DO
 	fbCART[counter1].A_STEP();
-END_FOR;]]></ST>
+END_FOR;
+
+bTest:= NOT bTest;]]></ST>
       </Implementation>
     </Action>
     <Action Name="A_set_cart_spaces" Id="{7d4d76aa-d053-4a28-a62b-1eb33cb8ead7}">

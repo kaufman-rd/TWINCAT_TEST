@@ -15,10 +15,10 @@
 		<Box File="Term 1 (EK1100).xti" Id="1">
 			<EtherCAT PortABoxInfo="#x00ffffff"/>
 		</Box>
-		<Box File="Drive 5 (CD02).xti" Id="5">
+		<Box File="MAIN.xti" Id="5">
 			<EtherCAT PortABoxInfo="#x02000001"/>
 		</Box>
-		<Box File="Drive 6 (CD02).xti" Id="6">
+		<Box File="SUPPLY.xti" Id="6">
 			<EtherCAT PortABoxInfo="#x01000005"/>
 		</Box>
 		<EtherCAT DcSyncMode="3"/>

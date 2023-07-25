@@ -19,17 +19,21 @@ VAR_INPUT
 	bMoveABS:BOOL;
 	bJogPos:BOOL;
 	bJogNeg:BOOL;
-	
+	rStep: REAL:=1500;
+	rStep_vel: REAL:=200;
+	bManual:BOOL:=FALSE;
+	bDo_Step_FW:BOOL:=FALSE;
+	bDo_Step_BW:BOOL:=FALSE;
 END_VAR
+
 VAR_OUTPUT
-	bBusy:BOOL;
+	bBusy: BOOL;
 	bError:BOOL;
 	bInPos:BOOL;
 	rActPos:LREAL;
 	rActVel:LREAL;
 END_VAR
 VAR
-	
 	MoveAbsolute: MC_MoveAbsolute;
 	Power: MC_Power;
 	Reset: MC_Reset;
@@ -40,7 +44,8 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[rActPos:=Axis.NcToPlc.ActPos;
+      <ST><![CDATA[
+rActPos:=Axis.NcToPlc.ActPos;
 rActVel:=Axis.NcToPlc.ActVelo;
 IF RELATIVE.Busy OR JOG.Busy OR moveAbsolute.busy THEN
 	bBusy:=TRUE;
@@ -81,7 +86,7 @@ JOG(
 	Axis:=Axis , 
 	JogForward:= bJogPos, 
 	JogBackwards:=bJogNeg , 
-	Mode:= , 
+	Mode:= E_JogMode.MC_JOGMODE_CONTINOUS,
 	Position:=rPos , 
 	Velocity:= rVel, 
 	Acceleration:= , 
@@ -128,7 +133,6 @@ SetPosition(
 	ErrorID=> );
 
 MoveAbsolute(
-	
 	Axis:= Axis, 
 	Execute:= bMoveABS, 
 	Position:= rPos, 

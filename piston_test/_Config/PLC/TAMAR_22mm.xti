@@ -983,7 +983,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{AD6E4C48-5E61-47B3-958D-58FBAEF446F5}" Name="TAMAR_22mm" PrjFilePath="..\..\TAMAR_22mm\TAMAR_22mm.plcproj" TmcFilePath="..\..\TAMAR_22mm\TAMAR_22mm.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TAMAR_22mm\TAMAR_22mm.tmc" TmcHash="{D75141C5-F730-990C-C754-264B2BEA122D}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TAMAR_22mm\TAMAR_22mm.tmc" TmcHash="{C10A7D0E-30AE-50BA-8AC1-288483072A02}">
 			<Name>TAMAR_22mm Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
