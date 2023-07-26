@@ -40,40 +40,38 @@ tNext(IN:=bMOVE , PT:=T#1S , Q=> , ET=> );
 
 CASE eMAIN_CONVAYOR_STATE OF
 	E_CONVAYOR_STATE.uninit:
-		//A_SETUP();
 		eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.idle;
 	
 	E_CONVAYOR_STATE.idle:
 		bDELAY:=FALSE;
-		bMOVE:=FALSE;
-		bCONV_MAIN_INPOS:=TRUE;
 	
-	E_CONVAYOR_STATE.do_move: // open advance piston and update carts
-		IF bCONV_MAIN_INPOS THEN		 
+	E_CONVAYOR_STATE.do_move: // start motion
+		IF NOT Axis_MAIN.bBusy  AND NOT Axis_MAIN.bError THEN
+			Axis_MAIN.rPos:=0;	
+			Axis_MAIN.bSetPosition:=TRUE;	 
 			A_CARTS_STEP();
-			fbPISTON[13].A_OPEN();
-			bCONV_MAIN_INPOS:=FALSE;
-		END_IF
-		bMOVE:=TRUE;
-		bCONV_MAIN_INPOS:=FALSE;
-		IF fbPISTON[13].PistonStatus= ePistonStatus.OPENED THEN
-			A_CARTS_STEP();
-			bMOVE:=FALSE;
-			bCONV_MAIN_INPOS:=TRUE;
+			Axis_MAIN.bDo_Step_FW:=TRUE;
 			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.st1;
 		END_IF
-	
-	E_CONVAYOR_STATE.st1://delay and close advansed piston
-		tDELAY.PT:=T#0.6S;
-		bDELAY:=TRUE;
-		IF tDelay.Q THEN
-			fbPISTON[13].A_CLOSE();
+		
+	E_CONVAYOR_STATE.st1:
+		Axis_MAIN.bSetPosition:=FALSE;
+		IF Axis_MAIN.rActPos = 0 THEN
+			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.st2;	
+		END_IF
+		
+	E_CONVAYOR_STATE.st2:
+		IF Axis_MAIN.rActPos > (Axis_MAIN.rStep/2)	THEN
+			A_CARTS_STEP();	
+			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.st3;
+		END_IF
+
+
+	E_CONVAYOR_STATE.st3:
+		IF Axis_MAIN.bInPos THEN
 			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.done;
 		END_IF
-		IF fbPISTON[13].PistonStatus= ePistonStatus.CLOSED THEN
-			//...
-		END_IF		
-	
+		
 	E_CONVAYOR_STATE.done:
 		//...
 	

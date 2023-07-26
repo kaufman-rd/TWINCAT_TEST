@@ -5,23 +5,23 @@
 VAR_INPUT
 	sName:STRING;
 	Axis:Axis_ref;
-	bEnable:BOOL;
-	bHalt:BOOL;
-	bReset:BOOL;
-	bSetPosition:BOOL;
+	bEnable:BOOL:=FALSE;
+	bHalt:BOOL:=FALSE;
+	bReset:BOOL:=FALSE;
+	bSetPosition:BOOL:=FALSE;
 	Dist:REAL;
-	bMoveRel:BOOL;
+	bMoveRel:BOOL:=FALSE;
 	rPos:LREAL;
 	rVel:LREAL;
 	rAcc:LREAL;
 	rDec:LREAL;
 	jJerk:LREAL;
-	bMoveABS:BOOL;
+	bMoveABS:BOOL:=FALSE;
 	bJogPos:BOOL;
 	bJogNeg:BOOL;
-	rStep: REAL:=1500;
+	rStep: REAL:=800;
 	rStep_vel: REAL:=200;
-	bManual:BOOL:=FALSE;
+	bmanual:BOOL:=FALSE;
 	bDo_Step_FW:BOOL:=FALSE;
 	bDo_Step_BW:BOOL:=FALSE;
 END_VAR
@@ -32,8 +32,12 @@ VAR_OUTPUT
 	bInPos:BOOL;
 	rActPos:LREAL;
 	rActVel:LREAL;
+	bRelDone:BOOL;
+	bAbsDone:BOOL;
 END_VAR
 VAR
+	tDelay: TON;
+	bDelay:BOOL:=FALSE;
 	MoveAbsolute: MC_MoveAbsolute;
 	Power: MC_Power;
 	Reset: MC_Reset;
@@ -41,12 +45,22 @@ VAR
 	JOG: MC_Jog;
 	RELATIVE: MC_MoveRelative;
 	HALT: MC_Halt;
+	bFirst_run:BOOL:=FALSE;
+	stepFW_state:INT:=0;
+	stepBW_state:INT:=0;
+	bReseting:BOOL:=FALSE;
+	state_reset:INT:=0;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
+
 rActPos:=Axis.NcToPlc.ActPos;
 rActVel:=Axis.NcToPlc.ActVelo;
+
+STEP_FW();
+
+
 IF RELATIVE.Busy OR JOG.Busy OR moveAbsolute.busy THEN
 	bBusy:=TRUE;
 ELSE
@@ -75,7 +89,7 @@ RELATIVE(
 	Jerk:= , 
 	BufferMode:= , 
 	Options:= , 
-	Done=> , 
+	Done=> bRelDone, 
 	Busy=> , 
 	Active=> , 
 	CommandAborted=> , 
@@ -142,7 +156,7 @@ MoveAbsolute(
 	Jerk:= , 
 	BufferMode:= , 
 	Options:= , 
-	Done=> , 
+	Done=> bAbsDone, 
 	Busy=> , 
 	Active=> , 
 	CommandAborted=> , 
@@ -164,5 +178,45 @@ HALT(
 	ErrorID=> );
 ]]></ST>
     </Implementation>
+    <Method Name="STEP_FW" Id="{14856ee9-0d4e-4730-ba53-d6af6d59f53f}">
+      <Declaration><![CDATA[METHOD STEP_FW : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ 
+CASE stepFW_state OF
+	
+	0:
+	IF bDo_Step_FW AND NOT bManual THEN
+		bReset:=TRUE;
+		bDo_Step_FW:=FALSE;
+		stepFW_state := 1;	
+	END_IF
+
+	1:
+	Dist:=rStep;
+	rVel:=rStep_Vel;
+	bEnable:=TRUE;
+	bMoveRel:=FALSE;
+	stepFW_state := 2;
+	bReset:=FALSE;
+	
+	2:
+	bMoveRel:=TRUE;
+	stepFW_state := 3;
+	
+	3:
+	IF bRelDone THEN
+		 bMoveRel:=FALSE;
+		 stepFW_state := 0;
+	END_IF
+	
+	
+	
+	
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
   </POU>
 </TcPlcObject>

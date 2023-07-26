@@ -191,6 +191,13 @@
       <SubType>Content</SubType>
       <DependentUpon>Controls\UC_MOTOR.usercontrol</DependentUpon>
     </Content>
+    <Content Include="Controls\SMALL_MOTOR.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Controls\SMALL_MOTOR.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Controls\SMALL_MOTOR.usercontrol</DependentUpon>
+    </Content>
     <Content Include="Imports\Images\ARROW_DOWN.png">
       <SubType>Content</SubType>
     </Content>

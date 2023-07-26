@@ -19,21 +19,24 @@ END_VAR
     <Action Name="A_STEP" Id="{14523dd1-b206-4535-943a-bfd0c09ba5ec}">
       <Implementation>
         <ST><![CDATA[IF stCART.position < num_of_carts*2 THEN
+	
+
+
 	IF stCART.position = supply_station_num THEN
-			stCART.color:=1;
+			stCART.color:=2;
 	END_IF  
 	IF stCART.position = separate1_station_num THEN
-		IF stCART.color = 1 THEN
-			stCART.color:=2;
-		END_IF
-	END_IF 
-	IF stCART.position = separate2_station_num THEN
 		IF stCART.color = 2 THEN
 			stCART.color:=3;
 		END_IF
 	END_IF 
-	IF stCART.position = clean_station_num THEN
+	IF stCART.position = separate2_station_num THEN
 		IF stCART.color = 3 THEN
+			stCART.color:=4;
+		END_IF
+	END_IF 
+	IF stCART.position = clean_station_num THEN
+		IF stCART.color = 4 THEN
 			stCART.color:=1;
 		END_IF
 		

@@ -76,6 +76,9 @@
     },
     {
       "url": "Controls/UC_MOTOR.usercontrol"
+    },
+    {
+      "url": "Controls/SMALL_MOTOR.usercontrol"
     }
   ],
   "content": [
