@@ -96,6 +96,14 @@
       "frameworkUserControlConfig": "Controls\\UserControl1.usercontrol.json",
       "id": "tchmi:project#/definitions/UserControl1_2",
       "type": "object"
+    },
+    "SMALL_MOTOR": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "Controls\\SMALL_MOTOR.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/SMALL_MOTOR"
     }
   }
 }

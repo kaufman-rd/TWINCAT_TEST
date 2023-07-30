@@ -12,7 +12,8 @@ TYPE E_MAIN_STATE :
 	done,
 	pause,
 	error,
-	estop
+	estop,
+	homing
 );
 END_TYPE
 ]]></Declaration>

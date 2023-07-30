@@ -6,11 +6,15 @@ VAR
 
 	tDelay: TON;
 	bDELAY: BOOL:=FALSE;
+	bHoming: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[tDelay(IN:=bDELAY);
 CASE eSUPPLY OF
+	E_STATION_STATE.homing:
+	bHoming:=TRUE;
+	
 	E_STATION_STATE.uninit:
 		eSUPPLY:= E_STATION_STATE.idle;
 

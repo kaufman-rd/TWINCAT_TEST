@@ -5,11 +5,15 @@
 VAR
 	tDelay: TON;
 	bDELAY: BOOL:=FALSE;
+	bHomed: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[tDelay(IN:=bDELAY);
 CASE eCLEAN OF
+	E_STATION_STATE.homing:
+		bHomed:=TRUE;
+		
 	E_STATION_STATE.uninit:
 		eCLEAN:= E_STATION_STATE.idle;
 

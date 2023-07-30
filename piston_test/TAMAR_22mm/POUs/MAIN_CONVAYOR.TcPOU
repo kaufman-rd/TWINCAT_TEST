@@ -20,6 +20,7 @@ VAR
 	tDelay: TON;
 	bDELAY: BOOL:=FALSE;
 	first_run: BOOL:=FALSE;
+	bHomed: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -39,6 +40,9 @@ tDelay(IN:=bDELAY);
 tNext(IN:=bMOVE , PT:=T#1S , Q=> , ET=> );
 
 CASE eMAIN_CONVAYOR_STATE OF
+	E_CONVAYOR_STATE.homing:
+		bHomed:=TRUE;
+		
 	E_CONVAYOR_STATE.uninit:
 		eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.idle;
 	

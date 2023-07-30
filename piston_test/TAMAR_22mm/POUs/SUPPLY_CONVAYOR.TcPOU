@@ -8,42 +8,58 @@ VAR
 	rtrigNext: R_TRIG;
 	counter: INT;
 	tNext: TON;
+	bHoming: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[FOR counter:=1 TO 6 BY 1 DO
-	fbCART[counter]();
-END_FOR;
-
-tNext(IN:=bMOVE , PT:=T#1S , Q=> , ET=> );
+      <ST><![CDATA[
 
 
 CASE eSUPPLY_CONVAYOR_STATE OF
-	E_CONVAYOR_STATE.uninit: 
+	E_CONVAYOR_STATE.homing:
+		bHoming:=TRUE;
+	
+	E_CONVAYOR_STATE.uninit:
 		eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.idle;
 	
 	E_CONVAYOR_STATE.idle:
-		bMOVE:=FALSE;
-		bCONV_SUPPLY_INPOS:=TRUE;
+		//idle
 	
-	E_CONVAYOR_STATE.do_move:
-		IF bCONV_SUPPLY_INPOS THEN		 
-			//fff
+	E_CONVAYOR_STATE.do_move: // start motion
+		IF NOT Axis_SUPPLY.bBusy  AND NOT Axis_SUPPLY.bError THEN
+			Axis_SUPPLY.rPos:=0;	
+			Axis_SUPPLY.bSetPosition:=TRUE;	 
+			
+			Axis_SUPPLY.bDo_Step_FW:=TRUE;
+			eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.st1;
 		END_IF
-		bMOVE:=TRUE;
-		bCONV_SUPPLY_INPOS:=FALSE;
-		IF tNext.Q THEN
+		
+	E_CONVAYOR_STATE.st1:
+		Axis_SUPPLY.bSetPosition:=FALSE;
+		IF Axis_SUPPLY.rActPos = 0 THEN
+			eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.st2;	
+		END_IF
+		
+	E_CONVAYOR_STATE.st2:
+		IF Axis_SUPPLY.rActPos > (Axis_SUPPLY.rStep/2)	THEN
+			
+			eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.st3;
+		END_IF
+
+
+	E_CONVAYOR_STATE.st3:
+		IF Axis_SUPPLY.bInPos THEN
 			eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.done;
 		END_IF
-	
+		
 	E_CONVAYOR_STATE.done:
-		bMOVE:=FALSE;
-		bCONV_SUPPLY_INPOS:=TRUE;
+		//...
 	
 	E_CONVAYOR_STATE.pause:
 	//paused
 	
-END_CASE]]></ST>
+END_CASE
+	]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

@@ -19,12 +19,17 @@ VAR
 	tDelay: TON;
 	bDELAY: BOOL:=FALSE;
 	E: INT;
+	bHomed: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[tDelay(IN:=bDELAY);
 
 CASE eState OF
+	
+	E_STATION_STATE.homing:
+		bHomed:=TRUE;
+		
 	E_STATION_STATE.uninit:
 		piston_updown.A_DEFAULT();
 		piston_colet.A_DEFAULT();
