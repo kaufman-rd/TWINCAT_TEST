@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="FB_SEPARATE" Id="{4b094dc6-1d4d-433f-882e-593773da02bc}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK FB_SEPARATE
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_SEPARATE EXTENDS FB_STATION
 VAR_INPUT
 	piston_updown: REFERENCE TO FB_NEW_PISTON;
 	piston_colet: REFERENCE TO FB_NEW_PISTON;
 	piston_puller: REFERENCE TO FB_NEW_PISTON;
 	piston_tray: REFERENCE TO FB_NEW_PISTON;
 	piston_pins: REFERENCE TO FB_NEW_PISTON;
-	eState: REFERENCE TO  E_STATION_STATE;
-	station_num:INT;
+	//eState: REFERENCE TO  E_STATION_STATE;
+	//station_num:INT;
 END_VAR
 VAR_OUTPUT
 	bRUNNING:BOOL :=FALSE;
@@ -19,7 +19,7 @@ VAR
 	tDelay: TON;
 	bDELAY: BOOL:=FALSE;
 	E: INT;
-	bHomed: BOOL;
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -28,15 +28,16 @@ END_VAR
 CASE eState OF
 	
 	E_STATION_STATE.homing:
-		bHomed:=TRUE;
-		
-	E_STATION_STATE.uninit:
 		piston_updown.A_DEFAULT();
 		piston_colet.A_DEFAULT();
 		piston_puller.A_DEFAULT();
 		piston_tray.A_DEFAULT();
 		piston_pins.A_DEFAULT();
 		eState:= E_STATION_STATE.idle;
+		bHomed:=TRUE;
+		
+	E_STATION_STATE.uninit:
+		eState:= E_STATION_STATE.homing;
 
 	E_STATION_STATE.idle:
 		bRUNNING:=FALSE;

@@ -1,54 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <POU Name="SUPPLY_CONVAYOR" Id="{eda0e613-4119-4a2f-b321-c37443d08c24}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM SUPPLY_CONVAYOR
+  <POU Name="FB_SUPPLY_CONV" Id="{dcf31f58-1611-4942-8603-7048375dd2fb}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_SUPPLY_CONV EXTENDS FB_STATION
+VAR_INPUT
+	fbAxis:REFERENCE TO FB_Axis;
+END_VAR
+VAR_OUTPUT
+END_VAR
 VAR
-	bMOVE:BOOL :=FALSE;
-	bSTARTUP: BOOL:=FALSE;
-	rtrigNext: R_TRIG;
-	counter: INT;
-	tNext: TON;
-	bHoming: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
-
-
-CASE eSUPPLY_CONVAYOR_STATE OF
+      <ST><![CDATA[CASE eSUPPLY_CONVAYOR_STATE OF
 	E_CONVAYOR_STATE.homing:
-		bHoming:=TRUE;
+		bHomed:=TRUE;
+		eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.idle;
 	
 	E_CONVAYOR_STATE.uninit:
-		eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.idle;
+		eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.homing;
 	
 	E_CONVAYOR_STATE.idle:
 		//idle
 	
 	E_CONVAYOR_STATE.do_move: // start motion
-		IF NOT Axis_SUPPLY.bBusy  AND NOT Axis_SUPPLY.bError THEN
-			Axis_SUPPLY.rPos:=0;	
-			Axis_SUPPLY.bSetPosition:=TRUE;	 
+		IF NOT fbAxis.bBusy  AND NOT fbAxis.bError THEN
+			fbAxis.rPos:=0;	
+			fbAxis.bSetPosition:=TRUE;	 
 			
-			Axis_SUPPLY.bDo_Step_FW:=TRUE;
+			fbAxis.bDo_Step_FW:=TRUE;
 			eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.st1;
 		END_IF
 		
 	E_CONVAYOR_STATE.st1:
-		Axis_SUPPLY.bSetPosition:=FALSE;
-		IF Axis_SUPPLY.rActPos = 0 THEN
+		fbAxis.bSetPosition:=FALSE;
+		IF fbAxis.rActPos = 0 THEN
 			eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.st2;	
 		END_IF
 		
 	E_CONVAYOR_STATE.st2:
-		IF Axis_SUPPLY.rActPos > (Axis_SUPPLY.rStep/2)	THEN
+		IF Axis_SUPPLY.rActPos > (fbAxis.rStep/2)	THEN
 			
 			eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.st3;
 		END_IF
 
 
 	E_CONVAYOR_STATE.st3:
-		IF Axis_SUPPLY.bInPos THEN
+		IF fbAxis.bInPos THEN
 			eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.done;
 		END_IF
 		

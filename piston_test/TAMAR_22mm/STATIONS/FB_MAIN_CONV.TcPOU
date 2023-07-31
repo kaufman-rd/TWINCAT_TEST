@@ -1,26 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <POU Name="MAIN_CONVAYOR" Id="{230d7160-cfd8-4561-bda5-963e513f3cc2}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM MAIN_CONVAYOR
+  <POU Name="FB_MAIN_CONV" Id="{71cfab58-087d-476c-851d-edc288f639d5}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_MAIN_CONV EXTENDS FB_STATION
+VAR_INPUT
+	fbAxis:REFERENCE TO FB_Axis;
+END_VAR
+VAR_OUTPUT
+END_VAR
 VAR
-	bTest:BOOL;
-	inc: INT:=1;
-	temp: INT;
-	state: INT:=0;
-	total_length: INT;
-	cart_space: INT;
-	cornerX: INT;
-	cornerY: INT;
 	bMOVE:BOOL :=FALSE;
-	bSTARTUP: BOOL:=FALSE;
-	rtrigNext: R_TRIG;
-	counter: INT;
-	counter1:INT;
 	tNext: TON;
 	tDelay: TON;
 	bDELAY: BOOL:=FALSE;
-	first_run: BOOL:=FALSE;
-	bHomed: BOOL;
+	counter: INT;
+	counter1: INT;
+	bTest: INT;
+	bSTARTUP: BOOL;
+	total_length: INT;
+	cart_space: INT;
+	inc: INT;
+	state: INT;
+	temp: INT;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -28,10 +28,10 @@ END_VAR
 	fbCART[counter]();
 END_FOR;
 
-IF NOT first_run THEN
+IF NOT bFirstRun THEN
 	A_set_cart_spaces();
 	A_SETUP();
-	first_run:=TRUE;
+	bFirstRun:=TRUE;
 END_IF
 
 
@@ -42,37 +42,38 @@ tNext(IN:=bMOVE , PT:=T#1S , Q=> , ET=> );
 CASE eMAIN_CONVAYOR_STATE OF
 	E_CONVAYOR_STATE.homing:
 		bHomed:=TRUE;
-		
-	E_CONVAYOR_STATE.uninit:
 		eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.idle;
+			
+	E_CONVAYOR_STATE.uninit:
+		eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.homing;
 	
 	E_CONVAYOR_STATE.idle:
 		bDELAY:=FALSE;
 	
 	E_CONVAYOR_STATE.do_move: // start motion
-		IF NOT Axis_MAIN.bBusy  AND NOT Axis_MAIN.bError THEN
-			Axis_MAIN.rPos:=0;	
-			Axis_MAIN.bSetPosition:=TRUE;	 
+		IF NOT fbAxis.bBusy  AND NOT fbAxis.bError THEN
+			fbAxis.rPos:=0;	
+			fbAxis.bSetPosition:=TRUE;	 
 			A_CARTS_STEP();
-			Axis_MAIN.bDo_Step_FW:=TRUE;
+			fbAxis.bDo_Step_FW:=TRUE;
 			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.st1;
 		END_IF
 		
 	E_CONVAYOR_STATE.st1:
-		Axis_MAIN.bSetPosition:=FALSE;
-		IF Axis_MAIN.rActPos = 0 THEN
+		IF fbAxis.rActPos = 0 THEN
 			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.st2;	
 		END_IF
 		
 	E_CONVAYOR_STATE.st2:
-		IF Axis_MAIN.rActPos > (Axis_MAIN.rStep/2)	THEN
+		IF fbAxis.rActPos > (fbAxis.rStep/2)	THEN
+			fbAxis.bSetPosition:=FALSE;
 			A_CARTS_STEP();	
 			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.st3;
 		END_IF
 
 
 	E_CONVAYOR_STATE.st3:
-		IF Axis_MAIN.bInPos THEN
+		IF fbAxis.bInPos THEN
 			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.done;
 		END_IF
 		
@@ -83,20 +84,9 @@ CASE eMAIN_CONVAYOR_STATE OF
 	//paused
 	
 END_CASE
-	
-
-
-
-
-
-
-	
-
-
-
-]]></ST>
+	]]></ST>
     </Implementation>
-    <Action Name="A_CARTS_STEP" Id="{7a1e55b7-d701-499d-a448-d86c230d8eaf}">
+    <Action Name="A_CARTS_STEP" Id="{f1cd68c8-1db3-44d5-945e-848910b1fd9a}">
       <Implementation>
         <ST><![CDATA[FOR counter1:=1 TO num_of_carts BY 1 DO
 	fbCART[counter1].A_STEP();
@@ -105,7 +95,7 @@ END_FOR;
 bTest:= NOT bTest;]]></ST>
       </Implementation>
     </Action>
-    <Action Name="A_set_cart_spaces" Id="{7d4d76aa-d053-4a28-a62b-1eb33cb8ead7}">
+    <Action Name="A_set_cart_spaces" Id="{7785daa4-c212-4f07-a161-d0b471ee798f}">
       <Implementation>
         <ST><![CDATA[ total_length := (conv_height*2)+(conv_length*2);
 cart_space := total_length /((num_of_carts*2));
@@ -189,13 +179,12 @@ WHILE state = 4 DO    //left2
 	END_IF
 END_WHILE
 
-
 ]]></ST>
       </Implementation>
     </Action>
-    <Action Name="A_SETUP" Id="{743a8297-84d8-4da3-9839-4637b3eb1bf1}">
+    <Action Name="A_SETUP" Id="{20c6d030-312a-4e4f-82b8-3645da995266}">
       <Implementation>
-        <ST><![CDATA[	bSTARTUP:=TRUE;
+        <ST><![CDATA[bSTARTUP:=TRUE;
 	fbCART[1].stCART.position:=1;
 	fbCART[1].stCART.color:=1;
 	fbCART[1].stCART.nNAME:=INT_TO_STRING(1001);

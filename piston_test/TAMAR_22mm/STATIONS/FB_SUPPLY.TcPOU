@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_SUPPLY" Id="{b2a17438-2a87-461f-9eb1-7bbd8a0b9ac3}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_SUPPLY EXTENDS FB_STATION
+VAR_INPUT
+	piston_supply: REFERENCE TO FB_NEW_PISTON;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE eSUPPLY OF
+	E_STATION_STATE.homing:
+		piston_supply.A_DEFAULT();
+		bHomed:=TRUE;
+		eSUPPLY:= E_STATION_STATE.idle;
+		
+	E_STATION_STATE.uninit:
+		eSUPPLY:= E_STATION_STATE.homing;
+
+	E_STATION_STATE.idle:
+		//
+			
+	E_STATION_STATE.do_action1:
+		piston_supply.A_OPEN();
+		eSUPPLY:=E_STATION_STATE.do_action2;
+	
+	E_STATION_STATE.do_action2:	
+		IF piston_supply.PistonStatus= ePistonStatus.OPENED  THEN
+			piston_supply.A_CLOSE();			
+			eSUPPLY:=E_STATION_STATE.do_action3;
+		END_IF
+		
+	E_STATION_STATE.do_action3:
+		IF piston_supply.PistonStatus= ePistonStatus.CLOSED  THEN			
+			eSUPPLY:=E_STATION_STATE.done;
+		END_IF
+	
+	
+	E_STATION_STATE.done:
+		//
+		
+	E_STATION_STATE.pause:
+		//paused
+
+END_CASE]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -20,10 +20,13 @@ VAR
 	temp_clean_state:E_STATION_STATE;
 	temp_conv_state:E_CONVAYOR_STATE;
 	temp_supconv_state:E_CONVAYOR_STATE;
-	bHoming:BOOL:=FALSE;
+	bHomed:BOOL:=FALSE;
 	fbSEPARATION1: FB_SEPARATE;		
 	fbSEPARATION2: FB_SEPARATE;	
-	
+	fbCLEAN: FB_CLEAN;
+	fbSUPPLY: FB_SUPPLY;
+	fbMAIN_CONV: FB_MAIN_CONV;
+	fbSUPPLY_CONV: FB_SUPPLY_CONV;
 	action_timeout: TON:=(PT:=T#20s);
 	move_timeout: TON;
 	bTIMEOUT:BOOL:=FALSE;
@@ -36,9 +39,8 @@ END_VAR
       <ST><![CDATA[
 A_ERROR_CHECK();
 PISTONS_CYCLE();
-MAIN_CONVAYOR();
-SUPPLY_CONVAYOR();
-SUPPLY();
+fbMAIN_CONV(fbAxis:=Axis_MAIN);
+fbSUPPLY_CONV(fbAxis:=Axis_SUPPLY);
 fbSEPARATION1(piston_updown:=  fbPiston[3],
 			  piston_colet:=  fbPiston[4],
 			  piston_puller:=  fbPiston[5],
@@ -55,7 +57,9 @@ fbSEPARATION2(piston_updown:=  fbPiston[8],
 			  eState:= eSEPARATE2,
  			  station_num:=separate2_station_num);	
 	
-CLEAN();
+fbCLEAN(piston_clean:=  fbPiston[14]);
+fbSUPPLY(piston_supply:=  fbPiston[1]);
+
 MOTORS();
 
 rtrigRESET(CLK:= b_RESET, Q=> );
@@ -68,7 +72,7 @@ action_timeout(IN:=bTIMEOUT);
 
 //MAIN_STATE_MACHINE:
 CASE eMAIN_STATE OF
-	E_MAIN_STATE.homing:
+	E_MAIN_STATE.homing:   // homing fo all stations
 		eSUPPLY := E_STATION_STATE.homing;
 		eSEPARATE1 := E_STATION_STATE.homing;
 		eSEPARATE2 := E_STATION_STATE.homing;
@@ -77,12 +81,12 @@ CASE eMAIN_STATE OF
 		eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.homing;
 		IF fbSEPARATION1.bHomed AND fbSEPARATION2.bHomed THEN
 			eMAIN_STATE:=E_MAIN_STATE.idle;
+			bHomed:=TRUE;
 		END_IF
 		
 	E_MAIN_STATE.uninit:
-		IF NOT bHoming THEN
+		IF NOT bHomed THEN
 			eMAIN_STATE:=E_MAIN_STATE.homing;
-			bHoming:=TRUE;
 		ELSE
 			eMAIN_STATE:=E_MAIN_STATE.idle;
 		END_IF
@@ -173,8 +177,8 @@ E_MAIN_STATE.error:
 END_CASE
 
 IF rtrigRESET.Q THEN
-	MAIN_CONVAYOR.A_set_cart_spaces();
-	MAIN_CONVAYOR.A_SETUP();
+	fbMAIN_CONV.A_set_cart_spaces();
+	fbMAIN_CONV.A_SETUP();
 	eMAIN_STATE:=E_MAIN_STATE.uninit;
 END_IF
 

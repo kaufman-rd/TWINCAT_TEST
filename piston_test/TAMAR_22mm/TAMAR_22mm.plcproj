@@ -49,16 +49,7 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\CLEAN.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\FB_Axis.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\FB_SEPARATE.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\MAIN_CONVAYOR.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\FB_CART.TcPOU">
@@ -76,19 +67,32 @@
     <Compile Include="POUs\MOTORS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\SUPPLY.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\SUPPLY_CONVAYOR.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\UpdateTimeStamp.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="STATIONS\FB_CLEAN.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="STATIONS\FB_MAIN_CONV.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="STATIONS\FB_SEPARATE.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="STATIONS\FB_STATION.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="STATIONS\FB_SUPPLY.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="STATIONS\FB_SUPPLY_CONV.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
+    <Folder Include="STATIONS" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_CLEAN" Id="{64fcedbb-8fec-4471-9a9b-cf3ec986b26e}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_CLEAN EXTENDS FB_STATION
+VAR_INPUT
+	piston_clean: REFERENCE TO FB_NEW_PISTON;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+CASE eCLEAN OF
+	E_STATION_STATE.homing:
+		piston_clean.A_DEFAULT();
+		bHomed:=TRUE;
+		eCLEAN:= E_STATION_STATE.idle;
+		
+	E_STATION_STATE.uninit:
+		eCLEAN:= E_STATION_STATE.idle;
+
+	E_STATION_STATE.idle:
+		//
+			
+	E_STATION_STATE.do_action1:
+		piston_clean.A_OPEN();
+		eCLEAN:=E_STATION_STATE.do_action2;
+		
+	E_STATION_STATE.do_action2:
+		IF piston_clean.PistonStatus= ePistonStatus.OPENED THEN
+			eCLEAN:=E_STATION_STATE.do_action3;
+		END_IF
+		
+	E_STATION_STATE.do_action3:
+		piston_clean.A_CLOSE();
+		eCLEAN:=E_STATION_STATE.do_action4;
+		
+	E_STATION_STATE.do_action4:
+		IF piston_clean.PistonStatus= ePistonStatus.CLOSED  THEN
+			eCLEAN:=E_STATION_STATE.done;
+		END_IF
+	
+	
+	E_STATION_STATE.done:
+		//done
+		
+	E_STATION_STATE.pause:
+		//paused
+
+END_CASE]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
