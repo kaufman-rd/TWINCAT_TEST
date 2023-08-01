@@ -16,7 +16,8 @@ TYPE E_CONVAYOR_STATE :
 	done,
 	pause,
 	error,
-	homing
+	homing,
+	estop
 );
 END_TYPE
 ]]></Declaration>

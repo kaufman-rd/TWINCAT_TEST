@@ -56,6 +56,7 @@ END_VAR
 	RESET.Execute:=TRUE;
 END_IF
 
+
 rActPos:=Axis.NcToPlc.ActPos;
 rActVel:=Axis.NcToPlc.ActVelo;
 
@@ -68,7 +69,7 @@ ELSE
 	bBusy:=FALSE;
 END_IF
 
-IF POWER.error THEN
+IF POWER.error OR RELATIVE.error OR MoveAbsolute.error OR JOG.error THEN
 	bError:=TRUE;
 ELSE
 	bError:=FALSE;

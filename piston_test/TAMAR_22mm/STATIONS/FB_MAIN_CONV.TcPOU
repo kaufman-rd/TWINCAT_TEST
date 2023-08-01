@@ -43,13 +43,18 @@ CASE eMAIN_CONVAYOR_STATE OF
 	E_CONVAYOR_STATE.homing:
 		bHomed:=TRUE;
 		eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.idle;
-			
+		fbAxis.bEnable:=TRUE;
+		fbAxis.bHalt:=FALSE;
+		bDELAY:=FALSE;
+		fbAxis.bSetPosition:=FALSE;
+		fbAxis.bReset:=FALSE;
+	
 	E_CONVAYOR_STATE.uninit:
 		eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.homing;
 	
 	E_CONVAYOR_STATE.idle:
-		bDELAY:=FALSE;
-	
+		//
+		
 	E_CONVAYOR_STATE.do_move: // start motion
 		IF NOT fbAxis.bBusy  AND NOT fbAxis.bError THEN
 			fbAxis.rPos:=0;	
@@ -60,7 +65,7 @@ CASE eMAIN_CONVAYOR_STATE OF
 		END_IF
 		
 	E_CONVAYOR_STATE.st1:
-		IF fbAxis.rActPos = 0 THEN
+		IF fbAxis.rActPos < 200 THEN
 			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.st2;	
 		END_IF
 		
@@ -81,7 +86,13 @@ CASE eMAIN_CONVAYOR_STATE OF
 		//...
 	
 	E_CONVAYOR_STATE.pause:
-	//paused
+	//
+	
+	E_CONVAYOR_STATE.estop:
+		fbAxis.bHalt:=TRUE;
+		fbAxis.bReset:=TRUE;
+	//...
+	
 	
 END_CASE
 	]]></ST>

@@ -15,11 +15,15 @@ END_VAR
 	E_CONVAYOR_STATE.homing:
 		bHomed:=TRUE;
 		eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.idle;
-	
+		fbAxis.bEnable:=TRUE;
+		
 	E_CONVAYOR_STATE.uninit:
 		eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.homing;
+		fbAxis.bHalt:=FALSE;
+		fbAxis.bReset:=FALSE;
 	
 	E_CONVAYOR_STATE.idle:
+		
 		//idle
 	
 	E_CONVAYOR_STATE.do_move: // start motion
@@ -33,18 +37,9 @@ END_VAR
 		
 	E_CONVAYOR_STATE.st1:
 		fbAxis.bSetPosition:=FALSE;
-		IF fbAxis.rActPos = 0 THEN
-			eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.st2;	
-		END_IF
-		
+		eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.st2;	
+
 	E_CONVAYOR_STATE.st2:
-		IF Axis_SUPPLY.rActPos > (fbAxis.rStep/2)	THEN
-			
-			eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.st3;
-		END_IF
-
-
-	E_CONVAYOR_STATE.st3:
 		IF fbAxis.bInPos THEN
 			eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.done;
 		END_IF
@@ -54,6 +49,10 @@ END_VAR
 	
 	E_CONVAYOR_STATE.pause:
 	//paused
+	
+	E_CONVAYOR_STATE.estop:
+		fbAxis.bHalt:=TRUE;
+		fbAxis.bReset:=TRUE;
 	
 END_CASE
 	]]></ST>
