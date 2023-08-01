@@ -222,7 +222,7 @@
 }
 </script>
 </div>
-<div id="TcHmiToggleButton_5" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleButton" data-tchmi-height="10" data-tchmi-height-unit="%" data-tchmi-left="53.4" data-tchmi-left-unit="%" data-tchmi-text="Manual" data-tchmi-top="44.8" data-tchmi-top-unit="%" data-tchmi-width="15.2" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-state-symbol="%pp%AXIS::bmanual%/pp%">
+<div id="TcHmiToggleButton_5" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleButton" data-tchmi-height="10" data-tchmi-height-unit="%" data-tchmi-left="53.4" data-tchmi-left-unit="%" data-tchmi-text="Manual" data-tchmi-top="44.8" data-tchmi-top-unit="%" data-tchmi-width="15.2" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-state-symbol="%pp%AXIS::bmanual%/pp%" data-tchmi-is-enabled="%s%PLC1.GVL.bPAUSE_MAIN%/s%">
 
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [

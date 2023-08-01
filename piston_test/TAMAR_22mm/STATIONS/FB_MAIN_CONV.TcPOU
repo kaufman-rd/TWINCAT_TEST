@@ -50,8 +50,17 @@ CASE eMAIN_CONVAYOR_STATE OF
 		fbAxis.bReset:=FALSE;
 	
 	E_CONVAYOR_STATE.uninit:
-		eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.homing;
-	
+		IF NOT  bHomed THEN
+			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.homing;
+		ELSE
+			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.idle;	
+		END_IF
+		fbAxis.bDo_Step_FW:=FALSE;
+		fbAxis.bMoveRel:=FALSE;
+		fbAxis.stepFW_state:=0;
+		fbAxis.bHalt:=FALSE;
+		fbAxis.bReset:=FALSE;
+		
 	E_CONVAYOR_STATE.idle:
 		//
 		
@@ -67,11 +76,11 @@ CASE eMAIN_CONVAYOR_STATE OF
 	E_CONVAYOR_STATE.st1:
 		IF fbAxis.rActPos < 200 THEN
 			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.st2;	
+			fbAxis.bSetPosition:=FALSE;
 		END_IF
 		
 	E_CONVAYOR_STATE.st2:
 		IF fbAxis.rActPos > (fbAxis.rStep/2)	THEN
-			fbAxis.bSetPosition:=FALSE;
 			A_CARTS_STEP();	
 			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.st3;
 		END_IF
@@ -89,8 +98,10 @@ CASE eMAIN_CONVAYOR_STATE OF
 	//
 	
 	E_CONVAYOR_STATE.estop:
+		fbAxis.stepFW_state:=0;
 		fbAxis.bHalt:=TRUE;
 		fbAxis.bReset:=TRUE;
+		bHomed:=FALSE;
 	//...
 	
 	

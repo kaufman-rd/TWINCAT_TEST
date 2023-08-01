@@ -24,6 +24,8 @@ VAR_INPUT
 	bmanual:BOOL:=FALSE;
 	bDo_Step_FW:BOOL:=FALSE;
 	bDo_Step_BW:BOOL:=FALSE;
+	stepFW_state:INT:=0;
+	stepBW_state:INT:=0;
 END_VAR
 
 VAR_OUTPUT
@@ -46,8 +48,7 @@ VAR
 	RELATIVE: MC_MoveRelative;
 	HALT: MC_Halt;
 	bFirst_run:BOOL:=FALSE;
-	stepFW_state:INT:=0;
-	stepBW_state:INT:=0;
+	
 	
 END_VAR
 ]]></Declaration>
@@ -190,7 +191,7 @@ END_VAR
 CASE stepFW_state OF
 	
 	0:
-	IF bDo_Step_FW AND NOT bManual THEN
+	IF bDo_Step_FW AND NOT bManual THEN		
 		bMoveRel:=FALSE;
 		//bReset:=TRUE;
 		bDo_Step_FW:=FALSE;
@@ -211,7 +212,7 @@ CASE stepFW_state OF
 	
 	3:
 	IF RELATIVE.Done THEN
-		 
+		 bDo_Step_FW:=FALSE;
 		 stepFW_state := 0;
 	END_IF
 	
