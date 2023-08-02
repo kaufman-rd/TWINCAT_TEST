@@ -5,7 +5,7 @@
 VAR
 	counter:INT:=0;
 	iNUMBER1 : INT:=2;
-	sNAME1 : STRING(255):='24_5A';
+	sNAME1 : STRING(255):='23_5A';
 	Trigger : BOOL;
 	rtrigRESET: R_TRIG;
 	rtrigE_STOP: R_TRIG;
@@ -206,7 +206,7 @@ IF rtrigPAUSE.Q THEN
 	temp_sep2_state:=eSEPARATE2;
 	temp_clean_state:=eCLEAN;
 	temp_conv_state:=eMAIN_CONVAYOR_STATE;
-	temp_supconv_state:=eMAIN_CONVAYOR_STATE;
+	temp_supconv_state:=eSUPPLY_CONVAYOR_STATE;
 	eMAIN_STATE:=E_MAIN_STATE.pause;
 	eSUPPLY:=E_STATION_STATE.pause;
 	eSEPARATE1:=E_STATION_STATE.pause;

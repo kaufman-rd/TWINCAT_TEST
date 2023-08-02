@@ -1,22 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <POU Name="FB_NEW_PISTON" Id="{103ce51c-b586-4a9e-935e-2be8c1d3f70d}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK FB_NEW_PISTON
+  <POU Name="FB_PISTON" Id="{103ce51c-b586-4a9e-935e-2be8c1d3f70d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_PISTON
 VAR_INPUT
 	
+	
 	bMANUAL:BOOL:=FALSE;
-	stPISTON:   ST_PISTON;
+	stPISTON:   REFERENCE TO ST_PISTON;
 	bCMD_OPEN_SWR: BOOL;
 	bCMD_CLOSE_SWR: BOOL;
 	bCMD_OPEN: BOOL;
 	bSEN_OPEN AT%I*: BOOL;
 	bSEN_CLOSE AT%I*: BOOL;
+	
+	
 END_VAR
 VAR_OUTPUT
 	PistonStatus:ePistonStatus;
 	bVALVE_OPEN: BOOL;
 	bVALVE_CLOSE: BOOL;
-	
+	bError_Condition_open:BOOL;
+	bError_Condition_close:BOOL;
 	
 END_VAR
 VAR
@@ -30,7 +34,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[   IF NOT bSTARTUP THEN
+      <ST><![CDATA[IF NOT bSTARTUP THEN
 	bCMD_OPEN:=stPISTON.bOPEN_BY_DEFAULT;
 	bSTARTUP:=TRUE;
 END_IF
@@ -39,12 +43,33 @@ timerOpening(IN:= bVALVE_OPEN, PT:=REAL_TO_TIME(stPISTON.openTime)*1000 , Q=> , 
 timerClosing(IN:= NOT bVALVE_OPEN, PT:=REAL_TO_TIME(stPISTON.closeTime)*1000 , Q=> , ET=> );
 timeoutOpening(IN:= bVALVE_OPEN AND NOT bSEN_OPEN, PT:= stPISTON.timeoutOpen, Q=> , ET=> );
 timeoutClosing(IN:= NOT bVALVE_OPEN AND NOT bSEN_CLOSE, PT:= stPISTON.timeoutClose, Q=> , ET=> );
+
 IF bMANUAL THEN
-	bVALVE_OPEN:= bCMD_OPEN;
-	bVALVE_CLOSE:= NOT bCMD_OPEN;
+	IF stPISTON.bDepened_open1 AND stPISTON.bDepened_open2  THEN
+		bError_Condition_open:=FALSE;
+		bVALVE_OPEN:= bCMD_OPEN;
+	ELSE
+		bError_Condition_open:=TRUE;
+	END_IF
+	IF stPISTON.bDepened_close1 AND stPISTON.bDepened_close2  THEN
+		bError_Condition_close:=FALSE;
+		bVALVE_CLOSE:= NOT bCMD_OPEN;
+	ELSE
+		bError_Condition_close:=TRUE;
+	END_IF
 ELSE
-	bVALVE_OPEN:= bCMD_OPEN_SWR;
-	bVALVE_CLOSE:= NOT bCMD_OPEN_SWR;
+	IF stPISTON.bDepened_open1 AND stPISTON.bDepened_open2  THEN
+		bError_Condition_open:=FALSE;
+		bVALVE_OPEN:= bCMD_OPEN_SWR;
+	ELSE
+		bError_Condition_open:=TRUE;
+	END_IF
+	IF stPISTON.bDepened_close1 AND stPISTON.bDepened_close2  THEN
+		bError_Condition_close:=FALSE;
+		bVALVE_CLOSE:= NOT bCMD_OPEN_SWR;
+	ELSE
+		bError_Condition_close:=TRUE;	
+	END_IF
 END_IF
 
 

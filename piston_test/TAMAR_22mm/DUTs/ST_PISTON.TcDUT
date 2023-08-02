@@ -11,6 +11,11 @@ STRUCT
 	timeoutOpen:  TIME:=T#5S;
 	timeoutClose: TIME:=T#5S;
 	bOPEN_BY_DEFAULT: BOOL:= FALSE;
+	bDepened_open1:BOOL;
+	bDepened_open2:BOOL;
+	bDepened_close1:BOOL;
+	bDepened_close2:BOOL;
+	
 END_STRUCT
 	
 END_TYPE

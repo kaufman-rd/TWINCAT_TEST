@@ -6,7 +6,7 @@
     "CACHEMAXAGE": "P30D",
     "CACHEMAXENTRYSIZE": 1048576,
     "CACHEMAXSIZE": 2097152,
-    "CERTIFICATE": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURwRENDQW95Z0F3SUJBZ0lKQUl6S2pKdStqOWxFTUEwR0NTcUdTSWIzRFFFQkN3VUFNRUl4Q3pBSkJnTlYKQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RmpBVUJnTlZCQU1NRFV4VQpMVTVQUVUxU1gzSnZiM1F3SUJjTk1qTXdPREF4TURjeU5EVXlXaGdQTWpBMk1URXhNamt3TnpJME5USmFNRDB4CkN6QUpCZ05WQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RVRBUEJnTlYKQkFNTUNFeFVMVTVQUVUxU01JSUJJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBUThBTUlJQkNnS0NBUUVBNlFYNAo4TTNUMkxDZTBxWUVjM21MWmFiTUc1L3J5d21WOVBLYnBSVFdjMWgrTTZWcldSVW9EamY5cVNMZThHdG5XS2ZOCkZVK2ZtS1lhOEZ1cmlIRzhrTjBRS1J1TFV0bjNDSkt2a3lJNUF4QnhkN3FIU0VaMngzaXA4YnpWTWV4V2ZDSGIKUDdyd1orMzB6dTRoNkl2SmlsVzduRUtZSUVueHUrU3VHdytYQ2JRYXNqYmxiUVptS0J5bFdRZHVUSDNJSjZHUgpzNHp0QUxlalQxbzJYMWZUcEllYlRJSW9WL1BZaFUvTngwcm9ZeDBIcE5xR24wUElEU0hjc3VEZ2VOVDQvNEtFCkE0KytnUnhGbFEveTF6YUh1M1VSSm9EYUhDbXBQZkNtTHh0a3dYQzNGVFlLOWdTSFhXTVlLV1pJUm1jRjZsa0QKWHhHazZJSVUvVGNYRnFMd2x3SURBUUFCbzRHZk1JR2NNRzBHQTFVZEVRUm1NR1NDQ1d4dlkyRnNhRzl6ZEljRQpmd0FBQVljUUFBQUFBQUFBQUFBQUFBQUFBQUFBQVlJSVRGUXRUazlCVFZLQ0YweFVMVTVQUVUxU0xtdGhkV1p0CllXNHRjbVF1WTI5dGh3U3Avc2o4aHdTc0VCNEhoeEQrZ0FBQUFBQUFBUHJFTkE1b3lzV0hNQjBHQTFVZERnUVcKQkJRS0h0djdMbmJDQThsaDlMQ29zL29ZRElCMzFqQU1CZ05WSFJNQkFmOEVBakFBTUEwR0NTcUdTSWIzRFFFQgpDd1VBQTRJQkFRQWEyK0RYK1FxTUhkbm5FaUNvbXBsbHdoOEFzaXRvVDV5UWZqZUZ6emhsUWhJZmg2WGY0RnN6CjJUSTI4NTR6NzN3S0Z5MHdIWDhWMEwzMWVqelRSSllGT1lFckIrRGEzWEdabHFyT2c1ckN0Vm9ibzFKNE1KSmMKY29yYTIwcVhrc21EL2o2RzFWMWQrMnprYkc3eUxpTlA1WEIyeFQzdktPZ2RhUFBrcDZFRE13NytjTHpnMGJYNApmdXZkU2Rod0RWQ3QxZmdLQzUwV3N2UEtEQXZIRnpnRXM0dm1NZ3p3eTBLbENUUWVDTXRNR1RJMnAva2NMRTlaCnFHMVZpYzNOU2svSDlnd0NneWUvTUhjS2pyY0NmSmxFbzIvNExyRWJnZEZFeFJSVmVMVzJCWkI3aXJWNTJZQUMKNHJ4UlB0Wkhvdk1mNjQyOU9SOGFxUXhPNW81bHBaZS8KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQotLS0tLUJFR0lOIENFUlRJRklDQVRFLS0tLS0KTUlJRHJEQ0NBcFNnQXdJQkFnSUpBTTdRMjVxOWxJSzJNQTBHQ1NxR1NJYjNEUUVCQ3dVQU1FSXhDekFKQmdOVgpCQVlUQWtSRk1Sc3dHUVlEVlFRS0RCSlVkMmx1UTBGVUlFaE5TU0JUWlhKMlpYSXhGakFVQmdOVkJBTU1EVXhVCkxVNVBRVTFTWDNKdmIzUXdJQmNOTWpNd09EQXhNRGN5TkRVeVdoZ1BNakEyTVRFeE1qa3dOekkwTlRKYU1FSXgKQ3pBSkJnTlZCQVlUQWtSRk1Sc3dHUVlEVlFRS0RCSlVkMmx1UTBGVUlFaE5TU0JUWlhKMlpYSXhGakFVQmdOVgpCQU1NRFV4VUxVNVBRVTFTWDNKdmIzUXdnZ0VpTUEwR0NTcUdTSWIzRFFFQkFRVUFBNElCRHdBd2dnRUtBb0lCCkFRQytISXRvQ0M0V2M5MElxWTdBQy9uemZ0SFYrVHBQQjJObHBlTi8yMTBLYlVrUHBBcGhSS3hpMkdUQW9SQk8KSkxkdExiUTlWR1QrVmcrQm0rWmFIL21Lb0lMNmcwL3FZSEtINFJuYmxhWFN6NHl1M0YzYVdaeCtQa040dkZodAoxYlRqNFdnK2hNbG9lR3dVZ1VIcFg4TldMYnhYOE05NFcxUytidDAyUkpuT085Q1lzKzNsMlVFeG1MOW1JNVU1ClRzMEpKYnRxcW44ZUo1WUpxb2FUZldFeFEzdGZubDdFRGg5UzlhaXFPL1FZUU04dHk1bHEwemhJRzdaZm9qZVYKTFdjN1g1Uy84ZU1kbVc2cGJuaWM3SXlaMTVidXV2bGNRcWlmSGZxNUJNTWJjY01IdzhGK1JHeUxZenRMZlFZRgpxZ2FURjhTSmxCY3daZjdiNHlLRzRjSDdBZ01CQUFHamdhSXdnWjh3YlFZRFZSMFJCR1l3WklJSmJHOWpZV3hvCmIzTjBod1IvQUFBQmh4QUFBQUFBQUFBQUFBQUFBQUFBQUFBQmdnaE1WQzFPVDBGTlVvSVhURlF0VGs5QlRWSXUKYTJGMVptMWhiaTF5WkM1amIyMkhCS24reVB5SEJLd1FIZ2VIRVA2QUFBQUFBQUFBK3NRMERtakt4WWN3SFFZRApWUjBPQkJZRUZKZGQ5QjNnSVRVVmk5ckp0LzgvLzFTc2lKbFFNQThHQTFVZEV3RUIvd1FGTUFNQkFmOHdEUVlKCktvWklodmNOQVFFTEJRQURnZ0VCQUkzcFB4cEY4SzUyNnhtejdTOGdNSzlHdmlJU2hicTc5amV6T2RmV3EwZUwKdldLOXZKVmVrUGcvcVlaVUFERXl4eVlzd3dCSkRKSDV6djJKbkRZVVZlZ3lHc1VjUm5xSW9Ic2p2QXZWY2p1cQpKMTdxZEttR05DYStSTUV4K0toWnFseDZ4QnRTWnRqblNySitGdzlmUlQ4ZXNZODhMR2hjcU5tYjF4TnlmazFzCjhWWW5ZVmJBTHFDVTNWYjVIUmE3K1hVTURuZ29VdHJCazNZa3RMNUhsa2psODVTaWFGQ3kzb0EyZER6SWlQZXAKQlI4NGx1K0p1ak8xTDRPbFl0MVRRWldvQ0J4eGo2eDgyTFh2ZFN3eHhiTkU5eGo1U0ZjNmZVVGY2TzZ0QnJQSgprNjN4TXZhUExYVllJTTdJc0lpc3hLOXYra09FZ1BVaFFWQWtXeWpLK1lNPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+    "CERTIFICATE": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURwRENDQW95Z0F3SUJBZ0lKQU11QkY2eVNkd3BuTUEwR0NTcUdTSWIzRFFFQkN3VUFNRUl4Q3pBSkJnTlYKQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RmpBVUJnTlZCQU1NRFV4VQpMVTVQUVUxU1gzSnZiM1F3SUJjTk1qTXdPREF5TURneE5qUTJXaGdQTWpBMk1URXhNekF3T0RFMk5EWmFNRDB4CkN6QUpCZ05WQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RVRBUEJnTlYKQkFNTUNFeFVMVTVQUVUxU01JSUJJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBUThBTUlJQkNnS0NBUUVBd2xtawpQUkJDMDBiSGVaUXlWRWwvS1JBTlNmc01VcnpqSVludmFJcnpwcmp4QjlUUy9hWWUrZXkxU0VobXI1QUhtTEhpCm5aSVQxN3Nva3ZQcDk2dkNBYzVGc0JzV2wzNjBFc25xSDVvYlRZNGVZQUhsMndpc0NaVTI0S1Y0VDUyK0hVNncKMzg5U0NISnE2aFdPSzlEeWhaSXJoa0hJbnpQMHdINE1EZCtYSWZEbDJmaEFSWkFCaDM2WFRjRlBpTDE0WU5URApPOWZXcE1lcUoxdmVoOTZmWEtGNzgyZi85a0I4a1Q5cTkwUkpoNTl1M2d3T25HVS9pa3FsQlhWZXBud1lsWkhTCndWNEpTVlA3TkVkUVA4Um5NMjFYeE5XUUtVdFh2R3V0SlREYVFsMUhUbnlHSlFMajdRY2JXVklYa0tPTVE3YlIKYzkzcDF1ZTZLWW1UVXFHeDV3SURBUUFCbzRHZk1JR2NNRzBHQTFVZEVRUm1NR1NDQ1d4dlkyRnNhRzl6ZEljRQpmd0FBQVljUUFBQUFBQUFBQUFBQUFBQUFBQUFBQVlJSVRGUXRUazlCVFZLQ0YweFVMVTVQUVUxU0xtdGhkV1p0CllXNHRjbVF1WTI5dGh3U3Avc2o4aHdTc0VCNEhoeEQrZ0FBQUFBQUFBUHJFTkE1b3lzV0hNQjBHQTFVZERnUVcKQkJTN0l1Z0FhY2VuaDVHdFhxejFQWFBqRzBPaFpEQU1CZ05WSFJNQkFmOEVBakFBTUEwR0NTcUdTSWIzRFFFQgpDd1VBQTRJQkFRQUFRVTdVV2tSaTNZVldKbW5ZbElSbDBROTQweS8zOThOWGdJdzBWNHRHK0p6SGw0bDdBSUpqClhiZC9QTXhrNzdIQWNpMkt0QlVMQ3JSdDhuWjFLdndTQ2FZNllVK3VydFJIQkNvR095K1pFbjlycXR1MmRLcHEKWjloN1N0OWs4aE95YXNrMHhvNDNydzdzem9CQlNCTWtRV284SGdva2Q5MWdWclk5OHB6TXNoeGVSd000amJaQgpEVEd6RlNqdXhMU1ZxVnE1SjdzU0RxOHNmVzBvbzF2OTVINWJOYjhvc2FTSTdaY3NoSFd1WTlyS2E3UzB6RjBwCkRNZktNbVk0VFVYUTJXdE1wdFdEUDNBMG1xUkJ5eGFTd0Q1Y3NUYTA2aFkzajNBUXoxTnQ3cnd6YWd2cldqTjUKU2xjdERXbldINEw1eHdablhNcGFWMzEvUitkc0crU08KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQotLS0tLUJFR0lOIENFUlRJRklDQVRFLS0tLS0KTUlJRHJEQ0NBcFNnQXdJQkFnSUpBTHMxY01rdFg2cGdNQTBHQ1NxR1NJYjNEUUVCQ3dVQU1FSXhDekFKQmdOVgpCQVlUQWtSRk1Sc3dHUVlEVlFRS0RCSlVkMmx1UTBGVUlFaE5TU0JUWlhKMlpYSXhGakFVQmdOVkJBTU1EVXhVCkxVNVBRVTFTWDNKdmIzUXdJQmNOTWpNd09EQXlNRGd4TmpRMVdoZ1BNakEyTVRFeE16QXdPREUyTkRWYU1FSXgKQ3pBSkJnTlZCQVlUQWtSRk1Sc3dHUVlEVlFRS0RCSlVkMmx1UTBGVUlFaE5TU0JUWlhKMlpYSXhGakFVQmdOVgpCQU1NRFV4VUxVNVBRVTFTWDNKdmIzUXdnZ0VpTUEwR0NTcUdTSWIzRFFFQkFRVUFBNElCRHdBd2dnRUtBb0lCCkFRRElIRUk0T21HbGxlQ3gyMkJBdjdqMUtKeXVWNUVZM3FKM3A3eUtjVkwwOEhZYnMxcDlZKzNLU2s1dEF5Y04KbmJIS2dLSmw5T3Y2dVBORXRqZHFHTGZKVEIzUStqM2h4NlA3R3RPMmtyT2FKM1ozbkh3WWhrNEUrN0prb1lXbApjWWFWM0ZaNXFPSEpScms1VElrYWJWRDBlbEs1a2xLU2xMaXVNNHUwV0RCUzhOSWJrSHhuck15QXJMOTVyaHFLCkxNVWRGdlZobWMveWo4VzN3UXQ0czZSZzhDa1BkZ2lwNmFoZ3dxNHB5a3pCa1BZV0RILzRlRXlacDF0Q2FWSGcKdjNZQld4QytzS2NaczFzTno2NUdrUVRTd1Joc2k2TkwwOXpaODNpU3k1TGVEYTQxZU5JeG90bzRxbHBrZ0J4TQpOb2x4UkNjc1IrQWxCTnlENm0rSTRrSVZBZ01CQUFHamdhSXdnWjh3YlFZRFZSMFJCR1l3WklJSmJHOWpZV3hvCmIzTjBod1IvQUFBQmh4QUFBQUFBQUFBQUFBQUFBQUFBQUFBQmdnaE1WQzFPVDBGTlVvSVhURlF0VGs5QlRWSXUKYTJGMVptMWhiaTF5WkM1amIyMkhCS24reVB5SEJLd1FIZ2VIRVA2QUFBQUFBQUFBK3NRMERtakt4WWN3SFFZRApWUjBPQkJZRUZHSkhnclVTTVNjallrcnNWVC9xS2J5aHh5UmNNQThHQTFVZEV3RUIvd1FGTUFNQkFmOHdEUVlKCktvWklodmNOQVFFTEJRQURnZ0VCQUNTTjk4ZEFUSVpJdlNrYnBtMHB2UTIwS0J0VzJ5a3R2WTdNb1l5U1RJTzQKVGdHalpuaTY4NXY0NTdJRTBTU2pnL09HNFkrQkEyeWhUeGQreVUxanpac0w1YnFyY1JEZzRGSE4wNjVYK3Y1YwpuWkNyYWZsOWF1Rk84V2JaNmk0MzhBVUtDd1I2ZWxtdjZUV2U2WW9zMWZDZmdFUUI0ZEdnSDlxNERTN3plamRxCjBVcWRlQkY5Ly9KR2NGNXdacEozQ1QwdTNuZmQvY1RJTHB0MnA4TVNKbytiKy82eGFydDlEWC9kY1ZpMkhjK3oKME9CWmZOZC8wQ09pK09HdEpEUWlJcmdJbERJcU9hQnNqUmdSVHRRSy9na2VTdDRHMDg0cHVNUFdMUHpDRlhHNwoxRTBLUTd1ZHhaYTBDcC94UUhTYVVwQ0ZHd3ArWkViM3JaQ044N2lHc3ZzPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
     "CERTIFICATEEXPIRATION": "P14000D",
     "CHECKSUMENABLED": true,
     "CHUNKSIZE": 1048576,
@@ -259,7 +259,9 @@
                 10,
                 11,
                 12,
-                13
+                13,
+                14,
+                15
             ],
             "options": [
                 {
@@ -317,6 +319,14 @@
                 {
                     "label": "error",
                     "value": 13
+                },
+                {
+                    "label": "homing",
+                    "value": 14
+                },
+                {
+                    "label": "estop",
+                    "value": 15
                 }
             ],
             "type": "integer"
@@ -349,7 +359,7 @@
                             "$ref": "#/definitions/PLC1.Tc2_MC2.MC_Halt"
                         },
                         {
-                            "propertyOrder": 37
+                            "propertyOrder": 39
                         }
                     ]
                 },
@@ -359,7 +369,7 @@
                             "$ref": "#/definitions/PLC1.Tc2_MC2.MC_Jog"
                         },
                         {
-                            "propertyOrder": 35
+                            "propertyOrder": 37
                         }
                     ]
                 },
@@ -369,7 +379,7 @@
                             "$ref": "#/definitions/PLC1.Tc2_MC2.MC_MoveAbsolute"
                         },
                         {
-                            "propertyOrder": 31
+                            "propertyOrder": 33
                         }
                     ]
                 },
@@ -379,7 +389,7 @@
                             "$ref": "#/definitions/PLC1.Tc2_MC2.MC_Power"
                         },
                         {
-                            "propertyOrder": 32
+                            "propertyOrder": 34
                         }
                     ]
                 },
@@ -389,7 +399,7 @@
                             "$ref": "#/definitions/PLC1.Tc2_MC2.MC_MoveRelative"
                         },
                         {
-                            "propertyOrder": 36
+                            "propertyOrder": 38
                         }
                     ]
                 },
@@ -399,7 +409,7 @@
                             "$ref": "#/definitions/PLC1.Tc2_MC2.MC_Reset"
                         },
                         {
-                            "propertyOrder": 33
+                            "propertyOrder": 35
                         }
                     ]
                 },
@@ -409,7 +419,7 @@
                             "$ref": "#/definitions/PLC1.Tc2_MC2.MC_SetPosition"
                         },
                         {
-                            "propertyOrder": 34
+                            "propertyOrder": 36
                         }
                     ]
                 },
@@ -419,7 +429,7 @@
                             "$ref": "tchmi:general#/definitions/BOOL"
                         },
                         {
-                            "propertyOrder": 28
+                            "propertyOrder": 30
                         }
                     ]
                 },
@@ -429,7 +439,7 @@
                             "$ref": "tchmi:general#/definitions/BOOL"
                         },
                         {
-                            "propertyOrder": 22
+                            "propertyOrder": 24
                         }
                     ]
                 },
@@ -439,7 +449,7 @@
                             "$ref": "tchmi:general#/definitions/BOOL"
                         },
                         {
-                            "propertyOrder": 30
+                            "propertyOrder": 32
                         }
                     ]
                 },
@@ -479,7 +489,7 @@
                             "$ref": "tchmi:general#/definitions/BOOL"
                         },
                         {
-                            "propertyOrder": 23
+                            "propertyOrder": 25
                         }
                     ]
                 },
@@ -489,7 +499,7 @@
                             "$ref": "tchmi:general#/definitions/BOOL"
                         },
                         {
-                            "propertyOrder": 38
+                            "propertyOrder": 40
                         }
                     ]
                 },
@@ -509,7 +519,7 @@
                             "$ref": "tchmi:general#/definitions/BOOL"
                         },
                         {
-                            "propertyOrder": 24
+                            "propertyOrder": 26
                         }
                     ]
                 },
@@ -559,7 +569,7 @@
                             "$ref": "tchmi:general#/definitions/BOOL"
                         },
                         {
-                            "propertyOrder": 27
+                            "propertyOrder": 29
                         }
                     ]
                 },
@@ -619,7 +629,7 @@
                             "$ref": "tchmi:general#/definitions/LREAL"
                         },
                         {
-                            "propertyOrder": 25
+                            "propertyOrder": 27
                         }
                     ]
                 },
@@ -629,7 +639,7 @@
                             "$ref": "tchmi:general#/definitions/LREAL"
                         },
                         {
-                            "propertyOrder": 26
+                            "propertyOrder": 28
                         }
                     ]
                 },
@@ -699,7 +709,7 @@
                             "$ref": "tchmi:general#/definitions/INT"
                         },
                         {
-                            "propertyOrder": 40
+                            "propertyOrder": 23
                         }
                     ]
                 },
@@ -709,7 +719,7 @@
                             "$ref": "tchmi:general#/definitions/INT"
                         },
                         {
-                            "propertyOrder": 39
+                            "propertyOrder": 22
                         }
                     ]
                 },
@@ -719,7 +729,7 @@
                             "$ref": "#/definitions/PLC1.Tc2_Standard.TON"
                         },
                         {
-                            "propertyOrder": 29
+                            "propertyOrder": 31
                         }
                     ]
                 }
@@ -906,6 +916,187 @@
                         },
                         {
                             "propertyOrder": 11
+                        }
+                    ]
+                }
+            },
+            "type": "object"
+        },
+        "PLC1.FB_PISTON": {
+            "properties": {
+                "PistonStatus": {
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/PLC1.ePistonStatus"
+                        },
+                        {
+                            "propertyOrder": 8
+                        }
+                    ]
+                },
+                "bCMD_CLOSE_SWR": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 4
+                        }
+                    ]
+                },
+                "bCMD_OPEN": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 5
+                        }
+                    ]
+                },
+                "bCMD_OPEN_SWR": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 3
+                        }
+                    ]
+                },
+                "bError_Condition_close": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 12
+                        }
+                    ]
+                },
+                "bError_Condition_open": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 11
+                        }
+                    ]
+                },
+                "bMANUAL": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 1
+                        }
+                    ]
+                },
+                "bSEN_CLOSE": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "attributes": {
+                                "TcAddressType": "Input"
+                            },
+                            "propertyOrder": 7
+                        }
+                    ]
+                },
+                "bSEN_OPEN": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "attributes": {
+                                "TcAddressType": "Input"
+                            },
+                            "propertyOrder": 6
+                        }
+                    ]
+                },
+                "bSTARTUP": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 17
+                        }
+                    ]
+                },
+                "bVALVE_CLOSE": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 10
+                        }
+                    ]
+                },
+                "bVALVE_OPEN": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 9
+                        }
+                    ]
+                },
+                "stPISTON": {
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/PLC1.REFERENCE-TO-ST_PISTON"
+                        },
+                        {
+                            "propertyOrder": 2
+                        }
+                    ]
+                },
+                "timeoutClosing": {
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/PLC1.Tc2_Standard.TON"
+                        },
+                        {
+                            "propertyOrder": 16
+                        }
+                    ]
+                },
+                "timeoutOpening": {
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/PLC1.Tc2_Standard.TON"
+                        },
+                        {
+                            "propertyOrder": 15
+                        }
+                    ]
+                },
+                "timerClosing": {
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/PLC1.Tc2_Standard.TON"
+                        },
+                        {
+                            "propertyOrder": 14
+                        }
+                    ]
+                },
+                "timerOpening": {
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/PLC1.Tc2_Standard.TON"
+                        },
+                        {
+                            "propertyOrder": 13
                         }
                     ]
                 }
@@ -2404,6 +2595,16 @@
         "PLC1.PVOID": {
             "type": "object"
         },
+        "PLC1.REFERENCE-TO-ST_PISTON": {
+            "allOf": [
+                {
+                    "allowImplicitAccess": false
+                },
+                {
+                    "$ref": "#/definitions/PLC1.ST_PISTON"
+                }
+            ]
+        },
         "PLC1.REFERENCE-TO-Tc2_MC2.AXIS_REF": {
             "allOf": [
                 {
@@ -2481,6 +2682,46 @@
         },
         "PLC1.ST_PISTON": {
             "properties": {
+                "bDepened_close1": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 10
+                        }
+                    ]
+                },
+                "bDepened_close2": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 11
+                        }
+                    ]
+                },
+                "bDepened_open1": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 8
+                        }
+                    ]
+                },
+                "bDepened_open2": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 9
+                        }
+                    ]
+                },
                 "bOPEN_BY_DEFAULT": {
                     "allOf": [
                         {
@@ -7936,7 +8177,7 @@
     "HTTP_FLOODPROTECTION": 10,
     "INITTIMEOUT": "PT10S",
     "KEEP_ALIVE": "PT40S",
-    "KEY": "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2Z0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktnd2dnU2tBZ0VBQW9JQkFRRHBCZmp3emRQWXNKN1MKcGdSemVZdGxwc3dibit2TENaWDA4cHVsRk5aeldINHpwV3RaRlNnT04vMnBJdDd3YTJkWXA4MFZUNStZcGhydwpXNnVJY2J5UTNSQXBHNHRTMmZjSWtxK1RJamtERUhGM3VvZElSbmJIZUtueHZOVXg3Rlo4SWRzL3V2Qm43ZlRPCjdpSG9pOG1LVmJ1Y1FwZ2dTZkc3NUs0YkQ1Y0p0QnF5TnVWdEJtWW9IS1ZaQjI1TWZjZ25vWkd6ak8wQXQ2TlAKV2paZlY5T2toNXRNZ2loWDg5aUZUODNIU3VoakhRZWsyb2FmUThnTklkeXk0T0I0MVBqL2dvUURqNzZCSEVXVgpEL0xYTm9lN2RSRW1nTm9jS2FrOThLWXZHMlRCY0xjVk5ncjJCSWRkWXhncFpraEdad1hxV1FOZkVhVG9naFQ5Ck54Y1dvdkNYQWdNQkFBRUNnZ0VCQU0wMzhrNTRwc3FlZWJGQWZva0lFUWo4QmFPS2lzbXNib0ZqckVtTmVYUHEKQ25NSGl1dlFZdzlxcGgzdjFQRmRWWTNSY2g4RG1hV0JIQlowVlRQOEhycGh4ZHErSkV4YUkySk1kUTRhUktWNwpOTUxoNWtSenNpWG9FWnNRMTUxNDY0MjA3M2RIOW5OQk1LbVJOUkd0RWxpZk9uUGFma2xwZGRncEJHQldzWWpiCmc3YU9MLytTeHNpdWdRc3I1engxYnBOR05tZ3Fpa0NvaitwT0RPUnpSRnM2VUdIVUdVMWRyS2Q2YStqd0JTcGgKSXplbHp0MnZLd1YzNno5Y25McitMR2JFMG9jNCtaVjNWbHFjdE9PYWl0ZFg4eXhrREd4RytQb1J0RmhWZTlMVwpwSlNrZ2FwRlJvemFaOVJyTVRrNWw0NkpaLzF1S3ViaWJnQTRGUjgwSTlrQ2dZRUE5U216YUdhNFFpcEZDOXRwCmFzb214blRzSGZGN0N1VlNQbUUrbnpiVGlRNEVYaHJEcWwzNDJBRVkwQ0pOcXFxVzNhN3RsYmRmVkgrLzF5eUoKTEFPNmh3dzJmM3g5R1A5eHdMTzNvZ01aRjhYaEkyWS9EdVVhRGl5U3lOSmZkMU1wSDNRczFYU1JHZHphWnJZZAp0TFZRaS9wZWlGTzRPbjZlV3ZNWDF3aVVoUDBDZ1lFQTgxTG1CZ2NFRWxtTmFlaW1JaGdqcUU3QXRmSkhZYS9lClgyVXd3NnlzbldDb3VGN0IyRDZRMG5IbWl5anVMOUJlSFJ5MWVVRGJzbmRTUVQ4bFJ5M08vTjB3a3dkeUJjUk0KeTNCN0N3QUpoVEFTd3hwUUp2S0NjbWRSWS9KTU4wVTlyb0tieHM2Y0o1cCtxRDBiNTRGb3kyWG1LZnpMd1ZvMApVdEhVNDMyVWFpTUNnWUF1R1NnOThrcWxUbE5yVmxkdEdCUFFiejNTcDR4dVVRNTA0azRuRytVTXVWRUM3TjlyCjBuMnZDQTNGWFIzamdHNGJ3dit6amlaanVoMjFkUTlaOGwySmRUZHVJMWRXY3ZuTnRUMUxQbS9pYzNmUTh6SGEKT0NQOUZFNkphbDAvRDZrRTNCQnVGcHdPRStRUk9oODkwbllSekFNb2VTMkQramtHZXYwNWxzaHVkUUtCZ0YraApQQkF3WDdSS2g5NlE5Z0krVkgxSWZrckQ3clFBNTdlOFVGOEhGVXhBK2U2RUoxRXl2YjVIejZEdnREVU1nb0NVCmtPb1h5SUNxanFSZ0NlbWdvbElWS0lzUWlRcWxMTDFqOXFmTEd2TENndzAwNFQxOVlERlFVOWVoR2IwN05GUEsKdHloNmVUckRhSFg4bG1QMUkxZVZNOUZhcmtYT2l2UGx6ZktlbjE3YkFvR0JBTWRacFRCWkNaS2hDZUI0MEVDUgozNW5COXZIK2FKWmJtMk90alhwVnNldWVRTWNNTCtxdFpJakEzTUIzRFhBdURBVEpTMGQzNEZJNG5SVHZZZ0RpClRRTFBFS2hxUnlkUCs2V25rV2MzNTNpSUVJVmlpYzl3VFQwMmhwUGVXUmxBRGZpUG45RHBVdVpPdEVSQmdxUTgKQVNSR1RwU1JEcXpVbXVtSExtdnhqUi81Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K",
+    "KEY": "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2UUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktjd2dnU2pBZ0VBQW9JQkFRRENXYVE5RUVMVFJzZDUKbERKVVNYOHBFQTFKK3d4U3ZPTWhpZTlvaXZPbXVQRUgxTkw5cGg3NTdMVklTR2F2a0FlWXNlS2RraFBYdXlpUwo4K24zcThJQnprV3dHeGFYZnJRU3llb2ZtaHROamg1Z0FlWGJDS3dKbFRiZ3BYaFBuYjRkVHJEZnoxSUljbXJxCkZZNHIwUEtGa2l1R1FjaWZNL1RBZmd3TjM1Y2g4T1haK0VCRmtBR0hmcGROd1UrSXZYaGcxTU03MTlha3g2b24KVzk2SDNwOWNvWHZ6Wi8vMlFIeVJQMnIzUkVtSG4yN2VEQTZjWlQrS1NxVUZkVjZtZkJpVmtkTEJYZ2xKVS9zMApSMUEveEdjemJWZkUxWkFwUzFlOGE2MGxNTnBDWFVkT2ZJWWxBdVB0Qnh0WlVoZVFvNHhEdHRGejNlblc1N29wCmlaTlNvYkhuQWdNQkFBRUNnZ0VBQzkrMkxSVGxRRXMrdktyVk9Ga1ZMOGtQUnNuVHd1cFBaaWtyTzFQaDl2bXQKb0REY2d5cTNFY1hvZlhZTzhBTDRzOWVLWk40YjRENUxDRTltcC84U1oxSFc2QjkvamRucjNvbi9oOWErZkVxRwppSThWSUFDem9oSS92QkhmKzkxRFZEOE9oMTMvUVF6Y2cxaTF5dStGSWF3QWhMOVlKb0hpSGpDVlEvTzVKQldjCmFWZGliU2pDbkVDSlhUUld0S09MZzk4dkRXb0FkRG1TMFlmWjYvZE4ra24yT1p3eWFKbEJxZCtyZlkxNk5BNjMKK0Y5TWRkK1VrS2dRdjFWaGRFOElqRXhXTlBsbGRVK3B0U0tHeFJMSXNwbHlNQ1BzNUZVWVlvaVM0N1c3aDFSbgp0VXBudm1iVXRnYzhQTk1wUnphZW9QNjZLQnR2ZVhIZUdENTJGZVZGWVFLQmdRRHJ0Ty8xeTE5SVk4YlUrNDZWCllrV1RvcitUSUhJd2ZLWG9rTUh2QU9FdzNkQVJUUEJ1UHdFSzlEQ2RRb3lVdWdPU3BMbWZhc0M4SWdVM1laS2IKbUVkZjZRNE1qYzIwVmRxU0hGN1Y3OTFaNDcyQlJRbmtCdXl5Zk96a0liSGxsazZTK3BPcVlxcW0rLzZCYkN5QgpOc1lrVy9GMktySit4dGpTK0xiWHFjS2V6UUtCZ1FEVEZUQjFKdDZrM3ZvbU5LMis4bWlKL1pjc3ZuNlhzVlkrCnRGcEtWQVM1VTVuakloZXA5ZTAwaTlaejNJMUVzR1VoRThZN3R1SDk1TWRCc01ydFpxbUtyc0tHOHVMSUhsNGIKenNBVGgweTVtQzVoaGN4ZnBuWmlSRXNJclFPOFZ5ZVN0NFBGK0NSZzhsRFUvOXJHaU8ybjNiWFBkOTUzU0R4MAplM2NIRk5Zcmd3S0JnQUpYWXNiVFJWZ0h2YkxoNk5HdER6bmZOUDMySll3N3dMNGxxZmVBejd2WGlEaVR4aE9pClJwVmdSWmRhVU9FdFU5bkNEeUg1UW43YjY2ZFlMY2VqNUptY1RBcHQ0aXczYWh0bmNyMjNTMENZVllxU0wvMzIKMzZVS1BxUXBmWVhsVDFTQWJyVVRrOVJpem0xa3NMQjc1YzM0cDlaZnFEUkFMMmt4RlVmaEpOREZBb0dBYUdNQQpOYzlsSjYvRmtZTlhzU2g4SGxHMG8wSUpwTWJrV2RvakZNTDhHeEtHOWRaMFVXNzNRWmN1Rk5vcldwN0pSRlJkCklrYk0rQnhkbGRUeVpmanhPMDQxa1Rzb2Y4TFUwM2VwY1g3bHFKcmp4UUxBRVVWbklpMlgxZENLR21nWGYrMFYKVTUvbGpiUUgyVzQyS1J5cU91dmY3NXZkL3F0UWltSk1lTW9MS0RVQ2dZRUFrc01QS0orQ3IwSXZNc1lRZGdvcgpsRlMzd1dJUzFjaGloT0FXSk5VUmVsbElpVWJXZlR6R0lqQURzSm00U2pPbGhMSW9LUllVc1p6VTd0dXY1WVQ5Ck5zVUFoU3hHVk0zMGYwNHloZUlLOXg2ZlF3c3U5Zjk3WlM5VUhPWjJZTmtTczNnejJ1dFlQbDJsbjJ4TUlab2QKS0l6RmNXNGVXQlMwYTByYmRRbEM3SjA9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K",
     "KEYPASSWORD": "",
     "LOCKOUT_PROTECTION_CLIENT_CERTIFICATE": true,
     "MAXCONNECTIONSPERCLIENT": 32,
@@ -8288,8 +8529,8 @@
     "REMOTESERVERS_CERTIFICATES": [],
     "REQUIREAUTH": 0,
     "SAMESITE_ATTRIBUTE": 2,
-    "SELFSIGNEDROOTCA": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURyRENDQXBTZ0F3SUJBZ0lKQU03UTI1cTlsSUsyTUEwR0NTcUdTSWIzRFFFQkN3VUFNRUl4Q3pBSkJnTlYKQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RmpBVUJnTlZCQU1NRFV4VQpMVTVQUVUxU1gzSnZiM1F3SUJjTk1qTXdPREF4TURjeU5EVXlXaGdQTWpBMk1URXhNamt3TnpJME5USmFNRUl4CkN6QUpCZ05WQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RmpBVUJnTlYKQkFNTURVeFVMVTVQUVUxU1gzSnZiM1F3Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLQW9JQgpBUUMrSEl0b0NDNFdjOTBJcVk3QUMvbnpmdEhWK1RwUEIyTmxwZU4vMjEwS2JVa1BwQXBoUkt4aTJHVEFvUkJPCkpMZHRMYlE5VkdUK1ZnK0JtK1phSC9tS29JTDZnMC9xWUhLSDRSbmJsYVhTejR5dTNGM2FXWngrUGtONHZGaHQKMWJUajRXZytoTWxvZUd3VWdVSHBYOE5XTGJ4WDhNOTRXMVMrYnQwMlJKbk9POUNZcyszbDJVRXhtTDltSTVVNQpUczBKSmJ0cXFuOGVKNVlKcW9hVGZXRXhRM3Rmbmw3RURoOVM5YWlxTy9RWVFNOHR5NWxxMHpoSUc3WmZvamVWCkxXYzdYNVMvOGVNZG1XNnBibmljN0l5WjE1YnV1dmxjUXFpZkhmcTVCTU1iY2NNSHc4RitSR3lMWXp0TGZRWUYKcWdhVEY4U0psQmN3WmY3YjR5S0c0Y0g3QWdNQkFBR2pnYUl3Z1o4d2JRWURWUjBSQkdZd1pJSUpiRzlqWVd4bwpiM04waHdSL0FBQUJoeEFBQUFBQUFBQUFBQUFBQUFBQUFBQUJnZ2hNVkMxT1QwRk5Vb0lYVEZRdFRrOUJUVkl1CmEyRjFabTFoYmkxeVpDNWpiMjJIQktuK3lQeUhCS3dRSGdlSEVQNkFBQUFBQUFBQStzUTBEbWpLeFljd0hRWUQKVlIwT0JCWUVGSmRkOUIzZ0lUVVZpOXJKdC84Ly8xU3NpSmxRTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3RFFZSgpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFJM3BQeHBGOEs1MjZ4bXo3UzhnTUs5R3ZpSVNoYnE3OWplek9kZldxMGVMCnZXSzl2SlZla1BnL3FZWlVBREV5eHlZc3d3QkpESkg1enYySm5EWVVWZWd5R3NVY1JucUlvSHNqdkF2VmNqdXEKSjE3cWRLbUdOQ2ErUk1FeCtLaFpxbHg2eEJ0U1p0am5TckorRnc5ZlJUOGVzWTg4TEdoY3FObWIxeE55Zmsxcwo4VlluWVZiQUxxQ1UzVmI1SFJhNytYVU1EbmdvVXRyQmszWWt0TDVIbGtqbDg1U2lhRkN5M29BMmREeklpUGVwCkJSODRsdStKdWpPMUw0T2xZdDFUUVpXb0NCeHhqNng4MkxYdmRTd3h4Yk5FOXhqNVNGYzZmVVRmNk82dEJyUEoKazYzeE12YVBMWFZZSU03SXNJaXN4Szl2K2tPRWdQVWhRVkFrV3lqSytZTT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=",
-    "SELFSIGNEDROOTCAKEY": "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2Z0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktnd2dnU2tBZ0VBQW9JQkFRRHBCZmp3emRQWXNKN1MKcGdSemVZdGxwc3dibit2TENaWDA4cHVsRk5aeldINHpwV3RaRlNnT04vMnBJdDd3YTJkWXA4MFZUNStZcGhydwpXNnVJY2J5UTNSQXBHNHRTMmZjSWtxK1RJamtERUhGM3VvZElSbmJIZUtueHZOVXg3Rlo4SWRzL3V2Qm43ZlRPCjdpSG9pOG1LVmJ1Y1FwZ2dTZkc3NUs0YkQ1Y0p0QnF5TnVWdEJtWW9IS1ZaQjI1TWZjZ25vWkd6ak8wQXQ2TlAKV2paZlY5T2toNXRNZ2loWDg5aUZUODNIU3VoakhRZWsyb2FmUThnTklkeXk0T0I0MVBqL2dvUURqNzZCSEVXVgpEL0xYTm9lN2RSRW1nTm9jS2FrOThLWXZHMlRCY0xjVk5ncjJCSWRkWXhncFpraEdad1hxV1FOZkVhVG9naFQ5Ck54Y1dvdkNYQWdNQkFBRUNnZ0VCQU0wMzhrNTRwc3FlZWJGQWZva0lFUWo4QmFPS2lzbXNib0ZqckVtTmVYUHEKQ25NSGl1dlFZdzlxcGgzdjFQRmRWWTNSY2g4RG1hV0JIQlowVlRQOEhycGh4ZHErSkV4YUkySk1kUTRhUktWNwpOTUxoNWtSenNpWG9FWnNRMTUxNDY0MjA3M2RIOW5OQk1LbVJOUkd0RWxpZk9uUGFma2xwZGRncEJHQldzWWpiCmc3YU9MLytTeHNpdWdRc3I1engxYnBOR05tZ3Fpa0NvaitwT0RPUnpSRnM2VUdIVUdVMWRyS2Q2YStqd0JTcGgKSXplbHp0MnZLd1YzNno5Y25McitMR2JFMG9jNCtaVjNWbHFjdE9PYWl0ZFg4eXhrREd4RytQb1J0RmhWZTlMVwpwSlNrZ2FwRlJvemFaOVJyTVRrNWw0NkpaLzF1S3ViaWJnQTRGUjgwSTlrQ2dZRUE5U216YUdhNFFpcEZDOXRwCmFzb214blRzSGZGN0N1VlNQbUUrbnpiVGlRNEVYaHJEcWwzNDJBRVkwQ0pOcXFxVzNhN3RsYmRmVkgrLzF5eUoKTEFPNmh3dzJmM3g5R1A5eHdMTzNvZ01aRjhYaEkyWS9EdVVhRGl5U3lOSmZkMU1wSDNRczFYU1JHZHphWnJZZAp0TFZRaS9wZWlGTzRPbjZlV3ZNWDF3aVVoUDBDZ1lFQTgxTG1CZ2NFRWxtTmFlaW1JaGdqcUU3QXRmSkhZYS9lClgyVXd3NnlzbldDb3VGN0IyRDZRMG5IbWl5anVMOUJlSFJ5MWVVRGJzbmRTUVQ4bFJ5M08vTjB3a3dkeUJjUk0KeTNCN0N3QUpoVEFTd3hwUUp2S0NjbWRSWS9KTU4wVTlyb0tieHM2Y0o1cCtxRDBiNTRGb3kyWG1LZnpMd1ZvMApVdEhVNDMyVWFpTUNnWUF1R1NnOThrcWxUbE5yVmxkdEdCUFFiejNTcDR4dVVRNTA0azRuRytVTXVWRUM3TjlyCjBuMnZDQTNGWFIzamdHNGJ3dit6amlaanVoMjFkUTlaOGwySmRUZHVJMWRXY3ZuTnRUMUxQbS9pYzNmUTh6SGEKT0NQOUZFNkphbDAvRDZrRTNCQnVGcHdPRStRUk9oODkwbllSekFNb2VTMkQramtHZXYwNWxzaHVkUUtCZ0YraApQQkF3WDdSS2g5NlE5Z0krVkgxSWZrckQ3clFBNTdlOFVGOEhGVXhBK2U2RUoxRXl2YjVIejZEdnREVU1nb0NVCmtPb1h5SUNxanFSZ0NlbWdvbElWS0lzUWlRcWxMTDFqOXFmTEd2TENndzAwNFQxOVlERlFVOWVoR2IwN05GUEsKdHloNmVUckRhSFg4bG1QMUkxZVZNOUZhcmtYT2l2UGx6ZktlbjE3YkFvR0JBTWRacFRCWkNaS2hDZUI0MEVDUgozNW5COXZIK2FKWmJtMk90alhwVnNldWVRTWNNTCtxdFpJakEzTUIzRFhBdURBVEpTMGQzNEZJNG5SVHZZZ0RpClRRTFBFS2hxUnlkUCs2V25rV2MzNTNpSUVJVmlpYzl3VFQwMmhwUGVXUmxBRGZpUG45RHBVdVpPdEVSQmdxUTgKQVNSR1RwU1JEcXpVbXVtSExtdnhqUi81Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K",
+    "SELFSIGNEDROOTCA": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURyRENDQXBTZ0F3SUJBZ0lKQUxzMWNNa3RYNnBnTUEwR0NTcUdTSWIzRFFFQkN3VUFNRUl4Q3pBSkJnTlYKQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RmpBVUJnTlZCQU1NRFV4VQpMVTVQUVUxU1gzSnZiM1F3SUJjTk1qTXdPREF5TURneE5qUTFXaGdQTWpBMk1URXhNekF3T0RFMk5EVmFNRUl4CkN6QUpCZ05WQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RmpBVUJnTlYKQkFNTURVeFVMVTVQUVUxU1gzSnZiM1F3Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLQW9JQgpBUURJSEVJNE9tR2xsZUN4MjJCQXY3ajFLSnl1VjVFWTNxSjNwN3lLY1ZMMDhIWWJzMXA5WSszS1NrNXRBeWNOCm5iSEtnS0psOU92NnVQTkV0amRxR0xmSlRCM1ErajNoeDZQN0d0TzJrck9hSjNaM25Id1loazRFKzdKa29ZV2wKY1lhVjNGWjVxT0hKUnJrNVRJa2FiVkQwZWxLNWtsS1NsTGl1TTR1MFdEQlM4Tklia0h4bnJNeUFyTDk1cmhxSwpMTVVkRnZWaG1jL3lqOFczd1F0NHM2Umc4Q2tQZGdpcDZhaGd3cTRweWt6QmtQWVdESC80ZUV5WnAxdENhVkhnCnYzWUJXeEMrc0tjWnMxc056NjVHa1FUU3dSaHNpNk5MMDl6WjgzaVN5NUxlRGE0MWVOSXhvdG80cWxwa2dCeE0KTm9seFJDY3NSK0FsQk55RDZtK0k0a0lWQWdNQkFBR2pnYUl3Z1o4d2JRWURWUjBSQkdZd1pJSUpiRzlqWVd4bwpiM04waHdSL0FBQUJoeEFBQUFBQUFBQUFBQUFBQUFBQUFBQUJnZ2hNVkMxT1QwRk5Vb0lYVEZRdFRrOUJUVkl1CmEyRjFabTFoYmkxeVpDNWpiMjJIQktuK3lQeUhCS3dRSGdlSEVQNkFBQUFBQUFBQStzUTBEbWpLeFljd0hRWUQKVlIwT0JCWUVGR0pIZ3JVU01TY2pZa3JzVlQvcUtieWh4eVJjTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3RFFZSgpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFDU045OGRBVElaSXZTa2JwbTBwdlEyMEtCdFcyeWt0dlk3TW9ZeVNUSU80ClRnR2pabmk2ODV2NDU3SUUwU1NqZy9PRzRZK0JBMnloVHhkK3lVMWp6WnNMNWJxcmNSRGc0RkhOMDY1WCt2NWMKblpDcmFmbDlhdUZPOFdiWjZpNDM4QVVLQ3dSNmVsbXY2VFdlNllvczFmQ2ZnRVFCNGRHZ0g5cTREUzd6ZWpkcQowVXFkZUJGOS8vSkdjRjV3WnBKM0NUMHUzbmZkL2NUSUxwdDJwOE1TSm8rYisvNnhhcnQ5RFgvZGNWaTJIYyt6CjBPQlpmTmQvMENPaStPR3RKRFFpSXJnSWxESXFPYUJzalJnUlR0UUsvZ2tlU3Q0RzA4NHB1TVBXTFB6Q0ZYRzcKMUUwS1E3dWR4WmEwQ3AveFFIU2FVcENGR3dwK1pFYjNyWkNOODdpR3N2cz0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=",
+    "SELFSIGNEDROOTCAKEY": "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2UUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktjd2dnU2pBZ0VBQW9JQkFRRENXYVE5RUVMVFJzZDUKbERKVVNYOHBFQTFKK3d4U3ZPTWhpZTlvaXZPbXVQRUgxTkw5cGg3NTdMVklTR2F2a0FlWXNlS2RraFBYdXlpUwo4K24zcThJQnprV3dHeGFYZnJRU3llb2ZtaHROamg1Z0FlWGJDS3dKbFRiZ3BYaFBuYjRkVHJEZnoxSUljbXJxCkZZNHIwUEtGa2l1R1FjaWZNL1RBZmd3TjM1Y2g4T1haK0VCRmtBR0hmcGROd1UrSXZYaGcxTU03MTlha3g2b24KVzk2SDNwOWNvWHZ6Wi8vMlFIeVJQMnIzUkVtSG4yN2VEQTZjWlQrS1NxVUZkVjZtZkJpVmtkTEJYZ2xKVS9zMApSMUEveEdjemJWZkUxWkFwUzFlOGE2MGxNTnBDWFVkT2ZJWWxBdVB0Qnh0WlVoZVFvNHhEdHRGejNlblc1N29wCmlaTlNvYkhuQWdNQkFBRUNnZ0VBQzkrMkxSVGxRRXMrdktyVk9Ga1ZMOGtQUnNuVHd1cFBaaWtyTzFQaDl2bXQKb0REY2d5cTNFY1hvZlhZTzhBTDRzOWVLWk40YjRENUxDRTltcC84U1oxSFc2QjkvamRucjNvbi9oOWErZkVxRwppSThWSUFDem9oSS92QkhmKzkxRFZEOE9oMTMvUVF6Y2cxaTF5dStGSWF3QWhMOVlKb0hpSGpDVlEvTzVKQldjCmFWZGliU2pDbkVDSlhUUld0S09MZzk4dkRXb0FkRG1TMFlmWjYvZE4ra24yT1p3eWFKbEJxZCtyZlkxNk5BNjMKK0Y5TWRkK1VrS2dRdjFWaGRFOElqRXhXTlBsbGRVK3B0U0tHeFJMSXNwbHlNQ1BzNUZVWVlvaVM0N1c3aDFSbgp0VXBudm1iVXRnYzhQTk1wUnphZW9QNjZLQnR2ZVhIZUdENTJGZVZGWVFLQmdRRHJ0Ty8xeTE5SVk4YlUrNDZWCllrV1RvcitUSUhJd2ZLWG9rTUh2QU9FdzNkQVJUUEJ1UHdFSzlEQ2RRb3lVdWdPU3BMbWZhc0M4SWdVM1laS2IKbUVkZjZRNE1qYzIwVmRxU0hGN1Y3OTFaNDcyQlJRbmtCdXl5Zk96a0liSGxsazZTK3BPcVlxcW0rLzZCYkN5QgpOc1lrVy9GMktySit4dGpTK0xiWHFjS2V6UUtCZ1FEVEZUQjFKdDZrM3ZvbU5LMis4bWlKL1pjc3ZuNlhzVlkrCnRGcEtWQVM1VTVuakloZXA5ZTAwaTlaejNJMUVzR1VoRThZN3R1SDk1TWRCc01ydFpxbUtyc0tHOHVMSUhsNGIKenNBVGgweTVtQzVoaGN4ZnBuWmlSRXNJclFPOFZ5ZVN0NFBGK0NSZzhsRFUvOXJHaU8ybjNiWFBkOTUzU0R4MAplM2NIRk5Zcmd3S0JnQUpYWXNiVFJWZ0h2YkxoNk5HdER6bmZOUDMySll3N3dMNGxxZmVBejd2WGlEaVR4aE9pClJwVmdSWmRhVU9FdFU5bkNEeUg1UW43YjY2ZFlMY2VqNUptY1RBcHQ0aXczYWh0bmNyMjNTMENZVllxU0wvMzIKMzZVS1BxUXBmWVhsVDFTQWJyVVRrOVJpem0xa3NMQjc1YzM0cDlaZnFEUkFMMmt4RlVmaEpOREZBb0dBYUdNQQpOYzlsSjYvRmtZTlhzU2g4SGxHMG8wSUpwTWJrV2RvakZNTDhHeEtHOWRaMFVXNzNRWmN1Rk5vcldwN0pSRlJkCklrYk0rQnhkbGRUeVpmanhPMDQxa1Rzb2Y4TFUwM2VwY1g3bHFKcmp4UUxBRVVWbklpMlgxZENLR21nWGYrMFYKVTUvbGpiUUgyVzQyS1J5cU91dmY3NXZkL3F0UWltSk1lTW9MS0RVQ2dZRUFrc01QS0orQ3IwSXZNc1lRZGdvcgpsRlMzd1dJUzFjaGloT0FXSk5VUmVsbElpVWJXZlR6R0lqQURzSm00U2pPbGhMSW9LUllVc1p6VTd0dXY1WVQ5Ck5zVUFoU3hHVk0zMGYwNHloZUlLOXg2ZlF3c3U5Zjk3WlM5VUhPWjJZTmtTczNnejJ1dFlQbDJsbjJ4TUlab2QKS0l6RmNXNGVXQlMwYTByYmRRbEM3SjA9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K",
     "SESSIONSTORAGE": {},
     "SHOW_CONFIGURATION_HINTS": true,
     "SHOW_MAINTENANCE_MODE": true,
@@ -10683,7 +10924,14 @@
             "DYNAMIC": true,
             "MAPPING": "PLC1::GVL::bSTART",
             "SCHEMA": {
-                "$ref": "tchmi:general#/definitions/BOOL"
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "comment": "start main state machine"
+                    }
+                ]
             },
             "USEMAPPING": true
         },
@@ -10843,7 +11091,58 @@
             "DYNAMIC": true,
             "MAPPING": "PLC1::GVL::fbPiston[0]",
             "SCHEMA": {
-                "$ref": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON"
+                "$ref": "tchmi:server#/definitions/PLC1.FB_PISTON"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.fbPiston.0.bCMD_OPEN_SWR": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::fbPiston[0]::bCMD_OPEN_SWR",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 3
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.fbPiston.0.bError_Condition_close": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::fbPiston[0]::bError_Condition_close",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 12
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.fbPiston.0.bError_Condition_open": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::fbPiston[0]::bError_Condition_open",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 11
+                    }
+                ]
             },
             "USEMAPPING": true
         },
@@ -10853,7 +11152,41 @@
             "DYNAMIC": true,
             "MAPPING": "PLC1::GVL::fbPiston[1]",
             "SCHEMA": {
-                "$ref": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON"
+                "$ref": "tchmi:server#/definitions/PLC1.FB_PISTON"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.fbPiston.1.bError_Condition_close": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::fbPiston[1]::bError_Condition_close",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 12
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.fbPiston.1.bError_Condition_open": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::fbPiston[1]::bError_Condition_open",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 11
+                    }
+                ]
             },
             "USEMAPPING": true
         },
@@ -10974,6 +11307,74 @@
             "MAPPING": "PLC1::GVL::fbPiston[9]",
             "SCHEMA": {
                 "$ref": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.stPISTON_PARAM.0.bDepened_close1": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::stPISTON_PARAM[0]::bDepened_close1",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 10
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.stPISTON_PARAM.0.bDepened_close2": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::stPISTON_PARAM[0]::bDepened_close2",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 11
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.stPISTON_PARAM.0.bDepened_open1": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::stPISTON_PARAM[0]::bDepened_open1",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 8
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.stPISTON_PARAM.0.bDepened_open2": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::stPISTON_PARAM[0]::bDepened_open2",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 9
+                    }
+                ]
             },
             "USEMAPPING": true
         },
@@ -11940,7 +12341,12 @@
                 "PLC1.GVL.eSUPPLY_CONVAYOR_STATE": 3,
                 "PLC1.GVL.fbCART": 3,
                 "PLC1.GVL.fbPiston.0": 3,
+                "PLC1.GVL.fbPiston.0.bCMD_OPEN_SWR": 3,
+                "PLC1.GVL.fbPiston.0.bError_Condition_close": 3,
+                "PLC1.GVL.fbPiston.0.bError_Condition_open": 3,
                 "PLC1.GVL.fbPiston.1": 3,
+                "PLC1.GVL.fbPiston.1.bError_Condition_close": 3,
+                "PLC1.GVL.fbPiston.1.bError_Condition_open": 3,
                 "PLC1.GVL.fbPiston.10": 3,
                 "PLC1.GVL.fbPiston.11": 3,
                 "PLC1.GVL.fbPiston.12": 3,
@@ -11954,6 +12360,10 @@
                 "PLC1.GVL.fbPiston.8": 3,
                 "PLC1.GVL.fbPiston.9": 3,
                 "PLC1.GVL.stPISTON_PARAM": 3,
+                "PLC1.GVL.stPISTON_PARAM.0.bDepened_close1": 3,
+                "PLC1.GVL.stPISTON_PARAM.0.bDepened_close2": 3,
+                "PLC1.GVL.stPISTON_PARAM.0.bDepened_open1": 3,
+                "PLC1.GVL.stPISTON_PARAM.0.bDepened_open2": 3,
                 "PLC1.MAIN.fbNewPiston": 3,
                 "PLC1.MAIN.fbNewPiston.PistonStatus": 3,
                 "PLC1.MAIN.fbPiston_B1": 3,

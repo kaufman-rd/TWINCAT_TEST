@@ -55,7 +55,7 @@
     <Compile Include="POUs\FB_CART.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_NEW_PISTON.TcPOU">
+    <Compile Include="POUs\FB_PISTON.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
