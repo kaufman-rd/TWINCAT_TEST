@@ -19,8 +19,8 @@ VAR_OUTPUT
 	PistonStatus:ePistonStatus;
 	bVALVE_OPEN: BOOL;
 	bVALVE_CLOSE: BOOL;
-	bError_Condition_open:BOOL;
-	bError_Condition_close:BOOL;
+	bO:BOOL;
+	bC:BOOL;
 	
 END_VAR
 VAR
@@ -45,33 +45,36 @@ timeoutOpening(IN:= bVALVE_OPEN AND NOT bSEN_OPEN, PT:= stPISTON.timeoutOpen, Q=
 timeoutClosing(IN:= NOT bVALVE_OPEN AND NOT bSEN_CLOSE, PT:= stPISTON.timeoutClose, Q=> , ET=> );
 
 IF bMANUAL THEN
-	IF stPISTON.bDepened_open1 AND stPISTON.bDepened_open2  THEN
-		bError_Condition_open:=FALSE;
+	IF bCMD_OPEN AND stPISTON.bDepened_open1 THEN
 		bVALVE_OPEN:= bCMD_OPEN;
-	ELSE
-		bError_Condition_open:=TRUE;
+		stPISTON.bError_Condition_open:=FALSE;	
+	ELSIF bCMD_OPEN AND NOT stPISTON.bDepened_open1 THEN
+		stPISTON.bError_Condition_open:=TRUE;
 	END_IF
-	IF stPISTON.bDepened_close1 AND stPISTON.bDepened_close2  THEN
-		bError_Condition_close:=FALSE;
-		bVALVE_CLOSE:= NOT bCMD_OPEN;
-	ELSE
-		bError_Condition_close:=TRUE;
+	
+	IF NOT bCMD_OPEN AND stPISTON.bDepened_close1 THEN
+		bVALVE_OPEN:= bCMD_OPEN;
+		stPISTON.bError_Condition_close:=FALSE;	
+	ELSIF NOT bCMD_OPEN AND NOT stPISTON.bDepened_close1 THEN
+		stPISTON.bError_Condition_close:=TRUE;
 	END_IF
+	
 ELSE
-	IF stPISTON.bDepened_open1 AND stPISTON.bDepened_open2  THEN
-		bError_Condition_open:=FALSE;
+	IF bCMD_OPEN_SWR AND stPISTON.bDepened_open1 THEN
 		bVALVE_OPEN:= bCMD_OPEN_SWR;
-	ELSE
-		bError_Condition_open:=TRUE;
+		stPISTON.bError_Condition_open:=FALSE;	
+	ELSIF bCMD_OPEN_SWR AND NOT stPISTON.bDepened_open1 THEN
+		stPISTON.bError_Condition_open:=TRUE;
 	END_IF
-	IF stPISTON.bDepened_close1 AND stPISTON.bDepened_close2  THEN
-		bError_Condition_close:=FALSE;
-		bVALVE_CLOSE:= NOT bCMD_OPEN_SWR;
-	ELSE
-		bError_Condition_close:=TRUE;	
+	
+	IF NOT bCMD_OPEN_SWR AND stPISTON.bDepened_close1 THEN
+		bVALVE_OPEN:= bCMD_OPEN_SWR;
+		stPISTON.bError_Condition_close:=FALSE;	
+	ELSIF NOT bCMD_OPEN_SWR AND NOT stPISTON.bDepened_close1 THEN
+		stPISTON.bError_Condition_close:=TRUE;
 	END_IF
 END_IF
-
+bVALVE_CLOSE:=NOT bVALVE_OPEN;
 
 
 CASE stPISTON.ePISTON_TYPE OF

@@ -983,11 +983,19 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{AD6E4C48-5E61-47B3-958D-58FBAEF446F5}" Name="TAMAR_22mm" PrjFilePath="..\..\TAMAR_22mm\TAMAR_22mm.plcproj" TmcFilePath="..\..\TAMAR_22mm\TAMAR_22mm.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TAMAR_22mm\TAMAR_22mm.tmc" TmcHash="{86737752-304D-EDDB-21A0-C2785EBCB89A}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TAMAR_22mm\TAMAR_22mm.tmc" TmcHash="{39ACDC21-B8CC-F304-A647-A6F3AF33E019}">
 			<Name>TAMAR_22mm Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
 				<Name>PlcTask Inputs</Name>
+				<Var>
+					<Name>GVL.Axis_MAIN.Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.Axis_SUPPLY.Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
 				<Var>
 					<Name>GVL.fbPiston[1].bSEN_OPEN</Name>
 					<Type>BOOL</Type>
@@ -1107,14 +1115,6 @@ External Setpoint Generation:
 				<Var>
 					<Name>GVL.fbPiston[15].bSEN_CLOSE</Name>
 					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.Axis_MAIN.Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.Axis_SUPPLY.Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="2" AreaNo="1">

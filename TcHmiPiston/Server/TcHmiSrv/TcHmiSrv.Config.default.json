@@ -6,7 +6,7 @@
     "CACHEMAXAGE": "P30D",
     "CACHEMAXENTRYSIZE": 1048576,
     "CACHEMAXSIZE": 2097152,
-    "CERTIFICATE": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURwRENDQW95Z0F3SUJBZ0lKQU11QkY2eVNkd3BuTUEwR0NTcUdTSWIzRFFFQkN3VUFNRUl4Q3pBSkJnTlYKQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RmpBVUJnTlZCQU1NRFV4VQpMVTVQUVUxU1gzSnZiM1F3SUJjTk1qTXdPREF5TURneE5qUTJXaGdQTWpBMk1URXhNekF3T0RFMk5EWmFNRDB4CkN6QUpCZ05WQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RVRBUEJnTlYKQkFNTUNFeFVMVTVQUVUxU01JSUJJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBUThBTUlJQkNnS0NBUUVBd2xtawpQUkJDMDBiSGVaUXlWRWwvS1JBTlNmc01VcnpqSVludmFJcnpwcmp4QjlUUy9hWWUrZXkxU0VobXI1QUhtTEhpCm5aSVQxN3Nva3ZQcDk2dkNBYzVGc0JzV2wzNjBFc25xSDVvYlRZNGVZQUhsMndpc0NaVTI0S1Y0VDUyK0hVNncKMzg5U0NISnE2aFdPSzlEeWhaSXJoa0hJbnpQMHdINE1EZCtYSWZEbDJmaEFSWkFCaDM2WFRjRlBpTDE0WU5URApPOWZXcE1lcUoxdmVoOTZmWEtGNzgyZi85a0I4a1Q5cTkwUkpoNTl1M2d3T25HVS9pa3FsQlhWZXBud1lsWkhTCndWNEpTVlA3TkVkUVA4Um5NMjFYeE5XUUtVdFh2R3V0SlREYVFsMUhUbnlHSlFMajdRY2JXVklYa0tPTVE3YlIKYzkzcDF1ZTZLWW1UVXFHeDV3SURBUUFCbzRHZk1JR2NNRzBHQTFVZEVRUm1NR1NDQ1d4dlkyRnNhRzl6ZEljRQpmd0FBQVljUUFBQUFBQUFBQUFBQUFBQUFBQUFBQVlJSVRGUXRUazlCVFZLQ0YweFVMVTVQUVUxU0xtdGhkV1p0CllXNHRjbVF1WTI5dGh3U3Avc2o4aHdTc0VCNEhoeEQrZ0FBQUFBQUFBUHJFTkE1b3lzV0hNQjBHQTFVZERnUVcKQkJTN0l1Z0FhY2VuaDVHdFhxejFQWFBqRzBPaFpEQU1CZ05WSFJNQkFmOEVBakFBTUEwR0NTcUdTSWIzRFFFQgpDd1VBQTRJQkFRQUFRVTdVV2tSaTNZVldKbW5ZbElSbDBROTQweS8zOThOWGdJdzBWNHRHK0p6SGw0bDdBSUpqClhiZC9QTXhrNzdIQWNpMkt0QlVMQ3JSdDhuWjFLdndTQ2FZNllVK3VydFJIQkNvR095K1pFbjlycXR1MmRLcHEKWjloN1N0OWs4aE95YXNrMHhvNDNydzdzem9CQlNCTWtRV284SGdva2Q5MWdWclk5OHB6TXNoeGVSd000amJaQgpEVEd6RlNqdXhMU1ZxVnE1SjdzU0RxOHNmVzBvbzF2OTVINWJOYjhvc2FTSTdaY3NoSFd1WTlyS2E3UzB6RjBwCkRNZktNbVk0VFVYUTJXdE1wdFdEUDNBMG1xUkJ5eGFTd0Q1Y3NUYTA2aFkzajNBUXoxTnQ3cnd6YWd2cldqTjUKU2xjdERXbldINEw1eHdablhNcGFWMzEvUitkc0crU08KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQotLS0tLUJFR0lOIENFUlRJRklDQVRFLS0tLS0KTUlJRHJEQ0NBcFNnQXdJQkFnSUpBTHMxY01rdFg2cGdNQTBHQ1NxR1NJYjNEUUVCQ3dVQU1FSXhDekFKQmdOVgpCQVlUQWtSRk1Sc3dHUVlEVlFRS0RCSlVkMmx1UTBGVUlFaE5TU0JUWlhKMlpYSXhGakFVQmdOVkJBTU1EVXhVCkxVNVBRVTFTWDNKdmIzUXdJQmNOTWpNd09EQXlNRGd4TmpRMVdoZ1BNakEyTVRFeE16QXdPREUyTkRWYU1FSXgKQ3pBSkJnTlZCQVlUQWtSRk1Sc3dHUVlEVlFRS0RCSlVkMmx1UTBGVUlFaE5TU0JUWlhKMlpYSXhGakFVQmdOVgpCQU1NRFV4VUxVNVBRVTFTWDNKdmIzUXdnZ0VpTUEwR0NTcUdTSWIzRFFFQkFRVUFBNElCRHdBd2dnRUtBb0lCCkFRRElIRUk0T21HbGxlQ3gyMkJBdjdqMUtKeXVWNUVZM3FKM3A3eUtjVkwwOEhZYnMxcDlZKzNLU2s1dEF5Y04KbmJIS2dLSmw5T3Y2dVBORXRqZHFHTGZKVEIzUStqM2h4NlA3R3RPMmtyT2FKM1ozbkh3WWhrNEUrN0prb1lXbApjWWFWM0ZaNXFPSEpScms1VElrYWJWRDBlbEs1a2xLU2xMaXVNNHUwV0RCUzhOSWJrSHhuck15QXJMOTVyaHFLCkxNVWRGdlZobWMveWo4VzN3UXQ0czZSZzhDa1BkZ2lwNmFoZ3dxNHB5a3pCa1BZV0RILzRlRXlacDF0Q2FWSGcKdjNZQld4QytzS2NaczFzTno2NUdrUVRTd1Joc2k2TkwwOXpaODNpU3k1TGVEYTQxZU5JeG90bzRxbHBrZ0J4TQpOb2x4UkNjc1IrQWxCTnlENm0rSTRrSVZBZ01CQUFHamdhSXdnWjh3YlFZRFZSMFJCR1l3WklJSmJHOWpZV3hvCmIzTjBod1IvQUFBQmh4QUFBQUFBQUFBQUFBQUFBQUFBQUFBQmdnaE1WQzFPVDBGTlVvSVhURlF0VGs5QlRWSXUKYTJGMVptMWhiaTF5WkM1amIyMkhCS24reVB5SEJLd1FIZ2VIRVA2QUFBQUFBQUFBK3NRMERtakt4WWN3SFFZRApWUjBPQkJZRUZHSkhnclVTTVNjallrcnNWVC9xS2J5aHh5UmNNQThHQTFVZEV3RUIvd1FGTUFNQkFmOHdEUVlKCktvWklodmNOQVFFTEJRQURnZ0VCQUNTTjk4ZEFUSVpJdlNrYnBtMHB2UTIwS0J0VzJ5a3R2WTdNb1l5U1RJTzQKVGdHalpuaTY4NXY0NTdJRTBTU2pnL09HNFkrQkEyeWhUeGQreVUxanpac0w1YnFyY1JEZzRGSE4wNjVYK3Y1YwpuWkNyYWZsOWF1Rk84V2JaNmk0MzhBVUtDd1I2ZWxtdjZUV2U2WW9zMWZDZmdFUUI0ZEdnSDlxNERTN3plamRxCjBVcWRlQkY5Ly9KR2NGNXdacEozQ1QwdTNuZmQvY1RJTHB0MnA4TVNKbytiKy82eGFydDlEWC9kY1ZpMkhjK3oKME9CWmZOZC8wQ09pK09HdEpEUWlJcmdJbERJcU9hQnNqUmdSVHRRSy9na2VTdDRHMDg0cHVNUFdMUHpDRlhHNwoxRTBLUTd1ZHhaYTBDcC94UUhTYVVwQ0ZHd3ArWkViM3JaQ044N2lHc3ZzPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+    "CERTIFICATE": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURwRENDQW95Z0F3SUJBZ0lKQUwvQUVZc3IvaTNZTUEwR0NTcUdTSWIzRFFFQkN3VUFNRUl4Q3pBSkJnTlYKQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RmpBVUJnTlZCQU1NRFV4VQpMVTVQUVUxU1gzSnZiM1F3SUJjTk1qTXdPREF5TVRFMU9URTFXaGdQTWpBMk1URXhNekF4TVRVNU1UVmFNRDB4CkN6QUpCZ05WQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RVRBUEJnTlYKQkFNTUNFeFVMVTVQUVUxU01JSUJJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBUThBTUlJQkNnS0NBUUVBMnhOdQpXTW4zQnNMVjdIbDBKSTF3ZlFWek0ra2FteURSTGlEQitIeWh0WTE1Zmc0a3NWcFdvbmx3bndKUUprQUlqN3UyCmF6OXFXSWxDSkZpV29wdWRmRys4SlVyR08rVVVXbm0zWWUrbm9rUVVIaXhmdXEyY21XVG5GcGZPQ3ZJMDA2SVYKUk9GdW1yQm5tb0ZyQXJkc1A2L21ybjhoK1lkMWwvYS83SS9kRW4wdXhrV3p2ZThlaEdsQUFlQWJpcjFkRWxreQpIUE9SMDIxTnkyc1VtRFMrZ2VROTh5bjhVclhiOVM5QXJhSkVrZmZST05lMjBISmRpUnVrazNudkpkOGJKaHphCnBrVzZGVDhGdjU4U1NNeCtGWVVyK3BrMzk4dTVtR1ZSTThLaHRBTkZscithclJrMVRYdldwY0xuSnFPaGpxUXUKWnpkVnEycjl6ME51NFNMcW13SURBUUFCbzRHZk1JR2NNRzBHQTFVZEVRUm1NR1NDQ1d4dlkyRnNhRzl6ZEljRQpmd0FBQVljUUFBQUFBQUFBQUFBQUFBQUFBQUFBQVlJSVRGUXRUazlCVFZLQ0YweFVMVTVQUVUxU0xtdGhkV1p0CllXNHRjbVF1WTI5dGh3U3Avc2o4aHdTc0VCNEhoeEQrZ0FBQUFBQUFBUHJFTkE1b3lzV0hNQjBHQTFVZERnUVcKQkJSNURzWDFHU2lyNFZ2QXVwaXk2ZHR3UFhrTTJqQU1CZ05WSFJNQkFmOEVBakFBTUEwR0NTcUdTSWIzRFFFQgpDd1VBQTRJQkFRREdaSGRsRkZoMUhybjVWNXlCalRZMkFEN1htMXRoUklvNlU1TnMxUDVDM0FGOG1Jckg3SVNmCnlORVZWaG16UkpuQU5aSHE2dUFrYWM1N3RQWEF3OXZBZC8vSWxBaVVXNUNueVpVQ2ZWSTBmamFFK21BM2dmZGMKRC9PWFRudEJUci9hQ1o0M1VSdWlBcDZRaENoUVkzSzNuMUFlYVhlOVZGblczWUowQUorQW1QYjRQajBCY2hvSQpIQ1p1cWtHamJlUGtFaFIzY25nQXlGQmV5aCtUNUg2ZlF4YWp6OWEwNnl3bTFWTk15V2dsQlBKVWtVTlFYSTRMCnRFeFQzVFhRSzdsUmxqTlE5U011V0ttQUZDOGRoT2k0WnZCSDUrM2IwV1dtMlJNNXVSSlBHWXplaG9DaWF2UXcKdnNzM21HYW1ZZVM5YllHRDdOSFZlRUlET1REZDhHU0gKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQotLS0tLUJFR0lOIENFUlRJRklDQVRFLS0tLS0KTUlJRHJEQ0NBcFNnQXdJQkFnSUpBS3pRQ2RTZ0w4dHpNQTBHQ1NxR1NJYjNEUUVCQ3dVQU1FSXhDekFKQmdOVgpCQVlUQWtSRk1Sc3dHUVlEVlFRS0RCSlVkMmx1UTBGVUlFaE5TU0JUWlhKMlpYSXhGakFVQmdOVkJBTU1EVXhVCkxVNVBRVTFTWDNKdmIzUXdJQmNOTWpNd09EQXlNVEUxT1RFMVdoZ1BNakEyTVRFeE16QXhNVFU1TVRWYU1FSXgKQ3pBSkJnTlZCQVlUQWtSRk1Sc3dHUVlEVlFRS0RCSlVkMmx1UTBGVUlFaE5TU0JUWlhKMlpYSXhGakFVQmdOVgpCQU1NRFV4VUxVNVBRVTFTWDNKdmIzUXdnZ0VpTUEwR0NTcUdTSWIzRFFFQkFRVUFBNElCRHdBd2dnRUtBb0lCCkFRRGdlb3hjTkZtcWZ3aDZPNmxMRUdVQkNGTjJjVzI3czFOam1EbW1HRURoUDA2U2xveE82UlYwdXYvVitnVHoKQUJQNUtkMmFrallncFNEUUMzc3dGelhSTmJ0ZTBpQnQrMldHS041ZzN0RUNvNWFHbWJaYndUdk9jc2pIblVWawpxV1pIanBUeEdBNCtJc2JFWVhQWGNEWmVIaEpvK1daVUpicWNLakV5QUdsWG00TW1KaStCdEtmM2dlTUJUWGNpCnhSbE5JUVQ1TXZxYjdIaE5WNllDV2tQcTJXYS9TQ20zYnh3OTc0V3ZLTmpIVkR3MjJma1FNNXhyRm9nSHVNMzMKdjJqODNKZzk5eUhRUmd0L0x3T0NVYi9Ja0ltNHVWU0VlQjZOeUJEM2lpQy9ROGU1SWlKVVV5K0ZWT05udytFMQpnSHBRT3lkYkRJelNRWDd2eU5zSDYxcmRBZ01CQUFHamdhSXdnWjh3YlFZRFZSMFJCR1l3WklJSmJHOWpZV3hvCmIzTjBod1IvQUFBQmh4QUFBQUFBQUFBQUFBQUFBQUFBQUFBQmdnaE1WQzFPVDBGTlVvSVhURlF0VGs5QlRWSXUKYTJGMVptMWhiaTF5WkM1amIyMkhCS24reVB5SEJLd1FIZ2VIRVA2QUFBQUFBQUFBK3NRMERtakt4WWN3SFFZRApWUjBPQkJZRUZGZ3FVMzJBaXd2RzlWdnp5cTFydVNrQlY5MGNNQThHQTFVZEV3RUIvd1FGTUFNQkFmOHdEUVlKCktvWklodmNOQVFFTEJRQURnZ0VCQUFZLzgvVTVTQ1RQdXU5d1FzM2plcHdGTzNnRjIralpLcDZCazRieTJ6engKS1dYN1dNOHVaTmlNaUw2Nkx0bklsTjl6VDdzUzF4WGRtaHhsUkJBamRSY0ltdlUxRG1CVVd4VHVVbGl0T3pGUgpJMXl5T0J2RGRHd3prNk9zZkE4b3VneCtCcmhBK3RJVzRDdENzcXlCa09hU2lEY256Z3ZmTXY2OENwOWVXNmdLCmx5UWllVzVYNmFFNE1maWxVOXN5NlpzL2QzSUVVQnZna29qY254eVpxNU1YK21JQXloRDI2RTViS1liZE9NOFoKZ3FWdzBjYktlT3d0dDY1Sm9KMU0vMzJXMEVHS3d4dFRvT3pvNFU2LzlNeEM1aVVIWXVMWURjdDBXSVF2ZGpMRgpZaEFnWGc1RllRbStIL2FsYTVabThaUElyV3k1eHFka2ljYUhXNjdVU0Y0PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
     "CERTIFICATEEXPIRATION": "P14000D",
     "CHECKSUMENABLED": true,
     "CHUNKSIZE": 1048576,
@@ -105,7 +105,9 @@
                 7,
                 8,
                 9,
-                10
+                10,
+                11,
+                12
             ],
             "options": [
                 {
@@ -151,6 +153,14 @@
                 {
                     "label": "error",
                     "value": 10
+                },
+                {
+                    "label": "homing",
+                    "value": 11
+                },
+                {
+                    "label": "estop",
+                    "value": 12
                 }
             ],
             "type": "integer"
@@ -169,7 +179,8 @@
                 4,
                 5,
                 6,
-                7
+                7,
+                8
             ],
             "options": [
                 {
@@ -203,6 +214,10 @@
                 {
                     "label": "estop",
                     "value": 7
+                },
+                {
+                    "label": "homing",
+                    "value": 8
                 }
             ],
             "type": "integer"
@@ -934,6 +949,16 @@
                         }
                     ]
                 },
+                "bC": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 12
+                        }
+                    ]
+                },
                 "bCMD_CLOSE_SWR": {
                     "allOf": [
                         {
@@ -964,26 +989,6 @@
                         }
                     ]
                 },
-                "bError_Condition_close": {
-                    "allOf": [
-                        {
-                            "$ref": "tchmi:general#/definitions/BOOL"
-                        },
-                        {
-                            "propertyOrder": 12
-                        }
-                    ]
-                },
-                "bError_Condition_open": {
-                    "allOf": [
-                        {
-                            "$ref": "tchmi:general#/definitions/BOOL"
-                        },
-                        {
-                            "propertyOrder": 11
-                        }
-                    ]
-                },
                 "bMANUAL": {
                     "allOf": [
                         {
@@ -991,6 +996,16 @@
                         },
                         {
                             "propertyOrder": 1
+                        }
+                    ]
+                },
+                "bO": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 11
                         }
                     ]
                 },
@@ -2719,6 +2734,26 @@
                         },
                         {
                             "propertyOrder": 9
+                        }
+                    ]
+                },
+                "bError_Condition_close": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 13
+                        }
+                    ]
+                },
+                "bError_Condition_open": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 12
                         }
                     ]
                 },
@@ -8177,7 +8212,7 @@
     "HTTP_FLOODPROTECTION": 10,
     "INITTIMEOUT": "PT10S",
     "KEEP_ALIVE": "PT40S",
-    "KEY": "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2UUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktjd2dnU2pBZ0VBQW9JQkFRRENXYVE5RUVMVFJzZDUKbERKVVNYOHBFQTFKK3d4U3ZPTWhpZTlvaXZPbXVQRUgxTkw5cGg3NTdMVklTR2F2a0FlWXNlS2RraFBYdXlpUwo4K24zcThJQnprV3dHeGFYZnJRU3llb2ZtaHROamg1Z0FlWGJDS3dKbFRiZ3BYaFBuYjRkVHJEZnoxSUljbXJxCkZZNHIwUEtGa2l1R1FjaWZNL1RBZmd3TjM1Y2g4T1haK0VCRmtBR0hmcGROd1UrSXZYaGcxTU03MTlha3g2b24KVzk2SDNwOWNvWHZ6Wi8vMlFIeVJQMnIzUkVtSG4yN2VEQTZjWlQrS1NxVUZkVjZtZkJpVmtkTEJYZ2xKVS9zMApSMUEveEdjemJWZkUxWkFwUzFlOGE2MGxNTnBDWFVkT2ZJWWxBdVB0Qnh0WlVoZVFvNHhEdHRGejNlblc1N29wCmlaTlNvYkhuQWdNQkFBRUNnZ0VBQzkrMkxSVGxRRXMrdktyVk9Ga1ZMOGtQUnNuVHd1cFBaaWtyTzFQaDl2bXQKb0REY2d5cTNFY1hvZlhZTzhBTDRzOWVLWk40YjRENUxDRTltcC84U1oxSFc2QjkvamRucjNvbi9oOWErZkVxRwppSThWSUFDem9oSS92QkhmKzkxRFZEOE9oMTMvUVF6Y2cxaTF5dStGSWF3QWhMOVlKb0hpSGpDVlEvTzVKQldjCmFWZGliU2pDbkVDSlhUUld0S09MZzk4dkRXb0FkRG1TMFlmWjYvZE4ra24yT1p3eWFKbEJxZCtyZlkxNk5BNjMKK0Y5TWRkK1VrS2dRdjFWaGRFOElqRXhXTlBsbGRVK3B0U0tHeFJMSXNwbHlNQ1BzNUZVWVlvaVM0N1c3aDFSbgp0VXBudm1iVXRnYzhQTk1wUnphZW9QNjZLQnR2ZVhIZUdENTJGZVZGWVFLQmdRRHJ0Ty8xeTE5SVk4YlUrNDZWCllrV1RvcitUSUhJd2ZLWG9rTUh2QU9FdzNkQVJUUEJ1UHdFSzlEQ2RRb3lVdWdPU3BMbWZhc0M4SWdVM1laS2IKbUVkZjZRNE1qYzIwVmRxU0hGN1Y3OTFaNDcyQlJRbmtCdXl5Zk96a0liSGxsazZTK3BPcVlxcW0rLzZCYkN5QgpOc1lrVy9GMktySit4dGpTK0xiWHFjS2V6UUtCZ1FEVEZUQjFKdDZrM3ZvbU5LMis4bWlKL1pjc3ZuNlhzVlkrCnRGcEtWQVM1VTVuakloZXA5ZTAwaTlaejNJMUVzR1VoRThZN3R1SDk1TWRCc01ydFpxbUtyc0tHOHVMSUhsNGIKenNBVGgweTVtQzVoaGN4ZnBuWmlSRXNJclFPOFZ5ZVN0NFBGK0NSZzhsRFUvOXJHaU8ybjNiWFBkOTUzU0R4MAplM2NIRk5Zcmd3S0JnQUpYWXNiVFJWZ0h2YkxoNk5HdER6bmZOUDMySll3N3dMNGxxZmVBejd2WGlEaVR4aE9pClJwVmdSWmRhVU9FdFU5bkNEeUg1UW43YjY2ZFlMY2VqNUptY1RBcHQ0aXczYWh0bmNyMjNTMENZVllxU0wvMzIKMzZVS1BxUXBmWVhsVDFTQWJyVVRrOVJpem0xa3NMQjc1YzM0cDlaZnFEUkFMMmt4RlVmaEpOREZBb0dBYUdNQQpOYzlsSjYvRmtZTlhzU2g4SGxHMG8wSUpwTWJrV2RvakZNTDhHeEtHOWRaMFVXNzNRWmN1Rk5vcldwN0pSRlJkCklrYk0rQnhkbGRUeVpmanhPMDQxa1Rzb2Y4TFUwM2VwY1g3bHFKcmp4UUxBRVVWbklpMlgxZENLR21nWGYrMFYKVTUvbGpiUUgyVzQyS1J5cU91dmY3NXZkL3F0UWltSk1lTW9MS0RVQ2dZRUFrc01QS0orQ3IwSXZNc1lRZGdvcgpsRlMzd1dJUzFjaGloT0FXSk5VUmVsbElpVWJXZlR6R0lqQURzSm00U2pPbGhMSW9LUllVc1p6VTd0dXY1WVQ5Ck5zVUFoU3hHVk0zMGYwNHloZUlLOXg2ZlF3c3U5Zjk3WlM5VUhPWjJZTmtTczNnejJ1dFlQbDJsbjJ4TUlab2QKS0l6RmNXNGVXQlMwYTByYmRRbEM3SjA9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K",
+    "KEY": "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2d0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktrd2dnU2xBZ0VBQW9JQkFRRGJFMjVZeWZjR3d0WHMKZVhRa2pYQjlCWE16NlJxYklORXVJTUg0ZktHMWpYbCtEaVN4V2xhaWVYQ2ZBbEFtUUFpUHU3WnJQMnBZaVVJawpXSmFpbTUxOGI3d2xTc1k3NVJSYWViZGg3NmVpUkJRZUxGKzZyWnlaWk9jV2w4NEs4alRUb2hWRTRXNmFzR2VhCmdXc0N0MncvcithdWZ5SDVoM1dYOXIvc2o5MFNmUzdHUmJPOTd4NkVhVUFCNEJ1S3ZWMFNXVEljODVIVGJVM0wKYXhTWU5MNkI1RDN6S2Z4U3RkdjFMMEN0b2tTUjk5RTQxN2JRY2wySkc2U1RlZThsM3hzbUhOcW1SYm9WUHdXLwpueEpJekg0VmhTdjZtVGYzeTdtWVpWRXp3cUcwQTBXV3Y1cXRHVFZOZTlhbHd1Y21vNkdPcEM1bk4xV3JhdjNQClEyN2hJdXFiQWdNQkFBRUNnZ0VCQUtuNi82bUF1MXpSbSs2cHBnWWVnR05nOFN3YjkvclprYlI2MGtZZFhkTmkKZkJ2a21XL0txbUhTWENIa1I1QUdLeDVyQlhWZGRRUlJLN0xMMGNWRmZRSnFKOCsvbnVRbU1JNnExakQxSkZwdwovRE1WTndtL1h6eGQ0RGZWZlpkY3FzUnloSkkzWC94Q1Y0QzRYZkZ6cEZnZUFaenZJOHRhNFZFUnNZUzVjMHk5CnlPVUpjWXRtNjFXdjRUMGVGbXEzVU1ad01pYmNEWVdOTE9BVk0wN0djL2svanJLVlJ2dU5tRXB4SEhvcG5idGQKaW9NWklnVkpkaU1jei9xbTQrVVg2K0NKS1RuUnZnaTFMclR5SXJ3OUl0Yk1PVFFSVXBDREJqaVNaSWZleWkrdApTRWNrbld5ZGlpZi8rTFFmVjlyMjZjVkk2RmhDeWZ1Y2YwL1VRTUdHSmlFQ2dZRUE5ZG9sNUpmVHdldGdzQ3NlCitrNnE0MjdHNS9SRFFHLy8wbC9DV3RxQ1VZVk8vUXFzZk8vcmw3ZHNmeEhjNzR2SVN2OWptYzRDK3ZDSU5sdTQKMk5OQXFnMjh3NmRRdUc2bmRzSW8wOEhyVXJJUktVUC9KVDhxTjNpZGlCUWZ4YmN2TnlVUUNrVlZaWUZjWk9XZQpoWlJHRlF3QzdQMzlCcUZYWkpURWRoakxHNE1DZ1lFQTVCNVlpMHB1MFl0UVJ3bEY2MzVHckszWXllV1pYbi8vCjN1VHRmUmk0YkVpSTJWbDdsaktibTcvUUVwMnB6ZklrYTBSVytvTDNZSzRXbE9VVnMvQzE1Yk0xWmpGQmpPa1UKbUtLb0xWdU4xWnpLTUpDMXowQTFzcGozUEFjYUV2RGhHeGswM01xVjZnSkRKUllFMkg0K2VRYXQzNldhMWw5YgpiTWgxWjBvRDBRa0NnWUVBMGQ2RUpHeDdKdm9RVXJLc3dnNHZrUEI2dVgxcGYzTmNWYkRMRDVXaVU0YlNFKzV0CnFrV0F2c1dreDZCdkVzb25rK1lKbHowbWpDS1NsSnlkNGZJTUxGNkh1aGwxTGN2QUJ2L2RyRTdJM0pJSFZrdW0KWFp4YkpIbEJPTzI4NWFIbm0xSjNLOTFkOWNXRkl0aGxCekM0MXJTbk5ybm1xaWRHbkNUbXhNMkxiSk1DZ1lFQQprU01oa05YMXRncWVNK1FaZ1dCaFZRSnkrTm5FLzlRT2x1RXVuTFg2dUtKWnQzZndZcnFtT0swTWxKdU5hd1BSCjJoR3NDVTBFV1pYSnRrZ2V5OUt0Mkl4eHdDZzhuWXU2Vi9hOWE4WmhjblNFUyt2MlVQdDRicjVXSnZJWnk4MUkKVzdabzVNVmNKbnZ6L29lSTQ3bEd4RGZVcm9PdUJSQzhtWFRkQmErWXlBa0NnWUIrTGdnTFpOUDUwMS9Ld1YzZQpQZVZXYnpkN2RXUlM0NzRsbDlOcUpOR2RpNTY3bFdrQnBjZ3BoWDA3cVU5STFGL0NIWW1uTVQvZkd1RkNzK05rCjJkNTdwVFdDMEFrMWFPU2hFWnlkMHorTWdJMDZJTklodG0yVVRXOCs3Q0RNQlM4MU85aDlkbUp6emZ2WW9BT1IKMWdpMENuenhkNTlBTFBxMkVJR2k3bWk5N3c9PQotLS0tLUVORCBQUklWQVRFIEtFWS0tLS0tCg==",
     "KEYPASSWORD": "",
     "LOCKOUT_PROTECTION_CLIENT_CERTIFICATE": true,
     "MAXCONNECTIONSPERCLIENT": 32,
@@ -8529,8 +8564,8 @@
     "REMOTESERVERS_CERTIFICATES": [],
     "REQUIREAUTH": 0,
     "SAMESITE_ATTRIBUTE": 2,
-    "SELFSIGNEDROOTCA": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURyRENDQXBTZ0F3SUJBZ0lKQUxzMWNNa3RYNnBnTUEwR0NTcUdTSWIzRFFFQkN3VUFNRUl4Q3pBSkJnTlYKQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RmpBVUJnTlZCQU1NRFV4VQpMVTVQUVUxU1gzSnZiM1F3SUJjTk1qTXdPREF5TURneE5qUTFXaGdQTWpBMk1URXhNekF3T0RFMk5EVmFNRUl4CkN6QUpCZ05WQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RmpBVUJnTlYKQkFNTURVeFVMVTVQUVUxU1gzSnZiM1F3Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLQW9JQgpBUURJSEVJNE9tR2xsZUN4MjJCQXY3ajFLSnl1VjVFWTNxSjNwN3lLY1ZMMDhIWWJzMXA5WSszS1NrNXRBeWNOCm5iSEtnS0psOU92NnVQTkV0amRxR0xmSlRCM1ErajNoeDZQN0d0TzJrck9hSjNaM25Id1loazRFKzdKa29ZV2wKY1lhVjNGWjVxT0hKUnJrNVRJa2FiVkQwZWxLNWtsS1NsTGl1TTR1MFdEQlM4Tklia0h4bnJNeUFyTDk1cmhxSwpMTVVkRnZWaG1jL3lqOFczd1F0NHM2Umc4Q2tQZGdpcDZhaGd3cTRweWt6QmtQWVdESC80ZUV5WnAxdENhVkhnCnYzWUJXeEMrc0tjWnMxc056NjVHa1FUU3dSaHNpNk5MMDl6WjgzaVN5NUxlRGE0MWVOSXhvdG80cWxwa2dCeE0KTm9seFJDY3NSK0FsQk55RDZtK0k0a0lWQWdNQkFBR2pnYUl3Z1o4d2JRWURWUjBSQkdZd1pJSUpiRzlqWVd4bwpiM04waHdSL0FBQUJoeEFBQUFBQUFBQUFBQUFBQUFBQUFBQUJnZ2hNVkMxT1QwRk5Vb0lYVEZRdFRrOUJUVkl1CmEyRjFabTFoYmkxeVpDNWpiMjJIQktuK3lQeUhCS3dRSGdlSEVQNkFBQUFBQUFBQStzUTBEbWpLeFljd0hRWUQKVlIwT0JCWUVGR0pIZ3JVU01TY2pZa3JzVlQvcUtieWh4eVJjTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3RFFZSgpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFDU045OGRBVElaSXZTa2JwbTBwdlEyMEtCdFcyeWt0dlk3TW9ZeVNUSU80ClRnR2pabmk2ODV2NDU3SUUwU1NqZy9PRzRZK0JBMnloVHhkK3lVMWp6WnNMNWJxcmNSRGc0RkhOMDY1WCt2NWMKblpDcmFmbDlhdUZPOFdiWjZpNDM4QVVLQ3dSNmVsbXY2VFdlNllvczFmQ2ZnRVFCNGRHZ0g5cTREUzd6ZWpkcQowVXFkZUJGOS8vSkdjRjV3WnBKM0NUMHUzbmZkL2NUSUxwdDJwOE1TSm8rYisvNnhhcnQ5RFgvZGNWaTJIYyt6CjBPQlpmTmQvMENPaStPR3RKRFFpSXJnSWxESXFPYUJzalJnUlR0UUsvZ2tlU3Q0RzA4NHB1TVBXTFB6Q0ZYRzcKMUUwS1E3dWR4WmEwQ3AveFFIU2FVcENGR3dwK1pFYjNyWkNOODdpR3N2cz0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=",
-    "SELFSIGNEDROOTCAKEY": "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2UUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktjd2dnU2pBZ0VBQW9JQkFRRENXYVE5RUVMVFJzZDUKbERKVVNYOHBFQTFKK3d4U3ZPTWhpZTlvaXZPbXVQRUgxTkw5cGg3NTdMVklTR2F2a0FlWXNlS2RraFBYdXlpUwo4K24zcThJQnprV3dHeGFYZnJRU3llb2ZtaHROamg1Z0FlWGJDS3dKbFRiZ3BYaFBuYjRkVHJEZnoxSUljbXJxCkZZNHIwUEtGa2l1R1FjaWZNL1RBZmd3TjM1Y2g4T1haK0VCRmtBR0hmcGROd1UrSXZYaGcxTU03MTlha3g2b24KVzk2SDNwOWNvWHZ6Wi8vMlFIeVJQMnIzUkVtSG4yN2VEQTZjWlQrS1NxVUZkVjZtZkJpVmtkTEJYZ2xKVS9zMApSMUEveEdjemJWZkUxWkFwUzFlOGE2MGxNTnBDWFVkT2ZJWWxBdVB0Qnh0WlVoZVFvNHhEdHRGejNlblc1N29wCmlaTlNvYkhuQWdNQkFBRUNnZ0VBQzkrMkxSVGxRRXMrdktyVk9Ga1ZMOGtQUnNuVHd1cFBaaWtyTzFQaDl2bXQKb0REY2d5cTNFY1hvZlhZTzhBTDRzOWVLWk40YjRENUxDRTltcC84U1oxSFc2QjkvamRucjNvbi9oOWErZkVxRwppSThWSUFDem9oSS92QkhmKzkxRFZEOE9oMTMvUVF6Y2cxaTF5dStGSWF3QWhMOVlKb0hpSGpDVlEvTzVKQldjCmFWZGliU2pDbkVDSlhUUld0S09MZzk4dkRXb0FkRG1TMFlmWjYvZE4ra24yT1p3eWFKbEJxZCtyZlkxNk5BNjMKK0Y5TWRkK1VrS2dRdjFWaGRFOElqRXhXTlBsbGRVK3B0U0tHeFJMSXNwbHlNQ1BzNUZVWVlvaVM0N1c3aDFSbgp0VXBudm1iVXRnYzhQTk1wUnphZW9QNjZLQnR2ZVhIZUdENTJGZVZGWVFLQmdRRHJ0Ty8xeTE5SVk4YlUrNDZWCllrV1RvcitUSUhJd2ZLWG9rTUh2QU9FdzNkQVJUUEJ1UHdFSzlEQ2RRb3lVdWdPU3BMbWZhc0M4SWdVM1laS2IKbUVkZjZRNE1qYzIwVmRxU0hGN1Y3OTFaNDcyQlJRbmtCdXl5Zk96a0liSGxsazZTK3BPcVlxcW0rLzZCYkN5QgpOc1lrVy9GMktySit4dGpTK0xiWHFjS2V6UUtCZ1FEVEZUQjFKdDZrM3ZvbU5LMis4bWlKL1pjc3ZuNlhzVlkrCnRGcEtWQVM1VTVuakloZXA5ZTAwaTlaejNJMUVzR1VoRThZN3R1SDk1TWRCc01ydFpxbUtyc0tHOHVMSUhsNGIKenNBVGgweTVtQzVoaGN4ZnBuWmlSRXNJclFPOFZ5ZVN0NFBGK0NSZzhsRFUvOXJHaU8ybjNiWFBkOTUzU0R4MAplM2NIRk5Zcmd3S0JnQUpYWXNiVFJWZ0h2YkxoNk5HdER6bmZOUDMySll3N3dMNGxxZmVBejd2WGlEaVR4aE9pClJwVmdSWmRhVU9FdFU5bkNEeUg1UW43YjY2ZFlMY2VqNUptY1RBcHQ0aXczYWh0bmNyMjNTMENZVllxU0wvMzIKMzZVS1BxUXBmWVhsVDFTQWJyVVRrOVJpem0xa3NMQjc1YzM0cDlaZnFEUkFMMmt4RlVmaEpOREZBb0dBYUdNQQpOYzlsSjYvRmtZTlhzU2g4SGxHMG8wSUpwTWJrV2RvakZNTDhHeEtHOWRaMFVXNzNRWmN1Rk5vcldwN0pSRlJkCklrYk0rQnhkbGRUeVpmanhPMDQxa1Rzb2Y4TFUwM2VwY1g3bHFKcmp4UUxBRVVWbklpMlgxZENLR21nWGYrMFYKVTUvbGpiUUgyVzQyS1J5cU91dmY3NXZkL3F0UWltSk1lTW9MS0RVQ2dZRUFrc01QS0orQ3IwSXZNc1lRZGdvcgpsRlMzd1dJUzFjaGloT0FXSk5VUmVsbElpVWJXZlR6R0lqQURzSm00U2pPbGhMSW9LUllVc1p6VTd0dXY1WVQ5Ck5zVUFoU3hHVk0zMGYwNHloZUlLOXg2ZlF3c3U5Zjk3WlM5VUhPWjJZTmtTczNnejJ1dFlQbDJsbjJ4TUlab2QKS0l6RmNXNGVXQlMwYTByYmRRbEM3SjA9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K",
+    "SELFSIGNEDROOTCA": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURyRENDQXBTZ0F3SUJBZ0lKQUt6UUNkU2dMOHR6TUEwR0NTcUdTSWIzRFFFQkN3VUFNRUl4Q3pBSkJnTlYKQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RmpBVUJnTlZCQU1NRFV4VQpMVTVQUVUxU1gzSnZiM1F3SUJjTk1qTXdPREF5TVRFMU9URTFXaGdQTWpBMk1URXhNekF4TVRVNU1UVmFNRUl4CkN6QUpCZ05WQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RmpBVUJnTlYKQkFNTURVeFVMVTVQUVUxU1gzSnZiM1F3Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLQW9JQgpBUURnZW94Y05GbXFmd2g2TzZsTEVHVUJDRk4yY1cyN3MxTmptRG1tR0VEaFAwNlNsb3hPNlJWMHV2L1YrZ1R6CkFCUDVLZDJha2pZZ3BTRFFDM3N3RnpYUk5idGUwaUJ0KzJXR0tONWczdEVDbzVhR21iWmJ3VHZPY3NqSG5VVmsKcVdaSGpwVHhHQTQrSXNiRVlYUFhjRFplSGhKbytXWlVKYnFjS2pFeUFHbFhtNE1tSmkrQnRLZjNnZU1CVFhjaQp4UmxOSVFUNU12cWI3SGhOVjZZQ1drUHEyV2EvU0NtM2J4dzk3NFd2S05qSFZEdzIyZmtRTTV4ckZvZ0h1TTMzCnYyajgzSmc5OXlIUVJndC9Md09DVWIvSWtJbTR1VlNFZUI2TnlCRDNpaUMvUThlNUlpSlVVeStGVk9ObncrRTEKZ0hwUU95ZGJESXpTUVg3dnlOc0g2MXJkQWdNQkFBR2pnYUl3Z1o4d2JRWURWUjBSQkdZd1pJSUpiRzlqWVd4bwpiM04waHdSL0FBQUJoeEFBQUFBQUFBQUFBQUFBQUFBQUFBQUJnZ2hNVkMxT1QwRk5Vb0lYVEZRdFRrOUJUVkl1CmEyRjFabTFoYmkxeVpDNWpiMjJIQktuK3lQeUhCS3dRSGdlSEVQNkFBQUFBQUFBQStzUTBEbWpLeFljd0hRWUQKVlIwT0JCWUVGRmdxVTMyQWl3dkc5VnZ6eXExcnVTa0JWOTBjTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3RFFZSgpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFBWS84L1U1U0NUUHV1OXdRczNqZXB3Rk8zZ0YyK2paS3A2Qms0Ynkyenp4CktXWDdXTTh1Wk5pTWlMNjZMdG5JbE45elQ3c1MxeFhkbWh4bFJCQWpkUmNJbXZVMURtQlVXeFR1VWxpdE96RlIKSTF5eU9CdkRkR3d6azZPc2ZBOG91Z3grQnJoQSt0SVc0Q3RDc3F5QmtPYVNpRGNuemd2Zk12NjhDcDllVzZnSwpseVFpZVc1WDZhRTRNZmlsVTlzeTZacy9kM0lFVUJ2Z2tvamNueHlacTVNWCttSUF5aEQyNkU1YktZYmRPTThaCmdxVncwY2JLZU93dHQ2NUpvSjFNLzMyVzBFR0t3eHRUb096bzRVNi85TXhDNWlVSFl1TFlEY3QwV0lRdmRqTEYKWWhBZ1hnNUZZUW0rSC9hbGE1Wm04WlBJcld5NXhxZGtpY2FIVzY3VVNGND0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=",
+    "SELFSIGNEDROOTCAKEY": "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2d0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktrd2dnU2xBZ0VBQW9JQkFRRGJFMjVZeWZjR3d0WHMKZVhRa2pYQjlCWE16NlJxYklORXVJTUg0ZktHMWpYbCtEaVN4V2xhaWVYQ2ZBbEFtUUFpUHU3WnJQMnBZaVVJawpXSmFpbTUxOGI3d2xTc1k3NVJSYWViZGg3NmVpUkJRZUxGKzZyWnlaWk9jV2w4NEs4alRUb2hWRTRXNmFzR2VhCmdXc0N0MncvcithdWZ5SDVoM1dYOXIvc2o5MFNmUzdHUmJPOTd4NkVhVUFCNEJ1S3ZWMFNXVEljODVIVGJVM0wKYXhTWU5MNkI1RDN6S2Z4U3RkdjFMMEN0b2tTUjk5RTQxN2JRY2wySkc2U1RlZThsM3hzbUhOcW1SYm9WUHdXLwpueEpJekg0VmhTdjZtVGYzeTdtWVpWRXp3cUcwQTBXV3Y1cXRHVFZOZTlhbHd1Y21vNkdPcEM1bk4xV3JhdjNQClEyN2hJdXFiQWdNQkFBRUNnZ0VCQUtuNi82bUF1MXpSbSs2cHBnWWVnR05nOFN3YjkvclprYlI2MGtZZFhkTmkKZkJ2a21XL0txbUhTWENIa1I1QUdLeDVyQlhWZGRRUlJLN0xMMGNWRmZRSnFKOCsvbnVRbU1JNnExakQxSkZwdwovRE1WTndtL1h6eGQ0RGZWZlpkY3FzUnloSkkzWC94Q1Y0QzRYZkZ6cEZnZUFaenZJOHRhNFZFUnNZUzVjMHk5CnlPVUpjWXRtNjFXdjRUMGVGbXEzVU1ad01pYmNEWVdOTE9BVk0wN0djL2svanJLVlJ2dU5tRXB4SEhvcG5idGQKaW9NWklnVkpkaU1jei9xbTQrVVg2K0NKS1RuUnZnaTFMclR5SXJ3OUl0Yk1PVFFSVXBDREJqaVNaSWZleWkrdApTRWNrbld5ZGlpZi8rTFFmVjlyMjZjVkk2RmhDeWZ1Y2YwL1VRTUdHSmlFQ2dZRUE5ZG9sNUpmVHdldGdzQ3NlCitrNnE0MjdHNS9SRFFHLy8wbC9DV3RxQ1VZVk8vUXFzZk8vcmw3ZHNmeEhjNzR2SVN2OWptYzRDK3ZDSU5sdTQKMk5OQXFnMjh3NmRRdUc2bmRzSW8wOEhyVXJJUktVUC9KVDhxTjNpZGlCUWZ4YmN2TnlVUUNrVlZaWUZjWk9XZQpoWlJHRlF3QzdQMzlCcUZYWkpURWRoakxHNE1DZ1lFQTVCNVlpMHB1MFl0UVJ3bEY2MzVHckszWXllV1pYbi8vCjN1VHRmUmk0YkVpSTJWbDdsaktibTcvUUVwMnB6ZklrYTBSVytvTDNZSzRXbE9VVnMvQzE1Yk0xWmpGQmpPa1UKbUtLb0xWdU4xWnpLTUpDMXowQTFzcGozUEFjYUV2RGhHeGswM01xVjZnSkRKUllFMkg0K2VRYXQzNldhMWw5YgpiTWgxWjBvRDBRa0NnWUVBMGQ2RUpHeDdKdm9RVXJLc3dnNHZrUEI2dVgxcGYzTmNWYkRMRDVXaVU0YlNFKzV0CnFrV0F2c1dreDZCdkVzb25rK1lKbHowbWpDS1NsSnlkNGZJTUxGNkh1aGwxTGN2QUJ2L2RyRTdJM0pJSFZrdW0KWFp4YkpIbEJPTzI4NWFIbm0xSjNLOTFkOWNXRkl0aGxCekM0MXJTbk5ybm1xaWRHbkNUbXhNMkxiSk1DZ1lFQQprU01oa05YMXRncWVNK1FaZ1dCaFZRSnkrTm5FLzlRT2x1RXVuTFg2dUtKWnQzZndZcnFtT0swTWxKdU5hd1BSCjJoR3NDVTBFV1pYSnRrZ2V5OUt0Mkl4eHdDZzhuWXU2Vi9hOWE4WmhjblNFUyt2MlVQdDRicjVXSnZJWnk4MUkKVzdabzVNVmNKbnZ6L29lSTQ3bEd4RGZVcm9PdUJSQzhtWFRkQmErWXlBa0NnWUIrTGdnTFpOUDUwMS9Ld1YzZQpQZVZXYnpkN2RXUlM0NzRsbDlOcUpOR2RpNTY3bFdrQnBjZ3BoWDA3cVU5STFGL0NIWW1uTVQvZkd1RkNzK05rCjJkNTdwVFdDMEFrMWFPU2hFWnlkMHorTWdJMDZJTklodG0yVVRXOCs3Q0RNQlM4MU85aDlkbUp6emZ2WW9BT1IKMWdpMENuenhkNTlBTFBxMkVJR2k3bWk5N3c9PQotLS0tLUVORCBQUklWQVRFIEtFWS0tLS0tCg==",
     "SESSIONSTORAGE": {},
     "SHOW_CONFIGURATION_HINTS": true,
     "SHOW_MAINTENANCE_MODE": true,
@@ -11095,6 +11130,23 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.GVL.fbPiston.0.bC": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::fbPiston[0]::bC",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 12
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "PLC1.GVL.fbPiston.0.bCMD_OPEN_SWR": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -11112,28 +11164,11 @@
             },
             "USEMAPPING": true
         },
-        "PLC1.GVL.fbPiston.0.bError_Condition_close": {
+        "PLC1.GVL.fbPiston.0.bO": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
             "DYNAMIC": true,
-            "MAPPING": "PLC1::GVL::fbPiston[0]::bError_Condition_close",
-            "SCHEMA": {
-                "allOf": [
-                    {
-                        "$ref": "tchmi:general#/definitions/BOOL"
-                    },
-                    {
-                        "propertyOrder": 12
-                    }
-                ]
-            },
-            "USEMAPPING": true
-        },
-        "PLC1.GVL.fbPiston.0.bError_Condition_open": {
-            "ACCESS": 3,
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "MAPPING": "PLC1::GVL::fbPiston[0]::bError_Condition_open",
+            "MAPPING": "PLC1::GVL::fbPiston[0]::bO",
             "SCHEMA": {
                 "allOf": [
                     {
@@ -11156,47 +11191,13 @@
             },
             "USEMAPPING": true
         },
-        "PLC1.GVL.fbPiston.1.bError_Condition_close": {
-            "ACCESS": 3,
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "MAPPING": "PLC1::GVL::fbPiston[1]::bError_Condition_close",
-            "SCHEMA": {
-                "allOf": [
-                    {
-                        "$ref": "tchmi:general#/definitions/BOOL"
-                    },
-                    {
-                        "propertyOrder": 12
-                    }
-                ]
-            },
-            "USEMAPPING": true
-        },
-        "PLC1.GVL.fbPiston.1.bError_Condition_open": {
-            "ACCESS": 3,
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "MAPPING": "PLC1::GVL::fbPiston[1]::bError_Condition_open",
-            "SCHEMA": {
-                "allOf": [
-                    {
-                        "$ref": "tchmi:general#/definitions/BOOL"
-                    },
-                    {
-                        "propertyOrder": 11
-                    }
-                ]
-            },
-            "USEMAPPING": true
-        },
         "PLC1.GVL.fbPiston.10": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
             "DYNAMIC": true,
             "MAPPING": "PLC1::GVL::fbPiston[10]",
             "SCHEMA": {
-                "$ref": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON"
+                "$ref": "tchmi:server#/definitions/PLC1.FB_PISTON"
             },
             "USEMAPPING": true
         },
@@ -11206,7 +11207,7 @@
             "DYNAMIC": true,
             "MAPPING": "PLC1::GVL::fbPiston[11]",
             "SCHEMA": {
-                "$ref": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON"
+                "$ref": "tchmi:server#/definitions/PLC1.FB_PISTON"
             },
             "USEMAPPING": true
         },
@@ -11216,7 +11217,7 @@
             "DYNAMIC": true,
             "MAPPING": "PLC1::GVL::fbPiston[12]",
             "SCHEMA": {
-                "$ref": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON"
+                "$ref": "tchmi:server#/definitions/PLC1.FB_PISTON"
             },
             "USEMAPPING": true
         },
@@ -11226,7 +11227,7 @@
             "DYNAMIC": true,
             "MAPPING": "PLC1::GVL::fbPiston[13]",
             "SCHEMA": {
-                "$ref": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON"
+                "$ref": "tchmi:server#/definitions/PLC1.FB_PISTON"
             },
             "USEMAPPING": true
         },
@@ -11236,7 +11237,7 @@
             "DYNAMIC": true,
             "MAPPING": "PLC1::GVL::fbPiston[2]",
             "SCHEMA": {
-                "$ref": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON"
+                "$ref": "tchmi:server#/definitions/PLC1.FB_PISTON"
             },
             "USEMAPPING": true
         },
@@ -11246,7 +11247,7 @@
             "DYNAMIC": true,
             "MAPPING": "PLC1::GVL::fbPiston[3]",
             "SCHEMA": {
-                "$ref": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON"
+                "$ref": "tchmi:server#/definitions/PLC1.FB_PISTON"
             },
             "USEMAPPING": true
         },
@@ -11256,7 +11257,7 @@
             "DYNAMIC": true,
             "MAPPING": "PLC1::GVL::fbPiston[4]",
             "SCHEMA": {
-                "$ref": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON"
+                "$ref": "tchmi:server#/definitions/PLC1.FB_PISTON"
             },
             "USEMAPPING": true
         },
@@ -11266,7 +11267,7 @@
             "DYNAMIC": true,
             "MAPPING": "PLC1::GVL::fbPiston[5]",
             "SCHEMA": {
-                "$ref": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON"
+                "$ref": "tchmi:server#/definitions/PLC1.FB_PISTON"
             },
             "USEMAPPING": true
         },
@@ -11276,7 +11277,7 @@
             "DYNAMIC": true,
             "MAPPING": "PLC1::GVL::fbPiston[6]",
             "SCHEMA": {
-                "$ref": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON"
+                "$ref": "tchmi:server#/definitions/PLC1.FB_PISTON"
             },
             "USEMAPPING": true
         },
@@ -11286,7 +11287,7 @@
             "DYNAMIC": true,
             "MAPPING": "PLC1::GVL::fbPiston[7]",
             "SCHEMA": {
-                "$ref": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON"
+                "$ref": "tchmi:server#/definitions/PLC1.FB_PISTON"
             },
             "USEMAPPING": true
         },
@@ -11296,7 +11297,7 @@
             "DYNAMIC": true,
             "MAPPING": "PLC1::GVL::fbPiston[8]",
             "SCHEMA": {
-                "$ref": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON"
+                "$ref": "tchmi:server#/definitions/PLC1.FB_PISTON"
             },
             "USEMAPPING": true
         },
@@ -11306,7 +11307,7 @@
             "DYNAMIC": true,
             "MAPPING": "PLC1::GVL::fbPiston[9]",
             "SCHEMA": {
-                "$ref": "tchmi:server#/definitions/PLC1.FB_NEW_PISTON"
+                "$ref": "tchmi:server#/definitions/PLC1.FB_PISTON"
             },
             "USEMAPPING": true
         },
@@ -11373,6 +11374,23 @@
                     },
                     {
                         "propertyOrder": 9
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.stPISTON_PARAM.0.bError_Condition_open": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::stPISTON_PARAM[0]::bError_Condition_open",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 12
                     }
                 ]
             },
@@ -12341,9 +12359,11 @@
                 "PLC1.GVL.eSUPPLY_CONVAYOR_STATE": 3,
                 "PLC1.GVL.fbCART": 3,
                 "PLC1.GVL.fbPiston.0": 3,
+                "PLC1.GVL.fbPiston.0.bC": 3,
                 "PLC1.GVL.fbPiston.0.bCMD_OPEN_SWR": 3,
                 "PLC1.GVL.fbPiston.0.bError_Condition_close": 3,
                 "PLC1.GVL.fbPiston.0.bError_Condition_open": 3,
+                "PLC1.GVL.fbPiston.0.bO": 3,
                 "PLC1.GVL.fbPiston.1": 3,
                 "PLC1.GVL.fbPiston.1.bError_Condition_close": 3,
                 "PLC1.GVL.fbPiston.1.bError_Condition_open": 3,
@@ -12364,6 +12384,7 @@
                 "PLC1.GVL.stPISTON_PARAM.0.bDepened_close2": 3,
                 "PLC1.GVL.stPISTON_PARAM.0.bDepened_open1": 3,
                 "PLC1.GVL.stPISTON_PARAM.0.bDepened_open2": 3,
+                "PLC1.GVL.stPISTON_PARAM.0.bError_Condition_open": 3,
                 "PLC1.MAIN.fbNewPiston": 3,
                 "PLC1.MAIN.fbNewPiston.PistonStatus": 3,
                 "PLC1.MAIN.fbPiston_B1": 3,
