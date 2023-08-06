@@ -6,6 +6,7 @@ VAR
 	
 	bSTARTUP: BOOL:=FALSE;
 	counter: INT;
+	MANUALcOUNTER:int:=0;
 	timimg: REAL:=0.4;
 	
 END_VAR
@@ -20,10 +21,7 @@ END_VAR
 	stPISTON_PARAM[1].timeoutOpen:=T#3S;
 	stPISTON_PARAM[1].timeoutClose:=T#3S;
 	stPISTON_PARAM[1].ePISTON_TYPE:= 0;
-	stPISTON_PARAM[1].bDepened_open1:=TRUE;
-	stPISTON_PARAM[1].bDepened_open2:=TRUE;
-	stPISTON_PARAM[1].bDepened_close1:=TRUE;
-	stPISTON_PARAM[1].bDepened_close2:=TRUE;
+	
 	
 	stPISTON_PARAM[2].nNAME:='SUPPLY2';
 	stPISTON_PARAM[2].bOPEN_BY_DEFAULT:=FALSE;
@@ -32,10 +30,7 @@ END_VAR
 	stPISTON_PARAM[2].timeoutOpen:=T#2S;
 	stPISTON_PARAM[2].timeoutClose:=T#2S;
 	stPISTON_PARAM[2].ePISTON_TYPE:= 0;
-	stPISTON_PARAM[2].bDepened_open1:=TRUE;
-	stPISTON_PARAM[2].bDepened_open2:=TRUE;
-	stPISTON_PARAM[2].bDepened_close1:=TRUE;
-	stPISTON_PARAM[2].bDepened_close2:=TRUE;
+	
 	
 	stPISTON_PARAM[3].nNAME:='SEPARATE1 UP_DOWN';
 	stPISTON_PARAM[3].bOPEN_BY_DEFAULT:=FALSE;
@@ -44,10 +39,7 @@ END_VAR
 	stPISTON_PARAM[3].timeoutOpen:=T#3S;
 	stPISTON_PARAM[3].timeoutClose:=T#3S;
 	stPISTON_PARAM[3].ePISTON_TYPE:= 0;
-	stPISTON_PARAM[3].bDepened_open1:=TRUE;
-	stPISTON_PARAM[3].bDepened_open2:=TRUE;
-	stPISTON_PARAM[3].bDepened_close1:=TRUE;
-	stPISTON_PARAM[3].bDepened_close2:=TRUE;
+	
 	
 	stPISTON_PARAM[4].nNAME:='SEPARATE1 COLET';
 	stPISTON_PARAM[4].bOPEN_BY_DEFAULT:=FALSE;
@@ -56,10 +48,7 @@ END_VAR
 	stPISTON_PARAM[4].timeoutOpen:=T#3S;
 	stPISTON_PARAM[4].timeoutClose:=T#3S;
 	stPISTON_PARAM[4].ePISTON_TYPE:= 0;
-	stPISTON_PARAM[4].bDepened_open1:=TRUE;
-	stPISTON_PARAM[4].bDepened_open2:=TRUE;
-	stPISTON_PARAM[4].bDepened_close1:=TRUE;
-	stPISTON_PARAM[4].bDepened_close2:=TRUE;
+	
 	
 	stPISTON_PARAM[5].nNAME:='SEPARATE1 PULL';
 	stPISTON_PARAM[5].bOPEN_BY_DEFAULT:=FALSE;
@@ -68,10 +57,7 @@ END_VAR
 	stPISTON_PARAM[5].timeoutOpen:=T#3S;
 	stPISTON_PARAM[5].timeoutClose:=T#3S;
 	stPISTON_PARAM[5].ePISTON_TYPE:= 0;
-	stPISTON_PARAM[5].bDepened_open1:=TRUE;
-	stPISTON_PARAM[5].bDepened_open2:=TRUE;
-	stPISTON_PARAM[5].bDepened_close1:=TRUE;
-	stPISTON_PARAM[5].bDepened_close2:=TRUE;
+	
 	
 	stPISTON_PARAM[6].nNAME:='SEPARATE1 TRAY';
 	stPISTON_PARAM[6].bOPEN_BY_DEFAULT:=FALSE;
@@ -80,10 +66,7 @@ END_VAR
 	stPISTON_PARAM[6].timeoutOpen:=T#3S;
 	stPISTON_PARAM[6].timeoutClose:=T#3S;
 	stPISTON_PARAM[6].ePISTON_TYPE:= 0;
-	stPISTON_PARAM[6].bDepened_open1:=TRUE;
-	stPISTON_PARAM[6].bDepened_open2:=TRUE;
-	stPISTON_PARAM[6].bDepened_close1:=TRUE;
-	stPISTON_PARAM[6].bDepened_close2:=TRUE;
+	
 	
 	stPISTON_PARAM[7].nNAME:='SEPARATE1 PINS';
 	stPISTON_PARAM[7].bOPEN_BY_DEFAULT:=FALSE;
@@ -92,10 +75,7 @@ END_VAR
 	stPISTON_PARAM[7].timeoutOpen:=T#3S;
 	stPISTON_PARAM[7].timeoutClose:=T#3S;
 	stPISTON_PARAM[7].ePISTON_TYPE:= 0;
-	stPISTON_PARAM[7].bDepened_open1:=TRUE;
-	stPISTON_PARAM[7].bDepened_open2:=TRUE;
-	stPISTON_PARAM[7].bDepened_close1:=TRUE;
-	stPISTON_PARAM[7].bDepened_close2:=TRUE;
+	
 	
 	stPISTON_PARAM[8].nNAME:='SEPARATE2 UP_DOWN';
 	stPISTON_PARAM[8].bOPEN_BY_DEFAULT:=FALSE;
@@ -104,10 +84,7 @@ END_VAR
 	stPISTON_PARAM[8].timeoutOpen:=T#3S;
 	stPISTON_PARAM[8].timeoutClose:=T#3S;
 	stPISTON_PARAM[8].ePISTON_TYPE:= 0;
-	stPISTON_PARAM[8].bDepened_open1:=TRUE;
-	stPISTON_PARAM[8].bDepened_open2:=TRUE;
-	stPISTON_PARAM[8].bDepened_close1:=TRUE;
-	stPISTON_PARAM[8].bDepened_close2:=TRUE;
+	
 	
 	stPISTON_PARAM[9].nNAME:='SEPARATE2 GRIP';
 	stPISTON_PARAM[9].bOPEN_BY_DEFAULT:=FALSE;
@@ -116,10 +93,7 @@ END_VAR
 	stPISTON_PARAM[9].timeoutOpen:=T#3S;
 	stPISTON_PARAM[9].timeoutClose:=T#3S;
 	stPISTON_PARAM[9].ePISTON_TYPE:= 0;
-	stPISTON_PARAM[9].bDepened_open1:=TRUE;
-	stPISTON_PARAM[9].bDepened_open2:=TRUE;
-	stPISTON_PARAM[9].bDepened_close1:=TRUE;
-	stPISTON_PARAM[9].bDepened_close2:=TRUE;
+	
 	
 	stPISTON_PARAM[10].nNAME:='SEPARATE2 PULL';
 	stPISTON_PARAM[10].bOPEN_BY_DEFAULT:=FALSE;
@@ -128,10 +102,7 @@ END_VAR
 	stPISTON_PARAM[10].timeoutOpen:=T#3S;
 	stPISTON_PARAM[10].timeoutClose:=T#3S;
 	stPISTON_PARAM[10].ePISTON_TYPE:= 0;
-	stPISTON_PARAM[10].bDepened_open1:=TRUE;
-	stPISTON_PARAM[10].bDepened_open2:=TRUE;
-	stPISTON_PARAM[10].bDepened_close1:=TRUE;
-	stPISTON_PARAM[10].bDepened_close2:=TRUE;
+	
 	
 	stPISTON_PARAM[11].nNAME:='SEPARATE2 TRAY';
 	stPISTON_PARAM[11].bOPEN_BY_DEFAULT:=FALSE;
@@ -140,10 +111,6 @@ END_VAR
 	stPISTON_PARAM[11].timeoutOpen:=T#3S;
 	stPISTON_PARAM[11].timeoutClose:=T#3S;
 	stPISTON_PARAM[11].ePISTON_TYPE:= 0;
-	stPISTON_PARAM[11].bDepened_open1:=TRUE;
-	stPISTON_PARAM[11].bDepened_open2:=TRUE;
-	stPISTON_PARAM[11].bDepened_close1:=TRUE;
-	stPISTON_PARAM[11].bDepened_close2:=TRUE;
 	
 	stPISTON_PARAM[12].nNAME:='SEPARATE2 PINS';
 	stPISTON_PARAM[12].bOPEN_BY_DEFAULT:=FALSE;
@@ -152,10 +119,6 @@ END_VAR
 	stPISTON_PARAM[12].timeoutOpen:=T#3S;
 	stPISTON_PARAM[12].timeoutClose:=T#3S;
 	stPISTON_PARAM[12].ePISTON_TYPE:= 0;
-	stPISTON_PARAM[12].bDepened_open1:=TRUE;
-	stPISTON_PARAM[12].bDepened_open2:=TRUE;
-	stPISTON_PARAM[12].bDepened_close1:=TRUE;
-	stPISTON_PARAM[12].bDepened_close2:=TRUE;
 	
 	stPISTON_PARAM[13].nNAME:='ADVANCE';
 	stPISTON_PARAM[13].bOPEN_BY_DEFAULT:=FALSE;
@@ -164,10 +127,6 @@ END_VAR
 	stPISTON_PARAM[13].timeoutOpen:=T#3S;
 	stPISTON_PARAM[13].timeoutClose:=T#3S;
 	stPISTON_PARAM[13].ePISTON_TYPE:= 0;
-	stPISTON_PARAM[13].bDepened_open1:=TRUE;
-	stPISTON_PARAM[13].bDepened_open2:=TRUE;
-	stPISTON_PARAM[13].bDepened_close1:=TRUE;
-	stPISTON_PARAM[13].bDepened_close2:=TRUE;
 	
 	stPISTON_PARAM[14].nNAME:='CLEAN';
 	stPISTON_PARAM[14].bOPEN_BY_DEFAULT:=FALSE;
@@ -176,10 +135,6 @@ END_VAR
 	stPISTON_PARAM[14].timeoutOpen:=T#3S;
 	stPISTON_PARAM[14].timeoutClose:=T#3S;
 	stPISTON_PARAM[14].ePISTON_TYPE:= 0;
-	stPISTON_PARAM[14].bDepened_open1:=TRUE;
-	stPISTON_PARAM[14].bDepened_open2:=TRUE;
-	stPISTON_PARAM[14].bDepened_close1:=TRUE;
-	stPISTON_PARAM[14].bDepened_close2:=TRUE;
 	
 	FOR counter:=1 TO iNUMBER_OF_PISTONS BY 1 DO
 		fbPiston[counter](stPISTON:=stPISTON_PARAM[counter]);
@@ -187,9 +142,22 @@ END_VAR
 	
 	bSTARTUP:=TRUE;
 END_IF
+
+MANUALcOUNTER:=0;
 FOR counter:=1 TO iNUMBER_OF_PISTONS BY 1 DO
+	IF fbPiston[counter].bMANUAL THEN
+		bManual_mode:=TRUE;
+		manualCounter:= manualCounter+1;
+	END_IF
 	fbPiston[counter]();
-END_FOR;]]></ST>
+END_FOR;
+
+IF manualCounter = 0 THEN
+	bManual_mode:=FALSE;
+END_IF
+
+//fbPiston[1].bDepened_open1:=TRUE;   //supply 1
+//fbPiston[2].bDepened_open1:=TRUE;   //supply 2]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

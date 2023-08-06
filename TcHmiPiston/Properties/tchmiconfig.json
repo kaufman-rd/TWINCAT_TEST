@@ -79,6 +79,12 @@
     },
     {
       "url": "Controls/SMALL_MOTOR.usercontrol"
+    },
+    {
+      "url": "Controls/ERROR_LED.usercontrol"
+    },
+    {
+      "url": "Controls/G_PISTON.usercontrol"
     }
   ],
   "content": [

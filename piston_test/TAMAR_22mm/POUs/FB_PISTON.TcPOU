@@ -12,6 +12,10 @@ VAR_INPUT
 	bCMD_OPEN: BOOL;
 	bSEN_OPEN AT%I*: BOOL;
 	bSEN_CLOSE AT%I*: BOOL;
+	bDepened_open1:BOOL:=TRUE;
+	bDepened_open2:BOOL:=TRUE;
+	bDepened_close1:BOOL:=TRUE;
+	bDepened_close2:BOOL:=TRUE;
 	
 	
 END_VAR
@@ -19,8 +23,8 @@ VAR_OUTPUT
 	PistonStatus:ePistonStatus;
 	bVALVE_OPEN: BOOL;
 	bVALVE_CLOSE: BOOL;
-	bO:BOOL;
-	bC:BOOL;
+	bError_Condition_open:BOOL;
+	bError_Condition_close:BOOL;
 	
 END_VAR
 VAR
@@ -45,33 +49,33 @@ timeoutOpening(IN:= bVALVE_OPEN AND NOT bSEN_OPEN, PT:= stPISTON.timeoutOpen, Q=
 timeoutClosing(IN:= NOT bVALVE_OPEN AND NOT bSEN_CLOSE, PT:= stPISTON.timeoutClose, Q=> , ET=> );
 
 IF bMANUAL THEN
-	IF bCMD_OPEN AND stPISTON.bDepened_open1 THEN
+	IF bCMD_OPEN AND bDepened_open1 THEN
 		bVALVE_OPEN:= bCMD_OPEN;
-		stPISTON.bError_Condition_open:=FALSE;	
-	ELSIF bCMD_OPEN AND NOT stPISTON.bDepened_open1 THEN
-		stPISTON.bError_Condition_open:=TRUE;
+		bError_Condition_open:=FALSE;	
+	ELSIF bCMD_OPEN AND NOT bDepened_open1 THEN
+		bError_Condition_open:=TRUE;
 	END_IF
 	
-	IF NOT bCMD_OPEN AND stPISTON.bDepened_close1 THEN
+	IF NOT bCMD_OPEN AND bDepened_close1 THEN
 		bVALVE_OPEN:= bCMD_OPEN;
-		stPISTON.bError_Condition_close:=FALSE;	
-	ELSIF NOT bCMD_OPEN AND NOT stPISTON.bDepened_close1 THEN
-		stPISTON.bError_Condition_close:=TRUE;
+		bError_Condition_close:=FALSE;	
+	ELSIF NOT bCMD_OPEN AND NOT bDepened_close1 THEN
+		bError_Condition_close:=TRUE;
 	END_IF
 	
 ELSE
-	IF bCMD_OPEN_SWR AND stPISTON.bDepened_open1 THEN
+	IF bCMD_OPEN_SWR AND bDepened_open1 THEN
 		bVALVE_OPEN:= bCMD_OPEN_SWR;
-		stPISTON.bError_Condition_open:=FALSE;	
-	ELSIF bCMD_OPEN_SWR AND NOT stPISTON.bDepened_open1 THEN
-		stPISTON.bError_Condition_open:=TRUE;
+		bError_Condition_open:=FALSE;	
+	ELSIF bCMD_OPEN_SWR AND NOT bDepened_open1 THEN
+		bError_Condition_open:=TRUE;
 	END_IF
 	
-	IF NOT bCMD_OPEN_SWR AND stPISTON.bDepened_close1 THEN
+	IF NOT bCMD_OPEN_SWR AND bDepened_close1 THEN
 		bVALVE_OPEN:= bCMD_OPEN_SWR;
-		stPISTON.bError_Condition_close:=FALSE;	
-	ELSIF NOT bCMD_OPEN_SWR AND NOT stPISTON.bDepened_close1 THEN
-		stPISTON.bError_Condition_close:=TRUE;
+		bError_Condition_close:=FALSE;	
+	ELSIF NOT bCMD_OPEN_SWR AND NOT bDepened_close1 THEN
+		bError_Condition_close:=TRUE;
 	END_IF
 END_IF
 bVALVE_CLOSE:=NOT bVALVE_OPEN;

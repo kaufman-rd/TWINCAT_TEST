@@ -48,7 +48,7 @@ VAR_GLOBAL
 	b_sense_home1: BOOL:=TRUE;
 	b_sense_home2: BOOL;
 	b_sense_home3: BOOL:=TRUE;
-	
+	bManual_Mode:BOOL:=FALSE;
 END_VAR
 ]]></Declaration>
   </GVL>

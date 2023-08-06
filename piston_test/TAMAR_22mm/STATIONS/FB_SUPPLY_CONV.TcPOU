@@ -27,8 +27,11 @@ END_VAR
 			eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.idle;
 		END_IF
 		fbAxis.bDo_Step_FW:=FALSE;
+		fbAxis.bMoveRel:=FALSE;
 		fbAxis.stepFW_state:=0;
-	E_CONVAYOR_STATE.idle:
+		fbAxis.bHalt:=FALSE;
+		fbAxis.bReset:=FALSE;
+		E_CONVAYOR_STATE.idle:
 		
 		//idle
 	
