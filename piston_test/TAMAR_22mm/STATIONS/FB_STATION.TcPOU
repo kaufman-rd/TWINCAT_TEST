@@ -3,6 +3,7 @@
   <POU Name="FB_STATION" Id="{7f1bbe98-a42f-44bb-8859-50705e170c70}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_STATION
 VAR_INPUT
+	bSkip:BOOL:=FALSE;
 	station_num:INT;
 	sName:STRING;
 	bFirstRun:BOOL:=FALSE;

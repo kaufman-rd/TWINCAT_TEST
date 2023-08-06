@@ -25,8 +25,13 @@ CASE eCLEAN OF
 		//fdgdfgfdgf
 			
 	E_STATION_STATE.do_action1:
-		piston_clean.A_OPEN();
-		eCLEAN:=E_STATION_STATE.do_action2;
+		IF NOT bSkip THEN
+			piston_clean.A_OPEN();
+			eCLEAN:=E_STATION_STATE.do_action2;
+		ELSE
+			eCLEAN:=E_STATION_STATE.done;
+		END_IF
+		
 		
 	E_STATION_STATE.do_action2:
 		IF piston_clean.PistonStatus= ePistonStatus.OPENED THEN

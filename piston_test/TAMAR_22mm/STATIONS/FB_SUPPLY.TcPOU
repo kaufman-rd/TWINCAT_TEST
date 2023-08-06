@@ -24,9 +24,13 @@ END_VAR
 		//
 			
 	E_STATION_STATE.do_action1:
-		piston_supply.A_OPEN();
-		eSUPPLY:=E_STATION_STATE.do_action2;
-	
+		IF NOT bSkip THEN
+			piston_supply.A_OPEN();
+			eSUPPLY:=E_STATION_STATE.do_action2;
+		ELSE
+			eSUPPLY:=E_STATION_STATE.done;
+		END_IF
+		
 	E_STATION_STATE.do_action2:	
 		IF piston_supply.PistonStatus= ePistonStatus.OPENED  THEN
 			piston_supply.A_CLOSE();			

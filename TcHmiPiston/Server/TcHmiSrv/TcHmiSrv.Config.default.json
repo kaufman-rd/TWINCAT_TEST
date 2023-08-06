@@ -11320,6 +11320,40 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.MAIN.fbSEPARATION1.bSkip": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::fbSEPARATION1::bSkip",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 1
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.fbSEPARATION2.bSkip": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::fbSEPARATION2::bSkip",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 1
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "RefreshDefinitions": {
             "ACCESS": 3,
             "DOMAIN": "TcHmiSrv",
@@ -12316,6 +12350,8 @@
                 "PLC1.MAIN.fbNewPiston": 3,
                 "PLC1.MAIN.fbNewPiston.PistonStatus": 3,
                 "PLC1.MAIN.fbPiston_B1": 3,
+                "PLC1.MAIN.fbSEPARATION1.bSkip": 3,
+                "PLC1.MAIN.fbSEPARATION2.bSkip": 3,
                 "PLC1.MAIN_STATE_MACHINE.bRESUME": 3,
                 "PLC1.MAIN_STATE_MACHINE.bSTOP": 3,
                 "PLC1.MAIN_STATE_MACHINE.bTRIGGER1": 3,

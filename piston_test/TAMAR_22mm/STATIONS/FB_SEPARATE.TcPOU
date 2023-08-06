@@ -44,16 +44,20 @@ CASE eState OF
 			
 
 	E_STATION_STATE.do_action1://delay and lower device
-		bRUNNING:=TRUE;
-		tDELAY.PT:=T#0.1S;
-		bDELAY:=TRUE;
-		IF tDELAY.Q THEN
-			bDELAY:=FALSE;
-			piston_updown.A_OPEN();
-		END_IF
-		
-		IF piston_updown.PistonStatus= ePistonStatus.OPENED THEN
-			eState:=E_STATION_STATE.do_action2;
+		IF NOT bSkip THEN
+			bRUNNING:=TRUE;
+			tDELAY.PT:=T#0.1S;
+			bDELAY:=TRUE;
+			IF tDELAY.Q THEN
+				bDELAY:=FALSE;
+				piston_updown.A_OPEN();
+			END_IF
+			
+			IF piston_updown.PistonStatus= ePistonStatus.OPENED THEN
+				eState:=E_STATION_STATE.do_action2;
+			END_IF
+		ELSE
+			eState:=E_STATION_STATE.done;
 		END_IF
 		
 	E_STATION_STATE.do_action2://delay and close colet

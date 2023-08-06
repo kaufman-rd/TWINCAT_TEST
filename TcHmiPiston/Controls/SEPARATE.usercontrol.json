@@ -220,6 +220,23 @@
       "propertySetterName": "setStation_state",
       "propertyGetterName": "getStation_state",
       "refTo": ""
+    },
+    {
+      "name": "data-tchmi-skip",
+      "displayName": "SKIP",
+      "allowSymbolExpressionsInObject": false,
+      "visible": true,
+      "type": "tchmi:general#/definitions/BOOL",
+      "category": "",
+      "description": "",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "propertyName": "SKIP",
+      "propertySetterName": "setSKIP",
+      "propertyGetterName": "getSKIP",
+      "refTo": ""
     }
   ],
   "virtualRights": [],
