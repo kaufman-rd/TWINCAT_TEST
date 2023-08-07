@@ -11337,6 +11337,23 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.MAIN.fbMAIN_CONV.bStepFW": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::fbMAIN_CONV::bStepFW",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 9
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "PLC1.MAIN.fbSEPARATION1.bSkip": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -12416,6 +12433,7 @@
                 "PLC1.GVL.stPISTON_PARAM.0.bDepened_open2": 3,
                 "PLC1.GVL.stPISTON_PARAM.0.bError_Condition_open": 3,
                 "PLC1.MAIN.fbCLEAN.bSkip": 3,
+                "PLC1.MAIN.fbMAIN_CONV.bStepFW": 3,
                 "PLC1.MAIN.fbNewPiston": 3,
                 "PLC1.MAIN.fbNewPiston.PistonStatus": 3,
                 "PLC1.MAIN.fbPiston_B1": 3,

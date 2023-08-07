@@ -8,6 +8,9 @@ END_VAR
 VAR_OUTPUT
 END_VAR
 VAR
+	rtrigFW: R_TRIG;
+	bStepFW:BOOL:=FALSE;
+	//bStepBW:BOOL:=FALSE;
 	bMOVE:BOOL :=FALSE;
 	tNext: TON;
 	tDelay: TON;
@@ -27,6 +30,7 @@ END_VAR
       <ST><![CDATA[FOR counter:=1 TO num_of_carts BY 1 DO
 	fbCART[counter]();
 END_FOR;
+rtrigFW(CLK:= bStepFW, Q=> );
 
 IF NOT bFirstRun THEN
 	A_set_cart_spaces();
@@ -34,6 +38,9 @@ IF NOT bFirstRun THEN
 	bFirstRun:=TRUE;
 END_IF
 
+IF rtrigFW.Q AND (eMAIN_CONVAYOR_STATE =E_CONVAYOR_STATE.pause OR eMAIN_CONVAYOR_STATE =E_CONVAYOR_STATE.done)  THEN
+	eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.do_move;
+END_IF
 
 
 tDelay(IN:=bDELAY);

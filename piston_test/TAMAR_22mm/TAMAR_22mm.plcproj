@@ -42,6 +42,9 @@
     <Compile Include="DUTs\ST_PISTON.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Functions\F_Linear.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GVLs\GVL.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
@@ -92,6 +95,7 @@
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
+    <Folder Include="Functions" />
     <Folder Include="STATIONS" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />

@@ -42,7 +42,7 @@ CASE eState OF
 
 	E_STATION_STATE.idle:
 		bRUNNING:=FALSE;
-			
+		
 
 	E_STATION_STATE.do_action1://delay and lower device
 		IF NOT bSkip THEN
@@ -129,9 +129,9 @@ CASE eState OF
 			eState:=E_STATION_STATE.done;
 		END_IF
 		
-	
 	E_STATION_STATE.done:
 		bRUNNING:=FALSE;
+		bDone:=TRUE;	
 		
 	E_STATION_STATE.pause:
 		//paused

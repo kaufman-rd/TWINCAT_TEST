@@ -36,7 +36,7 @@ END_VAR
    
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
+      <ST><![CDATA[rAnalogIn:=F_Linear(nanlogIn1,200,31170,0,2000);
 A_ERROR_CHECK();
 PISTONS_CYCLE();
 fbMAIN_CONV(fbAxis:=Axis_MAIN);

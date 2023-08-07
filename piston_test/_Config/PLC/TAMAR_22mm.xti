@@ -983,11 +983,15 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{AD6E4C48-5E61-47B3-958D-58FBAEF446F5}" Name="TAMAR_22mm" PrjFilePath="..\..\TAMAR_22mm\TAMAR_22mm.plcproj" TmcFilePath="..\..\TAMAR_22mm\TAMAR_22mm.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TAMAR_22mm\TAMAR_22mm.tmc" TmcHash="{3A1A76B5-E163-4D52-2B32-05A8E75E6127}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TAMAR_22mm\TAMAR_22mm.tmc" TmcHash="{09198E6F-D95B-738E-8FB2-E4787DD02F96}">
 			<Name>TAMAR_22mm Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
 				<Name>PlcTask Inputs</Name>
+				<Var>
+					<Name>GVL.nanlogIn1</Name>
+					<Type>INT</Type>
+				</Var>
 				<Var>
 					<Name>GVL.Axis_MAIN.Axis.NcToPlc</Name>
 					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
@@ -1176,6 +1180,9 @@ External Setpoint Generation:
 	</Project>
 	<Mappings>
 		<OwnerA Name="TAMAR_22mm Instance">
+			<OwnerB Name="TIID^Device 3 (EtherCAT)^Term 1 (EK1100)^Term 12 (EL3164)">
+				<Link VarA="PlcTask Inputs^GVL.nanlogIn1" VarB="AI Standard Channel 1^Value"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 3 (EtherCAT)^Term 1 (EK1100)^Term 2 (EL1809)">
 				<Link VarA="PlcTask Inputs^GVL.fbPiston[1].bSEN_OPEN" VarB="Channel 1^GVL.fbPiston[1].bSEN_OPEN" Size="1"/>
 			</OwnerB>

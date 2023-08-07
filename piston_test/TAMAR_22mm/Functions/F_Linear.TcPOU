@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="F_Linear" Id="{7c08d17f-8f43-46dd-a248-da25ea84a37b}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION F_Linear : real
+VAR_INPUT
+	analog_read:INT;
+	IO_min, IO_max, eng_min, eng_max:REAL;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF  (IO_max - IO_min) > 0 THEN
+	F_linear :=  ((eng_max - eng_min)/(IO_max - IO_min))*(analog_read - IO_max) + eng_max;
+ELSE
+	F_linear :=  0;
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
