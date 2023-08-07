@@ -1994,12 +1994,12 @@
 ]
 </script>
 </div>
-<div id="bul_sens" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiEllipse" data-tchmi-height="11.4" data-tchmi-height-unit="%" data-tchmi-left="74.4" data-tchmi-left-unit="%" data-tchmi-top="74.0" data-tchmi-top-unit="%" data-tchmi-width="11.8" data-tchmi-width-unit="%">
+<div id="bul_sens" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiEllipse" data-tchmi-height="9.1" data-tchmi-height-unit="%" data-tchmi-left="44.8" data-tchmi-left-unit="%" data-tchmi-top="73.1" data-tchmi-top-unit="%" data-tchmi-width="9.8" data-tchmi-width-unit="%">
 
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "bul_sens.onPressed",
+    "event": "%pp%BULLET_SENSOR%/pp%",
     "actions": [
       {
         "objectType": "Condition",
@@ -2030,12 +2030,59 @@
                 "value": {
                   "objectType": "StaticValue",
                   "valueType": "tchmi:framework#/definitions/Color",
+                  "value": null
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%bul_sens::FillColor%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Color",
                   "value": {
-                    "color": "rgba(255, 242, 157, 1)"
+                    "color": "rgba(241, 193, 61, 1)"
                   }
                 },
                 "asyncWait": true
-              },
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  },
+  {
+    "event": "bul_sens.onPressed",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/String",
+                  "symbolExpression": "%pp%BULLET_SENSOR%/pp%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "value": false
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
               {
                 "objectType": "WriteToSymbol",
                 "active": true,
@@ -2051,17 +2098,6 @@
           },
           {
             "else": [
-              {
-                "objectType": "WriteToSymbol",
-                "active": true,
-                "symbolExpression": "%ctrl%bul_sens::FillColor%/ctrl%",
-                "value": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:framework#/definitions/Color",
-                  "value": null
-                },
-                "asyncWait": true
-              },
               {
                 "objectType": "WriteToSymbol",
                 "active": true,

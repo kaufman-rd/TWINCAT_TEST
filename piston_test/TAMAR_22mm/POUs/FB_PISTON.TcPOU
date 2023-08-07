@@ -33,7 +33,7 @@ VAR
 	timeoutOpening:ton;
 	timeoutClosing:ton;
 	bSTARTUP: BOOL:=FALSE;
-	
+	rtrigMANUAL: R_TRIG;
 	
 END_VAR
 ]]></Declaration>
@@ -41,6 +41,11 @@ END_VAR
       <ST><![CDATA[IF NOT bSTARTUP THEN
 	bCMD_OPEN:=stPISTON.bOPEN_BY_DEFAULT;
 	bSTARTUP:=TRUE;
+END_IF
+
+rtrigMANUAL(CLK:= bMANUAL, Q=> );
+IF rtrigMANUAL.Q THEN
+	bCMD_OPEN:=bCMD_OPEN_SWR;
 END_IF
 
 timerOpening(IN:= bVALVE_OPEN, PT:=REAL_TO_TIME(stPISTON.openTime)*1000 , Q=> , ET=> );
@@ -138,6 +143,7 @@ END_IF
 IF timeoutClosing.Q  AND (stPISTON.ePISTON_TYPE = E_PISTON_TYPE.ONLY_CLOSE OR stPISTON.ePISTON_TYPE = E_PISTON_TYPE.BOTH)  THEN
 	PistonStatus:=ePistonStatus.ERROR;
 END_IF
+
 
 
 
