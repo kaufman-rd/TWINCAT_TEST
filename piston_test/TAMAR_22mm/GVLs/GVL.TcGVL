@@ -9,6 +9,8 @@ VAR_GLOBAL
 	supply_station_num: INT:=1;
 	separate1_station_num: INT:=5;
 	separate2_station_num: INT:=9;
+	bullet_check_num: INT:=13;
+	dispose_num:INT:=17;
 	clean_station_num: INT:=24;
 	total_ready:INT:=0;
 	iNUMBER_OF_PISTONS: INT:=15;
@@ -49,6 +51,7 @@ VAR_GLOBAL
 	b_sense_home2: BOOL;
 	b_sense_home3: BOOL:=TRUE;
 	bManual_Mode:BOOL:=FALSE;
+	bBulletSensor:BOOL:=FALSE;
 END_VAR
 ]]></Declaration>
   </GVL>

@@ -2711,6 +2711,16 @@
                         }
                     ]
                 },
+                "o_color": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/INT"
+                        },
+                        {
+                            "propertyOrder": 5
+                        }
+                    ]
+                },
                 "posX": {
                     "allOf": [
                         {
@@ -2737,7 +2747,7 @@
                             "$ref": "tchmi:general#/definitions/INT"
                         },
                         {
-                            "propertyOrder": 5
+                            "propertyOrder": 6
                         }
                     ]
                 }
@@ -10888,6 +10898,16 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.GVL.bBulletSensor": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::bBulletSensor",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
         "PLC1.GVL.bCONV_MAIN_INPOS": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -11116,6 +11136,50 @@
             "MAPPING": "PLC1::GVL::fbCART",
             "SCHEMA": {
                 "$ref": "tchmi:server#/definitions/PLC1.ARRAY_1..18_OF-FB_CART"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.fbCART.0": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::fbCART[0]",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.FB_CART"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.fbCART.0.stCART": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::fbCART[0]::stCART",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:server#/definitions/PLC1.ST_CART"
+                    },
+                    {
+                        "propertyOrder": 1
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.fbCART.0.stCART.o_color": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::fbCART[0]::stCART::o_color",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT"
+                    },
+                    {
+                        "propertyOrder": 5
+                    }
+                ]
             },
             "USEMAPPING": true
         },
@@ -12378,6 +12442,7 @@
                 "PLC1.GVL.Axis_SUPPLY.bHalt": 3,
                 "PLC1.GVL.Axis_SUPPLY.bInPos": 3,
                 "PLC1.GVL.Axis_SUPPLY.bmanual": 3,
+                "PLC1.GVL.bBulletSensor": 3,
                 "PLC1.GVL.bCONV_INPOS": 3,
                 "PLC1.GVL.bCONV_MAIN_INPOS": 3,
                 "PLC1.GVL.bCONV_SUPPLY_INPOS": 3,
@@ -12402,6 +12467,9 @@
                 "PLC1.GVL.eSUPPLY": 3,
                 "PLC1.GVL.eSUPPLY_CONVAYOR_STATE": 3,
                 "PLC1.GVL.fbCART": 3,
+                "PLC1.GVL.fbCART.0": 3,
+                "PLC1.GVL.fbCART.0.stCART": 3,
+                "PLC1.GVL.fbCART.0.stCART.o_color": 3,
                 "PLC1.GVL.fbPiston": 3,
                 "PLC1.GVL.fbPiston.0": 3,
                 "PLC1.GVL.fbPiston.0.bC": 3,

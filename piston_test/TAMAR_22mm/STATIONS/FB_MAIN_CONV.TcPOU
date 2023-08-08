@@ -216,6 +216,7 @@ END_WHILE
         <ST><![CDATA[bSTARTUP:=TRUE;
 	fbCART[1].stCART.position:=1;
 	fbCART[1].stCART.color:=1;
+	fbCART[1].stCART.o_color:=1;
 	fbCART[1].stCART.nNAME:=INT_TO_STRING(1001);
 	fbCART[1].stCART.posX:=posArrX[1];
 	fbCART[1].stCART.posY:=posArrY[1];
@@ -223,6 +224,7 @@ END_WHILE
 	FOR counter:=1 TO (num_of_carts-1) BY 1 DO
 		fbCART[counter+1].stCART.position:=37-((counter*2));
 		fbCART[counter+1].stCART.color:=1;
+		fbCART[counter+1].stCART.o_color:=1;
 		fbCART[counter+1].stCART.nNAME:=INT_TO_STRING(1000+counter+1);
 		fbCART[counter+1].stCART.posX:=posArrX[37-((counter*2))];
 		fbCART[counter+1].stCART.posY:=posArrY[37-((counter*2))];

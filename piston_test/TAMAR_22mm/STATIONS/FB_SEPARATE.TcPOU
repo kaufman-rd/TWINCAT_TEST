@@ -9,12 +9,11 @@ VAR_INPUT
 	piston_puller: REFERENCE TO FB_PISTON;
 	piston_tray: REFERENCE TO FB_PISTON;
 	piston_pins: REFERENCE TO FB_PISTON;
-	//eState: REFERENCE TO  E_STATION_STATE;
-	//station_num:INT;
+	
 END_VAR
 VAR_OUTPUT
 	bRUNNING:BOOL :=FALSE;
-	
+	bError:BOOL:=FALSE;
 END_VAR
 VAR
 	tDelay: TON;
@@ -36,6 +35,7 @@ CASE eState OF
 		piston_pins.A_DEFAULT();
 		eState:= E_STATION_STATE.idle;
 		bHomed:=TRUE;
+		bError:=FALSE;
 		
 	E_STATION_STATE.uninit:
 		eState:= E_STATION_STATE.homing;
@@ -125,8 +125,8 @@ CASE eState OF
 		tDELAY.PT:=T#0.1S;
 		bDELAY:=TRUE;
 		IF tDELAY.Q THEN
-			bDELAY:=FALSE;
-			eState:=E_STATION_STATE.done;
+				bDELAY:=FALSE;
+				eState:=E_STATION_STATE.done;
 		END_IF
 		
 	E_STATION_STATE.done:

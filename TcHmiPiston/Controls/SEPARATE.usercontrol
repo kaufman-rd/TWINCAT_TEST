@@ -1799,7 +1799,7 @@
 }
 </script>
 </div>
-<div id="manual_btn" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="4.6" data-tchmi-height-unit="%" data-tchmi-left="4.8" data-tchmi-left-unit="%" data-tchmi-text="Manual" data-tchmi-top="3.2" data-tchmi-top-unit="%" data-tchmi-width="10" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-is-enabled="%s%PLC1.GVL.bPAUSE_MAIN%/s%">
+<div id="manual_btn" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="4.6" data-tchmi-height-unit="%" data-tchmi-left="9.2" data-tchmi-left-unit="%" data-tchmi-text="Manual" data-tchmi-top="49.0" data-tchmi-top-unit="%" data-tchmi-width="10" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-is-enabled="%s%PLC1.GVL.bPAUSE_MAIN%/s%">
 
 
 
@@ -1994,72 +1994,23 @@
 ]
 </script>
 </div>
-<div id="bul_sens" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiEllipse" data-tchmi-height="9.1" data-tchmi-height-unit="%" data-tchmi-left="44.8" data-tchmi-left-unit="%" data-tchmi-top="73.1" data-tchmi-top-unit="%" data-tchmi-width="9.8" data-tchmi-width-unit="%">
+<div id="TcHmiTextblock_25" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="10" data-tchmi-height-unit="%" data-tchmi-left="44.8" data-tchmi-left-unit="%" data-tchmi-text="Bullet Sensor" data-tchmi-top="82.2" data-tchmi-top-unit="%" data-tchmi-width="30" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-text-font-size-unit="%">
+</div>
+<div id="TcHmiTextbox_2" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextbox" data-tchmi-height="8.3" data-tchmi-height-unit="%" data-tchmi-left="9.2" data-tchmi-left-unit="%" data-tchmi-text="%pp%station_state%/pp%" data-tchmi-top="63.9" data-tchmi-top-unit="%" data-tchmi-width="10.2" data-tchmi-width-unit="%" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-font-size="20">
+<script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
+{
+  "top": 3,
+  "right": 3,
+  "bottom": 3,
+  "left": 3
+}
+</script>
+
 
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "%pp%BULLET_SENSOR%/pp%",
-    "actions": [
-      {
-        "objectType": "Condition",
-        "active": true,
-        "parts": [
-          {
-            "if": [
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:general#/definitions/BOOL",
-                  "symbolExpression": "%pp%BULLET_SENSOR%/pp%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:general#/definitions/BOOL",
-                  "value": false
-                },
-                "compareOperator": "==",
-                "logic": null
-              }
-            ],
-            "then": [
-              {
-                "objectType": "WriteToSymbol",
-                "active": true,
-                "symbolExpression": "%ctrl%bul_sens::FillColor%/ctrl%",
-                "value": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:framework#/definitions/Color",
-                  "value": null
-                },
-                "asyncWait": true
-              }
-            ]
-          },
-          {
-            "else": [
-              {
-                "objectType": "WriteToSymbol",
-                "active": true,
-                "symbolExpression": "%ctrl%bul_sens::FillColor%/ctrl%",
-                "value": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:framework#/definitions/Color",
-                  "value": {
-                    "color": "rgba(241, 193, 61, 1)"
-                  }
-                },
-                "asyncWait": true
-              }
-            ]
-          }
-        ],
-        "asyncWait": true
-      }
-    ]
-  },
-  {
-    "event": "bul_sens.onPressed",
+    "event": "%pp%station_state%/pp%",
     "actions": [
       {
         "objectType": "Condition",
@@ -2071,12 +2022,12 @@
                 "compare1": {
                   "objectType": "Symbol",
                   "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%pp%BULLET_SENSOR%/pp%"
+                  "symbolExpression": "%pp%station_state%/pp%"
                 },
                 "compare2": {
                   "objectType": "StaticValue",
-                  "valueType": "tchmi:general#/definitions/BOOL",
-                  "value": false
+                  "valueType": "tchmi:server#/definitions/PLC1.E_STATION_STATE",
+                  "value": 13
                 },
                 "compareOperator": "==",
                 "logic": null
@@ -2086,11 +2037,13 @@
               {
                 "objectType": "WriteToSymbol",
                 "active": true,
-                "symbolExpression": "%pp%BULLET_SENSOR%/pp%",
+                "symbolExpression": "%ctrl%TcHmiTextbox_2::BackgroundColor%/ctrl%",
                 "value": {
                   "objectType": "StaticValue",
-                  "valueType": "tchmi:general#/definitions/BOOL",
-                  "value": true
+                  "valueType": "tchmi:framework#/definitions/Color",
+                  "value": {
+                    "color": "rgba(234, 97, 77, 1)"
+                  }
                 },
                 "asyncWait": true
               }
@@ -2101,11 +2054,11 @@
               {
                 "objectType": "WriteToSymbol",
                 "active": true,
-                "symbolExpression": "%pp%BULLET_SENSOR%/pp%",
+                "symbolExpression": "%ctrl%TcHmiTextbox_2::BackgroundColor%/ctrl%",
                 "value": {
                   "objectType": "StaticValue",
-                  "valueType": "tchmi:general#/definitions/BOOL",
-                  "value": false
+                  "valueType": "tchmi:framework#/definitions/Color",
+                  "value": null
                 },
                 "asyncWait": true
               }
@@ -2118,23 +2071,8 @@
   }
 ]
 </script>
-
-
 </div>
-<div id="TcHmiTextblock_25" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="10" data-tchmi-height-unit="%" data-tchmi-left="74.4" data-tchmi-left-unit="%" data-tchmi-text="Bullet Sensor" data-tchmi-top="67.8" data-tchmi-top-unit="%" data-tchmi-width="30" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-text-font-size-unit="%">
-</div>
-<div id="TcHmiTextbox_2" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextbox" data-tchmi-height="8.3" data-tchmi-height-unit="%" data-tchmi-left="4.8" data-tchmi-left-unit="%" data-tchmi-text="%pp%station_state%/pp%" data-tchmi-top="12.3" data-tchmi-top-unit="%" data-tchmi-width="10.2" data-tchmi-width-unit="%" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-font-size="20">
-<script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
-{
-  "top": 3,
-  "right": 3,
-  "bottom": 3,
-  "left": 3
-}
-</script>
-
-</div>
-<div id="manual_btn_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="4.6" data-tchmi-height-unit="%" data-tchmi-left="86.2" data-tchmi-left-unit="%" data-tchmi-text="Skip" data-tchmi-top="3.2" data-tchmi-top-unit="%" data-tchmi-width="10" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-is-enabled="true" >
+<div id="manual_btn_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="4.6" data-tchmi-height-unit="%" data-tchmi-left="9.2" data-tchmi-left-unit="%" data-tchmi-text="Skip" data-tchmi-top="55.6" data-tchmi-top-unit="%" data-tchmi-width="10" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-is-enabled="%s%PLC1.GVL.bPAUSE_MAIN%/s%" >
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
 {
   "color": "rgba(0, 0, 0, 1)"

@@ -23,23 +23,50 @@ END_VAR
 
 
 	IF stCART.position = supply_station_num THEN
+		IF NOT MAIN.fbSUPPLY.bSkip THEN
 			stCART.color:=2;
+		ELSE
+			stCART.color:=99;
+		END_IF
+		stCART.o_color:=2;
 	END_IF  
 	IF stCART.position = separate1_station_num THEN
-		IF stCART.color = 2 THEN
-			stCART.color:=3;
+		IF NOT MAIN.fbSEPARATION1.bSkip THEN
+			IF stCART.color = 2 THEN
+				stCART.color:=3;
+			END_IF
+		ELSE
+			stCART.color:=99;
 		END_IF
+		stCART.o_color:=3;
+		
 	END_IF 
 	IF stCART.position = separate2_station_num THEN
-		IF stCART.color = 3 THEN
-			stCART.color:=4;
+		IF NOT MAIN.fbSEPARATION2.bSkip THEN
+			IF stCART.color = 3 THEN
+				stCART.color:=4;
+			END_IF
+		ELSE
+			stCART.color:=99;
+		END_IF
+		stCART.o_color:=4;
+	END_IF 
+	
+	IF stCART.position = bullet_check_num THEN
+		IF bBulletSensor THEN
+				stCART.color:=89;
 		END_IF
 	END_IF 
+	
 	IF stCART.position = clean_station_num THEN
-		IF stCART.color = 4 THEN
-			stCART.color:=1;
+		IF NOT MAIN.fbCLEAN.bSkip THEN
+			IF stCART.color = 4 THEN
+				stCART.color:=1;
+			END_IF
+		ELSE
+			stCART.color:=99;
 		END_IF
-		
+		stCART.o_color:=1;
 	END_IF 
 	stCART.position:= stCART.position+1;
 	stCART.posX:=posArrX[stCART.position];
