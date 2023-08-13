@@ -3,7 +3,9 @@
   <POU Name="FB_SUPPLY" Id="{b2a17438-2a87-461f-9eb1-7bbd8a0b9ac3}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SUPPLY EXTENDS FB_STATION
 VAR_INPUT
-	piston_supply: REFERENCE TO FB_PISTON;
+	piston_push: REFERENCE TO FB_PISTON;
+	piston_open: REFERENCE TO FB_PISTON;
+	piston_hold: REFERENCE TO FB_PISTON;
 END_VAR
 VAR_OUTPUT
 END_VAR
@@ -13,7 +15,7 @@ END_VAR
     <Implementation>
       <ST><![CDATA[CASE eSUPPLY OF
 	E_STATION_STATE.homing:
-		piston_supply.A_DEFAULT();
+		piston_push.A_DEFAULT();
 		bHomed:=TRUE;
 		eSUPPLY:= E_STATION_STATE.idle;
 		
@@ -25,22 +27,38 @@ END_VAR
 			
 	E_STATION_STATE.do_action1:
 		IF NOT bSkip THEN
-			piston_supply.A_OPEN();
+			piston_hold.A_OPEN();
 			eSUPPLY:=E_STATION_STATE.do_action2;
 		ELSE
 			eSUPPLY:=E_STATION_STATE.done;
 		END_IF
 		
 	E_STATION_STATE.do_action2:	
-		IF piston_supply.PistonStatus= ePistonStatus.OPENED  THEN
-			piston_supply.A_CLOSE();			
+		IF piston_hold.PistonStatus= ePistonStatus.OPENED  THEN
+			piston_open.A_OPEN();			
 			eSUPPLY:=E_STATION_STATE.do_action3;
 		END_IF
+	
+	E_STATION_STATE.do_action3:	
+		IF piston_open.PistonStatus= ePistonStatus.OPENED  THEN
+			piston_push.A_OPEN();			
+			eSUPPLY:=E_STATION_STATE.do_action4;
+		END_IF
+	
+	E_STATION_STATE.do_action4:	
+		IF piston_push.PistonStatus= ePistonStatus.OPENED  THEN
+			piston_open.A_CLOSE();	
+			piston_hold.A_CLOSE();
+			piston_push.A_CLOSE();		
+			eSUPPLY:=E_STATION_STATE.do_action5;
+		END_IF
 		
-	E_STATION_STATE.do_action3:
-		IF piston_supply.PistonStatus= ePistonStatus.CLOSED  THEN			
+	E_STATION_STATE.do_action5:	
+		IF piston_hold.PistonStatus= ePistonStatus.CLOSED AND piston_open.PistonStatus= ePistonStatus.CLOSED AND piston_push.PistonStatus= ePistonStatus.CLOSED  THEN
 			eSUPPLY:=E_STATION_STATE.done;
 		END_IF
+	
+	
 	
 	
 	E_STATION_STATE.done:

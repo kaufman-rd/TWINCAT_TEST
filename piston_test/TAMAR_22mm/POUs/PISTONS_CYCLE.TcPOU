@@ -7,7 +7,7 @@ VAR
 	bSTARTUP: BOOL:=FALSE;
 	counter: INT;
 	MANUALcOUNTER:int:=0;
-	timimg: REAL:=0.4;
+	timimg: REAL:=0.3;
 	
 END_VAR
 ]]></Declaration>
@@ -16,8 +16,8 @@ END_VAR
 	
 	stPISTON_PARAM[1].nNAME:='FEEDER PUSHER';
 	stPISTON_PARAM[1].bOPEN_BY_DEFAULT:=FALSE;
-	stPISTON_PARAM[1].openTime:=1;
-	stPISTON_PARAM[1].closeTime:=1;
+	stPISTON_PARAM[1].openTime:=timimg;
+	stPISTON_PARAM[1].closeTime:=timimg;
 	stPISTON_PARAM[1].timeoutOpen:=T#3S;
 	stPISTON_PARAM[1].timeoutClose:=T#3S;
 	stPISTON_PARAM[1].ePISTON_TYPE:= 0;
@@ -184,8 +184,8 @@ END_VAR
 	
 	stPISTON_PARAM[21].nNAME:='DROP PUSHER';
 	stPISTON_PARAM[21].bOPEN_BY_DEFAULT:=FALSE;
-	stPISTON_PARAM[21].openTime:=timimg;
-	stPISTON_PARAM[21].closeTime:=timimg;
+	stPISTON_PARAM[21].openTime:=0.5;
+	stPISTON_PARAM[21].closeTime:=0.5;
 	stPISTON_PARAM[21].timeoutOpen:=T#3S;
 	stPISTON_PARAM[21].timeoutClose:=T#3S;
 	stPISTON_PARAM[21].ePISTON_TYPE:= 0;

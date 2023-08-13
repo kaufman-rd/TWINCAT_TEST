@@ -9,6 +9,8 @@ VAR_INPUT
 	piston_puller: REFERENCE TO FB_PISTON;
 	piston_tray: REFERENCE TO FB_PISTON;
 	piston_pins: REFERENCE TO FB_PISTON;
+	piston_tray_door: REFERENCE TO FB_PISTON;
+	piston_tray_push: REFERENCE TO FB_PISTON;
 	
 END_VAR
 VAR_OUTPUT
@@ -32,6 +34,8 @@ CASE eState OF
 		piston_colet.A_DEFAULT();
 		piston_puller.A_DEFAULT();
 		piston_tray.A_DEFAULT();
+		piston_tray_push.A_DEFAULT();
+		piston_tray_door.A_DEFAULT();
 		piston_pins.A_DEFAULT();
 		eState:= E_STATION_STATE.idle;
 		bHomed:=TRUE;
@@ -46,88 +50,68 @@ CASE eState OF
 
 	E_STATION_STATE.do_action1://delay and lower device
 		IF NOT bSkip THEN
-			bRUNNING:=TRUE;
-			tDELAY.PT:=T#0.1S;
-			bDELAY:=TRUE;
-			IF tDELAY.Q THEN
-				bDELAY:=FALSE;
-				piston_updown.A_OPEN();
-			END_IF
-			
-			IF piston_updown.PistonStatus= ePistonStatus.OPENED THEN
-				eState:=E_STATION_STATE.do_action2;
-			END_IF
+			piston_updown.A_OPEN();
+			eState:=E_STATION_STATE.do_action2;
 		ELSE
 			eState:=E_STATION_STATE.done;
 		END_IF
 		
-	E_STATION_STATE.do_action2://delay and close colet
-		tDELAY.PT:=T#0.1S;
-		bDELAY:=TRUE;
-		IF tDELAY.Q THEN
-			bDELAY:=FALSE;
+	E_STATION_STATE.do_action2:
+		//tDELAY.PT:=T#0.1S;
+		//bDELAY:=TRUE;
+			//bDELAY:=FALSE;
+		IF piston_updown.PistonStatus= ePistonStatus.OPENED THEN
 			piston_colet.A_OPEN();
-		END_IF
-		
-		IF piston_colet.PistonStatus= ePistonStatus.OPENED THEN
 			eState:=E_STATION_STATE.do_action3;
 		END_IF
 	
-	E_STATION_STATE.do_action3://delay and pull while raising
-		tDELAY.PT:=T#0.2S;		
-		bDELAY:=TRUE;
-		IF tDELAY.Q THEN
-			bDELAY:=FALSE;
+	E_STATION_STATE.do_action3:
+		IF piston_colet.PistonStatus= ePistonStatus.OPENED  THEN
 			piston_updown.A_CLOSE();
 			piston_puller.A_OPEN();
-		END_IF
-		IF piston_updown.PistonStatus= ePistonStatus.CLOSED AND piston_puller.PistonStatus= ePistonStatus.OPENED THEN
+			piston_tray.A_OPEN();
 			eState:=E_STATION_STATE.do_action4;
 		END_IF
 	
-	E_STATION_STATE.do_action4://delay close puller and enter tray
-		tDELAY.PT:=T#0.2S;		
-		bDELAY:=TRUE;
-		IF tDELAY.Q THEN
-			bDELAY:=FALSE;
-			piston_puller.A_CLOSE();
+	E_STATION_STATE.do_action4:
+		IF piston_puller.PistonStatus= ePistonStatus.OPENED  THEN
+			piston_colet.A_CLOSE();
 			piston_tray.A_OPEN();
-		END_IF
-		IF piston_puller.PistonStatus= ePistonStatus.CLOSED AND piston_tray.PistonStatus= ePistonStatus.OPENED THEN
 			eState:=E_STATION_STATE.do_action5;
 		END_IF
-
-	E_STATION_STATE.do_action5://release colet and push pins
-		tDELAY.PT:=T#0.2S;		
-		bDELAY:=TRUE;
-		IF tDELAY.Q THEN
-			bDELAY:=FALSE;
-			piston_colet.A_CLOSE();
+	 
+	E_STATION_STATE.do_action5:
+		IF piston_tray.PistonStatus= ePistonStatus.OPENED AND piston_colet.PistonStatus= ePistonStatus.CLOSED AND piston_updown.PistonStatus= ePistonStatus.CLOSED  THEN
 			piston_pins.A_OPEN();
-		END_IF
-		IF piston_colet.PistonStatus= ePistonStatus.CLOSED AND piston_pins.PistonStatus= ePistonStatus.OPENED THEN
 			eState:=E_STATION_STATE.do_action6;
 		END_IF
-		
-	E_STATION_STATE.do_action6://raise pins and close tray
-		tDELAY.PT:=T#0.2S;		
-		bDELAY:=TRUE;
-		IF tDELAY.Q THEN
-			bDELAY:=FALSE;
-			piston_pins.A_CLOSE();
-			piston_tray.A_CLOSE();
-		END_IF
-		IF piston_colet.PistonStatus= ePistonStatus.CLOSED AND piston_pins.PistonStatus= ePistonStatus.CLOSED THEN
+
+	E_STATION_STATE.do_action6:
+		IF piston_pins.PistonStatus= ePistonStatus.OPENED THEN
+			piston_tray_push.A_OPEN();
+			piston_tray_door.A_OPEN();
 			eState:=E_STATION_STATE.do_action7;
+		END_IF
+	
+	E_STATION_STATE.do_action7:
+		IF piston_tray_push.PistonStatus= ePistonStatus.OPENED AND piston_tray_door.PistonStatus= ePistonStatus.OPENED  THEN
+			piston_tray_push.A_CLOSE();
+			piston_tray_door.A_CLOSE();
+			piston_puller.A_CLOSE();
+			eState:=E_STATION_STATE.do_action8;
 		END_IF	
 		
-	E_STATION_STATE.do_action7://delay
-		tDELAY.PT:=T#0.1S;
-		bDELAY:=TRUE;
-		IF tDELAY.Q THEN
-				bDELAY:=FALSE;
-				eState:=E_STATION_STATE.done;
+	E_STATION_STATE.do_action8:
+		IF piston_tray_push.PistonStatus= ePistonStatus.CLOSED AND piston_tray_door.PistonStatus= ePistonStatus.CLOSED  THEN
+			piston_tray.A_CLOSE();
+			eState:=E_STATION_STATE.do_action9;
 		END_IF
+			
+	E_STATION_STATE.do_action9:
+		
+		IF piston_tray.PistonStatus= ePistonStatus.CLOSED  THEN
+			eState:=E_STATION_STATE.done;
+		END_IF	
 		
 	E_STATION_STATE.done:
 		bRUNNING:=FALSE;

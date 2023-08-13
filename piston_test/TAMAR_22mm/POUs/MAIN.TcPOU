@@ -48,6 +48,8 @@ fbSEPARATION1(piston_updown:=  fbPiston[3],
 			  piston_puller:=  fbPiston[5],
 			  piston_tray:=  fbPiston[6],
 			  piston_pins:=  fbPiston[7],
+			  piston_tray_door:=  fbPiston[17],
+			  piston_tray_push:=  fbPiston[16],
 			  eState:= eSEPARATE1,
 			  station_num:=separate1_station_num);
 		
@@ -56,12 +58,14 @@ fbSEPARATION2(piston_updown:=  fbPiston[8],
 			  piston_puller:=  fbPiston[10],
 			  piston_tray:=  fbPiston[11],
 			  piston_pins:=  fbPiston[12],
+			   piston_tray_door:=  fbPiston[19],
+			  piston_tray_push:=  fbPiston[18],
 			  eState:= eSEPARATE2,
  			  station_num:=separate2_station_num);	
 	
 fbCLEAN(piston_clean:=  fbPiston[14]);
 fbDROP(piston_open:=  fbPiston[22],piston_push:=  fbPiston[21]);
-fbSUPPLY(piston_supply:=  fbPiston[1]);
+fbSUPPLY(piston_push:=  fbPiston[1],piston_hold:=  fbPiston[2],piston_open:=  fbPiston[15]);
 
 MOTORS();
 
