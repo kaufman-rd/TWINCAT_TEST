@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_DROP" Id="{fe51b714-c52e-4b14-af2e-8a2c760db9fe}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_DROP EXTENDS FB_STATION
+VAR_INPUT
+	piston_push: REFERENCE TO FB_PISTON;
+	piston_open: REFERENCE TO FB_PISTON;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE eDROP OF
+	E_STATION_STATE.homing:
+		piston_open.A_DEFAULT();
+		piston_push.A_DEFAULT();
+		bHomed:=TRUE;
+		eDROP:= E_STATION_STATE.idle;
+		
+	E_STATION_STATE.uninit:
+		eDROP:= E_STATION_STATE.idle;
+
+	E_STATION_STATE.idle:
+		//fdgdfgfdgf
+			
+	E_STATION_STATE.do_action1:
+		IF NOT bSkip THEN
+			piston_open.A_OPEN();
+			eDROP:=E_STATION_STATE.do_action2;
+		ELSE
+			eDROP:=E_STATION_STATE.done;
+		END_IF
+		
+		
+	E_STATION_STATE.do_action2:
+		IF piston_open.PistonStatus= ePistonStatus.OPENED THEN
+			piston_push.A_OPEN();
+			eDROP:=E_STATION_STATE.do_action3;
+		END_IF
+	
+	E_STATION_STATE.do_action3:
+		IF piston_push.PistonStatus= ePistonStatus.OPENED THEN
+			eDROP:=E_STATION_STATE.do_action4;
+			piston_open.A_CLOSE();
+		END_IF
+	
+	E_STATION_STATE.do_action4:
+		IF piston_open .PistonStatus= ePistonStatus.CLOSED THEN
+			piston_push.A_CLOSE();
+			eDROP:=E_STATION_STATE.do_action5;
+		END_IF
+
+	E_STATION_STATE.do_action5:
+		IF piston_push.PistonStatus= ePistonStatus.CLOSED THEN
+			eDROP:=E_STATION_STATE.done;
+		END_IF
+		
+	E_STATION_STATE.done:
+		//done
+		
+	E_STATION_STATE.pause:
+		//paused
+
+END_CASE]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

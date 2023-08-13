@@ -2,7 +2,7 @@
 
 
 
-<div id="TcHmiRectangle_3" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="27.1" data-tchmi-height-unit="%" data-tchmi-left="26.0" data-tchmi-left-unit="%" data-tchmi-top="42.2" data-tchmi-top-unit="%" data-tchmi-width="54.0" data-tchmi-width-unit="%" data-tchmi-zindex="0">
+<div id="TcHmiRectangle_3" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="27.1" data-tchmi-height-unit="%" data-tchmi-left="26.0" data-tchmi-left-unit="%" data-tchmi-top="42.2" data-tchmi-top-unit="%" data-tchmi-width="63.9" data-tchmi-width-unit="%" data-tchmi-zindex="0">
 
 
 
@@ -158,7 +158,7 @@
 }
 </script>
 </div>
-<div id="TcHmiTextblock_9" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="69" data-tchmi-left-unit="px" data-tchmi-text="Supply Station" data-tchmi-top="421" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-zindex="9">
+<div id="TcHmiTextblock_9" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="69" data-tchmi-left-unit="px" data-tchmi-text="Feeder Station" data-tchmi-top="421" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-zindex="9">
 
 <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
 {
@@ -180,7 +180,7 @@
 }
 </script>
 </div>
-<div id="TcHmiTextblock_15" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="1324" data-tchmi-left-unit="px" data-tchmi-text="Clean Station" data-tchmi-top="772" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-zindex="9">
+<div id="TcHmiTextblock_15" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="1465" data-tchmi-left-unit="px" data-tchmi-text="Clean Station" data-tchmi-top="792" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-zindex="9">
 <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
 {
   "color": "rgba(223, 237, 235, 1)"
@@ -397,9 +397,9 @@
   }
 ]
 </script>
-<div id="SEPARATE_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="318" data-tchmi-height-unit="px" data-tchmi-left="480" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/SEPARATE.usercontrol" data-tchmi-top="40" data-tchmi-top-unit="px" data-tchmi-width="358" data-tchmi-width-unit="px" data-tchmi-updown="%s%PLC1.GVL.fbPiston.2::PistonStatus%/s%" data-tchmi-colet="%s%PLC1.GVL.fbPiston.3::PistonStatus%/s%" data-tchmi-puller="%s%PLC1.GVL.fbPiston.4::PistonStatus%/s%" data-tchmi-tray="%s%PLC1.GVL.fbPiston.5::PistonStatus%/s%" data-tchmi-pins="%s%PLC1.GVL.fbPiston.6::PistonStatus%/s%" data-tchmi-p_updown="%s%PLC1.GVL.fbPiston.2%/s%" data-tchmi-p_colet="%s%PLC1.GVL.fbPiston.3%/s%" data-tchmi-p_puller="%s%PLC1.GVL.fbPiston.4%/s%" data-tchmi-p_tray="%s%PLC1.GVL.fbPiston.5%/s%" data-tchmi-p_pins="%s%PLC1.GVL.fbPiston.6%/s%" data-tchmi-zindex="7" data-tchmi-station_state="%s%PLC1.GVL.eSEPARATE1%/s%" data-tchmi-skip="%s%PLC1.MAIN.fbSEPARATION1.bSkip%/s%" data-tchmi-bullet_sensor="%s%PLC1.MAIN.fbSEPARATION1.b_BULL_SENSOR%/s%">
+<div id="SEPARATE_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="318" data-tchmi-height-unit="px" data-tchmi-left="479" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/SEPARATE.usercontrol" data-tchmi-top="40" data-tchmi-top-unit="px" data-tchmi-width="358" data-tchmi-width-unit="px" data-tchmi-updown="%s%PLC1.GVL.fbPiston.2::PistonStatus%/s%" data-tchmi-colet="%s%PLC1.GVL.fbPiston.3::PistonStatus%/s%" data-tchmi-puller="%s%PLC1.GVL.fbPiston.4::PistonStatus%/s%" data-tchmi-tray="%s%PLC1.GVL.fbPiston.5::PistonStatus%/s%" data-tchmi-pins="%s%PLC1.GVL.fbPiston.6::PistonStatus%/s%" data-tchmi-p_updown="%s%PLC1.GVL.fbPiston.2%/s%" data-tchmi-p_colet="%s%PLC1.GVL.fbPiston.3%/s%" data-tchmi-p_puller="%s%PLC1.GVL.fbPiston.4%/s%" data-tchmi-p_tray="%s%PLC1.GVL.fbPiston.5%/s%" data-tchmi-p_pins="%s%PLC1.GVL.fbPiston.6%/s%" data-tchmi-zindex="7" data-tchmi-station_state="%s%PLC1.GVL.eSEPARATE1%/s%" data-tchmi-skip="%s%PLC1.MAIN.fbSEPARATION1.bSkip%/s%" data-tchmi-bullet_sensor="%s%PLC1.MAIN.fbSEPARATION1.b_BULL_SENSOR%/s%" data-tchmi-tray_push="" data-tchmi-tray_door="" data-tchmi-p_tray_push="%s%PLC1.GVL.fbPiston.15%/s%" data-tchmi-p_tray_door="%s%PLC1.GVL.fbPiston.16%/s%">
 </div>
-<div id="SEPARATE_2" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="318" data-tchmi-height-unit="px" data-tchmi-left="787" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/SEPARATE.usercontrol" data-tchmi-top="40" data-tchmi-top-unit="px" data-tchmi-width="358" data-tchmi-width-unit="px" data-tchmi-updown="%s%PLC1.GVL.fbPiston.7::PistonStatus%/s%" data-tchmi-colet="%s%PLC1.GVL.fbPiston.8::PistonStatus%/s%" data-tchmi-puller="%s%PLC1.GVL.fbPiston.9::PistonStatus%/s%" data-tchmi-tray="%s%PLC1.GVL.fbPiston.10::PistonStatus%/s%" data-tchmi-pins="%s%PLC1.GVL.fbPiston.11::PistonStatus%/s%" data-tchmi-p_updown="%s%PLC1.GVL.fbPiston.7%/s%" data-tchmi-p_colet="%s%PLC1.GVL.fbPiston.8%/s%" data-tchmi-p_puller="%s%PLC1.GVL.fbPiston.9%/s%" data-tchmi-p_tray="%s%PLC1.GVL.fbPiston.10%/s%" data-tchmi-p_pins="%s%PLC1.GVL.fbPiston.11%/s%" data-tchmi-zindex="7" data-tchmi-station_state="%s%PLC1.GVL.eSEPARATE2%/s%" data-tchmi-skip="%s%PLC1.MAIN.fbSEPARATION2.bSkip%/s%" data-tchmi-bullet_sensor="%s%PLC1.MAIN.fbSEPARATION2.b_BULL_SENSOR%/s%">
+<div id="SEPARATE_2" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="318" data-tchmi-height-unit="px" data-tchmi-left="836" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/SEPARATE.usercontrol" data-tchmi-top="40" data-tchmi-top-unit="px" data-tchmi-width="358" data-tchmi-width-unit="px" data-tchmi-updown="%s%PLC1.GVL.fbPiston.7::PistonStatus%/s%" data-tchmi-colet="%s%PLC1.GVL.fbPiston.8::PistonStatus%/s%" data-tchmi-puller="%s%PLC1.GVL.fbPiston.9::PistonStatus%/s%" data-tchmi-tray="%s%PLC1.GVL.fbPiston.10::PistonStatus%/s%" data-tchmi-pins="%s%PLC1.GVL.fbPiston.11::PistonStatus%/s%" data-tchmi-p_updown="%s%PLC1.GVL.fbPiston.7%/s%" data-tchmi-p_colet="%s%PLC1.GVL.fbPiston.8%/s%" data-tchmi-p_puller="%s%PLC1.GVL.fbPiston.9%/s%" data-tchmi-p_tray="%s%PLC1.GVL.fbPiston.10%/s%" data-tchmi-p_pins="%s%PLC1.GVL.fbPiston.11%/s%" data-tchmi-zindex="7" data-tchmi-skip="%s%PLC1.MAIN.fbSEPARATION2.bSkip%/s%" data-tchmi-bullet_sensor="%s%PLC1.MAIN.fbSEPARATION2.b_BULL_SENSOR%/s%" data-tchmi-station_state="%s%PLC1.GVL.eSEPARATE2%/s%" data-tchmi-tray_push="" data-tchmi-tray_door="" data-tchmi-p_tray_push="%s%PLC1.GVL.fbPiston.17%/s%" data-tchmi-p_tray_door="%s%PLC1.GVL.fbPiston.18%/s%">
 </div>
 <div id="TcHmiButton_4" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="24" data-tchmi-left-unit="px" data-tchmi-text="Init" data-tchmi-top="85" data-tchmi-top-unit="px" data-tchmi-width="132" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-zindex="8" data-tchmi-tooltip="" data-tchmi-state-symbol="%s%PLC1.GVL.bINIT_MAIN%/s%">
 </div>
@@ -641,7 +641,7 @@
 </div>
 <div id="UserControl1_18" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="100" data-tchmi-height-unit="px" data-tchmi-left="%s%PLC1.GVL.fbCART[17]::stCART::posX%/s%" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/UC_CART.usercontrol" data-tchmi-top="%s%PLC1.GVL.fbCART[17]::stCART::posY%/s%" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-zindex="8" data-tchmi-cart="%s%PLC1.GVL.fbCART[17]%/s%">
 </div>
-<div id="UserControl1_21" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="213" data-tchmi-height-unit="px" data-tchmi-left="14" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/SMALL_MOTOR.usercontrol" data-tchmi-top="722" data-tchmi-top-unit="px" data-tchmi-width="263" data-tchmi-width-unit="px" data-tchmi-zindex="3" data-tchmi-axis="%s%PLC1.GVL.Axis_SUPPLY%/s%">
+<div id="UserControl1_21" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="213" data-tchmi-height-unit="px" data-tchmi-left="16" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/SMALL_MOTOR.usercontrol" data-tchmi-top="772" data-tchmi-top-unit="px" data-tchmi-width="263" data-tchmi-width-unit="px" data-tchmi-zindex="3" data-tchmi-axis="%s%PLC1.GVL.Axis_SUPPLY%/s%">
 </div>
 <div id="UserControl1_22" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="206" data-tchmi-height-unit="px" data-tchmi-left="1105" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/SMALL_MOTOR.usercontrol" data-tchmi-top="457" data-tchmi-top-unit="px" data-tchmi-width="267" data-tchmi-width-unit="px" data-tchmi-zindex="1" data-tchmi-axis="%s%PLC1.GVL.Axis_MAIN%/s%">
 </div>
@@ -656,7 +656,7 @@
 </script>
 
 </div>
-<div id="TcHmiTextbox_4" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextbox" data-tchmi-height="4.1" data-tchmi-height-unit="%" data-tchmi-left="68.9" data-tchmi-left-unit="%" data-tchmi-text="%s%PLC1.GVL.eCLEAN%/s%" data-tchmi-top="84.2" data-tchmi-top-unit="%" data-tchmi-width="2.1" data-tchmi-width-unit="%" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-font-size="20">
+<div id="TcHmiTextbox_4" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextbox" data-tchmi-height="4.1" data-tchmi-height-unit="%" data-tchmi-left="76.2" data-tchmi-left-unit="%" data-tchmi-text="%s%PLC1.GVL.eCLEAN%/s%" data-tchmi-top="86.3" data-tchmi-top-unit="%" data-tchmi-width="2.1" data-tchmi-width-unit="%" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-font-size="20">
 <script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
 {
   "top": 3,
@@ -669,16 +669,16 @@
 </div>
 <div id="TcHmiButton_6" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="24" data-tchmi-left-unit="px" data-tchmi-text="Reset" data-tchmi-top="148" data-tchmi-top-unit="px" data-tchmi-width="132" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-zindex="8" data-tchmi-state-symbol="%s%PLC1.GVL.b_RESET%/s%">
 </div>
-<div id="UserControl1_27" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="95" data-tchmi-height-unit="px" data-tchmi-left="110" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/G_PISTON.usercontrol" data-tchmi-top="592" data-tchmi-top-unit="px" data-tchmi-width="196" data-tchmi-width-unit="px" data-tchmi-piston="%s%PLC1.GVL.fbPiston[1]%/s%">
+<div id="UserControl1_27" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="95" data-tchmi-height-unit="px" data-tchmi-left="109" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/G_PISTON.usercontrol" data-tchmi-top="549" data-tchmi-top-unit="px" data-tchmi-width="196" data-tchmi-width-unit="px" data-tchmi-piston="%s%PLC1.GVL.fbPiston[1]%/s%">
 </div>
-<div id="UserControl1_28" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="95" data-tchmi-height-unit="px" data-tchmi-left="110" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/G_PISTON.usercontrol" data-tchmi-top="473" data-tchmi-top-unit="px" data-tchmi-width="196" data-tchmi-width-unit="px" data-tchmi-piston="%s%PLC1.GVL.fbPiston[0]%/s%">
+<div id="UserControl1_28" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="95" data-tchmi-height-unit="px" data-tchmi-left="109" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/G_PISTON.usercontrol" data-tchmi-top="468" data-tchmi-top-unit="px" data-tchmi-width="196" data-tchmi-width-unit="px" data-tchmi-piston="%s%PLC1.GVL.fbPiston[0]%/s%">
 </div>
-<div id="TcHmiTextblock_48" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="110" data-tchmi-left-unit="px" data-tchmi-text="Supply Piston" data-tchmi-top="473" data-tchmi-top-unit="px" data-tchmi-width="97" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-zindex="9">
+<div id="TcHmiTextblock_48" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="110" data-tchmi-left-unit="px" data-tchmi-text="Feeder Pusher" data-tchmi-top="473" data-tchmi-top-unit="px" data-tchmi-width="97" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-zindex="9">
 
 </div>
-<div id="TcHmiTextblock_49" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="100" data-tchmi-left-unit="px" data-tchmi-text="Holding Piston" data-tchmi-top="595" data-tchmi-top-unit="px" data-tchmi-width="97" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-zindex="9">
+<div id="TcHmiTextblock_49" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="100" data-tchmi-left-unit="px" data-tchmi-text="Feeder Holder" data-tchmi-top="557" data-tchmi-top-unit="px" data-tchmi-width="97" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-zindex="9">
 </div>
-<div id="UserControl1_29" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="100" data-tchmi-height-unit="px" data-tchmi-left="1372" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/G_PISTON.usercontrol" data-tchmi-top="786" data-tchmi-top-unit="px" data-tchmi-width="159" data-tchmi-width-unit="px" data-tchmi-piston="%s%PLC1.GVL.fbPiston[13]%/s%">
+<div id="UserControl1_29" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="100" data-tchmi-height-unit="px" data-tchmi-left="1513" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/G_PISTON.usercontrol" data-tchmi-top="806" data-tchmi-top-unit="px" data-tchmi-width="159" data-tchmi-width-unit="px" data-tchmi-piston="%s%PLC1.GVL.fbPiston[13]%/s%">
 </div>
 <div id="manual_btn_2" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="2.0" data-tchmi-height-unit="%" data-tchmi-left="6.8" data-tchmi-left-unit="%" data-tchmi-text="Skip" data-tchmi-top="46.8" data-tchmi-top-unit="%" data-tchmi-width="4.6" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-is-enabled="true">
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
@@ -784,7 +784,7 @@
 ]
 </script>
 </div>
-<div id="manual_btn_3" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="2.0" data-tchmi-height-unit="%" data-tchmi-left="71.8" data-tchmi-left-unit="%" data-tchmi-text="Skip" data-tchmi-top="77.4" data-tchmi-top-unit="%" data-tchmi-width="4.6" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-is-enabled="true">
+<div id="manual_btn_3" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="2.0" data-tchmi-height-unit="%" data-tchmi-left="79.1" data-tchmi-left-unit="%" data-tchmi-text="Skip" data-tchmi-top="79.5" data-tchmi-top-unit="%" data-tchmi-width="4.6" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-is-enabled="true">
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
 {
   "color": "rgba(0, 0, 0, 1)"
@@ -888,18 +888,18 @@
 ]
 </script>
 </div>
-<div id="TcHmiTextblock_51" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="1509" data-tchmi-left-unit="px" data-tchmi-text="Safety Station" data-tchmi-top="242" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-zindex="9">
+<div id="TcHmiTextblock_51" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="24" data-tchmi-height-unit="px" data-tchmi-left="1513" data-tchmi-left-unit="px" data-tchmi-text="Dispose Station" data-tchmi-top="241" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-zindex="9">
 <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
 {
   "color": "rgba(223, 237, 235, 1)"
 }
 </script>
 </div>
-<div id="UserControl1_30" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="100" data-tchmi-height-unit="px" data-tchmi-left="1500" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/G_PISTON.usercontrol" data-tchmi-top="247" data-tchmi-top-unit="px" data-tchmi-width="159" data-tchmi-width-unit="px" data-tchmi-piston="%s%PLC1.GVL.fbPiston[12]%/s%">
+<div id="UserControl1_30" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="98" data-tchmi-height-unit="px" data-tchmi-left="1513" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/G_PISTON.usercontrol" data-tchmi-top="261" data-tchmi-top-unit="px" data-tchmi-width="159" data-tchmi-width-unit="px" data-tchmi-piston="%s%PLC1.GVL.fbPiston[12]%/s%">
 </div>
 <div id="TcHmiButton_7" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="961" data-tchmi-left-unit="px" data-tchmi-text="STEP FW" data-tchmi-top="513" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-state-symbol="%s%PLC1.MAIN.fbMAIN_CONV.bStepFW%/s%">
 </div>
-<div id="TcHmiEllipse_8" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiEllipse" data-tchmi-height="5.0" data-tchmi-height-unit="%" data-tchmi-left="63.2" data-tchmi-left-unit="%" data-tchmi-top="27.9" data-tchmi-top-unit="%" data-tchmi-width="3.7" data-tchmi-width-unit="%">
+<div id="TcHmiEllipse_8" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiEllipse" data-tchmi-height="4.3" data-tchmi-height-unit="%" data-tchmi-left="62.9" data-tchmi-left-unit="%" data-tchmi-top="31.9" data-tchmi-top-unit="%" data-tchmi-width="2.8" data-tchmi-width-unit="%">
 
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
@@ -1024,6 +1024,142 @@
 ]
 </script>
 </div>
-<div id="TcHmiTextblock_52" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="2.1" data-tchmi-height-unit="%" data-tchmi-left="63.7" data-tchmi-left-unit="%" data-tchmi-text="Bullet Sensor" data-tchmi-top="25.2" data-tchmi-top-unit="%" data-tchmi-width="4.0" data-tchmi-width-unit="%" data-tchmi-word-wrap="true">
+<div id="TcHmiTextblock_52" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="2.1" data-tchmi-height-unit="%" data-tchmi-left="62.9" data-tchmi-left-unit="%" data-tchmi-text="Bullet Sensor" data-tchmi-top="27.8" data-tchmi-top-unit="%" data-tchmi-width="4.0" data-tchmi-width-unit="%" data-tchmi-word-wrap="true">
+</div>
+<div id="UserControl1_31" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="95" data-tchmi-height-unit="px" data-tchmi-left="109" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/G_PISTON.usercontrol" data-tchmi-top="638" data-tchmi-top-unit="px" data-tchmi-width="196" data-tchmi-width-unit="px" data-tchmi-piston="%s%PLC1.GVL.fbPiston[14]%/s%">
+</div>
+<div id="TcHmiTextblock_53" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="100" data-tchmi-left-unit="px" data-tchmi-text="Feeder Opener" data-tchmi-top="646" data-tchmi-top-unit="px" data-tchmi-width="97" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-zindex="9">
+</div>
+<div id="TcHmiTextblock_57" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="606" data-tchmi-left-unit="px" data-tchmi-text="Drop Station" data-tchmi-top="788" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-zindex="9">
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "rgba(223, 237, 235, 1)"
+}
+</script>
+</div>
+<div id="TcHmiTextbox_5" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextbox" data-tchmi-height="4.1" data-tchmi-height-unit="%" data-tchmi-left="29.2" data-tchmi-left-unit="%" data-tchmi-text="%s%PLC1.GVL.eDROP%/s%" data-tchmi-top="81.2" data-tchmi-top-unit="%" data-tchmi-width="2.1" data-tchmi-width-unit="%" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-font-size="20">
+<script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
+{
+  "top": 3,
+  "right": 3,
+  "bottom": 3,
+  "left": 3
+}
+</script>
+
+</div>
+<div id="UserControl1_34" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="100" data-tchmi-height-unit="px" data-tchmi-left="616" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/G_PISTON.usercontrol" data-tchmi-top="802" data-tchmi-top-unit="px" data-tchmi-width="159" data-tchmi-width-unit="px" data-tchmi-piston="%s%PLC1.GVL.fbPiston[20]%/s%">
+</div>
+<div id="manual_btn_4" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="2.0" data-tchmi-height-unit="%" data-tchmi-left="32.1" data-tchmi-left-unit="%" data-tchmi-text="Skip" data-tchmi-top="79.5" data-tchmi-top-unit="%" data-tchmi-width="4.6" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-is-enabled="true">
+<script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
+{
+  "color": "rgba(0, 0, 0, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "rgba(255, 255, 255, 1)"
+}
+</script>
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "manual_btn_4.onPressed",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "symbolExpression": "%s%PLC1.MAIN.fbDROP::bSkip%/s%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "value": false
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%s%PLC1.MAIN.fbDROP::bSkip%/s%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "value": true
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%manual_btn_4::BackgroundColor%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Color",
+                  "value": {
+                    "color": "rgba(214, 218, 56, 1)"
+                  }
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%s%PLC1.MAIN.fbDROP::bSkip%/s%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "value": false
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%manual_btn_4::BackgroundColor%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Color",
+                  "value": {
+                    "color": "rgba(255, 255, 255, 1)"
+                  }
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
+</div>
+<div id="UserControl1_35" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="100" data-tchmi-height-unit="px" data-tchmi-left="616" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/G_PISTON.usercontrol" data-tchmi-top="863" data-tchmi-top-unit="px" data-tchmi-width="159" data-tchmi-width-unit="px" data-tchmi-piston="%s%PLC1.GVL.fbPiston[21]%/s%">
+</div>
+<div id="TcHmiTextblock_58" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="2.1" data-tchmi-height-unit="%" data-tchmi-left="32.3" data-tchmi-left-unit="%" data-tchmi-text="push" data-tchmi-top="82.3" data-tchmi-top-unit="%" data-tchmi-width="4.0" data-tchmi-width-unit="%" data-tchmi-word-wrap="true">
+</div>
+<div id="TcHmiTextblock_59" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="2.1" data-tchmi-height-unit="%" data-tchmi-left="33.3" data-tchmi-left-unit="%" data-tchmi-text="push" data-tchmi-top="85.2" data-tchmi-top-unit="%" data-tchmi-width="4.0" data-tchmi-width-unit="%" data-tchmi-word-wrap="true">
+</div>
+<div id="TcHmiTextblock_60" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="2.1" data-tchmi-height-unit="%" data-tchmi-left="33.3" data-tchmi-left-unit="%" data-tchmi-text="open" data-tchmi-top="91.2" data-tchmi-top-unit="%" data-tchmi-width="4.0" data-tchmi-width-unit="%" data-tchmi-word-wrap="true">
 </div>
 </div>

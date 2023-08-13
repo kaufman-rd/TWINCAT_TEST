@@ -18,12 +18,14 @@ VAR
 	temp_sep1_state:E_STATION_STATE;
 	temp_sep2_state:E_STATION_STATE;
 	temp_clean_state:E_STATION_STATE;
+	temp_drop_state:E_STATION_STATE;
 	temp_conv_state:E_CONVAYOR_STATE;
 	temp_supconv_state:E_CONVAYOR_STATE;
 	bHomed:BOOL:=FALSE;
 	fbSEPARATION1: FB_SEPARATE;		
 	fbSEPARATION2: FB_SEPARATE;	
 	fbCLEAN: FB_CLEAN;
+	fbDROP: FB_DROP;
 	fbSUPPLY: FB_SUPPLY;
 	fbMAIN_CONV: FB_MAIN_CONV;
 	fbSUPPLY_CONV: FB_SUPPLY_CONV;
@@ -58,6 +60,7 @@ fbSEPARATION2(piston_updown:=  fbPiston[8],
  			  station_num:=separate2_station_num);	
 	
 fbCLEAN(piston_clean:=  fbPiston[14]);
+fbDROP(piston_open:=  fbPiston[22],piston_push:=  fbPiston[21]);
 fbSUPPLY(piston_supply:=  fbPiston[1]);
 
 MOTORS();
@@ -77,6 +80,7 @@ CASE eMAIN_STATE OF
 		eSEPARATE1 := E_STATION_STATE.homing;
 		eSEPARATE2 := E_STATION_STATE.homing;
 		eCLEAN := E_STATION_STATE.homing;
+		eDROP := E_STATION_STATE.homing;
 		eMAIN_CONVAYOR_STATE := E_CONVAYOR_STATE.homing;
 		eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.homing;
 		IF fbSEPARATION1.bHomed AND fbSEPARATION2.bHomed THEN
@@ -94,6 +98,7 @@ CASE eMAIN_STATE OF
 			eSEPARATE1 := E_STATION_STATE.unInit;
 			eSEPARATE2 := E_STATION_STATE.unInit;
 			eCLEAN := E_STATION_STATE.unInit;
+			eDROP := E_STATION_STATE.unInit;
 			eMAIN_CONVAYOR_STATE := E_CONVAYOR_STATE.unInit;
 			eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.unInit;
 			eMAIN_STATE:=E_MAIN_STATE.idle;
@@ -123,12 +128,16 @@ CASE eMAIN_STATE OF
 			IF eCLEAN = E_STATION_STATE.idle THEN
 				eCLEAN := E_STATION_STATE.do_action1;
 			END_IF
+			IF eDROP = E_STATION_STATE.idle THEN
+				eDROP := E_STATION_STATE.do_action1;
+			END_IF
 		END_IF
-		IF (eSEPARATE1 = E_STATION_STATE.done AND eSEPARATE2 = E_STATION_STATE.done AND eSUPPLY = E_STATION_STATE.done  AND eCLEAN = E_STATION_STATE.done) THEN
+		IF (eSEPARATE1 = E_STATION_STATE.done AND eSEPARATE2 = E_STATION_STATE.done AND eSUPPLY = E_STATION_STATE.done  AND eCLEAN = E_STATION_STATE.done AND eDROP = E_STATION_STATE.done) THEN
 			eSUPPLY := E_STATION_STATE.idle;
 			eSEPARATE1 := E_STATION_STATE.idle;
 			eSEPARATE2 := E_STATION_STATE.idle;
 			eCLEAN := E_STATION_STATE.idle;
+			eDROP := E_STATION_STATE.idle;
 			eMAIN_STATE:=E_MAIN_STATE.move_next;
 			bTIMEOUT:=FALSE;
 		END_IF
@@ -158,6 +167,7 @@ CASE eMAIN_STATE OF
 			eSEPARATE1:=temp_sep1_state;
 			eSEPARATE2:=temp_sep2_state;
 			eCLEAN:=temp_clean_state;
+			eDROP:=temp_drop_state;
 			eMAIN_CONVAYOR_STATE:=temp_conv_state;
 			eSUPPLY_CONVAYOR_STATE:=temp_conv_state;
 		END_IF
@@ -167,6 +177,7 @@ CASE eMAIN_STATE OF
 		eSEPARATE1 := E_STATION_STATE.error;
 		eSEPARATE2 := E_STATION_STATE.error;
 		eCLEAN := E_STATION_STATE.error;
+		eDROP := E_STATION_STATE.error;
 		eMAIN_CONVAYOR_STATE := E_CONVAYOR_STATE.error;
 		eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.error;
 		Axis_MAIN.bHalt:=TRUE;
@@ -194,6 +205,7 @@ IF rtrigINIT.Q THEN
 	eSEPARATE1 := E_STATION_STATE.estop;
 	eSEPARATE2 := E_STATION_STATE.estop;
 	eCLEAN := E_STATION_STATE.error;
+	eDROP := E_STATION_STATE.error;
 	eMAIN_CONVAYOR_STATE := E_CONVAYOR_STATE.estop;
 	eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.estop;
 	eMAIN_STATE:=E_MAIN_STATE.uninit;
@@ -205,6 +217,7 @@ IF rtrigPAUSE.Q THEN
 	temp_sep1_state:=eSEPARATE1;
 	temp_sep2_state:=eSEPARATE2;
 	temp_clean_state:=eCLEAN;
+	temp_drop_state:=eCLEAN;
 	temp_conv_state:=eMAIN_CONVAYOR_STATE;
 	temp_supconv_state:=eSUPPLY_CONVAYOR_STATE;
 	eMAIN_STATE:=E_MAIN_STATE.pause;

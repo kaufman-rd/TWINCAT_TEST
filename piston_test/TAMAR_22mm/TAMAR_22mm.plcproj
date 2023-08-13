@@ -76,6 +76,9 @@
     <Compile Include="STATIONS\FB_CLEAN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="STATIONS\FB_DROP.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="STATIONS\FB_MAIN_CONV.TcPOU">
       <SubType>Code</SubType>
     </Compile>
