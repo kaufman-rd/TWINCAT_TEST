@@ -3,6 +3,7 @@
   <POU Name="MAIN" Id="{53f75a9f-ce5b-4537-a8c7-41cbbfdb1ac5}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
+	counter1:INT:=0;
 	counter:INT:=0;
 	iNUMBER1 : INT:=2;
 	sNAME1 : STRING(255):='23_5A';
@@ -39,8 +40,8 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[rAnalogIn:=F_Linear(nanlogIn1,200,31170,0,2000);
-A_ERROR_CHECK();
 PISTONS_CYCLE();
+A_PISTON_ERROR_CHECK();
 fbMAIN_CONV(fbAxis:=Axis_MAIN);
 fbSUPPLY_CONV(fbAxis:=Axis_SUPPLY);
 fbSEPARATION1(piston_updown:=  fbPiston[3],
@@ -113,10 +114,18 @@ CASE eMAIN_STATE OF
 	E_MAIN_STATE.idle:
 		IF rtrigSTART.Q THEN
 			IF b_sense_home1 AND NOT b_sense_home2 AND b_sense_home3 THEN 
-				eMAIN_STATE:=E_MAIN_STATE.do_actions;
+				eMAIN_STATE:=E_MAIN_STATE.safety;
 			END_IF
 		END_IF
-		
+	
+	E_MAIN_STATE.safety:
+		A_SAFETY_CHECK();
+		IF NOT b_E_STOP THEN
+			eMAIN_STATE:=E_MAIN_STATE.do_actions;
+		ELSE
+			eMAIN_STATE:=E_MAIN_STATE.estop;
+		END_IF
+	
 	E_MAIN_STATE.do_actions:
 		bTIMEOUT:=TRUE;
 		IF b_sense_home1 AND NOT b_sense_home2 AND b_sense_home3 THEN 
@@ -160,7 +169,7 @@ CASE eMAIN_STATE OF
 		IF eMAIN_CONVAYOR_STATE = E_CONVAYOR_STATE.done AND eSUPPLY_CONVAYOR_STATE = E_CONVAYOR_STATE.done THEN
 			eMAIN_CONVAYOR_STATE := E_CONVAYOR_STATE.idle;
 			eSUPPLY_CONVAYOR_STATE := E_CONVAYOR_STATE.idle;
-			eMAIN_STATE:=E_MAIN_STATE.do_actions;
+			eMAIN_STATE:=E_MAIN_STATE.safety;
 		END_IF
 		
 	E_MAIN_STATE.pause: 
@@ -205,13 +214,15 @@ IF rtrigE_STOP.Q THEN
 END_IF
 
 IF rtrigINIT.Q THEN
-	eSUPPLY := E_STATION_STATE.estop;
-	eSEPARATE1 := E_STATION_STATE.estop;
-	eSEPARATE2 := E_STATION_STATE.estop;
-	eCLEAN := E_STATION_STATE.error;
-	eDROP := E_STATION_STATE.error;
+	//eSUPPLY := E_STATION_STATE.estop;
+	//eSEPARATE1 := E_STATION_STATE.estop;
+	//eSEPARATE2 := E_STATION_STATE.estop;
+	//eCLEAN := E_STATION_STATE.error;
+	//eDROP := E_STATION_STATE.error;
 	eMAIN_CONVAYOR_STATE := E_CONVAYOR_STATE.estop;
 	eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.estop;
+	b_E_STOP:=FALSE;
+	bSafety_error:=FALSE;
 	eMAIN_STATE:=E_MAIN_STATE.uninit;
 END_IF
 
@@ -236,7 +247,7 @@ END_IF
 
 ]]></ST>
     </Implementation>
-    <Action Name="A_ERROR_CHECK" Id="{31fa973b-2552-4508-9ddd-0d789e896870}">
+    <Action Name="A_PISTON_ERROR_CHECK" Id="{31fa973b-2552-4508-9ddd-0d789e896870}">
       <Implementation>
         <ST><![CDATA[FOR counter:=1 TO iNUMBER_OF_PISTONS BY 1 DO
 	IF fbPiston[counter].PistonStatus = ePistonStatus.ERROR THEN
@@ -245,6 +256,15 @@ END_IF
 	END_IF
 	
 END_FOR;]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="A_SAFETY_CHECK" Id="{d7d5bf32-283e-4dd1-af49-80d8b6309e6e}">
+      <Implementation>
+        <ST><![CDATA[FOR counter1:=1 TO num_of_carts BY 1 DO
+	fbCART[counter1].A_CHECK();
+END_FOR;
+
+]]></ST>
       </Implementation>
     </Action>
   </POU>

@@ -16,6 +16,17 @@ END_VAR
     <Implementation>
       <ST><![CDATA[]]></ST>
     </Implementation>
+    <Action Name="A_CHECK" Id="{ee2d2cc5-a3db-4b77-a107-1f4155b24c47}">
+      <Implementation>
+        <ST><![CDATA[IF stCART.position = bullet_check_num THEN
+		IF bBulletSensor THEN
+				stCART.color:=89;
+				bSafety_error:=TRUE;
+				b_E_STOP:=TRUE;
+		END_IF
+	END_IF ]]></ST>
+      </Implementation>
+    </Action>
     <Action Name="A_STEP" Id="{14523dd1-b206-4535-943a-bfd0c09ba5ec}">
       <Implementation>
         <ST><![CDATA[IF stCART.position < num_of_carts*2 THEN
@@ -52,11 +63,7 @@ END_VAR
 		stCART.o_color:=4;
 	END_IF 
 	
-	IF stCART.position = bullet_check_num THEN
-		IF bBulletSensor THEN
-				stCART.color:=89;
-		END_IF
-	END_IF 
+	
 	
 	IF stCART.position = clean_station_num THEN
 		IF NOT MAIN.fbCLEAN.bSkip THEN
@@ -68,6 +75,9 @@ END_VAR
 		END_IF
 		stCART.o_color:=1;
 	END_IF 
+	
+	
+	
 	stCART.position:= stCART.position+1;
 	stCART.posX:=posArrX[stCART.position];
 	stCART.posY:=posArrY[stCART.position];

@@ -1,5 +1,5 @@
 <div id="C_Page1" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="1920" data-tchmi-height="960" data-tchmi-zindex="3" data-tchmi-zindex="2">
-<div id="UC_NEW_PISTON_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="203" data-tchmi-height-unit="px" data-tchmi-left="34" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/UC_NEW_PISTON.usercontrol" data-tchmi-top="86" data-tchmi-top-unit="px" data-tchmi-width="190" data-tchmi-width-unit="px" data-tchmi-piston="%s%PLC1.GVL.fbPiston.0%/s%" data-tchmi-st_piston="%s%PLC1.GVL.stPISTON_PARAM[0]%/s%" data-tchmi-zindex="2" data-tchmi-param="%s%PLC1.GVL.fbPiston.0%/s%">
+<div id="UC_NEW_PISTON_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="203" data-tchmi-height-unit="px" data-tchmi-left="34" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/UC_NEW_PISTON.usercontrol" data-tchmi-top="86" data-tchmi-top-unit="px" data-tchmi-width="190" data-tchmi-width-unit="px" data-tchmi-st_piston="%s%PLC1.GVL.stPISTON_PARAM[0]%/s%" data-tchmi-zindex="2" data-tchmi-param="%s%PLC1.GVL.fbPiston.0%/s%" data-tchmi-piston="%s%PLC1.GVL.fbPiston.0%/s%">
 </div>
 
 <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">

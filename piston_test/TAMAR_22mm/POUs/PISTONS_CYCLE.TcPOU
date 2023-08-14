@@ -7,7 +7,7 @@ VAR
 	bSTARTUP: BOOL:=FALSE;
 	counter: INT;
 	MANUALcOUNTER:int:=0;
-	timimg: REAL:=0.3;
+	timimg: REAL:=0.2;
 	
 END_VAR
 ]]></Declaration>

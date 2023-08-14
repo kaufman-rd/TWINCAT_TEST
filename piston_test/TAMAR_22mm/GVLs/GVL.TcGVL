@@ -11,7 +11,7 @@ VAR_GLOBAL
 	separate1_station_num: INT:=5;
 	separate2_station_num: INT:=9;
 	bullet_check_num: INT:=11;
-	dispose_num:INT:=15;
+	dispose_station_num:INT:=11;
 	clean_station_num: INT:=23;
 	primer_station_num: INT:=27;
 	drop_station_num: INT:=33;
@@ -52,6 +52,7 @@ VAR_GLOBAL
 	bINIT_MAIN: BOOL:=FALSE;
 	b_E_STOP:BOOL:=FALSE;
 	b_RESET:BOOL:=FALSE;
+	bSafety_error:BOOL:=FALSE;
 	b_sense_home1: BOOL:=TRUE;
 	b_sense_home2: BOOL;
 	b_sense_home3: BOOL:=TRUE;

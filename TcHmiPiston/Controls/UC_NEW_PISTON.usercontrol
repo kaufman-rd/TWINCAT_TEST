@@ -302,7 +302,7 @@
 }
 </script>
 </div>
-<div id="TcHmiTextbox" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextbox" data-tchmi-height="8.0" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="%" data-tchmi-text="%pp%PISTON::stPISTON::openTime|BindingMode=TwoWay|BindingEvent=onUserInteractionFinished%/pp%" data-tchmi-top="57.5" data-tchmi-top-unit="%" data-tchmi-width="37.1" data-tchmi-width-unit="%" data-tchmi-zindex="5">
+<div id="TcHmiTextbox" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextbox" data-tchmi-height="8.0" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="%" data-tchmi-text="%pp%PISTON::timerOpening::PT|BindingEvent=onUserInteractionFinished%/pp%" data-tchmi-top="57.5" data-tchmi-top-unit="%" data-tchmi-width="37.1" data-tchmi-width-unit="%" data-tchmi-zindex="5" data-tchmi-auto-focus-out="true">
 <script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
 {
   "top": 3,
@@ -313,7 +313,7 @@
 </script>
 
 </div>
-<div id="TcHmiTextbox_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextbox" data-tchmi-height="8.6" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="%" data-tchmi-top="79.3" data-tchmi-top-unit="%" data-tchmi-width="37.1" data-tchmi-width-unit="%" data-tchmi-text="%pp%PISTON::stPISTON::closeTime|BindingMode=TwoWay|BindingEvent=onUserInteractionFinished%/pp%" data-tchmi-zindex="5">
+<div id="TcHmiTextbox_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextbox" data-tchmi-height="8.6" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="%" data-tchmi-top="79.3" data-tchmi-top-unit="%" data-tchmi-width="37.1" data-tchmi-width-unit="%" data-tchmi-text="%pp%PISTON::timerClosing::PT|BindingEvent=onUserInteractionFinished%/pp%" data-tchmi-zindex="5">
 <script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
 {
   "top": 3,

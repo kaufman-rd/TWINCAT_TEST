@@ -8,6 +8,7 @@ END_VAR
 VAR_OUTPUT
 END_VAR
 VAR
+	
 	rtrigFW: R_TRIG;
 	bStepFW:BOOL:=FALSE;
 	//bStepBW:BOOL:=FALSE;
@@ -70,30 +71,34 @@ CASE eMAIN_CONVAYOR_STATE OF
 		
 	E_CONVAYOR_STATE.idle:
 		//
+	
+	E_CONVAYOR_STATE.do_move:
+		eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.st1;
 		
-	E_CONVAYOR_STATE.do_move: // start motion
+	
+	E_CONVAYOR_STATE.st1: // start motion
 		IF NOT fbAxis.bBusy  AND NOT fbAxis.bError THEN
 			fbAxis.rPos:=0;	
-			fbAxis.bSetPosition:=TRUE;	 
+			fbAxis.bSetPosition:=TRUE;	
 			A_CARTS_STEP();
 			fbAxis.bDo_Step_FW:=TRUE;
-			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.st1;
-		END_IF
-		
-	E_CONVAYOR_STATE.st1:
-		IF fbAxis.rActPos < 200 THEN
-			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.st2;	
-			fbAxis.bSetPosition:=FALSE;
+			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.st2;
 		END_IF
 		
 	E_CONVAYOR_STATE.st2:
+		IF fbAxis.rActPos < 200 THEN
+			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.st3;	
+			fbAxis.bSetPosition:=FALSE;
+		END_IF
+		
+	E_CONVAYOR_STATE.st3:
 		IF fbAxis.rActPos > (fbAxis.rStep/2)	THEN
 			A_CARTS_STEP();	
-			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.st3;
+			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.st4;
 		END_IF
 
 
-	E_CONVAYOR_STATE.st3:
+	E_CONVAYOR_STATE.st4:
 		IF fbAxis.bInPos THEN
 			eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.done;
 		END_IF

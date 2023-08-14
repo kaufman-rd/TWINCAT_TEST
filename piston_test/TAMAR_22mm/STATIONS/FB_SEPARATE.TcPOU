@@ -104,6 +104,7 @@ CASE eState OF
 	E_STATION_STATE.do_action8:
 		IF piston_tray_push.PistonStatus= ePistonStatus.CLOSED AND piston_tray_door.PistonStatus= ePistonStatus.CLOSED  THEN
 			piston_tray.A_CLOSE();
+			piston_pins.A_CLOSE();
 			eState:=E_STATION_STATE.do_action9;
 		END_IF
 			

@@ -13,7 +13,8 @@ TYPE E_MAIN_STATE :
 	pause,
 	error,
 	estop,
-	homing
+	homing,
+	safety
 );
 END_TYPE
 ]]></Declaration>
