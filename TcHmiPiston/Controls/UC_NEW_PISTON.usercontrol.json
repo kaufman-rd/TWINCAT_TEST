@@ -16,6 +16,23 @@
       "propertySetterName": "setPISTON",
       "propertyGetterName": "getPISTON",
       "refTo": ""
+    },
+    {
+      "name": "data-tchmi-stpiston",
+      "displayName": "stPISTON",
+      "allowSymbolExpressionsInObject": false,
+      "visible": true,
+      "type": "tchmi:server#/definitions/PLC1.ST_PISTON",
+      "category": "",
+      "description": "",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "propertyName": "stPISTON",
+      "propertySetterName": "setStPISTON",
+      "propertyGetterName": "getStPISTON",
+      "refTo": ""
     }
   ],
   "virtualRights": [],

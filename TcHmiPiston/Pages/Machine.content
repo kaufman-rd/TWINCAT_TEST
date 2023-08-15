@@ -908,18 +908,18 @@
 ]
 </script>
 </div>
-<div id="TcHmiTextblock_51" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="24" data-tchmi-height-unit="px" data-tchmi-left="1513" data-tchmi-left-unit="px" data-tchmi-text="Dispose Station" data-tchmi-top="241" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-zindex="9">
+<div id="TcHmiTextblock_51" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="24" data-tchmi-height-unit="px" data-tchmi-left="1534" data-tchmi-left-unit="px" data-tchmi-text="Dispose Station" data-tchmi-top="235" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-zindex="9">
 <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
 {
   "color": "rgba(223, 237, 235, 1)"
 }
 </script>
 </div>
-<div id="UserControl1_30" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="98" data-tchmi-height-unit="px" data-tchmi-left="1513" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/G_PISTON.usercontrol" data-tchmi-top="261" data-tchmi-top-unit="px" data-tchmi-width="159" data-tchmi-width-unit="px" data-tchmi-piston="%s%PLC1.GVL.fbPiston[12]%/s%">
+<div id="UserControl1_30" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="98" data-tchmi-height-unit="px" data-tchmi-left="1560" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/G_PISTON.usercontrol" data-tchmi-top="259" data-tchmi-top-unit="px" data-tchmi-width="159" data-tchmi-width-unit="px" data-tchmi-piston="%s%PLC1.GVL.fbPiston[12]%/s%">
 </div>
 <div id="TcHmiButton_7" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="961" data-tchmi-left-unit="px" data-tchmi-text="STEP FW" data-tchmi-top="513" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-state-symbol="%s%PLC1.MAIN.fbMAIN_CONV.bStepFW%/s%">
 </div>
-<div id="TcHmiEllipse_8" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiEllipse" data-tchmi-height="4.3" data-tchmi-height-unit="%" data-tchmi-left="62.9" data-tchmi-left-unit="%" data-tchmi-top="31.9" data-tchmi-top-unit="%" data-tchmi-width="2.8" data-tchmi-width-unit="%">
+<div id="TcHmiEllipse_8" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiEllipse" data-tchmi-height="4.3" data-tchmi-height-unit="%" data-tchmi-left="77.7" data-tchmi-left-unit="%" data-tchmi-top="30.1" data-tchmi-top-unit="%" data-tchmi-width="2.8" data-tchmi-width-unit="%">
 
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [

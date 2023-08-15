@@ -10,8 +10,8 @@ VAR_GLOBAL
 	supply_station_num: INT:=1;
 	separate1_station_num: INT:=5;
 	separate2_station_num: INT:=9;
-	bullet_check_num: INT:=11;
-	dispose_station_num:INT:=11;
+	bullet_check_num: INT:=15;
+	dispose_station_num:INT:=15;
 	clean_station_num: INT:=23;
 	primer_station_num: INT:=27;
 	drop_station_num: INT:=33;

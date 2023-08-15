@@ -282,7 +282,7 @@
 
 
 </div>
-<div id="TcHmiTextblock_4" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="15.0" data-tchmi-height-unit="%" data-tchmi-left="0.0" data-tchmi-left-unit="%" data-tchmi-text="%pp%PISTON::stPISTON::nNAME%/pp%" data-tchmi-top="0" data-tchmi-top-unit="%" data-tchmi-width="100.0" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-zindex="9" data-tchmi-text-font-size-unit="%" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-font-size="100">
+<div id="TcHmiTextblock_4" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="15.0" data-tchmi-height-unit="%" data-tchmi-left="0.0" data-tchmi-left-unit="%" data-tchmi-top="0" data-tchmi-top-unit="%" data-tchmi-width="100.0" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-zindex="9" data-tchmi-text-font-size-unit="%" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-font-size="100" data-tchmi-is-enabled="true" data-tchmi-text="%pp%stPISTON::nNAME%/pp%">
 
 <script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
 {
@@ -301,6 +301,10 @@
   "color": "rgba(0, 0, 0, 1)"
 }
 </script>
+
+
+
+
 </div>
 <div id="TcHmiTextbox" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextbox" data-tchmi-height="8.0" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="%" data-tchmi-text="%pp%PISTON::timerOpening::PT|BindingEvent=onUserInteractionFinished%/pp%" data-tchmi-top="57.5" data-tchmi-top-unit="%" data-tchmi-width="37.1" data-tchmi-width-unit="%" data-tchmi-zindex="5" data-tchmi-auto-focus-out="true">
 <script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">

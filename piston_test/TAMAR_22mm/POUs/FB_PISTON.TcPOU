@@ -28,6 +28,7 @@ VAR_OUTPUT
 	
 END_VAR
 VAR
+	sName:STRING;
 	timerOpening:ton;
 	timerClosing:ton;
 	timeoutOpening:ton;
@@ -41,6 +42,7 @@ END_VAR
       <ST><![CDATA[IF NOT bSTARTUP THEN
 	bCMD_OPEN:=stPISTON.bOPEN_BY_DEFAULT;
 	bSTARTUP:=TRUE;
+	sName:=stPISTON.nNAME;
 END_IF
 
 rtrigMANUAL(CLK:= bMANUAL, Q=> );
