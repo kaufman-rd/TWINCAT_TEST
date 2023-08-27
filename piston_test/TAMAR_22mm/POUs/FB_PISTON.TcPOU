@@ -35,6 +35,8 @@ VAR
 	timeoutClosing:ton;
 	bSTARTUP: BOOL:=FALSE;
 	rtrigMANUAL: R_TRIG;
+	rtrigERROR: R_TRIG;
+	bERROR:BOOL:=FALSE;
 	
 END_VAR
 ]]></Declaration>
@@ -48,6 +50,13 @@ END_IF
 rtrigMANUAL(CLK:= bMANUAL, Q=> );
 IF rtrigMANUAL.Q THEN
 	bCMD_OPEN:=bCMD_OPEN_SWR;
+END_IF
+
+rtrigERROR(CLK:=(timeoutOpening.Q AND (stPISTON.ePISTON_TYPE = E_PISTON_TYPE.ONLY_OPEN OR stPISTON.ePISTON_TYPE = E_PISTON_TYPE.BOTH)), Q=> );
+IF rtrigERROR.Q THEN
+	PistonStatus:=ePistonStatus.ERROR;
+	A_OPEN_ERROR();
+	bERROR:=TRUE;
 END_IF
 
 timerOpening(IN:= bVALVE_OPEN, PT:=REAL_TO_TIME(stPISTON.openTime*1000) , Q=> , ET=> );
@@ -104,7 +113,7 @@ CASE stPISTON.ePISTON_TYPE OF
 	
 	1://only open sensor
 	
-		IF bVALVE_OPEN AND NOT bSEN_OPEN THEN
+		IF bVALVE_OPEN AND NOT bSEN_OPEN AND NOT timeoutOpening.Q THEN
 			PistonStatus:=ePistonStatus.OPENING;
 		ELSIF bVALVE_OPEN AND bSEN_OPEN THEN
 			PistonStatus:=ePistonStatus.OPENED;
@@ -139,11 +148,13 @@ CASE stPISTON.ePISTON_TYPE OF
 	
 END_CASE
 
-IF timeoutOpening.Q AND (stPISTON.ePISTON_TYPE = E_PISTON_TYPE.ONLY_OPEN OR stPISTON.ePISTON_TYPE = E_PISTON_TYPE.BOTH)  THEN
-	PistonStatus:=ePistonStatus.ERROR;
-END_IF
+//IF timeoutOpening.Q AND (stPISTON.ePISTON_TYPE = E_PISTON_TYPE.ONLY_OPEN OR stPISTON.ePISTON_TYPE = E_PISTON_TYPE.BOTH)  THEN
+//	PistonStatus:=ePistonStatus.ERROR;
+//	A_OPEN_ERROR();
+//END_IF
 IF timeoutClosing.Q  AND (stPISTON.ePISTON_TYPE = E_PISTON_TYPE.ONLY_CLOSE OR stPISTON.ePISTON_TYPE = E_PISTON_TYPE.BOTH)  THEN
 	PistonStatus:=ePistonStatus.ERROR;
+	A_CLOSE_ERROR();
 END_IF
 
 
@@ -156,6 +167,16 @@ END_IF
     <Action Name="A_CLOSE" Id="{445c1d90-1cac-4e57-b5b0-98b5b66b350e}">
       <Implementation>
         <ST><![CDATA[bCMD_OPEN_SWR:=FALSE;]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="A_CLOSE_ERROR" Id="{6846447f-a805-4330-b167-35718d596cb8}">
+      <Implementation>
+        <ST><![CDATA[gEventType:= E_EventType.Alarm; 
+gEventSeverity:= TcEventSeverity.Error;
+gEventIdentity:=1002;
+gEventName:= stPISTON.nNAME;
+gEventText:='CLOSING ERROR PISTON:';
+fbEventLogger.mAdd();]]></ST>
       </Implementation>
     </Action>
     <Action Name="A_DEFAULT" Id="{bf860e38-8780-47ac-ad74-e891a7c1d484}">
@@ -173,11 +194,34 @@ END_IF]]></ST>
         <ST><![CDATA[bCMD_OPEN_SWR:=TRUE;]]></ST>
       </Implementation>
     </Action>
+    <Action Name="A_OPEN_ERROR" Id="{c3532af4-7ab4-45f6-aa4d-e3d03553aa97}">
+      <Implementation>
+        <ST><![CDATA[gEventType:= E_EventType.Alarm; 
+gEventSeverity:= TcEventSeverity.Error;
+gEventIdentity:=1001;
+gEventName:= stPISTON.nNAME;
+gEventText:='OPENING ERROR PISTON:';
+fbEventLogger.mAdd();]]></ST>
+      </Implementation>
+    </Action>
     <LineIds Name="FB_PISTON">
-      <LineId Id="3" Count="111" />
+      <LineId Id="3" Count="9" />
+      <LineId Id="156" Count="5" />
+      <LineId Id="155" Count="0" />
+      <LineId Id="13" Count="91" />
+      <LineId Id="151" Count="0" />
+      <LineId Id="105" Count="2" />
+      <LineId Id="152" Count="0" />
+      <LineId Id="108" Count="6" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_PISTON.A_CLOSE">
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_PISTON.A_CLOSE_ERROR">
+      <LineId Id="2" Count="2" />
+      <LineId Id="6" Count="0" />
+      <LineId Id="5" Count="0" />
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="FB_PISTON.A_DEFAULT">
@@ -185,6 +229,12 @@ END_IF]]></ST>
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="FB_PISTON.A_OPEN">
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_PISTON.A_OPEN_ERROR">
+      <LineId Id="2" Count="2" />
+      <LineId Id="6" Count="0" />
+      <LineId Id="5" Count="0" />
       <LineId Id="1" Count="0" />
     </LineIds>
   </POU>

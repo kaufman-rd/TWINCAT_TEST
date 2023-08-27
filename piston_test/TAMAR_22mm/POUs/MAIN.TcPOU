@@ -223,6 +223,7 @@ IF rtrigE_STOP.Q THEN
 	gEventType:= E_EventType.Message; 
 	gEventSeverity:= TcEventSeverity.Info;
 	gEventIdentity:=999;
+	gEventText:='MAIN';
 	gEventText:='Emergency Stop';
 	fbEventLogger.mAdd();
 END_IF
@@ -291,6 +292,7 @@ END_FOR;
       <LineId Id="248" Count="0" />
       <LineId Id="3" Count="171" />
       <LineId Id="259" Count="2" />
+      <LineId Id="306" Count="0" />
       <LineId Id="258" Count="0" />
       <LineId Id="262" Count="0" />
       <LineId Id="175" Count="29" />

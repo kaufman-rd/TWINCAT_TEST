@@ -9,6 +9,7 @@ VAR_GLOBAL
 	gEventSeverity: TcEventSeverity:= TcEventSeverity.Info;
 	gEventIdentity: UDINT:=0;
 	gEventText: STRING(255):='Startup Event';
+	gEventName: STRING(255):='';
 	fbEventLogger: FB_EventLogger;
 	
 	nanlogIn1 AT%I*:INT;

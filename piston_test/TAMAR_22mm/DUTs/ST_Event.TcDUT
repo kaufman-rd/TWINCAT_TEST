@@ -6,6 +6,7 @@ STRUCT
 	eEventType: E_EventType; 
 	eEventSeverity: TcEventSeverity;
 	nEventIdentity: UDINT;
+	sEventName: STRING(255);
 	sEventText: STRING(255);
 	dtTimestamp: DATE_AND_TIME;
 	
