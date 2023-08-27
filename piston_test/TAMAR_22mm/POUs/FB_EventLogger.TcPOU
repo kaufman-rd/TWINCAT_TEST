@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_EventLogger" Id="{ce2a722b-5878-4631-9052-9e37560196c4}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_EventLogger
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	EventBuffer: ARRAY[1..MAXIMUN_SIZE_OF_EVENT_BUFFR] OF ST_Event;
+	EventBufferIndex:INT:=0;
+END_VAR
+VAR CONSTANT
+	MAXIMUN_SIZE_OF_EVENT_BUFFR:INT :=100;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="IsEventBufferFull" Id="{8f82d951-cb10-4ede-902a-fe0225981d02}">
+      <Declaration><![CDATA[METHOD IsEventBufferFull : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF (EventBufferIndex+1) > MAXIMUN_SIZE_OF_EVENT_BUFFR THEN
+	
+	IsEventBufferFull:=TRUE;
+ELSE
+	IsEventBufferFull:=FALSE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mAdd" Id="{89335789-7a03-417e-9cd7-03d6b2902c98}">
+      <Declaration><![CDATA[(* returns false if not succesfull*) 
+METHOD PUBLIC mAdd : BOOL
+VAR_INPUT
+	
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+IF NOT IsEventBufferFull() THEN
+	EventBufferIndex:=EventBufferIndex+1;
+	EventBuffer[EventBufferIndex].eEventType:=gEventType;
+	EventBuffer[EventBufferIndex].eEventSeverity:=gEventSeverity;
+	EventBuffer[EventBufferIndex].nEventIdentity:=gEventIdentity;
+	EventBuffer[EventBufferIndex].sEventText:=gEventText;
+	UpdateEventTimestampWithSystemTime (stEvent:=EventBuffer[EventBufferIndex]); 
+	mAdd:=TRUE ;
+ELSE
+	mAdd:=FALSE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_EventLogger">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_EventLogger.IsEventBufferFull">
+      <LineId Id="6" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="7" Count="2" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_EventLogger.mAdd">
+      <LineId Id="11" Count="0" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="16" Count="1" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="14" Count="1" />
+      <LineId Id="13" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

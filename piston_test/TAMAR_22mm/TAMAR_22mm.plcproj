@@ -24,6 +24,9 @@
     <Compile Include="DUTs\E_CONVAYOR_STATE.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\E_EventType.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\E_MAIN_STATE.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -39,10 +42,19 @@
     <Compile Include="DUTs\ST_CART.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\ST_Event.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\ST_PISTON.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Functions\F_Linear.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\UpdateEventTimestampWithSystemTime.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\UpdateTimeStamp.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GVLs\GVL.TcGVL">
@@ -61,6 +73,9 @@
     <Compile Include="POUs\FB_ERROR_CODE.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\FB_EventLogger.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\FB_PISTON.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -71,9 +86,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MOTORS.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\UpdateTimeStamp.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="STATIONS\FB_CLEAN.TcPOU">

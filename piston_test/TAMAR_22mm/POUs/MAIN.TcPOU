@@ -30,16 +30,25 @@ VAR
 	fbSUPPLY: FB_SUPPLY;
 	fbMAIN_CONV: FB_MAIN_CONV;
 	fbSUPPLY_CONV: FB_SUPPLY_CONV;
-	action_timeout: TON:=(PT:=T#20s);
+	
+	
+	action_timeout: TON:=(PT:=T#20S);
 	move_timeout: TON;
 	bTIMEOUT:BOOL:=FALSE;
+	
+	bFirstRun:BOOL:=TRUE;
 END_VAR
 
 
    
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[rAnalogIn:=F_Linear(nanlogIn1,200,31170,0,2000);
+      <ST><![CDATA[IF bFirstRun THEN
+	fbEventLogger.mAdd();
+	bFirstRun:=FALSE;
+END_IF
+
+rAnalogIn:=F_Linear(nanlogIn1,200,31170,0,2000);
 PISTONS_CYCLE();
 A_PISTON_ERROR_CHECK();
 fbMAIN_CONV(fbAxis:=Axis_MAIN);
@@ -211,6 +220,11 @@ IF rtrigE_STOP.Q THEN
 	eMAIN_STATE:=E_MAIN_STATE.estop;
 	eMAIN_CONVAYOR_STATE := E_CONVAYOR_STATE.estop;
 	eSUPPLY_CONVAYOR_STATE := E_CONVAYOR_STATE.estop;
+	gEventType:= E_EventType.Message; 
+	gEventSeverity:= TcEventSeverity.Info;
+	gEventIdentity:=999;
+	gEventText:='Emergency Stop';
+	fbEventLogger.mAdd();
 END_IF
 
 IF rtrigINIT.Q THEN
@@ -232,7 +246,7 @@ IF rtrigPAUSE.Q THEN
 	temp_sep1_state:=eSEPARATE1;
 	temp_sep2_state:=eSEPARATE2;
 	temp_clean_state:=eCLEAN;
-	temp_drop_state:=eCLEAN;
+	temp_drop_state:=eDROP;
 	temp_conv_state:=eMAIN_CONVAYOR_STATE;
 	temp_supconv_state:=eSUPPLY_CONVAYOR_STATE;
 	eMAIN_STATE:=E_MAIN_STATE.pause;
@@ -241,6 +255,8 @@ IF rtrigPAUSE.Q THEN
 	eSEPARATE2:=E_STATION_STATE.pause;
 	eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.pause;
 	eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.pause;
+	eCLEAN:=E_STATION_STATE.pause;
+	eDROP:=E_STATION_STATE.pause;
 	
 END_IF
 
@@ -268,7 +284,19 @@ END_FOR;
       </Implementation>
     </Action>
     <LineIds Name="MAIN">
-      <LineId Id="3" Count="205" />
+      <LineId Id="247" Count="0" />
+      <LineId Id="251" Count="0" />
+      <LineId Id="254" Count="0" />
+      <LineId Id="252" Count="0" />
+      <LineId Id="248" Count="0" />
+      <LineId Id="3" Count="171" />
+      <LineId Id="259" Count="2" />
+      <LineId Id="258" Count="0" />
+      <LineId Id="262" Count="0" />
+      <LineId Id="175" Count="29" />
+      <LineId Id="263" Count="0" />
+      <LineId Id="265" Count="0" />
+      <LineId Id="205" Count="3" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="MAIN.A_PISTON_ERROR_CHECK">

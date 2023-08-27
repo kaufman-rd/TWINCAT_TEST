@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="UpdateTimeStamp" Id="{3ebf2d11-b075-4b1e-bfc5-6a6be67fc618}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION UpdateTimeStamp 
 VAR_INPUT

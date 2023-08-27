@@ -4,6 +4,13 @@
     <Declaration><![CDATA[ //{attribute 'qualified_only'}
 VAR_GLOBAL
 	
+	sError:STRING;
+	gEventType: E_EventType:= E_EventType.Message; 
+	gEventSeverity: TcEventSeverity:= TcEventSeverity.Info;
+	gEventIdentity: UDINT:=0;
+	gEventText: STRING(255):='Startup Event';
+	fbEventLogger: FB_EventLogger;
+	
 	nanlogIn1 AT%I*:INT;
 	rAnalogIn:REAL;
 	 
