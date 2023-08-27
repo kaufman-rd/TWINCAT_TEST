@@ -237,5 +237,21 @@ END_WHILE
 	]]></ST>
       </Implementation>
     </Action>
+    <LineIds Name="FB_MAIN_CONV">
+      <LineId Id="3" Count="89" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_MAIN_CONV.A_CARTS_STEP">
+      <LineId Id="2" Count="3" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_MAIN_CONV.A_set_cart_spaces">
+      <LineId Id="2" Count="81" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_MAIN_CONV.A_SETUP">
+      <LineId Id="2" Count="15" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

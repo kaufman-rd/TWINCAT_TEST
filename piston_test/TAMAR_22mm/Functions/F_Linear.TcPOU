@@ -16,5 +16,9 @@ ELSE
 	F_linear :=  0;
 END_IF]]></ST>
     </Implementation>
+    <LineIds Name="F_Linear">
+      <LineId Id="3" Count="3" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

@@ -221,5 +221,9 @@ END_IF
 //fbPiston[1].bDepened_open1:=TRUE;   //supply 1
 //fbPiston[2].bDepened_open1:=TRUE;   //supply 2]]></ST>
     </Implementation>
+    <LineIds Name="PISTONS_CYCLE">
+      <LineId Id="3" Count="206" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

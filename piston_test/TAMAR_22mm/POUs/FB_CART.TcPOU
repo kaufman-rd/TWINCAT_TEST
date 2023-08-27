@@ -91,5 +91,16 @@ END_IF
 ]]></ST>
       </Implementation>
     </Action>
+    <LineIds Name="FB_CART">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_CART.A_CHECK">
+      <LineId Id="2" Count="5" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_CART.A_STEP">
+      <LineId Id="2" Count="58" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

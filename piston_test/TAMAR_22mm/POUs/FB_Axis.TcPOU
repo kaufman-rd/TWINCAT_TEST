@@ -222,5 +222,13 @@ CASE stepFW_state OF
 END_CASE]]></ST>
       </Implementation>
     </Method>
+    <LineIds Name="FB_Axis">
+      <LineId Id="3" Count="125" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.STEP_FW">
+      <LineId Id="3" Count="31" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

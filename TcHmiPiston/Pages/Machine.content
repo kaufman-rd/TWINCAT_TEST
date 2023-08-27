@@ -210,213 +210,7 @@
 }
 </script>
 
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
-  {
-    "event": "%s%PLC1.GVL.eMAIN_STATE%/s%",
-    "actions": [
-      {
-        "objectType": "SwitchCase",
-        "active": true,
-        "compare": {
-          "objectType": "Symbol",
-          "valueType": "tchmi:server#/definitions/PLC1.E_MAIN_STATE",
-          "symbolExpression": "%s%PLC1.GVL.eMAIN_STATE%/s%"
-        },
-        "cases": [
-          {
-            "caseValue": {
-              "objectType": "StaticValue",
-              "valueType": "tchmi:server#/definitions/PLC1.E_MAIN_STATE",
-              "value": 7
-            },
-            "actions": [
-              {
-                "objectType": "WriteToSymbol",
-                "active": true,
-                "symbolExpression": "%ctrl%Machine::BackgroundColor%/ctrl%",
-                "value": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:framework#/definitions/Color",
-                  "value": {
-                    "color": "rgba(238, 95, 85, 1)"
-                  }
-                },
-                "asyncWait": true
-              }
-            ]
-          },
-          {
-            "caseValue": {
-              "objectType": "StaticValue",
-              "valueType": "tchmi:server#/definitions/PLC1.E_MAIN_STATE",
-              "value": 5
-            },
-            "actions": [
-              {
-                "objectType": "WriteToSymbol",
-                "active": true,
-                "symbolExpression": "%ctrl%Machine::BackgroundColor%/ctrl%",
-                "value": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:framework#/definitions/Color",
-                  "value": {
-                    "color": "rgba(198, 241, 233, 1)"
-                  }
-                },
-                "asyncWait": true
-              }
-            ]
-          },
-          {
-            "caseValue": {
-              "objectType": "StaticValue",
-              "valueType": "tchmi:server#/definitions/PLC1.E_MAIN_STATE",
-              "value": 0
-            },
-            "actions": [
-              {
-                "objectType": "WriteToSymbol",
-                "active": true,
-                "symbolExpression": "%ctrl%Machine::BackgroundColor%/ctrl%",
-                "value": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:framework#/definitions/Color",
-                  "value": null
-                },
-                "asyncWait": true
-              }
-            ]
-          },
-          {
-            "caseValue": {
-              "objectType": "StaticValue",
-              "valueType": "tchmi:server#/definitions/PLC1.E_MAIN_STATE",
-              "value": 1
-            },
-            "actions": [
-              {
-                "objectType": "WriteToSymbol",
-                "active": true,
-                "symbolExpression": "%ctrl%Machine::BackgroundColor%/ctrl%",
-                "value": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:framework#/definitions/Color",
-                  "value": null
-                },
-                "asyncWait": true
-              }
-            ]
-          },
-          {
-            "caseValue": {
-              "objectType": "StaticValue",
-              "valueType": "tchmi:server#/definitions/PLC1.E_MAIN_STATE",
-              "value": 2
-            },
-            "actions": [
-              {
-                "objectType": "WriteToSymbol",
-                "active": true,
-                "symbolExpression": "%ctrl%Machine::BackgroundColor%/ctrl%",
-                "value": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:framework#/definitions/Color",
-                  "value": null
-                },
-                "asyncWait": true
-              }
-            ]
-          },
-          {
-            "caseValue": {
-              "objectType": "StaticValue",
-              "valueType": "tchmi:server#/definitions/PLC1.E_MAIN_STATE",
-              "value": 3
-            },
-            "actions": [
-              {
-                "objectType": "WriteToSymbol",
-                "active": true,
-                "symbolExpression": "%ctrl%Machine::BackgroundColor%/ctrl%",
-                "value": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:framework#/definitions/Color",
-                  "value": null
-                },
-                "asyncWait": true
-              }
-            ]
-          },
-          {
-            "caseValue": {
-              "objectType": "StaticValue",
-              "valueType": "tchmi:server#/definitions/PLC1.E_MAIN_STATE",
-              "value": 4
-            },
-            "actions": [
-              {
-                "objectType": "WriteToSymbol",
-                "active": true,
-                "symbolExpression": "%ctrl%Machine::BackgroundColor%/ctrl%",
-                "value": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:framework#/definitions/Color",
-                  "value": null
-                },
-                "asyncWait": true
-              }
-            ]
-          },
-          {
-            "caseValue": {
-              "objectType": "StaticValue",
-              "valueType": "tchmi:server#/definitions/PLC1.E_MAIN_STATE",
-              "value": 6
-            },
-            "actions": [
-              {
-                "objectType": "WriteToSymbol",
-                "active": true,
-                "symbolExpression": "%ctrl%Machine::BackgroundColor%/ctrl%",
-                "value": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:framework#/definitions/Color",
-                  "value": {
-                    "color": "rgba(248, 199, 223, 1)"
-                  }
-                },
-                "asyncWait": true
-              }
-            ]
-          },
-          {
-            "caseValue": {
-              "objectType": "StaticValue",
-              "valueType": "tchmi:server#/definitions/PLC1.E_MAIN_STATE",
-              "value": 2
-            },
-            "actions": [
-              {
-                "objectType": "WriteToSymbol",
-                "active": true,
-                "symbolExpression": "%ctrl%Machine::BackgroundColor%/ctrl%",
-                "value": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:framework#/definitions/Color",
-                  "value": null
-                },
-                "asyncWait": true
-              }
-            ]
-          }
-        ],
-        "asyncWait": true
-      }
-    ]
-  }
-]
-</script>
+
 <div id="SEPARATE_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="318" data-tchmi-height-unit="px" data-tchmi-left="479" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/SEPARATE.usercontrol" data-tchmi-top="40" data-tchmi-top-unit="px" data-tchmi-width="358" data-tchmi-width-unit="px" data-tchmi-updown="%s%PLC1.GVL.fbPiston.2::PistonStatus%/s%" data-tchmi-colet="%s%PLC1.GVL.fbPiston.3::PistonStatus%/s%" data-tchmi-puller="%s%PLC1.GVL.fbPiston.4::PistonStatus%/s%" data-tchmi-tray="%s%PLC1.GVL.fbPiston.5::PistonStatus%/s%" data-tchmi-pins="%s%PLC1.GVL.fbPiston.6::PistonStatus%/s%" data-tchmi-p_updown="%s%PLC1.GVL.fbPiston.2%/s%" data-tchmi-p_colet="%s%PLC1.GVL.fbPiston.3%/s%" data-tchmi-p_puller="%s%PLC1.GVL.fbPiston.4%/s%" data-tchmi-p_tray="%s%PLC1.GVL.fbPiston.5%/s%" data-tchmi-p_pins="%s%PLC1.GVL.fbPiston.6%/s%" data-tchmi-zindex="7" data-tchmi-station_state="%s%PLC1.GVL.eSEPARATE1%/s%" data-tchmi-skip="%s%PLC1.MAIN.fbSEPARATION1.bSkip%/s%" data-tchmi-bullet_sensor="%s%PLC1.MAIN.fbSEPARATION1.b_BULL_SENSOR%/s%" data-tchmi-tray_push="" data-tchmi-tray_door="" data-tchmi-p_tray_push="%s%PLC1.GVL.fbPiston.15%/s%" data-tchmi-p_tray_door="%s%PLC1.GVL.fbPiston.16%/s%">
 </div>
 <div id="SEPARATE_2" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="318" data-tchmi-height-unit="px" data-tchmi-left="836" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/SEPARATE.usercontrol" data-tchmi-top="40" data-tchmi-top-unit="px" data-tchmi-width="358" data-tchmi-width-unit="px" data-tchmi-updown="%s%PLC1.GVL.fbPiston.7::PistonStatus%/s%" data-tchmi-colet="%s%PLC1.GVL.fbPiston.8::PistonStatus%/s%" data-tchmi-puller="%s%PLC1.GVL.fbPiston.9::PistonStatus%/s%" data-tchmi-tray="%s%PLC1.GVL.fbPiston.10::PistonStatus%/s%" data-tchmi-pins="%s%PLC1.GVL.fbPiston.11::PistonStatus%/s%" data-tchmi-p_updown="%s%PLC1.GVL.fbPiston.7%/s%" data-tchmi-p_colet="%s%PLC1.GVL.fbPiston.8%/s%" data-tchmi-p_puller="%s%PLC1.GVL.fbPiston.9%/s%" data-tchmi-p_tray="%s%PLC1.GVL.fbPiston.10%/s%" data-tchmi-p_pins="%s%PLC1.GVL.fbPiston.11%/s%" data-tchmi-zindex="7" data-tchmi-skip="%s%PLC1.MAIN.fbSEPARATION2.bSkip%/s%" data-tchmi-bullet_sensor="%s%PLC1.MAIN.fbSEPARATION2.b_BULL_SENSOR%/s%" data-tchmi-station_state="%s%PLC1.GVL.eSEPARATE2%/s%" data-tchmi-tray_push="" data-tchmi-tray_door="" data-tchmi-p_tray_push="%s%PLC1.GVL.fbPiston.17%/s%" data-tchmi-p_tray_door="%s%PLC1.GVL.fbPiston.18%/s%">
@@ -1044,7 +838,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiTextblock_52" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="2.1" data-tchmi-height-unit="%" data-tchmi-left="62.9" data-tchmi-left-unit="%" data-tchmi-text="Bullet Sensor" data-tchmi-top="28.8" data-tchmi-top-unit="%" data-tchmi-width="4.0" data-tchmi-width-unit="%" data-tchmi-word-wrap="true">
+<div id="TcHmiTextblock_52" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="2.1" data-tchmi-height-unit="%" data-tchmi-left="76.8" data-tchmi-left-unit="%" data-tchmi-text="Bullet Sensor" data-tchmi-top="34.4" data-tchmi-top-unit="%" data-tchmi-width="4.0" data-tchmi-width-unit="%" data-tchmi-word-wrap="true">
 </div>
 <div id="UserControl1_31" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="95" data-tchmi-height-unit="px" data-tchmi-left="109" data-tchmi-left-unit="px" data-tchmi-target-user-control="Controls/G_PISTON.usercontrol" data-tchmi-top="638" data-tchmi-top-unit="px" data-tchmi-width="196" data-tchmi-width-unit="px" data-tchmi-piston="%s%PLC1.GVL.fbPiston[14]%/s%">
 </div>
@@ -1182,7 +976,7 @@
 </div>
 <div id="TcHmiTextblock_60" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="2.1" data-tchmi-height-unit="%" data-tchmi-left="33.3" data-tchmi-left-unit="%" data-tchmi-text="open" data-tchmi-top="91.2" data-tchmi-top-unit="%" data-tchmi-width="4.0" data-tchmi-width-unit="%" data-tchmi-word-wrap="true">
 </div>
-<div id="TcHmiEllipse_9" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiEllipse" data-tchmi-height="7.1" data-tchmi-height-unit="%" data-tchmi-left="62.4" data-tchmi-left-unit="%" data-tchmi-top="13.5" data-tchmi-top-unit="%" data-tchmi-width="4.8" data-tchmi-width-unit="%">
+<div id="TcHmiEllipse_9" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiEllipse" data-tchmi-height="7.1" data-tchmi-height-unit="%" data-tchmi-left="76.8" data-tchmi-left-unit="%" data-tchmi-top="10.7" data-tchmi-top-unit="%" data-tchmi-width="4.8" data-tchmi-width-unit="%">
 
 
 
@@ -1303,6 +1097,112 @@
 ]
 </script>
 </div>
-<div id="TcHmiTextblock_61" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="2.1" data-tchmi-height-unit="%" data-tchmi-left="62.9" data-tchmi-left-unit="%" data-tchmi-text="check bullets" data-tchmi-top="16.1" data-tchmi-top-unit="%" data-tchmi-width="4.0" data-tchmi-width-unit="%" data-tchmi-word-wrap="true">
+<div id="TcHmiTextblock_61" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="2.1" data-tchmi-height-unit="%" data-tchmi-left="77.3" data-tchmi-left-unit="%" data-tchmi-text="check bullets" data-tchmi-top="13.3" data-tchmi-top-unit="%" data-tchmi-width="4.0" data-tchmi-width-unit="%" data-tchmi-word-wrap="true">
+</div>
+<div id="TcHmiButton_10" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="4.1" data-tchmi-height-unit="%" data-tchmi-left="11.9" data-tchmi-left-unit="%" data-tchmi-text="Start Action" data-tchmi-top="46.8" data-tchmi-top-unit="%" data-tchmi-width="2.4" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-is-enabled="%s%PLC1.GVL.bPAUSE_MAIN%/s%">
+
+
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "rgba(245, 176, 112, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
+{
+  "color": "rgba(0, 0, 0, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "TcHmiButton_10.onPressed",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%s%PLC1.GVL.eSUPPLY%/s%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:server#/definitions/PLC1.E_STATION_STATE",
+          "value": 2
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
+</div>
+
+
+<div id="TcHmiButton_11" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="4.1" data-tchmi-height-unit="%" data-tchmi-left="29.2" data-tchmi-left-unit="%" data-tchmi-text="Start Action" data-tchmi-top="86.3" data-tchmi-top-unit="%" data-tchmi-width="2.4" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-is-enabled="%s%PLC1.GVL.bPAUSE_MAIN%/s%">
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "rgba(245, 176, 112, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
+{
+  "color": "rgba(0, 0, 0, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "TcHmiButton_11.onPressed",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%s%PLC1.GVL.eDROP%/s%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:server#/definitions/PLC1.E_STATION_STATE",
+          "value": 2
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
+</div>
+<div id="TcHmiButton_12" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="4.1" data-tchmi-height-unit="%" data-tchmi-left="84.6" data-tchmi-left-unit="%" data-tchmi-text="Start Action" data-tchmi-top="79.5" data-tchmi-top-unit="%" data-tchmi-width="2.4" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-is-enabled="%s%PLC1.GVL.bPAUSE_MAIN%/s%">
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "rgba(245, 176, 112, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
+{
+  "color": "rgba(0, 0, 0, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "TcHmiButton_12.onPressed",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%s%PLC1.GVL.eCLEAN%/s%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:server#/definitions/PLC1.E_STATION_STATE",
+          "value": 2
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
 </div>
 </div>

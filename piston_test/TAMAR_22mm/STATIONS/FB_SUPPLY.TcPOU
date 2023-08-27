@@ -69,5 +69,9 @@ END_VAR
 
 END_CASE]]></ST>
     </Implementation>
+    <LineIds Name="FB_SUPPLY">
+      <LineId Id="3" Count="53" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

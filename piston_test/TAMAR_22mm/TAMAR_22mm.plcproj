@@ -58,6 +58,9 @@
     <Compile Include="POUs\FB_CART.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\FB_ERROR_CODE.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\FB_PISTON.TcPOU">
       <SubType>Code</SubType>
     </Compile>

@@ -56,5 +56,9 @@ CASE eCLEAN OF
 
 END_CASE]]></ST>
     </Implementation>
+    <LineIds Name="FB_CLEAN">
+      <LineId Id="3" Count="42" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

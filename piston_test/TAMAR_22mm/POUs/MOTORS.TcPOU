@@ -8,8 +8,12 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[Axis_MAIN(sName:='MAIN');
-Axis_SUPPLY(sNAme:='supply');
+Axis_SUPPLY(sNAme:='SUPPLY');
 ]]></ST>
     </Implementation>
+    <LineIds Name="MOTORS">
+      <LineId Id="3" Count="1" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
