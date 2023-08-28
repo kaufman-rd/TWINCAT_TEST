@@ -222,6 +222,17 @@
                   }
                 },
                 "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%ManualTray_3::Top%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/MeasurementValue",
+                  "value": 28.8
+                },
+                "asyncWait": true
               }
             ]
           },
@@ -232,6 +243,17 @@
               "value": 0
             },
             "actions": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%ManualTray_3::Top%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/MeasurementValue",
+                  "value": 47.8
+                },
+                "asyncWait": true
+              },
               {
                 "objectType": "WriteToSymbol",
                 "active": true,
@@ -334,6 +356,17 @@
               {
                 "objectType": "WriteToSymbol",
                 "active": true,
+                "symbolExpression": "%ctrl%ManualTray_3::Top%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/MeasurementValue",
+                  "value": 37.8
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
                 "symbolExpression": "%ctrl%updown::Top%/ctrl%",
                 "value": {
                   "objectType": "StaticValue",
@@ -430,6 +463,17 @@
               "value": 3
             },
             "actions": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%ManualTray_3::Top%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/MeasurementValue",
+                  "value": 37.8
+                },
+                "asyncWait": true
+              },
               {
                 "objectType": "WriteToSymbol",
                 "active": true,

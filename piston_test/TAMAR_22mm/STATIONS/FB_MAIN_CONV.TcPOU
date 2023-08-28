@@ -8,7 +8,7 @@ END_VAR
 VAR_OUTPUT
 END_VAR
 VAR
-	
+	rtrig_ERROR: R_TRIG;
 	rtrigFW: R_TRIG;
 	bStepFW:BOOL:=FALSE;
 	//bStepBW:BOOL:=FALSE;
@@ -116,6 +116,18 @@ CASE eMAIN_CONVAYOR_STATE OF
 		bHomed:=FALSE;
 	//...
 	
+	E_CONVAYOR_STATE.error:
+		//...
+		
+	rtrig_ERROR(CLK:=(eMAIN_CONVAYOR_STATE=E_CONVAYOR_STATE.error), Q=> );
+	IF rtrig_ERROR.Q THEN
+		gEventType:= 'Alarm'; 
+		gEventSeverity:= 'Error';
+		gEventIdentity:=2001;
+		gEventName:= 'MAIN CONVAYOR';
+		gEventText:='MOTOR ERROR:';
+		fbEventLogger.mAdd();
+	END_IF
 	
 END_CASE
 	]]></ST>
@@ -126,7 +138,7 @@ END_CASE
 	fbCART[counter1].A_STEP();
 END_FOR;
 
-bTest:= NOT bTest;]]></ST>
+]]></ST>
       </Implementation>
     </Action>
     <Action Name="A_set_cart_spaces" Id="{7785daa4-c212-4f07-a161-d0b471ee798f}">
@@ -238,7 +250,10 @@ END_WHILE
       </Implementation>
     </Action>
     <LineIds Name="FB_MAIN_CONV">
-      <LineId Id="3" Count="89" />
+      <LineId Id="3" Count="87" />
+      <LineId Id="119" Count="10" />
+      <LineId Id="118" Count="0" />
+      <LineId Id="91" Count="1" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_MAIN_CONV.A_CARTS_STEP">

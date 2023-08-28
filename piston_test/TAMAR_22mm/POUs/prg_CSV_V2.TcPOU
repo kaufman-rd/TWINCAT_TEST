@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="prg_CSV_V2" Id="{564b1ed0-10ab-4978-a2c6-5185d380a682}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM prg_CSV_V2
+VAR
+	FilePathAndName: STRING:='C:\temp\Records_X-X-XX.xls';// Path for Win CE: 'Hard Disk\ftp\Records_X-X-XX.xls';
+	
+	fbFileOpen					:	FB_FileOpen;
+	fbFileClose					:	FB_FileClose;
+	fbFileWrite					:	FB_FileWrite;
+	fbFileGet					:	FB_FileGets;
+	
+	bFirstCycle:BOOL:=TRUE;//:=TRUE;	
+	bWrite: BOOL;
+	bStart: BOOL;
+	iState: INT;
+	hFile: UINT;
+	i:INT:=1;
+
+	bBusy: BOOL;
+	bDone: BOOL;
+	bError: BOOL;
+
+	sLine: STRING;
+	sLineToWrite:STRING(255);
+	sHeader :STRING(255):='Time Stamp$TDescription$TValu$TUnit';
+	iErrorState: INT;
+	FirstLine: STRING;
+
+
+	
+//Data to Write
+	arrDataToWrite:ARRAY[1..C_MaxParametersToWrite]OF ST_CsvTableRowData;
+	tonPulseGenerator:ton;
+	
+//get System Time ( for CSV time stamp )	
+	fbLocalSystemTime:FB_LocalSystemTime;
+	tonWritingCyclie:ton;
+	sSyatemTime: STRING(24);
+	wDayMem:WORD;
+	
+	
+END_VAR
+VAR CONSTANT
+	C_MaxParametersToWrite:INT:=1;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//get System Time ( for CSV time stamp )
+fbLocalSystemTime( bEnable:= TRUE ); 
+sSyatemTime:=SYSTEMTIME_TO_STRING(fbLocalSystemTime.systemTime);
+
+//Set data to write
+	//Analog data 1
+	arrDataToWrite[1].sTimeStamp:=sSyatemTime;
+	arrDataToWrite[1].sType:=gEventType;
+	arrDataToWrite[1].sSeverity:=gEventSeverity;
+	arrDataToWrite[1].sIdentity:=UDINT_TO_STRING(gEventIdentity);
+	arrDataToWrite[1].sName:=gEventName;
+	arrDataToWrite[1].sText:=gEventText;
+	arrDataToWrite[1].sP_CAPSULE :=LREAL_TO_STRING(0);
+	arrDataToWrite[1].sSel_FEED :=LREAL_TO_STRING(0);
+	arrDataToWrite[1].sSel_PRODUCT :=LREAL_TO_STRING(0);
+	arrDataToWrite[1].sUnit :=LREAL_TO_STRING(0);
+	
+	//Analog data 2
+	//arrDataToWrite[2].sDescription:='Humidity sensor 2';
+	//arrDataToWrite[2].sUnit:='%';
+	//arrDataToWrite[2].sTimeStamp:=sSyatemTime;
+	//arrDataToWrite[2].sValue:=REAL_TO_STRING(2);
+	
+    
+
+//Writing rate
+tonWritingCyclie(IN:= NOT tonWritingCyclie.Q , PT:= T#30S , Q=> , ET=> );
+IF WriteLogToFile THEN
+	WriteLogToFile:=FALSE;
+	//Create new file every day
+	IF wDayMem <> fbLocalSystemTime.systemTime.wDay OR bFirstCycle  THEN
+			wDayMem:=fbLocalSystemTime.systemTime.wDay;
+			FilePathAndName:=concat('C:\LOGS\TAMAR',concat('-',concat(WORD_TO_STRING(fbLocalSystemTime.systemTime.wDay),concat('-',concat(WORD_TO_STRING(fbLocalSystemTime.systemTime.wMonth),concat('-',concat(WORD_TO_STRING(fbLocalSystemTime.systemTime.wYear),'.xls')))))));
+			//FilePathAndName:=concat('C:\LOGS\Records',concat('-',concat(WORD_TO_STRING(fbLocalSystemTime.systemTime.wDay),concat('-',concat(WORD_TO_STRING(fbLocalSystemTime.systemTime.wMonth),concat('-',concat(WORD_TO_STRING(fbLocalSystemTime.systemTime.wYear),'.xls')))))));
+			bFirstCycle:=FALSE;
+	END_IF
+	bWrite:=TRUE;
+END_IF	
+
+//Excel coloms Header
+sHeader:='Time Stamp$TTYPE$TSEVERITY$TIDENTITY$TNAME$TTEXT$T$T$T$T';
+
+
+CASE iState OF
+	0:	IF bWrite THEN
+			fbFileOpen.bExecute := FALSE;
+			fbFileClose.bExecute := FALSE;
+			fbFileWrite.bExecute := FALSE;
+			fbFileGet.bExecute := FALSE;
+			bDone:=FALSE;
+			bError:=FALSE;
+			bWrite:=FALSE;
+			iState := iState + 1;
+		END_IF
+
+	1:	(* open a file to test it's content *)
+		fbFileOpen(
+			sPathName:=FilePathAndName ,
+			nMode:= FOPEN_MODEAPPEND OR FOPEN_MODEPLUS OR FOPEN_MODETEXT ,
+			bExecute:=TRUE  );
+	
+		IF fbFileOpen.bBusy THEN
+			iState := iState + 1;
+		END_IF
+
+	2:	IF NOT fbFileOpen.bBusy AND NOT fbFileOpen.bError THEN
+			hFile:=fbFileOpen.hFile;
+			fbFileOpen.bExecute := FALSE;
+			iState := iState + 1;
+		ELSIF fbFileOpen.bError THEN
+			iErrorState:=iState;
+			iState := 99;
+		END_IF
+
+
+	3:	(*Get First line to check if file allready writen *)
+		fbFileGet(
+			hFile:=hFile ,
+			bExecute:=TRUE ,
+			tTimeout:=T#1s ,
+			sLine=>FirstLine ,
+			bEOF=> );
+
+		IF fbFileGet.bBusy THEN
+			iState := iState + 1;
+		END_IF;
+
+	4:	IF NOT fbFileGet.bBusy AND NOT fbFileGet.bError THEN
+			fbFileGet(bExecute:=FALSE);
+			IF FirstLine='' THEN
+				iState := iState + 1;
+			ELSE
+				iState:=10;
+			END_IF
+		ELSIF fbFileGet.bError THEN
+			iErrorState:=iState;
+			iState := 99;
+		END_IF
+
+
+	5:	(*write file header*)
+		fbFileWrite(
+				sNetId:='' ,
+				hFile:=hFile ,
+				pWriteBuff:= ADR(sHeader),
+				cbWriteLen:=INT_TO_UDINT (LEN(sHeader)) ,
+				bExecute:=TRUE ,
+				tTimeout:=T#5s );
+
+		IF fbFileWrite.bBusy THEN
+			iState := iState + 1;
+		END_IF;
+
+
+	6:	IF  NOT fbFileWrite.bBusy
+			AND NOT fbFileWrite.bError   THEN
+				fbFileWrite.bExecute:=FALSE;
+				iState := iState + 1;
+		ELSIF fbFileWrite.bError THEN
+			iErrorState:=iState;
+			iState := 99;
+		END_IF
+
+
+	7: (*close the file handle*)
+		fbFileClose.bExecute := TRUE;
+		fbFileClose.hFile := hFile;
+		IF fbFileClose.bBusy THEN
+			iState := iState + 1;
+		END_IF;
+
+	8:	IF NOT fbFileClose.bBusy AND NOT fbFileClose.bError THEN
+			fbFileClose.bExecute := FALSE;
+			iState := 10;
+		ELSIF fbFileClose.bError THEN
+			iErrorState:=iState;
+			iState := 99;
+		END_IF
+
+	10:	(* open a file to append line*)
+		fbFileOpen(
+			sPathName:=FilePathAndName ,
+			nMode:= FOPEN_MODEAPPEND ,
+			bExecute:=TRUE ,
+			hFile=>hFile );
+	
+		IF fbFileOpen.bBusy THEN
+			iState := iState + 1;
+		END_IF
+
+	11:	IF NOT fbFileOpen.bBusy AND NOT fbFileOpen.bError THEN
+			hFile:=fbFileOpen.hFile;
+			fbFileOpen.bExecute := FALSE;
+			iState := iState + 4;
+		ELSIF fbFileOpen.bError THEN
+			iErrorState:=iState;
+			iState := 99;
+		END_IF
+
+
+
+	15:	(* write data into log file*)
+		IF i > 0 AND i <= C_MaxParametersToWrite THEN
+			sLineToWrite:=CONCAT('$N',
+				concat(sSyatemTime,
+					concat('$T',
+						concat(arrDataToWrite[i].sType,
+							concat('$T',
+								concat(arrDataToWrite[i].sSeverity,
+									concat('$T',
+										concat(arrDataToWrite[i].sIdentity,
+											concat('$T',
+												concat(arrDataToWrite[i].sName,
+													concat('$T',
+														concat(arrDataToWrite[i].sText,
+															concat('$T',
+																concat(arrDataToWrite[i].sSel_FEED,
+																		concat('$T',
+																			concat(arrDataToWrite[i].sSel_PRODUCT,
+																				concat('$T',
+																					concat(arrDataToWrite[i].sP_TRANSFER,
+																						concat('$T',
+																							concat(arrDataToWrite[i].sP_CAPSULE,
+																								concat('$T',arrDataToWrite[i].sUnit)))))))))))))))))))));
+			sLog:=sLineToWrite;// copy string to GVL string
+			fbFileWrite(
+				sNetId:='' ,
+				hFile:=hFile ,
+				pWriteBuff:= ADR(sLineToWrite),
+				cbWriteLen:=INT_TO_UDINT (LEN(sLineToWrite)) ,
+				bExecute:=TRUE ,
+				tTimeout:=T#10S ,
+				bBusy=> ,
+				bError=>,
+				nErrId=> );
+
+		ELSE
+			iState:=80;
+		END_IF
+
+		
+
+		IF  NOT fbFileWrite.bBusy
+			AND NOT fbFileWrite.bError   THEN
+			fbFileWrite.bExecute:=FALSE;
+			i:=i+1;
+			//iState:=80;
+		END_IF
+
+
+	80: (*close the file handle*)
+		i:=1;
+		fbFileClose.bExecute := TRUE;
+		fbFileClose.hFile := hFile;
+		IF fbFileClose.bBusy THEN
+			iState := iState + 1;
+		END_IF;
+
+	81:	IF NOT fbFileClose.bBusy AND NOT fbFileClose.bError THEN
+			fbFileClose.bExecute := FALSE;
+			iState := 88;
+			hFile := fbFileClose.hFile;
+		ELSIF fbFileClose.bError THEN
+			iErrorState:=iState;
+			iState := 99;
+		END_IF
+
+	88: bBusy := FALSE;
+		bDone := NOT bError;
+		iState := 0;
+		i:=1;
+
+	99:	bError := TRUE;
+		iState := 88;
+
+END_CASE;
+fbFileOpen();
+fbFileClose();
+fbFileWrite();
+fbFileGet();
+]]></ST>
+    </Implementation>
+    <LineIds Name="prg_CSV_V2">
+      <LineId Id="3" Count="12" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="28" Count="12" />
+      <LineId Id="295" Count="0" />
+      <LineId Id="41" Count="210" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

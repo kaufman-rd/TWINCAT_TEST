@@ -4,17 +4,10 @@
     <Declaration><![CDATA[ //{attribute 'qualified_only'}
 VAR_GLOBAL
 	
-	sError:STRING;
-	gEventType: E_EventType:= E_EventType.Message; 
-	gEventSeverity: TcEventSeverity:= TcEventSeverity.Info;
-	gEventIdentity: UDINT:=0;
-	gEventText: STRING(255):='Startup Event';
-	gEventName: STRING(255):='';
-	fbEventLogger: FB_EventLogger;
-	
+	//======================================== IO =====================================
 	nanlogIn1 AT%I*:INT;
 	rAnalogIn:REAL;
-	 
+	//======================================== stations =============================== 
 	supply_station_num: INT:=1;
 	separate1_station_num: INT:=5;
 	separate2_station_num: INT:=9;

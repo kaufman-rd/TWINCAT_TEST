@@ -35,7 +35,8 @@ VAR
 	timeoutClosing:ton;
 	bSTARTUP: BOOL:=FALSE;
 	rtrigMANUAL: R_TRIG;
-	rtrigERROR: R_TRIG;
+	rtrig_OPEN_ERROR: R_TRIG;
+	rtrig_CLOSE_ERROR: R_TRIG;
 	bERROR:BOOL:=FALSE;
 	
 END_VAR
@@ -51,13 +52,19 @@ rtrigMANUAL(CLK:= bMANUAL, Q=> );
 IF rtrigMANUAL.Q THEN
 	bCMD_OPEN:=bCMD_OPEN_SWR;
 END_IF
-
-rtrigERROR(CLK:=(timeoutOpening.Q AND (stPISTON.ePISTON_TYPE = E_PISTON_TYPE.ONLY_OPEN OR stPISTON.ePISTON_TYPE = E_PISTON_TYPE.BOTH)), Q=> );
-IF rtrigERROR.Q THEN
+// opening error triger
+rtrig_OPEN_ERROR(CLK:=(timeoutOpening.Q AND (stPISTON.ePISTON_TYPE = E_PISTON_TYPE.ONLY_OPEN OR stPISTON.ePISTON_TYPE = E_PISTON_TYPE.BOTH)), Q=> );
+IF rtrig_OPEN_ERROR.Q THEN
 	PistonStatus:=ePistonStatus.ERROR;
 	A_OPEN_ERROR();
-	bERROR:=TRUE;
 END_IF
+// closing error triger
+rtrig_CLOSE_ERROR(CLK:=(timeoutClosing.Q AND (stPISTON.ePISTON_TYPE = E_PISTON_TYPE.ONLY_CLOSE OR stPISTON.ePISTON_TYPE = E_PISTON_TYPE.BOTH)), Q=> );
+IF rtrig_CLOSE_ERROR.Q THEN
+	PistonStatus:=ePistonStatus.ERROR;
+	A_CLOSE_ERROR();
+END_IF
+
 
 timerOpening(IN:= bVALVE_OPEN, PT:=REAL_TO_TIME(stPISTON.openTime*1000) , Q=> , ET=> );
 timerClosing(IN:= NOT bVALVE_OPEN, PT:=REAL_TO_TIME(stPISTON.closeTime*1000) , Q=> , ET=> );
@@ -128,7 +135,7 @@ CASE stPISTON.ePISTON_TYPE OF
 			PistonStatus:=ePistonStatus.OPENING;
 		ELSIF bVALVE_OPEN AND timerOpening.Q THEN
 			PistonStatus:=ePistonStatus.OPENED;
-		ELSIF bVALVE_CLOSE AND NOT bSEN_CLOSE THEN
+		ELSIF bVALVE_CLOSE AND NOT bSEN_CLOSE AND NOT timeoutClosing.Q THEN
 			PistonStatus:=ePistonStatus.CLOSING;
 		ELSIF bVALVE_CLOSE AND bSEN_CLOSE THEN
 			PistonStatus:=ePistonStatus.CLOSED;
@@ -136,11 +143,11 @@ CASE stPISTON.ePISTON_TYPE OF
 	
 	
 	3://both sensors
-		IF bVALVE_OPEN AND NOT bSEN_OPEN THEN
+		IF bVALVE_OPEN AND NOT bSEN_OPEN AND NOT timeoutOpening.Q THEN
 			PistonStatus:=ePistonStatus.OPENING;
 		ELSIF bVALVE_OPEN AND bSEN_OPEN THEN
 			PistonStatus:=ePistonStatus.OPENED;
-		ELSIF bVALVE_CLOSE AND NOT bSEN_CLOSE THEN
+		ELSIF bVALVE_CLOSE AND NOT bSEN_CLOSE AND NOT timeoutClosing.Q THEN
 			PistonStatus:=ePistonStatus.CLOSING;
 		ELSIF bVALVE_CLOSE AND bSEN_CLOSE THEN
 			PistonStatus:=ePistonStatus.CLOSED;
@@ -152,10 +159,10 @@ END_CASE
 //	PistonStatus:=ePistonStatus.ERROR;
 //	A_OPEN_ERROR();
 //END_IF
-IF timeoutClosing.Q  AND (stPISTON.ePISTON_TYPE = E_PISTON_TYPE.ONLY_CLOSE OR stPISTON.ePISTON_TYPE = E_PISTON_TYPE.BOTH)  THEN
-	PistonStatus:=ePistonStatus.ERROR;
-	A_CLOSE_ERROR();
-END_IF
+//IF timeoutClosing.Q  AND (stPISTON.ePISTON_TYPE = E_PISTON_TYPE.ONLY_CLOSE OR stPISTON.ePISTON_TYPE = E_PISTON_TYPE.BOTH)  THEN
+//	PistonStatus:=ePistonStatus.ERROR;
+//	A_CLOSE_ERROR();
+//END_IF
 
 
 
@@ -171,11 +178,11 @@ END_IF
     </Action>
     <Action Name="A_CLOSE_ERROR" Id="{6846447f-a805-4330-b167-35718d596cb8}">
       <Implementation>
-        <ST><![CDATA[gEventType:= E_EventType.Alarm; 
-gEventSeverity:= TcEventSeverity.Error;
+        <ST><![CDATA[gEventType:= 'Alarm'; 
+gEventSeverity:= 'Error';
 gEventIdentity:=1002;
 gEventName:= stPISTON.nNAME;
-gEventText:='CLOSING ERROR PISTON:';
+gEventText:='PISTON CLOSING ERROR:';
 fbEventLogger.mAdd();]]></ST>
       </Implementation>
     </Action>
@@ -196,19 +203,24 @@ END_IF]]></ST>
     </Action>
     <Action Name="A_OPEN_ERROR" Id="{c3532af4-7ab4-45f6-aa4d-e3d03553aa97}">
       <Implementation>
-        <ST><![CDATA[gEventType:= E_EventType.Alarm; 
-gEventSeverity:= TcEventSeverity.Error;
+        <ST><![CDATA[gEventType:= 'Alarm'; 
+gEventSeverity:= 'Error';
 gEventIdentity:=1001;
 gEventName:= stPISTON.nNAME;
-gEventText:='OPENING ERROR PISTON:';
+gEventText:='PISTON OPENING ERROR:';
 fbEventLogger.mAdd();]]></ST>
       </Implementation>
     </Action>
     <LineIds Name="FB_PISTON">
       <LineId Id="3" Count="9" />
-      <LineId Id="156" Count="5" />
+      <LineId Id="156" Count="4" />
       <LineId Id="155" Count="0" />
-      <LineId Id="13" Count="91" />
+      <LineId Id="207" Count="0" />
+      <LineId Id="200" Count="3" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="206" Count="0" />
+      <LineId Id="205" Count="0" />
+      <LineId Id="14" Count="90" />
       <LineId Id="151" Count="0" />
       <LineId Id="105" Count="2" />
       <LineId Id="152" Count="0" />

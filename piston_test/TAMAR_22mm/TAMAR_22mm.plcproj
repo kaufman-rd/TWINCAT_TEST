@@ -42,6 +42,9 @@
     <Compile Include="DUTs\ST_CART.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\ST_CsvTableRowData.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\ST_Event.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -58,6 +61,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GVLs\GVL.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\GVL_EVENT_LOGS.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
@@ -86,6 +93,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MOTORS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\prg_CSV_V2.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="STATIONS\FB_CLEAN.TcPOU">

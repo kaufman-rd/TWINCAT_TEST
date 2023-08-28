@@ -8,6 +8,7 @@ END_VAR
 VAR_OUTPUT
 END_VAR
 VAR
+	rtrig_ERROR: R_TRIG;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -64,11 +65,31 @@ END_VAR
 		fbAxis.bReset:=TRUE;
 		bHomed:=FALSE;
 	
+	E_CONVAYOR_STATE.error:
+		//...
+		
+	rtrig_ERROR(CLK:=(eSUPPLY_CONVAYOR_STATE=E_CONVAYOR_STATE.error), Q=> );
+	IF rtrig_ERROR.Q THEN
+		gEventType:= 'Alarm'; 
+		gEventSeverity:= 'Error';
+		gEventIdentity:=3001;
+		gEventName:= 'SUPPLY CONVAYOR';
+		gEventText:='MOTOR ERROR:';
+		fbEventLogger.mAdd();
+	END_IF
 END_CASE
 	]]></ST>
     </Implementation>
     <LineIds Name="FB_SUPPLY_CONV">
-      <LineId Id="3" Count="53" />
+      <LineId Id="3" Count="52" />
+      <LineId Id="65" Count="1" />
+      <LineId Id="68" Count="0" />
+      <LineId Id="70" Count="1" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="79" Count="3" />
+      <LineId Id="72" Count="0" />
+      <LineId Id="69" Count="0" />
+      <LineId Id="56" Count="0" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>

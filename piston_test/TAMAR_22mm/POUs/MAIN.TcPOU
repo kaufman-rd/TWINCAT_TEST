@@ -76,7 +76,7 @@ fbSEPARATION2(piston_updown:=  fbPiston[8],
 fbCLEAN(piston_clean:=  fbPiston[14]);
 fbDROP(piston_open:=  fbPiston[22],piston_push:=  fbPiston[21]);
 fbSUPPLY(piston_push:=  fbPiston[1],piston_hold:=  fbPiston[2],piston_open:=  fbPiston[15]);
-
+prg_CSV_V2();
 MOTORS();
 
 rtrigRESET(CLK:= b_RESET, Q=> );
@@ -195,17 +195,9 @@ CASE eMAIN_STATE OF
 		END_IF
 		
 	E_MAIN_STATE.estop: 
-		eSUPPLY := E_STATION_STATE.error;
-		eSEPARATE1 := E_STATION_STATE.error;
-		eSEPARATE2 := E_STATION_STATE.error;
-		eCLEAN := E_STATION_STATE.error;
-		eDROP := E_STATION_STATE.error;
-		eMAIN_CONVAYOR_STATE := E_CONVAYOR_STATE.error;
-		eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.error;
-		Axis_MAIN.bHalt:=TRUE;
-		Axis_SUPPLY.bHalt:=TRUE;
+		//estop
 	
-E_MAIN_STATE.error:
+	E_MAIN_STATE.error:
 		// error	
 
 END_CASE
@@ -217,15 +209,9 @@ IF rtrigRESET.Q THEN
 END_IF
 
 IF rtrigE_STOP.Q THEN
-	eMAIN_STATE:=E_MAIN_STATE.estop;
-	eMAIN_CONVAYOR_STATE := E_CONVAYOR_STATE.estop;
-	eSUPPLY_CONVAYOR_STATE := E_CONVAYOR_STATE.estop;
-	gEventType:= E_EventType.Message; 
-	gEventSeverity:= TcEventSeverity.Info;
-	gEventIdentity:=999;
-	gEventText:='MAIN';
-	gEventText:='Emergency Stop';
-	fbEventLogger.mAdd();
+	
+	A_ESTOP();
+	
 END_IF
 
 IF rtrigINIT.Q THEN
@@ -264,6 +250,27 @@ END_IF
 
 ]]></ST>
     </Implementation>
+    <Action Name="A_ESTOP" Id="{0f95b7f8-fe3e-4170-839c-0c5fb0dfe4a8}">
+      <Implementation>
+        <ST><![CDATA[gEventType:= 'Message'; 
+	eMAIN_STATE:=E_MAIN_STATE.estop;
+	eSUPPLY := E_STATION_STATE.estop;
+	eSEPARATE1 := E_STATION_STATE.estop;
+	eSEPARATE2 := E_STATION_STATE.estop;
+	eCLEAN := E_STATION_STATE.estop;
+	eDROP := E_STATION_STATE.estop;
+	eMAIN_CONVAYOR_STATE := E_CONVAYOR_STATE.estop;
+	eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.estop;
+	Axis_MAIN.bHalt:=TRUE;
+	Axis_SUPPLY.bHalt:=TRUE;	
+
+	gEventSeverity:= 'Info';
+	gEventIdentity:=999;
+	gEventName:='MAIN';
+	gEventText:='Emergency Stop';
+	fbEventLogger.mAdd();]]></ST>
+      </Implementation>
+    </Action>
     <Action Name="A_PISTON_ERROR_CHECK" Id="{31fa973b-2552-4508-9ddd-0d789e896870}">
       <Implementation>
         <ST><![CDATA[FOR counter:=1 TO iNUMBER_OF_PISTONS BY 1 DO
@@ -290,16 +297,25 @@ END_FOR;
       <LineId Id="254" Count="0" />
       <LineId Id="252" Count="0" />
       <LineId Id="248" Count="0" />
-      <LineId Id="3" Count="171" />
-      <LineId Id="259" Count="2" />
-      <LineId Id="306" Count="0" />
-      <LineId Id="258" Count="0" />
+      <LineId Id="3" Count="146" />
+      <LineId Id="158" Count="13" />
+      <LineId Id="173" Count="0" />
+      <LineId Id="259" Count="0" />
       <LineId Id="262" Count="0" />
       <LineId Id="175" Count="29" />
       <LineId Id="263" Count="0" />
       <LineId Id="265" Count="0" />
       <LineId Id="205" Count="3" />
       <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.A_ESTOP">
+      <LineId Id="2" Count="0" />
+      <LineId Id="9" Count="8" />
+      <LineId Id="3" Count="0" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="4" Count="2" />
+      <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="MAIN.A_PISTON_ERROR_CHECK">
       <LineId Id="2" Count="5" />

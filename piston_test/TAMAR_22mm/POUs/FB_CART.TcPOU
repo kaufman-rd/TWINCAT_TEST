@@ -20,9 +20,16 @@ END_VAR
       <Implementation>
         <ST><![CDATA[IF stCART.position = bullet_check_num THEN
 		IF bBulletSensor THEN
-				stCART.color:=89;
-				bSafety_error:=TRUE;
-				b_E_STOP:=TRUE;
+			stCART.color:=89;
+			bSafety_error:=TRUE;
+			b_E_STOP:=TRUE;
+				
+			gEventType:= 'Alarm'; 
+			gEventSeverity:= 'Safety';
+			gEventIdentity:=9001;
+			gEventName:= stCART.nNAME;
+			gEventText:='BULLETS NOT PICKED:';
+			fbEventLogger.mAdd();
 		END_IF
 	END_IF ]]></ST>
       </Implementation>
@@ -95,7 +102,11 @@ END_IF
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_CART.A_CHECK">
-      <LineId Id="2" Count="5" />
+      <LineId Id="2" Count="4" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="10" Count="4" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="7" Count="0" />
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="FB_CART.A_STEP">

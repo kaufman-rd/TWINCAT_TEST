@@ -16,6 +16,10 @@
   {
     "name": "Pistons",
     "content": "Pages/C_Page1.content"
+  },
+  {
+    "name": "Logs",
+    "content": "Pages/Logs.content"
   }
 ]
 </script>

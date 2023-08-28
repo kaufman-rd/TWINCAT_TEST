@@ -37,7 +37,10 @@ METHOD PUBLIC mAdd : BOOL
 VAR_INPUT
 	
 END_VAR
-]]></Declaration>
+
+VAR
+	arrDataToWrite: INT;
+END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[
 IF NOT IsEventBufferFull() THEN
@@ -45,13 +48,16 @@ IF NOT IsEventBufferFull() THEN
 	EventBuffer[EventBufferIndex].eEventType:=gEventType;
 	EventBuffer[EventBufferIndex].eEventSeverity:=gEventSeverity;
 	EventBuffer[EventBufferIndex].nEventIdentity:=gEventIdentity;
-	EventBuffer[EventBufferIndex].sEventName:=gEventText;
+	EventBuffer[EventBufferIndex].sEventName:=gEventName;
 	EventBuffer[EventBufferIndex].sEventText:=gEventText;
 	UpdateEventTimestampWithSystemTime (stEvent:=EventBuffer[EventBufferIndex]); 
+	sEventTime:= DT_TO_STRING (EventBuffer[EventBufferIndex].dtTimestamp);
 	mAdd:=TRUE ;
 ELSE
 	mAdd:=FALSE;
-END_IF]]></ST>
+END_IF
+
+]]></ST>
       </Implementation>
     </Method>
     <LineIds Name="FB_EventLogger">
@@ -73,8 +79,11 @@ END_IF]]></ST>
       <LineId Id="21" Count="0" />
       <LineId Id="20" Count="0" />
       <LineId Id="12" Count="0" />
+      <LineId Id="56" Count="0" />
       <LineId Id="14" Count="1" />
       <LineId Id="13" Count="0" />
+      <LineId Id="60" Count="0" />
+      <LineId Id="33" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

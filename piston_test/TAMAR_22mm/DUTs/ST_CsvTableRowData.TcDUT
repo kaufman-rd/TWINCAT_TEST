@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="ST_CsvTableRowData" Id="{1f3413b8-ca74-4ea8-8e15-7af148e6f828}">
+    <Declaration><![CDATA[TYPE ST_CsvTableRowData :
+STRUCT
+	sTimeStamp:STRING;
+	sType:STRING;
+	sSeverity:STRING;
+	sIdentity:STRING;
+	sName:STRING;
+	sText:STRING;
+	sROP:STRING;
+	sP_TRANSFER:STRING;
+	sP_TAP:STRING;
+	sP_CAPSULE:STRING;
+	sS_FEED:STRING;
+	sS_PRODUCT:STRING;
+	sH_FEED:STRING;
+	sH_PRODUCT:STRING;
+	sSel_FEED:STRING;
+	sSel_PRODUCT:STRING;
+	sUnit:STRING;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
