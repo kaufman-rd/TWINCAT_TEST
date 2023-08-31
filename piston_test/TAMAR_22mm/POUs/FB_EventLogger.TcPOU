@@ -7,7 +7,9 @@ END_VAR
 VAR_OUTPUT
 END_VAR
 VAR
+	buffer_counter:INT;
 	EventBuffer: ARRAY[1..MAXIMUN_SIZE_OF_EVENT_BUFFR] OF ST_Event;
+	EventBuffer_clear: ARRAY[1..MAXIMUN_SIZE_OF_EVENT_BUFFR] OF ST_Event;
 	EventBufferIndex:INT:=0;
 END_VAR
 VAR CONSTANT
@@ -24,11 +26,11 @@ END_VAR
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF (EventBufferIndex+1) > MAXIMUN_SIZE_OF_EVENT_BUFFR THEN
-	
-	IsEventBufferFull:=TRUE;
-ELSE
-	IsEventBufferFull:=FALSE;
-END_IF]]></ST>
+	EventBuffer:=EventBuffer_clear;
+	EventBufferIndex:=0 ;
+	//IsEventBufferFull:=TRUE; 
+END_IF
+IsEventBufferFull:=FALSE;]]></ST>
       </Implementation>
     </Method>
     <Method Name="mAdd" Id="{89335789-7a03-417e-9cd7-03d6b2902c98}">
@@ -65,9 +67,10 @@ END_IF
     </LineIds>
     <LineIds Name="FB_EventLogger.IsEventBufferFull">
       <LineId Id="6" Count="0" />
-      <LineId Id="10" Count="0" />
-      <LineId Id="7" Count="2" />
+      <LineId Id="16" Count="1" />
+      <LineId Id="7" Count="0" />
       <LineId Id="5" Count="0" />
+      <LineId Id="18" Count="0" />
     </LineIds>
     <LineIds Name="FB_EventLogger.mAdd">
       <LineId Id="11" Count="0" />

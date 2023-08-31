@@ -79,7 +79,6 @@ IF WriteLogToFile THEN
 	IF wDayMem <> fbLocalSystemTime.systemTime.wDay OR bFirstCycle  THEN
 			wDayMem:=fbLocalSystemTime.systemTime.wDay;
 			FilePathAndName:=concat('C:\LOGS\TAMAR',concat('-',concat(WORD_TO_STRING(fbLocalSystemTime.systemTime.wDay),concat('-',concat(WORD_TO_STRING(fbLocalSystemTime.systemTime.wMonth),concat('-',concat(WORD_TO_STRING(fbLocalSystemTime.systemTime.wYear),'.xls')))))));
-			//FilePathAndName:=concat('C:\LOGS\Records',concat('-',concat(WORD_TO_STRING(fbLocalSystemTime.systemTime.wDay),concat('-',concat(WORD_TO_STRING(fbLocalSystemTime.systemTime.wMonth),concat('-',concat(WORD_TO_STRING(fbLocalSystemTime.systemTime.wYear),'.xls')))))));
 			bFirstCycle:=FALSE;
 	END_IF
 	bWrite:=TRUE;
@@ -294,7 +293,8 @@ fbFileGet();
       <LineId Id="25" Count="0" />
       <LineId Id="28" Count="12" />
       <LineId Id="295" Count="0" />
-      <LineId Id="41" Count="210" />
+      <LineId Id="41" Count="3" />
+      <LineId Id="46" Count="205" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>

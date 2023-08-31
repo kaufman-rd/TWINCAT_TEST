@@ -5,13 +5,7 @@
 VAR_INPUT
 	
 	
-	bMANUAL:BOOL:=FALSE;
 	stPISTON:   REFERENCE TO ST_PISTON;
-	bCMD_OPEN_SWR: BOOL;
-	bCMD_CLOSE_SWR: BOOL;
-	bCMD_OPEN: BOOL;
-	bSEN_OPEN AT%I*: BOOL;
-	bSEN_CLOSE AT%I*: BOOL;
 	bDepened_open1:BOOL:=TRUE;
 	bDepened_open2:BOOL:=TRUE;
 	bDepened_close1:BOOL:=TRUE;
@@ -21,14 +15,17 @@ VAR_INPUT
 END_VAR
 VAR_OUTPUT
 	PistonStatus:ePistonStatus;
-	bVALVE_OPEN: BOOL;
-	bVALVE_CLOSE: BOOL;
-	bError_Condition_open:BOOL;
-	bError_Condition_close:BOOL;
+	
 	
 END_VAR
 VAR
+	bMANUAL:BOOL:=FALSE;
 	sName:STRING;
+	bCMD_OPEN_SWR: BOOL;
+	bCMD_CLOSE_SWR: BOOL;
+	bCMD_OPEN: BOOL;
+	bSEN_OPEN AT%I*: BOOL;
+	bSEN_CLOSE AT%I*: BOOL;
 	timerOpening:ton;
 	timerClosing:ton;
 	timeoutOpening:ton;
@@ -38,11 +35,16 @@ VAR
 	rtrig_OPEN_ERROR: R_TRIG;
 	rtrig_CLOSE_ERROR: R_TRIG;
 	bERROR:BOOL:=FALSE;
-	
+	bVALVE_OPEN: BOOL;
+	bVALVE_CLOSE: BOOL;
+	bError_Condition_open:BOOL;
+	bError_Condition_close:BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF NOT bSTARTUP THEN
+      <ST><![CDATA[
+
+IF NOT bSTARTUP THEN
 	bCMD_OPEN:=stPISTON.bOPEN_BY_DEFAULT;
 	bSTARTUP:=TRUE;
 	sName:=stPISTON.nNAME;
@@ -212,6 +214,8 @@ fbEventLogger.mAdd();]]></ST>
       </Implementation>
     </Action>
     <LineIds Name="FB_PISTON">
+      <LineId Id="247" Count="0" />
+      <LineId Id="272" Count="0" />
       <LineId Id="3" Count="9" />
       <LineId Id="156" Count="4" />
       <LineId Id="155" Count="0" />
