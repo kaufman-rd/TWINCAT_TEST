@@ -50,7 +50,7 @@
               {
                 "compare1": {
                   "objectType": "Symbol",
-                  "valueType": "tchmi:general#/definitions/String",
+                  "valueType": "tchmi:general#/definitions/BOOL",
                   "symbolExpression": "%pp%P_UPDOWN::bCMD_OPEN%/pp%"
                 },
                 "compare2": {

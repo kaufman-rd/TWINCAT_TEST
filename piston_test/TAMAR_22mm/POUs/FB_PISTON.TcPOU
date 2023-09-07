@@ -34,6 +34,8 @@ VAR
 	rtrigMANUAL: R_TRIG;
 	rtrig_OPEN_ERROR: R_TRIG;
 	rtrig_CLOSE_ERROR: R_TRIG;
+	rtrig_OPEN_CONDITION: R_TRIG;
+	rtrig_CLOSE_CONDITION: R_TRIG;
 	bERROR:BOOL:=FALSE;
 	bVALVE_OPEN: BOOL;
 	bVALVE_CLOSE: BOOL;
@@ -54,16 +56,32 @@ rtrigMANUAL(CLK:= bMANUAL, Q=> );
 IF rtrigMANUAL.Q THEN
 	bCMD_OPEN:=bCMD_OPEN_SWR;
 END_IF
-// opening error triger
+// opening error timeout  triger
 rtrig_OPEN_ERROR(CLK:=(timeoutOpening.Q AND (stPISTON.ePISTON_TYPE = E_PISTON_TYPE.ONLY_OPEN OR stPISTON.ePISTON_TYPE = E_PISTON_TYPE.BOTH)), Q=> );
 IF rtrig_OPEN_ERROR.Q THEN
 	PistonStatus:=ePistonStatus.ERROR;
+	gEventText:='PISTON OPENING TIMEOUT:';
 	A_OPEN_ERROR();
 END_IF
-// closing error triger
+// closing error timeout triger
 rtrig_CLOSE_ERROR(CLK:=(timeoutClosing.Q AND (stPISTON.ePISTON_TYPE = E_PISTON_TYPE.ONLY_CLOSE OR stPISTON.ePISTON_TYPE = E_PISTON_TYPE.BOTH)), Q=> );
 IF rtrig_CLOSE_ERROR.Q THEN
 	PistonStatus:=ePistonStatus.ERROR;
+	gEventText:='PISTON CLOSING TIMEOUT:';
+	A_CLOSE_ERROR();
+END_IF
+//opening condition error triger
+rtrig_OPEN_CONDITION(CLK:=bError_Condition_open, Q=> );
+IF rtrig_OPEN_CONDITION.Q THEN
+	PistonStatus:=ePistonStatus.ERROR;
+	gEventText:='PISTON OPENING CONDITION:';
+	A_OPEN_ERROR();
+END_IF
+//closing condition error triger
+rtrig_CLOSE_CONDITION(CLK:=bError_Condition_close, Q=> );
+IF rtrig_CLOSE_CONDITION.Q THEN
+	PistonStatus:=ePistonStatus.ERROR;
+	gEventText:='PISTON CLOSING CONDITION:';
 	A_CLOSE_ERROR();
 END_IF
 
@@ -78,7 +96,9 @@ IF bMANUAL THEN
 		bVALVE_OPEN:= bCMD_OPEN;
 		bError_Condition_open:=FALSE;	
 	ELSIF bCMD_OPEN AND NOT bDepened_open1 THEN
-		bError_Condition_open:=TRUE;
+		bError_Condition_open:=TRUE; 
+		//gEventText:='PISTON OPENING CONDITION:';
+		//A_OPEN_ERROR();
 	END_IF
 	
 	IF NOT bCMD_OPEN AND bDepened_close1 THEN
@@ -86,6 +106,8 @@ IF bMANUAL THEN
 		bError_Condition_close:=FALSE;	
 	ELSIF NOT bCMD_OPEN AND NOT bDepened_close1 THEN
 		bError_Condition_close:=TRUE;
+		//gEventText:='PISTON CLOSING CONDITION:';
+		//A_CLOSE_ERROR();
 	END_IF
 	
 ELSE
@@ -94,6 +116,8 @@ ELSE
 		bError_Condition_open:=FALSE;	
 	ELSIF bCMD_OPEN_SWR AND NOT bDepened_open1 THEN
 		bError_Condition_open:=TRUE;
+		//gEventText:='PISTON OPENING CONDITION:';
+		//A_OPEN_ERROR();
 	END_IF
 	
 	IF NOT bCMD_OPEN_SWR AND bDepened_close1 THEN
@@ -101,6 +125,8 @@ ELSE
 		bError_Condition_close:=FALSE;	
 	ELSIF NOT bCMD_OPEN_SWR AND NOT bDepened_close1 THEN
 		bError_Condition_close:=TRUE;
+		//gEventText:='PISTON CLOSING CONDITION:';
+		//A_CLOSE_ERROR();
 	END_IF
 END_IF
 bVALVE_CLOSE:=NOT bVALVE_OPEN;
@@ -184,7 +210,6 @@ END_CASE
 gEventSeverity:= 'Error';
 gEventIdentity:=1002;
 gEventName:= stPISTON.nNAME;
-gEventText:='PISTON CLOSING ERROR:';
 fbEventLogger.mAdd();]]></ST>
       </Implementation>
     </Action>
@@ -209,7 +234,6 @@ END_IF]]></ST>
 gEventSeverity:= 'Error';
 gEventIdentity:=1001;
 gEventName:= stPISTON.nNAME;
-gEventText:='PISTON OPENING ERROR:';
 fbEventLogger.mAdd();]]></ST>
       </Implementation>
     </Action>
@@ -217,14 +241,32 @@ fbEventLogger.mAdd();]]></ST>
       <LineId Id="247" Count="0" />
       <LineId Id="272" Count="0" />
       <LineId Id="3" Count="9" />
-      <LineId Id="156" Count="4" />
+      <LineId Id="156" Count="3" />
+      <LineId Id="312" Count="0" />
+      <LineId Id="160" Count="0" />
       <LineId Id="155" Count="0" />
       <LineId Id="207" Count="0" />
-      <LineId Id="200" Count="3" />
+      <LineId Id="200" Count="2" />
+      <LineId Id="313" Count="0" />
+      <LineId Id="203" Count="0" />
       <LineId Id="13" Count="0" />
       <LineId Id="206" Count="0" />
+      <LineId Id="324" Count="4" />
       <LineId Id="205" Count="0" />
-      <LineId Id="14" Count="90" />
+      <LineId Id="333" Count="5" />
+      <LineId Id="332" Count="0" />
+      <LineId Id="339" Count="0" />
+      <LineId Id="329" Count="0" />
+      <LineId Id="14" Count="10" />
+      <LineId Id="314" Count="1" />
+      <LineId Id="25" Count="6" />
+      <LineId Id="319" Count="1" />
+      <LineId Id="32" Count="7" />
+      <LineId Id="316" Count="0" />
+      <LineId Id="321" Count="0" />
+      <LineId Id="40" Count="6" />
+      <LineId Id="322" Count="1" />
+      <LineId Id="47" Count="57" />
       <LineId Id="151" Count="0" />
       <LineId Id="105" Count="2" />
       <LineId Id="152" Count="0" />
@@ -237,7 +279,6 @@ fbEventLogger.mAdd();]]></ST>
     <LineIds Name="FB_PISTON.A_CLOSE_ERROR">
       <LineId Id="2" Count="2" />
       <LineId Id="6" Count="0" />
-      <LineId Id="5" Count="0" />
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="FB_PISTON.A_DEFAULT">
@@ -250,7 +291,6 @@ fbEventLogger.mAdd();]]></ST>
     <LineIds Name="FB_PISTON.A_OPEN_ERROR">
       <LineId Id="2" Count="2" />
       <LineId Id="6" Count="0" />
-      <LineId Id="5" Count="0" />
       <LineId Id="1" Count="0" />
     </LineIds>
   </POU>
