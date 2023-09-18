@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.44" ClassName="CFlbTermDef" SubType="9099">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.50" ClassName="CFlbTermDef" SubType="9099">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-002000000008}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..0] OF BYTE</Name>
@@ -35,36 +35,130 @@
 	<Box Id="4" BoxType="9099" BoxFlags="#x00000020">
 		<Name>__FILENAME__</Name>
 		<ImageId>1000</ImageId>
-		<EtherCAT SlaveType="3" AdsServerAddress="056d467f0405ec03" PdiType="#x0405" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="47" FoeType="1" VendorId="#x00000002" ProductCode="#x18503052" RevisionNo="#x00150000" InfoDataAddr="true" InfoDataNetId="true" TimeoutMailbox2="2000" GenerateOwnNetId="true" InitializeOwnNetId="true" CheckRevisionNoType="3" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL6224 (IO Link Master)" Desc="EL6224">
+		<Xml>
+			<Port>
+				<FileName/>
+				<VendorName>Vendor(0x0416)</VendorName>
+				<VendorLogo/>
+				<DeviceName>Device(0x00000040)</DeviceName>
+				<DeviceIcon/>
+				<DeviceSymbol/>
+				<ProductId/>
+				<DeviceFamilyName/>
+				<DeviceText/>
+				<Flags>0x0060071c</Flags>
+				<Features>0x00000000</Features>
+				<DirectParameter>00000040000004160000111B1C08870000000000</DirectParameter>
+				<UserInterface2>
+					<Observer/>
+					<Maintenance/>
+					<Specialist/>
+				</UserInterface2>
+				<PdCollections>
+					<activePd>0x0</activePd>
+				</PdCollections>
+			</Port>
+			<Port>
+				<FileName/>
+				<VendorName>Vendor(0x0416)</VendorName>
+				<VendorLogo/>
+				<DeviceName>Device(0x00000040)</DeviceName>
+				<DeviceIcon/>
+				<DeviceSymbol/>
+				<ProductId/>
+				<DeviceFamilyName/>
+				<DeviceText/>
+				<Flags>0x0060071c</Flags>
+				<Features>0x00000000</Features>
+				<DirectParameter>00000040000004160000111B1C08870000000000</DirectParameter>
+				<UserInterface2>
+					<Observer/>
+					<Maintenance/>
+					<Specialist/>
+				</UserInterface2>
+				<PdCollections>
+					<activePd>0x0</activePd>
+				</PdCollections>
+			</Port>
+			<Port>
+				<FileName/>
+				<VendorName/>
+				<VendorLogo/>
+				<DeviceName/>
+				<DeviceIcon/>
+				<DeviceSymbol/>
+				<ProductId/>
+				<DeviceFamilyName/>
+				<DeviceText/>
+				<Flags>0x00000000</Flags>
+				<Features>0x00000000</Features>
+				<DirectParameter>0000000000000000000000000000000000000000</DirectParameter>
+				<UserInterface2>
+					<Observer/>
+					<Maintenance/>
+					<Specialist/>
+				</UserInterface2>
+				<PdCollections>
+					<activePd>0x0</activePd>
+				</PdCollections>
+			</Port>
+			<Port>
+				<FileName/>
+				<VendorName/>
+				<VendorLogo/>
+				<DeviceName/>
+				<DeviceIcon/>
+				<DeviceSymbol/>
+				<ProductId/>
+				<DeviceFamilyName/>
+				<DeviceText/>
+				<Flags>0x00000000</Flags>
+				<Features>0x00000000</Features>
+				<DirectParameter>0000000000000000000000000000000000000000</DirectParameter>
+				<UserInterface2>
+					<Observer/>
+					<Maintenance/>
+					<Specialist/>
+				</UserInterface2>
+				<PdCollections>
+					<activePd>0x0</activePd>
+				</PdCollections>
+			</Port>
+		</Xml>
+		<EtherCAT SlaveType="3" AdsServerAddress="056d467f0405ef03" PdiType="#x0405" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="47" FoeType="1" VendorId="#x00000002" ProductCode="#x18503052" RevisionNo="#x00150000" InfoDataAddr="true" InfoDataNetId="true" TimeoutMailbox2="2000" GenerateOwnNetId="true" InitializeOwnNetId="true" CheckRevisionNoType="3" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL6224 (IO Link Master)" Desc="EL6224">
 			<SyncMan>001000012600010001000000400000010001001026010000</SyncMan>
 			<SyncMan>001100012200010002000000400000010001001122010000</SyncMan>
-			<SyncMan>001200002400000003000000000000000000001224000000</SyncMan>
-			<SyncMan>001306002000010004000000000000000600001320010000</SyncMan>
-			<Fmmu>0000000000000000000000020000000001000000000000000000000000000000</Fmmu>
+			<SyncMan>001210002400010003000000000000000000001224010000</SyncMan>
+			<SyncMan>00130a002000010004000000000000000600001320010000</SyncMan>
+			<Fmmu>0000000000000000001200020100000001000000000000000000000000000000</Fmmu>
 			<Fmmu>0000000000000000001300010100000002000000000000000000000000000000</Fmmu>
 			<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
 			<BootStrapData>0010f400f410f400</BootStrapData>
 			<DcMode>4672656552756e0000000000000000004672656552756e00000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000</DcMode>
 			<DcMode>4443000000000000000000000000000044432d53796e6368726f6e000000000000000000000000000000000000000000000000000000000000000000000000010100000000000000000000000000000000000000000000000000000000000000</DcMode>
+			<MBoxUserCmdData>020003001c0000000b000000000000000000000000000000000000000000000030008001140000004000000016040000111b1c0008870000000023004f626a656374203830303000</MBoxUserCmdData>
+			<MBoxUserCmdData>020003001c0000000b000000000000000000000000000000000000000000000030108001140000004000000016040000111b1c0008870000000023004f626a656374203830313000</MBoxUserCmdData>
+			<MBoxUserCmdData>020003001c0000000b0000000000000000000000000000000000000000000000302080011400000000000000000000000000000000000000000000004f626a656374203830323000</MBoxUserCmdData>
+			<MBoxUserCmdData>020003001c0000000b0000000000000000000000000000000000000000000000303080011400000000000000000000000000000000000000000000004f626a656374203830333000</MBoxUserCmdData>
 			<Pdo Name="DeviceState Inputs Device" Index="#x1a05" Flags="#x0010" SyncMan="3">
-				<Entry>
+				<Entry BitLen="8">
 					<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
 				</Entry>
-				<Entry>
+				<Entry BitLen="4">
 					<Type GUID="{18071995-0000-0000-0000-002000000004}">ARRAY [0..3] OF BIT</Type>
 				</Entry>
-				<Entry Name="Device Diag" Index="#xf101" Sub="#x0d">
+				<Entry Name="Device Diag" BitLen="1" Index="#xf101" Sub="#x0d">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry>
+				<Entry BitLen="2">
 					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
 				</Entry>
-				<Entry Name="Device State" Index="#xf101" Sub="#x10">
+				<Entry Name="Device State" BitLen="1" Index="#xf101" Sub="#x10">
 					<Type>BIT</Type>
 				</Entry>
 			</Pdo>
 			<Pdo Name="DeviceState Inputs" Index="#x1a04" Flags="#x0010" SyncMan="3">
-				<Entry Name="State Ch1" Index="#xf100" Sub="#x01">
+				<Entry Name="State Ch1" BitLen="8" Index="#xf100" Sub="#x01">
 					<Type>USINT</Type>
 					<Comment><![CDATA[0x_0 = Port disabled
 0x_1 = Port in std dig in
@@ -82,7 +176,7 @@
 0x9_ = invalid PD out length
 0xA_ = no Device detected]]></Comment>
 				</Entry>
-				<Entry Name="State Ch2" Index="#xf100" Sub="#x02">
+				<Entry Name="State Ch2" BitLen="8" Index="#xf100" Sub="#x02">
 					<Type>USINT</Type>
 					<Comment><![CDATA[0x_0 = Port disabled
 0x_1 = Port in std dig in
@@ -100,7 +194,7 @@
 0x9_ = invalid PD out length
 0xA_ = no Device detected]]></Comment>
 				</Entry>
-				<Entry Name="State Ch3" Index="#xf100" Sub="#x03">
+				<Entry Name="State Ch3" BitLen="8" Index="#xf100" Sub="#x03">
 					<Type>USINT</Type>
 					<Comment><![CDATA[0x_0 = Port disabled
 0x_1 = Port in std dig in
@@ -118,7 +212,7 @@
 0x9_ = invalid PD out length
 0xA_ = no Device detected]]></Comment>
 				</Entry>
-				<Entry Name="State Ch4" Index="#xf100" Sub="#x04">
+				<Entry Name="State Ch4" BitLen="8" Index="#xf100" Sub="#x04">
 					<Type>USINT</Type>
 					<Comment><![CDATA[0x_0 = Port disabled
 0x_1 = Port in std dig in
@@ -137,14 +231,32 @@
 0xA_ = no Device detected]]></Comment>
 				</Entry>
 			</Pdo>
-			<Pdo Name="IO Inputs Channel 1" Index="#x1a00" Flags="#x0001" SyncMan="3"/>
-			<Pdo Name="IO Inputs Channel 2" Index="#x1a01" Flags="#x0001" SyncMan="3"/>
-			<Pdo Name="IO Inputs Channel 3" Index="#x1a02" Flags="#x0001" SyncMan="3"/>
-			<Pdo Name="IO Inputs Channel 4" Index="#x1a03" Flags="#x0001" SyncMan="3"/>
-			<Pdo Name="IO Outputs Channel 1" Index="#x1600" InOut="1" Flags="#x0001" SyncMan="2"/>
-			<Pdo Name="IO Outputs Channel 2" Index="#x1601" InOut="1" Flags="#x0001" SyncMan="2"/>
-			<Pdo Name="IO Outputs Channel 3" Index="#x1602" InOut="1" Flags="#x0001" SyncMan="2"/>
-			<Pdo Name="IO Outputs Channel 4" Index="#x1603" InOut="1" Flags="#x0001" SyncMan="2"/>
+			<Pdo Name="IO-Link Port1_in" Index="#x1a00" Flags="#x0000" SyncMan="3">
+				<Entry Name="Port1: process data" BitLen="8" Index="#x6000" Sub="#x01">
+					<Type>BYTE</Type>
+				</Entry>
+				<Entry BitLen="8">
+					<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="IO-Link Port2_in" Index="#x1a01" Flags="#x0000" SyncMan="3">
+				<Entry Name="Port2: process data" BitLen="8" Index="#x6010" Sub="#x01">
+					<Type>BYTE</Type>
+				</Entry>
+				<Entry BitLen="8">
+					<Type>BYTE</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="IO-Link Port1_out" Index="#x1600" InOut="1" Flags="#x0000" SyncMan="2">
+				<Entry Name="GVL_IO.uIOLINK1" BitLen="64" Index="#x7000" Sub="#x01">
+					<Type>ULINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="IO-Link Port2_out" Index="#x1601" InOut="1" Flags="#x0000" SyncMan="2">
+				<Entry Name="GVL_IO.uIOLINK2" BitLen="64" Index="#x7010" Sub="#x01">
+					<Type>ULINT</Type>
+				</Entry>
+			</Pdo>
 			<CoeProfile ProfileNo="407638921"/>
 			<CoeProfile ProfileNo="407638921"/>
 			<CoeProfile ProfileNo="407638921"/>

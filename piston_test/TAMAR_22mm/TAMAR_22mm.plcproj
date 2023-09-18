@@ -39,6 +39,19 @@
     <Compile Include="DUTs\E_STATION_STATE.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\IO\EL1809.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\IO\EL2809.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\IO\GVL_IO.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="DUTs\IO\ST_VTUG.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\ST_CART.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -122,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
+    <Folder Include="DUTs\IO" />
     <Folder Include="GVLs" />
     <Folder Include="Functions" />
     <Folder Include="STATIONS" />

@@ -2,22 +2,19 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="FB_PISTON" Id="{103ce51c-b586-4a9e-935e-2be8c1d3f70d}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_PISTON
+
 VAR_INPUT
-	
-	
 	stPISTON:   REFERENCE TO ST_PISTON;
 	bDepened_open1:BOOL:=TRUE;
 	bDepened_open2:BOOL:=TRUE;
 	bDepened_close1:BOOL:=TRUE;
 	bDepened_close2:BOOL:=TRUE;
-	
-	
 END_VAR
+
 VAR_OUTPUT
 	PistonStatus:ePistonStatus;
-	
-	
 END_VAR
+
 VAR
 	bMANUAL:BOOL:=FALSE;
 	sName:STRING;
