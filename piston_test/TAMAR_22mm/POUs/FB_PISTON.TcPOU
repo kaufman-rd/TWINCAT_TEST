@@ -13,6 +13,8 @@ END_VAR
 
 VAR_OUTPUT
 	PistonStatus:ePistonStatus;
+	bVALVE_OPEN: BOOL;
+	bVALVE_CLOSE: BOOL;
 END_VAR
 
 VAR
@@ -34,8 +36,7 @@ VAR
 	rtrig_OPEN_CONDITION: R_TRIG;
 	rtrig_CLOSE_CONDITION: R_TRIG;
 	bERROR:BOOL:=FALSE;
-	bVALVE_OPEN: BOOL;
-	bVALVE_CLOSE: BOOL;
+	
 	bError_Condition_open:BOOL;
 	bError_Condition_close:BOOL;
 END_VAR

@@ -48,7 +48,8 @@ END_VAR
 	bFirstRun:=FALSE;
 END_IF
 
-//uIOLINK.0:= bValve[1];
+//uIOLINK1.10:=1;
+//uIOLINK1.11:=1;
 
 rAnalogIn:=F_Linear(nanlogIn1,200,31170,0,2000);
 PISTONS_CYCLE();
@@ -299,6 +300,7 @@ END_FOR;
       <LineId Id="254" Count="0" />
       <LineId Id="252" Count="0" />
       <LineId Id="306" Count="1" />
+      <LineId Id="348" Count="0" />
       <LineId Id="248" Count="0" />
       <LineId Id="3" Count="146" />
       <LineId Id="158" Count="13" />

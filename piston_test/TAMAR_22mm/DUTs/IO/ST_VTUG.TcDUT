@@ -3,8 +3,8 @@
   <DUT Name="ST_VTUG" Id="{b828fe01-4566-44dc-852a-62a2f9043997}">
     <Declaration><![CDATA[TYPE ST_VTUG :
 STRUCT
-	sol_14: BOOL;
-	sol_12: BOOL;
+	sol_A: BOOL;
+	sol_B: BOOL;
 END_STRUCT
 END_TYPE
 ]]></Declaration>

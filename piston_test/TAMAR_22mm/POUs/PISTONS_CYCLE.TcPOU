@@ -262,16 +262,48 @@ separate2();
                           <v n="LValue">false</v>
                           <v n="Boolean">false</v>
                           <v n="IsInstance">true</v>
-                          <v n="Id">3L</v>
+                          <v n="Id">15L</v>
                         </o>
                         <o n="OutputItems" t="OutputItemList">
-                          <l2 n="OutputItems">
+                          <l2 n="OutputItems" cet="Operand">
                             <n />
+                            <o>
+                              <v n="Operand">"uIOLINK1.0"</v>
+                              <v n="Type">"BOOL"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">true</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">17L</v>
+                            </o>
+                            <o>
+                              <v n="Operand">"uIOLINK1.1"</v>
+                              <v n="Type">"BOOL"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">true</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">18L</v>
+                            </o>
                           </l2>
                         </o>
                         <o n="Flags" t="Flags">
                           <v n="Flags">0</v>
-                          <v n="Fixed">false</v>
+                          <v n="Fixed">true</v>
                           <v n="Extensible">false</v>
                         </o>
                         <n n="InputFlags" />
@@ -391,9 +423,13 @@ separate2();
                         <o n="OutputParam" t="ParamList">
                           <l2 n="Names" cet="String">
                             <v>PistonStatus</v>
+                            <v>bVALVE_OPEN</v>
+                            <v>bVALVE_CLOSE</v>
                           </l2>
                           <l2 n="Types" cet="String">
                             <v>ePistonStatus</v>
+                            <v>BOOL</v>
+                            <v>BOOL</v>
                           </l2>
                         </o>
                         <v n="CallType" t="Operator">FunctionBlock</v>
@@ -402,7 +438,7 @@ separate2();
                         <n n="STSnippet" />
                         <v n="ContainsExtensibleInputs">false</v>
                         <v n="ProvidesSTSnippet">false</v>
-                        <v n="Id">4L</v>
+                        <v n="Id">16L</v>
                       </o>
                     </l2>
                     <l2 n="Connectors" />
@@ -1260,16 +1296,48 @@ separate2();
                           <v n="LValue">false</v>
                           <v n="Boolean">false</v>
                           <v n="IsInstance">true</v>
-                          <v n="Id">132L</v>
+                          <v n="Id">156L</v>
                         </o>
                         <o n="OutputItems" t="OutputItemList">
-                          <l2 n="OutputItems">
+                          <l2 n="OutputItems" cet="Operand">
                             <n />
+                            <o>
+                              <v n="Operand">"uIOLINK2.0"</v>
+                              <v n="Type">"BOOL"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">true</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">158L</v>
+                            </o>
+                            <o>
+                              <v n="Operand">"uIOLINK2.1"</v>
+                              <v n="Type">"BOOL"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">true</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">159L</v>
+                            </o>
                           </l2>
                         </o>
                         <o n="Flags" t="Flags">
                           <v n="Flags">0</v>
-                          <v n="Fixed">false</v>
+                          <v n="Fixed">true</v>
                           <v n="Extensible">false</v>
                         </o>
                         <n n="InputFlags" />
@@ -1389,9 +1457,13 @@ separate2();
                         <o n="OutputParam" t="ParamList">
                           <l2 n="Names" cet="String">
                             <v>PistonStatus</v>
+                            <v>bVALVE_OPEN</v>
+                            <v>bVALVE_CLOSE</v>
                           </l2>
                           <l2 n="Types" cet="String">
                             <v>ePistonStatus</v>
+                            <v>BOOL</v>
+                            <v>BOOL</v>
                           </l2>
                         </o>
                         <v n="CallType" t="Operator">FunctionBlock</v>
@@ -1400,7 +1472,7 @@ separate2();
                         <n n="STSnippet" />
                         <v n="ContainsExtensibleInputs">false</v>
                         <v n="ProvidesSTSnippet">false</v>
-                        <v n="Id">133L</v>
+                        <v n="Id">157L</v>
                       </o>
                     </l2>
                     <l2 n="Connectors" />
@@ -1432,16 +1504,48 @@ separate2();
                           <v n="LValue">false</v>
                           <v n="Boolean">false</v>
                           <v n="IsInstance">true</v>
-                          <v n="Id">120L</v>
+                          <v n="Id">160L</v>
                         </o>
                         <o n="OutputItems" t="OutputItemList">
-                          <l2 n="OutputItems">
+                          <l2 n="OutputItems" cet="Operand">
                             <n />
+                            <o>
+                              <v n="Operand">"uIOLINK2.2"</v>
+                              <v n="Type">"BOOL"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">true</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">162L</v>
+                            </o>
+                            <o>
+                              <v n="Operand">"uIOLINK2.3"</v>
+                              <v n="Type">"BOOL"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">true</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">163L</v>
+                            </o>
                           </l2>
                         </o>
                         <o n="Flags" t="Flags">
                           <v n="Flags">0</v>
-                          <v n="Fixed">false</v>
+                          <v n="Fixed">true</v>
                           <v n="Extensible">false</v>
                         </o>
                         <n n="InputFlags" />
@@ -1561,9 +1665,13 @@ separate2();
                         <o n="OutputParam" t="ParamList">
                           <l2 n="Names" cet="String">
                             <v>PistonStatus</v>
+                            <v>bVALVE_OPEN</v>
+                            <v>bVALVE_CLOSE</v>
                           </l2>
                           <l2 n="Types" cet="String">
                             <v>ePistonStatus</v>
+                            <v>BOOL</v>
+                            <v>BOOL</v>
                           </l2>
                         </o>
                         <v n="CallType" t="Operator">FunctionBlock</v>
@@ -1572,7 +1680,7 @@ separate2();
                         <n n="STSnippet" />
                         <v n="ContainsExtensibleInputs">false</v>
                         <v n="ProvidesSTSnippet">false</v>
-                        <v n="Id">121L</v>
+                        <v n="Id">161L</v>
                       </o>
                     </l2>
                     <l2 n="Connectors" />
@@ -1604,16 +1712,48 @@ separate2();
                           <v n="LValue">false</v>
                           <v n="Boolean">false</v>
                           <v n="IsInstance">true</v>
-                          <v n="Id">144L</v>
+                          <v n="Id">164L</v>
                         </o>
                         <o n="OutputItems" t="OutputItemList">
-                          <l2 n="OutputItems">
+                          <l2 n="OutputItems" cet="Operand">
                             <n />
+                            <o>
+                              <v n="Operand">"uIOLINK2.4"</v>
+                              <v n="Type">"BOOL"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">true</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">166L</v>
+                            </o>
+                            <o>
+                              <v n="Operand">"uIOLINK2.5"</v>
+                              <v n="Type">"BOOL"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">true</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">167L</v>
+                            </o>
                           </l2>
                         </o>
                         <o n="Flags" t="Flags">
                           <v n="Flags">0</v>
-                          <v n="Fixed">false</v>
+                          <v n="Fixed">true</v>
                           <v n="Extensible">false</v>
                         </o>
                         <n n="InputFlags" />
@@ -1733,9 +1873,13 @@ separate2();
                         <o n="OutputParam" t="ParamList">
                           <l2 n="Names" cet="String">
                             <v>PistonStatus</v>
+                            <v>bVALVE_OPEN</v>
+                            <v>bVALVE_CLOSE</v>
                           </l2>
                           <l2 n="Types" cet="String">
                             <v>ePistonStatus</v>
+                            <v>BOOL</v>
+                            <v>BOOL</v>
                           </l2>
                         </o>
                         <v n="CallType" t="Operator">FunctionBlock</v>
@@ -1744,7 +1888,7 @@ separate2();
                         <n n="STSnippet" />
                         <v n="ContainsExtensibleInputs">false</v>
                         <v n="ProvidesSTSnippet">false</v>
-                        <v n="Id">145L</v>
+                        <v n="Id">165L</v>
                       </o>
                     </l2>
                     <l2 n="Connectors" />
