@@ -131,7 +131,7 @@
 </div>
 <div id="TcHmiTextblock_43" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="5.2" data-tchmi-height-unit="%" data-tchmi-left="44.3" data-tchmi-left-unit="%" data-tchmi-text="Act Pos" data-tchmi-top="18.0" data-tchmi-top-unit="%" data-tchmi-width="16.6" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-text-font-size="100" data-tchmi-text-font-size-unit="%">
 </div>
-<div id="UC_LED_13" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="9.5" data-tchmi-height-unit="%" data-tchmi-left="27" data-tchmi-left-unit="%" data-tchmi-target-user-control="Controls/UC_LED.usercontrol" data-tchmi-top="18.3" data-tchmi-top-unit="%" data-tchmi-width="12" data-tchmi-width-unit="%" data-tchmi-bled="%pp%AXIS::Power::Enable%/pp%">
+<div id="UC_LED_13" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="9.5" data-tchmi-height-unit="%" data-tchmi-left="27" data-tchmi-left-unit="%" data-tchmi-target-user-control="Controls/UC_LED.usercontrol" data-tchmi-top="18.3" data-tchmi-top-unit="%" data-tchmi-width="12" data-tchmi-width-unit="%" data-tchmi-bled="%pp%AXIS::power::Enable%/pp%">
 </div>
 <div id="UC_LED_14" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="9.5" data-tchmi-height-unit="%" data-tchmi-left="27" data-tchmi-left-unit="%" data-tchmi-target-user-control="Controls/UC_LED.usercontrol" data-tchmi-top="31.5" data-tchmi-top-unit="%" data-tchmi-width="12" data-tchmi-width-unit="%" data-tchmi-bled="%pp%AXIS::bInPos%/pp%">
 </div>

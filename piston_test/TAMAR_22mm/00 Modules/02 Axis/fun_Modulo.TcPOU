@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="fun_Modulo" Id="{b7613cba-50f9-4fff-b7c4-a1abfca5fd37}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION fun_Modulo : LREAL
+VAR_INPUT
+	fVar: LREAL;
+	fModulo: LREAL:=360.0;
+
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fun_Modulo:=fVar;
+IF fun_Modulo>0 THEN;
+	WHILE fun_Modulo>=fModulo DO
+		fun_Modulo:=fun_Modulo-fModulo;
+	END_WHILE
+ELSE;
+	WHILE fun_Modulo<0 DO
+		fun_Modulo:=fun_Modulo+fModulo;
+	END_WHILE	
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="fun_Modulo">
+      <LineId Id="20" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="18" Count="1" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="21" Count="1" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="13" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

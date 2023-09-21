@@ -268,8 +268,8 @@ separate2();
                           <l2 n="OutputItems" cet="Operand">
                             <n />
                             <o>
-                              <v n="Operand">"uIOLINK1.0"</v>
-                              <v n="Type">"BOOL"</v>
+                              <v n="Operand">""</v>
+                              <n n="Type" />
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
@@ -284,8 +284,8 @@ separate2();
                               <v n="Id">17L</v>
                             </o>
                             <o>
-                              <v n="Operand">"uIOLINK1.1"</v>
-                              <v n="Type">"BOOL"</v>
+                              <v n="Operand">""</v>
+                              <n n="Type" />
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
@@ -1302,8 +1302,8 @@ separate2();
                           <l2 n="OutputItems" cet="Operand">
                             <n />
                             <o>
-                              <v n="Operand">"uIOLINK2.0"</v>
-                              <v n="Type">"BOOL"</v>
+                              <v n="Operand">""</v>
+                              <n n="Type" />
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
@@ -1318,8 +1318,8 @@ separate2();
                               <v n="Id">158L</v>
                             </o>
                             <o>
-                              <v n="Operand">"uIOLINK2.1"</v>
-                              <v n="Type">"BOOL"</v>
+                              <v n="Operand">""</v>
+                              <n n="Type" />
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
@@ -1510,8 +1510,8 @@ separate2();
                           <l2 n="OutputItems" cet="Operand">
                             <n />
                             <o>
-                              <v n="Operand">"uIOLINK2.2"</v>
-                              <v n="Type">"BOOL"</v>
+                              <v n="Operand">""</v>
+                              <n n="Type" />
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
@@ -1526,8 +1526,8 @@ separate2();
                               <v n="Id">162L</v>
                             </o>
                             <o>
-                              <v n="Operand">"uIOLINK2.3"</v>
-                              <v n="Type">"BOOL"</v>
+                              <v n="Operand">""</v>
+                              <n n="Type" />
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
@@ -1718,8 +1718,8 @@ separate2();
                           <l2 n="OutputItems" cet="Operand">
                             <n />
                             <o>
-                              <v n="Operand">"uIOLINK2.4"</v>
-                              <v n="Type">"BOOL"</v>
+                              <v n="Operand">""</v>
+                              <n n="Type" />
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
@@ -1734,8 +1734,8 @@ separate2();
                               <v n="Id">166L</v>
                             </o>
                             <o>
-                              <v n="Operand">"uIOLINK2.5"</v>
-                              <v n="Type">"BOOL"</v>
+                              <v n="Operand">""</v>
+                              <n n="Type" />
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
