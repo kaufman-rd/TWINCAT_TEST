@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <DUT Name="EL2809" Id="{21658651-b5a4-4543-b10e-c027e6e168c1}">
-    <Declaration><![CDATA[TYPE EL2809 :
+  <DUT Name="EL2869" Id="{21658651-b5a4-4543-b10e-c027e6e168c1}">
+    <Declaration><![CDATA[TYPE EL2869 :
 STRUCT
 	ch1		:BOOL;
 	ch2		:BOOL;

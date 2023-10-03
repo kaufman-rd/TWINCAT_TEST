@@ -81,7 +81,8 @@ fbDROP(piston_open:=  fbPiston[22],piston_push:=  fbPiston[21]);
 fbSUPPLY(piston_push:=  fbPiston[1],piston_hold:=  fbPiston[2],piston_open:=  fbPiston[15]);
 prg_CSV_V2();
 MOTORS();
-
+JACK_CYCLE();
+PIST_CYCLE();
 rtrigRESET(CLK:= b_RESET, Q=> );
 rtrigE_STOP(CLK:= b_E_STOP, Q=> );
 rtrigINIT(CLK:= bINIT_MAIN, Q=> );
@@ -302,7 +303,9 @@ END_FOR;
       <LineId Id="306" Count="1" />
       <LineId Id="348" Count="0" />
       <LineId Id="248" Count="0" />
-      <LineId Id="3" Count="146" />
+      <LineId Id="3" Count="30" />
+      <LineId Id="389" Count="0" />
+      <LineId Id="34" Count="115" />
       <LineId Id="158" Count="13" />
       <LineId Id="173" Count="0" />
       <LineId Id="259" Count="0" />
