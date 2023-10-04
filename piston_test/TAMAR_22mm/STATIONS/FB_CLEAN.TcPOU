@@ -3,7 +3,7 @@
   <POU Name="FB_CLEAN" Id="{64fcedbb-8fec-4471-9a9b-cf3ec986b26e}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_CLEAN EXTENDS FB_STATION
 VAR_INPUT
-	piston_clean: REFERENCE TO FB_PISTON;
+	pClean: REFERENCE TO FB_PIST;
 END_VAR
 VAR_OUTPUT
 END_VAR
@@ -14,7 +14,7 @@ END_VAR
       <ST><![CDATA[
 CASE eCLEAN OF
 	E_STATION_STATE.homing:
-		piston_clean.A_DEFAULT();
+		pClean.A_INIT();
 		bHomed:=TRUE;
 		eCLEAN:= E_STATION_STATE.idle;
 		
@@ -26,7 +26,7 @@ CASE eCLEAN OF
 			
 	E_STATION_STATE.do_action1:
 		IF NOT bSkip THEN
-			piston_clean.A_OPEN();
+			pClean.A_OPEN();
 			eCLEAN:=E_STATION_STATE.do_action2;
 		ELSE
 			eCLEAN:=E_STATION_STATE.done;
@@ -34,16 +34,16 @@ CASE eCLEAN OF
 		
 		
 	E_STATION_STATE.do_action2:
-		IF piston_clean.PistonStatus= ePistonStatus.OPENED THEN
+		IF pClean.PistStatus= E_PIST_STATUS.OPENED THEN
 			eCLEAN:=E_STATION_STATE.do_action3;
 		END_IF
 		
 	E_STATION_STATE.do_action3:
-		piston_clean.A_CLOSE();
+		pClean.A_CLOSE();
 		eCLEAN:=E_STATION_STATE.do_action4;
 		
 	E_STATION_STATE.do_action4:
-		IF piston_clean.PistonStatus= ePistonStatus.CLOSED  THEN
+		IF pClean.PistStatus= E_PIST_STATUS.CLOSED  THEN
 			eCLEAN:=E_STATION_STATE.done;
 		END_IF
 	

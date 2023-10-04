@@ -136,6 +136,14 @@
       "frameworkUserControlConfig": "Controls\\G_PISTON.usercontrol.json",
       "type": "object",
       "id": "tchmi:project#/definitions/G_PISTON"
+    },
+    "G_PIST": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "Controls\\G_PIST.usercontrol.json",
+      "id": "tchmi:project#/definitions/G_PIST",
+      "type": "object"
     }
   }
 }

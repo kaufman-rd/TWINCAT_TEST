@@ -3,8 +3,9 @@
   <POU Name="FB_DROP" Id="{fe51b714-c52e-4b14-af2e-8a2c760db9fe}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_DROP EXTENDS FB_STATION
 VAR_INPUT
-	piston_push: REFERENCE TO FB_PISTON;
-	piston_open: REFERENCE TO FB_PISTON;
+	pPush: REFERENCE TO FB_PIST;
+	pOpen1: REFERENCE TO FB_PIST;
+	pOpen2: REFERENCE TO FB_PIST;
 END_VAR
 VAR_OUTPUT
 END_VAR
@@ -14,8 +15,9 @@ END_VAR
     <Implementation>
       <ST><![CDATA[CASE eDROP OF
 	E_STATION_STATE.homing:
-		piston_open.A_DEFAULT();
-		piston_push.A_DEFAULT();
+		pOpen1.A_INIT();
+		pOpen2.A_INIT();
+		pPush.A_INIT();
 		bHomed:=TRUE;
 		eDROP:= E_STATION_STATE.idle;
 		
@@ -27,7 +29,8 @@ END_VAR
 			
 	E_STATION_STATE.do_action1:
 		IF NOT bSkip THEN
-			piston_open.A_OPEN();
+			pOpen1.A_OPEN();
+			pOpen2.A_OPEN();
 			eDROP:=E_STATION_STATE.do_action2;
 		ELSE
 			eDROP:=E_STATION_STATE.done;
@@ -35,25 +38,26 @@ END_VAR
 		
 		
 	E_STATION_STATE.do_action2:
-		IF piston_open.PistonStatus= ePistonStatus.OPENED THEN
-			piston_push.A_OPEN();
+		IF pOpen1.PistStatus= E_PIST_STATUS.OPENED AND pOpen2.PistStatus= E_PIST_STATUS.OPENED THEN
+			pPush.A_OPEN();
 			eDROP:=E_STATION_STATE.do_action3;
 		END_IF
 	
 	E_STATION_STATE.do_action3:
-		IF piston_push.PistonStatus= ePistonStatus.OPENED THEN
+		IF pPush.PistStatus= E_PIST_STATUS.OPENED THEN
 			eDROP:=E_STATION_STATE.do_action4;
-			piston_open.A_CLOSE();
+			pOpen1.A_CLOSE();
+			pOpen2.A_CLOSE();
 		END_IF
 	
 	E_STATION_STATE.do_action4:
-		IF piston_open .PistonStatus= ePistonStatus.CLOSED THEN
-			piston_push.A_CLOSE();
+		IF pOpen1.PistStatus= E_PIST_STATUS.CLOSED AND pOpen2.PistStatus= E_PIST_STATUS.CLOSED THEN
+			pPush.A_CLOSE();
 			eDROP:=E_STATION_STATE.do_action5;
 		END_IF
 
 	E_STATION_STATE.do_action5:
-		IF piston_push.PistonStatus= ePistonStatus.CLOSED THEN
+		IF pPush.PistStatus= E_PIST_STATUS.CLOSED THEN
 			eDROP:=E_STATION_STATE.done;
 		END_IF
 		
@@ -66,7 +70,13 @@ END_VAR
 END_CASE]]></ST>
     </Implementation>
     <LineIds Name="FB_DROP">
-      <LineId Id="3" Count="50" />
+      <LineId Id="3" Count="2" />
+      <LineId Id="64" Count="0" />
+      <LineId Id="6" Count="12" />
+      <LineId Id="65" Count="0" />
+      <LineId Id="19" Count="15" />
+      <LineId Id="66" Count="0" />
+      <LineId Id="35" Count="18" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>

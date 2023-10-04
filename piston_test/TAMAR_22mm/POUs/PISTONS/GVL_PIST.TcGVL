@@ -3,7 +3,7 @@
   <GVL Name="GVL_PIST" Id="{355e3a0f-01dd-4caf-8ab7-c00715794fa7}">
     <Declaration><![CDATA[//{attribute 'qualified_only'}
 VAR_GLOBAL
-	fbPistTest: FB_PIST;
+	fbPist:  ARRAY[1..30] OF FB_PIST;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

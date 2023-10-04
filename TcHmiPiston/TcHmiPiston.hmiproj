@@ -131,6 +131,13 @@
     <Content Include=".eslintrc.json">
       <Visible>false</Visible>
     </Content>
+    <Content Include="Controls\G_PIST.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Controls\G_PIST.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Controls\G_PIST.usercontrol</DependentUpon>
+    </Content>
     <Content Include="Controls\PULLER.usercontrol">
       <SubType>Content</SubType>
     </Content>

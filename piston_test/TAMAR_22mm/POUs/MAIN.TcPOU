@@ -76,9 +76,9 @@ fbSEPARATION2(piston_updown:=  fbPiston[8],
 			  eState:= eSEPARATE2,
  			  station_num:=separate2_station_num);	
 	
-fbCLEAN(piston_clean:=  fbPiston[14]);
-fbDROP(piston_open:=  fbPiston[22],piston_push:=  fbPiston[21]);
-fbSUPPLY(piston_push:=  fbPiston[1],piston_hold:=  fbPiston[2],piston_open:=  fbPiston[15]);
+fbCLEAN(pClean:=  fbPist[6]);
+fbDROP(pPush:=  fbPist[9],pOpen1:=  fbPist[10],pOpen2:=  fbPist[11]);
+fbSUPPLY(pPush:=fbPist[1],pLock1:=fbPist[2],pLock2:=fbPist[3],pOpen1:=fbPist[4],pOpen2:=fbPist[5]);
 prg_CSV_V2();
 MOTORS();
 JACK_CYCLE();

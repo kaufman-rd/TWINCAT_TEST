@@ -6,7 +6,7 @@
     "CACHEMAXAGE": "P30D",
     "CACHEMAXENTRYSIZE": 1048576,
     "CACHEMAXSIZE": 2097152,
-    "CERTIFICATE": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURuakNDQW9hZ0F3SUJBZ0lKQU1VSkJVZEt6ak13TUEwR0NTcUdTSWIzRFFFQkN3VUFNRUl4Q3pBSkJnTlYKQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RmpBVUJnTlZCQU1NRFV4VQpMVTVQUVUxU1gzSnZiM1F3SUJjTk1qTXhNREF6TURZeE5qTXpXaGdQTWpBMk1qQXhNekV3TmpFMk16TmFNRDB4CkN6QUpCZ05WQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RVRBUEJnTlYKQkFNTUNFeFVMVTVQUVUxU01JSUJJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBUThBTUlJQkNnS0NBUUVBcnZ1dQp0dmNhUWVWUVZmTkk4azBWQWhsMzlaMzFRNGEza3ZVVEN1eVdaMDNTM3ZVd3pzUG1RWnFIaCt1b1c4TVJIYXdVCno3ZDIrWUplK0pjWU9wUHo0WThVQ25IcklTbGtkdWd1dllCRkFXQ25KdHgvMk16ZEJmeFkwZzNpMWFPTmVyREIKT1FzRXFoelc2YUN4QXBDU244N0RIdGt3WnlvL2U3a0tjQzFKbEhDTHF6VktZbFhhMDhyN0s3Znh3TG9GUGxYSQpoK1JKamRBZ1YrYWl4T3NtR2ExeDMrQVBqbmxEcmttNzBDSTF3WkNZS0pGaS9GdDJKbjB3aEZWNkZ5R0FIM2FKCmtITlRVQWlHL3UvTWtmVDdkTEhnMTJoNi9JcnFrOHM4WkpPcEswMkNLZHRXL2phWkdXdXcreHFray9EdFFvdkwKRmxkbGRacGh0aXhsVUhxYVJRSURBUUFCbzRHWk1JR1dNR2NHQTFVZEVRUmdNRjZDQ1d4dlkyRnNhRzl6ZEljRQpmd0FBQVljUUFBQUFBQUFBQUFBQUFBQUFBQUFBQVlJSVRGUXRUazlCVFZLQ0YweFVMVTVQUVUxU0xtdGhkV1p0CllXNHRjbVF1WTI5dGh3U3NFQjRNaHhEK2dBQUFBQUFBQVByRU5BNW95c1dITUIwR0ExVWREZ1FXQkJUUDZVVmcKejdyMkZXMkQ0eERJUWt0TFNUODNKekFNQmdOVkhSTUJBZjhFQWpBQU1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQgpBUUJmRmZBWmdxMGJIaFBaT01peWF0a1JvZkF0RFF2d3hZUW5pM2RiZ0lwVjhPSEZucm5wd29KL2x0dVpqL0MwCk12UVovQXV5aU1PMnZPbzhldW53bnBYQlNDR3FHUGNKZjZhelpjTURGV1JzcjV3R1o3U0xkUnl0aXF5N0swM1kKZDNoa3A2TXlXWFVSdHMvbGdYVXovd0lBa3hIMGZoOTlsRUN1YkNnNFlRYzNsY25Bbk1yMlRSbjJNdUFIZGpiZgpGWjN4dGhhVHZaZnBGZzFrcDhCblVnME1XRDYxSmtrZG9ObTYxcDJLckZxaEp2ZzBHVVk4WkJXWHVYcUlqY1RnCmcveTh2S0dOSVVFT0NvQ2xBelI5TWF3eEEyZkFrWVplbzE0L01xemJ0ZVBYUUw1TEhCYkxTellTMFM5aEZON1oKTllYS081TmtKYXlkQmFmbi9tdHVEcHJjCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0KLS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURwakNDQW82Z0F3SUJBZ0lKQUpESWFuNGdnUjRrTUEwR0NTcUdTSWIzRFFFQkN3VUFNRUl4Q3pBSkJnTlYKQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RmpBVUJnTlZCQU1NRFV4VQpMVTVQUVUxU1gzSnZiM1F3SUJjTk1qTXhNREF6TURZeE5qTXlXaGdQTWpBMk1qQXhNekV3TmpFMk16SmFNRUl4CkN6QUpCZ05WQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RmpBVUJnTlYKQkFNTURVeFVMVTVQUVUxU1gzSnZiM1F3Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLQW9JQgpBUUM1enA2ZzZHSk1aUVprNzVwcFNxUmtMUzY5eEVlRlRTRDhZejdCaDJuTHhlWGFENStsdDlrSHI4Y29MVVNiClMvSGxYaXA2Rk9pTGMzbFl0ZkVWWVRWY1FUN1ZiNlhDVy9aa2g2ODE4VWx1VkttUk9lblZFU2d4Y1Rrd0hnZWUKS2dvWU9Od0xGeUp5bHdWd05XMWI2dEdLN0VSbG5ZOTkxczBEYlQ0bTIxT3pPeFBMdkRncHBPd3BzTDZhU0VjNgovRFpQOUtTeUFwYlhhTzhvcHVwak9LM045N1VwU2tvQnIza01XUHVpby9FSXVwUVdvYytCWkF6bEIvMTU5SGU4CjRPdXhCS1hSKzJKeDUwWUJSVHY3OTMwZmVyOWx4Sy9BOUtuTmR0QzRXK2FKY2MzaG1wbW5aRnRsWXAzVlF6a24KU0ZDZVQwVHF0bUlUMVJqNzFweEl6NnY3QWdNQkFBR2pnWnd3Z1prd1p3WURWUjBSQkdBd1hvSUpiRzlqWVd4bwpiM04waHdSL0FBQUJoeEFBQUFBQUFBQUFBQUFBQUFBQUFBQUJnZ2hNVkMxT1QwRk5Vb0lYVEZRdFRrOUJUVkl1CmEyRjFabTFoYmkxeVpDNWpiMjJIQkt3UUhneUhFUDZBQUFBQUFBQUErc1EwRG1qS3hZY3dIUVlEVlIwT0JCWUUKRktLbFlDRW1MOVNkdTNaRXA0R2ZZNzhYb0FXUE1BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTgpBUUVMQlFBRGdnRUJBS284UStiMHZ0OGxqVkZGWUt6S3U2RmxXSGlSc2Rmc2FkUUJ1NStDbGszaUJjcjRlODNFCnVRRzdZVllsYVZZdEp3aW1kek5GY0lyTm9ndkFVcTVPL0QrN0diTXp5ZkpZbDViTTdBeENLNnZINFFYWnlFbDQKN0tRbWVUNzJDYVBTQ0FQY01DSWoxQUlWbEJBS1FrYWdzR1cxMll4djlEL1dYTTFnYjdpVmY0KzdWQ3pEdzJjVwpjOEQ3WFJ3Y0F2OHF2Z01lcmE2SDJBdjIzOFpQNXNLSkxPd01NMkY2aTc2M2NQL1BocXYvejF3NXptYTFUVGcvClVsaGErVjRDUm1BdW5YZjFOTnlxNGRPUlcrYUJkZWdlWERvbThhZVgxSjFybnZBZUhwSlFGSEh3Q0RselQvSUYKaTRQV2pLRmxUWk5LQi9jd0EvOWRPc3h6dkFTVU1pVzVmUkU9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+    "CERTIFICATE": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURwRENDQW95Z0F3SUJBZ0lKQU9XSkhpQmUxandqTUEwR0NTcUdTSWIzRFFFQkN3VUFNRUl4Q3pBSkJnTlYKQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RmpBVUJnTlZCQU1NRFV4VQpMVTVQUVUxU1gzSnZiM1F3SUJjTk1qTXhNREEwTURjME5UVTVXaGdQTWpBMk1qQXlNREV3TnpRMU5UbGFNRDB4CkN6QUpCZ05WQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RVRBUEJnTlYKQkFNTUNFeFVMVTVQUVUxU01JSUJJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBUThBTUlJQkNnS0NBUUVBdzdQRApUQ1FRUTJBbmswVVIzSlBOQllrUlBMSXlodzFDY3VTMWQ3ZnBMTFhsK2hZNzcvV0NjMHBDZGZHL1k2VUUwT1hxCmFueGRQNFRkbi95QW43UjdJTXRKdlY5dCtidDFXakNYOFdWMEVjMXdIVS9JVk8xNjZBa2k3YWpQMWI3MmNFMEoKMGR1L0ptaU9DclVzZ2dkMUQ3WXI5ZnVvQ0oxM0xjSVhFaUY2N3k5VDJLSkJxb3NibFIyU0hDQUZOVHZqYnh2SApYV1hHUkhaREVnb2tqd1R2WkJoZ0hhNEVtQ05idmJEMGhITDZwMmRtOEt1emlMZUtXU1ltNEtjd2J0MjA2WFJRCjBuTW56aFhMWlF2c3NlK2xwOWxsYm1CdTlUYUVaNEFoSyswSnp3TkROZlVKdmx2aVJJbUs1WEU4elpsUU0vQUkKcDd3Z0NGREFHUjJ2TWZTcHdRSURBUUFCbzRHZk1JR2NNRzBHQTFVZEVRUm1NR1NDQ1d4dlkyRnNhRzl6ZEljRQpmd0FBQVljUUFBQUFBQUFBQUFBQUFBQUFBQUFBQVlJSVRGUXRUazlCVFZLQ0YweFVMVTVQUVUxU0xtdGhkV1p0CllXNHRjbVF1WTI5dGh3U3Avc2o4aHdTc0VCNE1oeEQrZ0FBQUFBQUFBUHJFTkE1b3lzV0hNQjBHQTFVZERnUVcKQkJTU0xQYTNPamdZNnVmZXlKRlhpZWJ1dVNQMXdEQU1CZ05WSFJNQkFmOEVBakFBTUEwR0NTcUdTSWIzRFFFQgpDd1VBQTRJQkFRQVUweWJMVndhdno2MG52aXlDUXBsTVhHZjhmbEFlamxJdW9EVCtwTUFxbHNJdU4ybjlGWFpECmphSkNUa3NvcGhjeE5YeFdrWkR4VnBHalo4TlNNa0FuWWhRU1Z5NUFQTytMaTErTVZwWTVpelNZZUcwUE1OWmgKTzZSdHBZUDUrbU5qV0I3eG9Fc1ZmUDBvRmRVU25IVlJZSkpZZXZCc0Z2eW8rQkJzRHAzbW9rcXdFUWxabUthawpGaHY0VlA1NFRoUkVxdmtaTjROdFRSV2YzS0dvWnhnZHJNWnIwVjhBQzBzclE5RXFQc29ZQ05NdnhzUTEyZ1JNClg2NkcyVVZJQnN1dndLQTArSmpPVjdpSWljc3VpaWp1N3ExejM4eE1FaXJ2SGwrOVp0SkczSkhmekc0aHZVTzYKNDByZGQ4a0lraDBCMXJ5QzIvVWZrWi9HaXZYSWZMZk0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQotLS0tLUJFR0lOIENFUlRJRklDQVRFLS0tLS0KTUlJRHJEQ0NBcFNnQXdJQkFnSUpBT0cwQ3F1aXl2KzJNQTBHQ1NxR1NJYjNEUUVCQ3dVQU1FSXhDekFKQmdOVgpCQVlUQWtSRk1Sc3dHUVlEVlFRS0RCSlVkMmx1UTBGVUlFaE5TU0JUWlhKMlpYSXhGakFVQmdOVkJBTU1EVXhVCkxVNVBRVTFTWDNKdmIzUXdJQmNOTWpNeE1EQTBNRGMwTlRVNVdoZ1BNakEyTWpBeU1ERXdOelExTlRsYU1FSXgKQ3pBSkJnTlZCQVlUQWtSRk1Sc3dHUVlEVlFRS0RCSlVkMmx1UTBGVUlFaE5TU0JUWlhKMlpYSXhGakFVQmdOVgpCQU1NRFV4VUxVNVBRVTFTWDNKdmIzUXdnZ0VpTUEwR0NTcUdTSWIzRFFFQkFRVUFBNElCRHdBd2dnRUtBb0lCCkFRREVTc29sUnNpZXhvUmY0Z3R6bHBOV2dHbVpoYTQvQmFHdExWVlF1MFFieTBEcjZBWUo4My9qdGZJL1RIMWsKdTVhUFRtaCtUN1loUHNKc0ZhZU9NcDJSTk1xT1ZMZjgybFQzMWFSK3NWNUZKaHFpQ2hvNms5WDAyTTlINHJpUworRmY4MW5GVE5pcllxNUp2T2I3YmE3MEVNZ1dtYlJUQzVlVlVrWWtqcHVyUXpudGZNc1JGNVBJekxYNVBrVzNoCnQzWWhnb2JwdlROeGE3c2MrTngzZ3BEQUFOK0VFV0dUUnJhZWNoWFdVcm9RL3Nzdk9qUGlWVmNxbDdFTjA3aW4KQjFXSjlOTjcxZVBGSmFPWE1Rb3pHWEZNblVsdnJlQWVQZFBudHdvblhnamtyS3JsbndVNEcveUJzak82SkJBUwpPSkgvd3VrYmZHeGZ6eEd3ck9PMTJPMjVBZ01CQUFHamdhSXdnWjh3YlFZRFZSMFJCR1l3WklJSmJHOWpZV3hvCmIzTjBod1IvQUFBQmh4QUFBQUFBQUFBQUFBQUFBQUFBQUFBQmdnaE1WQzFPVDBGTlVvSVhURlF0VGs5QlRWSXUKYTJGMVptMWhiaTF5WkM1amIyMkhCS24reVB5SEJLd1FIZ3lIRVA2QUFBQUFBQUFBK3NRMERtakt4WWN3SFFZRApWUjBPQkJZRUZPRTNLV2NjMWRCaDJwN096c0pmamJ1UW9DcHpNQThHQTFVZEV3RUIvd1FGTUFNQkFmOHdEUVlKCktvWklodmNOQVFFTEJRQURnZ0VCQUtYVGRHdUM3K1l2azFRRk43VTcvcVhGYmVqaDFseGdGMFA2dUtoZnRVd3QKcEp1RFF2b3F6eTQyUFZMYXRCTXFma3orT2s4bmxubkpLZkU3K1dFMElESUtSamMrUXpXTHBRSDdxZ1NxOGorSwphQldQZG8xcHM1VG41djl1ZkVJY0IxUEJBU1lsK2h0eUo2K214QlRHSkZya1crQzJ0SmhrSGR3THJJNXVsMnU1ClNHYlFCT1V1SW9EU1BBQUcvdUwycjFrNVJ5SERDN0RQZGVpdkwrNkkrLzZlWGM2YU5BbGIyeVZQZldpbnRJbU8KcGdxeFJYcTM1TU9lVHVjRmg1c3B6WGhCYkRRNU1KMXYrWWhpVm5KNHE3MTVRTnFLNCsybzcxWGhSdDZScjdFRApPNEExZjg3dWZ5V0NyMU1YTHE1NmV5L2c3WUlmeTlZNUFBdEEyUTZpV2lBPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
     "CERTIFICATEEXPIRATION": "P14000D",
     "CHECKSUMENABLED": true,
     "CHUNKSIZE": 1048576,
@@ -112,6 +112,15 @@
             },
             "maxItems": 2,
             "minItems": 2,
+            "startOffset": 1,
+            "type": "array"
+        },
+        "PLC1.ARRAY_1..30_OF-FB_PIST": {
+            "items": {
+                "$ref": "#/definitions/PLC1.FB_PIST"
+            },
+            "maxItems": 30,
+            "minItems": 30,
             "startOffset": 1,
             "type": "array"
         },
@@ -264,6 +273,95 @@
             "type": "integer"
         },
         "PLC1.E_PISTON_TYPE": {
+            "attributes": {
+                "generate_implicit_init_function": "",
+                "qualified_only": "",
+                "strict": ""
+            },
+            "enum": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "options": [
+                {
+                    "label": "NO_SENSORS",
+                    "value": 0
+                },
+                {
+                    "label": "ONLY_OPEN",
+                    "value": 1
+                },
+                {
+                    "label": "ONLY_CLOSE",
+                    "value": 2
+                },
+                {
+                    "label": "BOTH",
+                    "value": 3
+                }
+            ],
+            "type": "integer"
+        },
+        "PLC1.E_PIST_STATUS": {
+            "attributes": {
+                "generate_implicit_init_function": "",
+                "qualified_only": "",
+                "strict": ""
+            },
+            "enum": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+            ],
+            "options": [
+                {
+                    "label": "UNINIT",
+                    "value": 0
+                },
+                {
+                    "label": "INIT",
+                    "value": 1
+                },
+                {
+                    "label": "READY",
+                    "value": 2
+                },
+                {
+                    "label": "OPENED",
+                    "value": 3
+                },
+                {
+                    "label": "CLOSED",
+                    "value": 4
+                },
+                {
+                    "label": "OPENING",
+                    "value": 5
+                },
+                {
+                    "label": "CLOSING",
+                    "value": 6
+                },
+                {
+                    "label": "ERROR",
+                    "value": 7
+                },
+                {
+                    "label": "PAUSE",
+                    "value": 8
+                }
+            ],
+            "type": "integer"
+        },
+        "PLC1.E_PIST_TYPE": {
             "attributes": {
                 "generate_implicit_init_function": "",
                 "qualified_only": "",
@@ -1157,6 +1255,297 @@
                         },
                         {
                             "propertyOrder": 11
+                        }
+                    ]
+                }
+            },
+            "type": "object"
+        },
+        "PLC1.FB_PIST": {
+            "properties": {
+                "SFCInit": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "attributes": {
+                                "ignore-duplicate": ""
+                            },
+                            "propertyOrder": 27
+                        }
+                    ]
+                },
+                "SFCReset": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "attributes": {
+                                "ignore-duplicate": ""
+                            },
+                            "propertyOrder": 28
+                        }
+                    ]
+                },
+                "bCMD_CLOSE_SWR": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 22
+                        }
+                    ]
+                },
+                "bCMD_OPEN": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 19
+                        }
+                    ]
+                },
+                "bCMD_OPEN_SWR": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 21
+                        }
+                    ]
+                },
+                "bDefaultState": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 7
+                        }
+                    ]
+                },
+                "bDepened_close1": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 10
+                        }
+                    ]
+                },
+                "bDepened_close2": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 11
+                        }
+                    ]
+                },
+                "bDepened_open1": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 8
+                        }
+                    ]
+                },
+                "bDepened_open2": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 9
+                        }
+                    ]
+                },
+                "bERROR": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 18
+                        }
+                    ]
+                },
+                "bError_Condition_close": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 17
+                        }
+                    ]
+                },
+                "bError_Condition_open": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 16
+                        }
+                    ]
+                },
+                "bInit": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 1
+                        }
+                    ]
+                },
+                "bMANUAL": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 20
+                        }
+                    ]
+                },
+                "bSEN_CLOSE": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 25
+                        }
+                    ]
+                },
+                "bSEN_OPEN": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 24
+                        }
+                    ]
+                },
+                "bSTARTUP": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 23
+                        }
+                    ]
+                },
+                "bStepDone": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 26
+                        }
+                    ]
+                },
+                "bVALVE_CLOSE": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 15
+                        }
+                    ]
+                },
+                "bVALVE_OPEN": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 14
+                        }
+                    ]
+                },
+                "close_time": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/TIME"
+                        },
+                        {
+                            "propertyOrder": 3
+                        }
+                    ]
+                },
+                "close_timeout": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/TIME"
+                        },
+                        {
+                            "propertyOrder": 5
+                        }
+                    ]
+                },
+                "eType": {
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/PLC1.E_PIST_TYPE"
+                        },
+                        {
+                            "propertyOrder": 6
+                        }
+                    ]
+                },
+                "open_time": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/TIME"
+                        },
+                        {
+                            "propertyOrder": 2
+                        }
+                    ]
+                },
+                "open_timeout": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/TIME"
+                        },
+                        {
+                            "propertyOrder": 4
+                        }
+                    ]
+                },
+                "pistStatus": {
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/PLC1.E_PIST_STATUS"
+                        },
+                        {
+                            "propertyOrder": 13
+                        }
+                    ]
+                },
+                "sName": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                        },
+                        {
+                            "propertyOrder": 12
                         }
                     ]
                 }
@@ -9260,7 +9649,7 @@
     "HTTP_FLOODPROTECTION": 10,
     "INITTIMEOUT": "PT10S",
     "KEEP_ALIVE": "PT40S",
-    "KEY": "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2QUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktZd2dnU2lBZ0VBQW9JQkFRQ3UrNjYyOXhwQjVWQlYKODBqeVRSVUNHWGYxbmZWRGhyZVM5Uk1LN0pablRkTGU5VERPdytaQm1vZUg2Nmhid3hFZHJCVFB0M2I1Z2w3NApseGc2ay9QaGp4UUtjZXNoS1dSMjZDNjlnRVVCWUtjbTNIL1l6TjBGL0ZqU0RlTFZvNDE2c01FNUN3U3FITmJwCm9MRUNrSktmenNNZTJUQm5Lajk3dVFwd0xVbVVjSXVyTlVwaVZkclR5dnNydC9IQXVnVStWY2lINUVtTjBDQlgKNXFMRTZ5WVpyWEhmNEErT2VVT3VTYnZRSWpYQmtKZ29rV0w4VzNZbWZUQ0VWWG9YSVlBZmRvbVFjMU5RQ0liKwo3OHlSOVB0MHNlRFhhSHI4aXVxVHl6eGtrNmtyVFlJcDIxYitOcGtaYTdEN0dxU1Q4TzFDaThzV1YyVjFtbUcyCkxHVlFlcHBGQWdNQkFBRUNnZ0VBRXNjdG03THUzVzEzYnBIYUhTNktkNXcyRkdTc0lsLzlxVWFsa1lHTUxtL2EKbGxTbnRUaXVxQkdtUTc3VlpXdU1sYXVXM0NlckcrR1N3WWl0Yi9QYXN6VUFpSkpyRWpiMzhnNituVlY3a2tkRwpDTlNXMzdRMGIrVUJ2eUVBVzc3ZWV2RW0rekVrZ2dEd1MwZ1VWdHNlOFFsbVJSUTNyb3FKSDRUZkN1VEJSYTJVCndZYWJpT0xTZ1p0dm82ZTlhRFBVZlVPNEltQnZXay94Y2E2c2F2cnozZmNSYXBDdWo5dHBIai9obmRPRFZyVjMKM2QrNXJ4VTYzOW9TSE9DT00zekkrQ3RFYWZLUE93ckFRUUZzNTcySVJqcGFYWFl5N2xKOHRuYTRwYlB1eVhVLwpnbmRGTkJTYmZtWDZDbHlBdGVHdmFEWjk2bEViOWpsSjAza25sTlpXTFFLQmdRRGZWYkVhbDFSZlY1TDVYcHpoCmF1aW44SGRiUDlNYllIbVZPeFB6YjZaTnRpWWp2Ykx3eFU0M1Z6M3ErcVhLWnhxRC91bjhWeXNFMlorUEVORE8Ka3c3dHNDQ1BHQ2gvakNmSnVsQVExNHdYdFNoN2pQMUtMWUJ4cXM4ZzZ6U0xSNEFmc2g5L1RWV2h2VHdOQlRIQwp0b2xKVTFOMmR1aFo4ZGJtMmRjb3FLYVN1d0tCZ1FESWs1Q1l5ZDFKWWlpWjF3ZHhLUzdadHlFcmJrUW1aWkNsCmVzMlYxRlBHVm1QN3hpZG1ucFRUdHRtOEJoeUpSQlVXc3NBaDdldFNJNWNnSCtJdHBNdm5QNGpGZHNPMFhkbU8KeTFuMVJTKzBlVG5OMW5iNFRCaHkxVWJWQm1aWHJiWDdFUExhenYwQ2Rqc3pHOXJkb09UWVkrdnNNdG9vMTBGMQpPalYxT0tFMi93S0JnQ0d5TENaMjdxUHo4cGp0VFg0MVF5VVRndTZoa3BodTFlbE9JSlI2SS8xVm5pdUdVNWxBCks2enQzTW0zUjR4aVFmM29XQ1ZhZ1lNWjBwa2pVRjNha2tZS2JOOHFKZklZazJnOFZCZzJiVXltYUpVN2tIdkEKb2NDRXBQdXlnUnNDanJJNWpjY0hSQVJES094Ti9GUUVkbkk1d0QzL2NzOGZUZTFHc00vUm9sQkJBb0dBVTVkMApUc2pxYVhmNE5jMHc4ODlYRUROTEpwK0kxWHZFb2NLaFJZMDg4TTcyVW1yTjV1MjJWdG5BdXFUTlpjT3pDa2VxCjNUa2J0cHJRay9uVnVISVM3S2hFNXc3TkZ6RjV4eElteHBwei9FSDlmalNnVm5EWVM1dHBMc1RCQ0UrRUpVTjIKQXd6NjB2alZTVUtWbjRJN2ZaZC9MbXd2RVpCTVhuL0k0YmFkTVo4Q2dZQk1rbjRtU2hmeXVRK3ZORHNqQVZybwoxTkJoY0hiRUZlZnExajQ5Y05iU05UTnVkenpmTHhuWVdrNld4Y3VhYmxtUi9PVnFWWjg5aTliblQxYy9zZ1p5Cm9qUXdCZnVNTlkyeVVXMGZsSkFwL1NOSldmaDJ0TS90N2pSN1hJaVViMk95NlNTN3h3WGkyUFJlRVBKZ214aDgKd25yQWRCZzdoNHovSGg3Q0ROT1l3UT09Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K",
+    "KEY": "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2d0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktrd2dnU2xBZ0VBQW9JQkFRRERzOE5NSkJCRFlDZVQKUlJIY2s4MEZpUkU4c2pLSERVSnk1TFYzdCtrc3RlWDZGanZ2OVlKelNrSjE4YjlqcFFUUTVlcHFmRjAvaE4yZgovSUNmdEhzZ3kwbTlYMjM1dTNWYU1KZnhaWFFSelhBZFQ4aFU3WHJvQ1NMdHFNL1Z2dlp3VFFuUjI3OG1hSTRLCnRTeUNCM1VQdGl2MSs2Z0luWGN0d2hjU0lYcnZMMVBZb2tHcWl4dVZIWkljSUFVMU8rTnZHOGRkWmNaRWRrTVMKQ2lTUEJPOWtHR0FkcmdTWUkxdTlzUFNFY3ZxbloyYndxN09JdDRwWkppYmdwekJ1M2JUcGRGRFNjeWZPRmN0bApDK3l4NzZXbjJXVnVZRzcxTm9SbmdDRXI3UW5QQTBNMTlRbStXK0pFaVlybGNUek5tVkF6OEFpbnZDQUlVTUFaCkhhOHg5S25CQWdNQkFBRUNnZ0VCQUp5UFdnUzJzU0FGYzRPWWRQS2VkeDBmaTErZ08xWFpZTGhqaVYwdUR1ZEsKMmFHWldmZmMwN0NCenV0bUs3TitsM3k3QWk2UU1WVVlhT2lOYXlUWWtNd3FkV0ovVG83RHpkMEtGUFAwTXNmdgpMdXIwSVpMM3JTU2w4b0JvVldSczhkL2pjYUNtaUtRa2JzWFlMTFFWWFN2bGxBT2tnTWZybVNWTktZSENzUU5ZCjFLYzNnb21RMlc5emZGei9OQnFuNE04SnlmWGVWK1BOWit5SnlLeTY0YTRPM1k3aktrN0dFYnp4cW1jS3REME4KOGg5ZVQvT2trL1BlY2lVektaTzZpQ3JMdUFudkhWbnk4OHZEOEhqLy80TmkwMW1xeUNOa0NSdDgwL1VYckluawovb3RqWlR5UWVDbHZHT3lTa21rUmJ0VHdZY3NIN2h5YXcrVyt6RDVpNEhFQ2dZRUE5ZWFOdS9zZ0ZwZDc0blVFCmF0Wm5rTHBycEpnUW9sbm1nYnhLTCtIM1dRZkRPcWpNTzc5THZVTzdDalROTGsvSXl1V1MrNXc3Um9LakZEQXoKT1VVQzl4bThFd1luK2d3ZC8xQVRzSk40Qy9vL2NPWVMxS0FuSDZXakpwR1d1YlJWRWhjMEF0ajBubTRWamNtRgpwL2ZIUlcwZkkwQjNHL0k0bTZxT0VNNTMySVVDZ1lFQXk3MXAzcWk4aXVqZ0RoTHBpZ3NGYlZQRU84QzhnOTRKCkpjNzRzOXE1V080MzBuY0ZvTkYxSjY3UFcrcG5BNDJlRTVLV1N1YWwyODJPRldra3BvVVJ4Q05OelZ2V1dNUFkKcW01YStubWJiRUJxWTJpVU9BR3d3Zm9lUVR1ZUhiN0UzWXliZnFiV01aSlhlekIxc1BpK05DdlBoNzFZUnlPYwpTR3pqUUZJWmJ3MENnWUJoL3ozZytwV3hLekc5OERDUWUxM091ZHlJUGVuekthekphMGFOaXBwT3F0OU5FMVJCClExMWwwZ1pLYlB5UVJrK1pQS0MxRVhBMkMzMytYNjhxVmF4MjJaU3dhRFdxV3dYaGFBSlF6cFI3QVlJaTlpM3UKK3R4Y3FtQTQwTENtMVkxSnBtR2QrT1NUOXY4MEFHbjVwSytQcFl0Uk96Rzh1MjEvN0JxdDYvcXJHUUtCZ1FDYwpMQ2xISUJqR2NoT3ROaG9HVXNScU5WZXFaZWNiUGN2TlM0V2dkL3l6aW9jSHNXeURCWXZFUzE5dm1aSTFTd3pzCisrUndyYlJkZEllQktnT0tFVjY0OWtiaEw1QnlvazBtOTBpTnowR3dEUUNBQ3QzeXdIajVkL3hSREozN053dzQKdDF0S0RpRUtCcDlBTXJsRVdxZVIzak5LWFgyWnFsWlZ2Z0hFZ0NvMjBRS0JnUURlQ0ovazlaNGYyS0wyYzNJTwowMTI2dW45QkxwWGQ1UzFQNjhFVHpTRnluY1gzSkNJSDArUkhLS1VDTjc0em5tSVBsRFJLKzN4V0paNkVWS3htClhwL3JYZXFyTGpDaVRmSU84VlV3ai9PYm00akVzWXlibmhZaklJRnF2cDRuZ1Jod09WUW4rVnZPRFdZN0lkcDUKTGxvVDBJQ1V5bVlCSDIrVDd0Mkl4ajRoaUE9PQotLS0tLUVORCBQUklWQVRFIEtFWS0tLS0tCg==",
     "KEYPASSWORD": "",
     "LOCKOUT_PROTECTION_CLIENT_CERTIFICATE": true,
     "MAXCONNECTIONSPERCLIENT": 32,
@@ -9612,8 +10001,8 @@
     "REMOTESERVERS_CERTIFICATES": [],
     "REQUIREAUTH": 0,
     "SAMESITE_ATTRIBUTE": 2,
-    "SELFSIGNEDROOTCA": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURwakNDQW82Z0F3SUJBZ0lKQUpESWFuNGdnUjRrTUEwR0NTcUdTSWIzRFFFQkN3VUFNRUl4Q3pBSkJnTlYKQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RmpBVUJnTlZCQU1NRFV4VQpMVTVQUVUxU1gzSnZiM1F3SUJjTk1qTXhNREF6TURZeE5qTXlXaGdQTWpBMk1qQXhNekV3TmpFMk16SmFNRUl4CkN6QUpCZ05WQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RmpBVUJnTlYKQkFNTURVeFVMVTVQUVUxU1gzSnZiM1F3Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLQW9JQgpBUUM1enA2ZzZHSk1aUVprNzVwcFNxUmtMUzY5eEVlRlRTRDhZejdCaDJuTHhlWGFENStsdDlrSHI4Y29MVVNiClMvSGxYaXA2Rk9pTGMzbFl0ZkVWWVRWY1FUN1ZiNlhDVy9aa2g2ODE4VWx1VkttUk9lblZFU2d4Y1Rrd0hnZWUKS2dvWU9Od0xGeUp5bHdWd05XMWI2dEdLN0VSbG5ZOTkxczBEYlQ0bTIxT3pPeFBMdkRncHBPd3BzTDZhU0VjNgovRFpQOUtTeUFwYlhhTzhvcHVwak9LM045N1VwU2tvQnIza01XUHVpby9FSXVwUVdvYytCWkF6bEIvMTU5SGU4CjRPdXhCS1hSKzJKeDUwWUJSVHY3OTMwZmVyOWx4Sy9BOUtuTmR0QzRXK2FKY2MzaG1wbW5aRnRsWXAzVlF6a24KU0ZDZVQwVHF0bUlUMVJqNzFweEl6NnY3QWdNQkFBR2pnWnd3Z1prd1p3WURWUjBSQkdBd1hvSUpiRzlqWVd4bwpiM04waHdSL0FBQUJoeEFBQUFBQUFBQUFBQUFBQUFBQUFBQUJnZ2hNVkMxT1QwRk5Vb0lYVEZRdFRrOUJUVkl1CmEyRjFabTFoYmkxeVpDNWpiMjJIQkt3UUhneUhFUDZBQUFBQUFBQUErc1EwRG1qS3hZY3dIUVlEVlIwT0JCWUUKRktLbFlDRW1MOVNkdTNaRXA0R2ZZNzhYb0FXUE1BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTgpBUUVMQlFBRGdnRUJBS284UStiMHZ0OGxqVkZGWUt6S3U2RmxXSGlSc2Rmc2FkUUJ1NStDbGszaUJjcjRlODNFCnVRRzdZVllsYVZZdEp3aW1kek5GY0lyTm9ndkFVcTVPL0QrN0diTXp5ZkpZbDViTTdBeENLNnZINFFYWnlFbDQKN0tRbWVUNzJDYVBTQ0FQY01DSWoxQUlWbEJBS1FrYWdzR1cxMll4djlEL1dYTTFnYjdpVmY0KzdWQ3pEdzJjVwpjOEQ3WFJ3Y0F2OHF2Z01lcmE2SDJBdjIzOFpQNXNLSkxPd01NMkY2aTc2M2NQL1BocXYvejF3NXptYTFUVGcvClVsaGErVjRDUm1BdW5YZjFOTnlxNGRPUlcrYUJkZWdlWERvbThhZVgxSjFybnZBZUhwSlFGSEh3Q0RselQvSUYKaTRQV2pLRmxUWk5LQi9jd0EvOWRPc3h6dkFTVU1pVzVmUkU9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
-    "SELFSIGNEDROOTCAKEY": "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2QUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktZd2dnU2lBZ0VBQW9JQkFRQ3UrNjYyOXhwQjVWQlYKODBqeVRSVUNHWGYxbmZWRGhyZVM5Uk1LN0pablRkTGU5VERPdytaQm1vZUg2Nmhid3hFZHJCVFB0M2I1Z2w3NApseGc2ay9QaGp4UUtjZXNoS1dSMjZDNjlnRVVCWUtjbTNIL1l6TjBGL0ZqU0RlTFZvNDE2c01FNUN3U3FITmJwCm9MRUNrSktmenNNZTJUQm5Lajk3dVFwd0xVbVVjSXVyTlVwaVZkclR5dnNydC9IQXVnVStWY2lINUVtTjBDQlgKNXFMRTZ5WVpyWEhmNEErT2VVT3VTYnZRSWpYQmtKZ29rV0w4VzNZbWZUQ0VWWG9YSVlBZmRvbVFjMU5RQ0liKwo3OHlSOVB0MHNlRFhhSHI4aXVxVHl6eGtrNmtyVFlJcDIxYitOcGtaYTdEN0dxU1Q4TzFDaThzV1YyVjFtbUcyCkxHVlFlcHBGQWdNQkFBRUNnZ0VBRXNjdG03THUzVzEzYnBIYUhTNktkNXcyRkdTc0lsLzlxVWFsa1lHTUxtL2EKbGxTbnRUaXVxQkdtUTc3VlpXdU1sYXVXM0NlckcrR1N3WWl0Yi9QYXN6VUFpSkpyRWpiMzhnNituVlY3a2tkRwpDTlNXMzdRMGIrVUJ2eUVBVzc3ZWV2RW0rekVrZ2dEd1MwZ1VWdHNlOFFsbVJSUTNyb3FKSDRUZkN1VEJSYTJVCndZYWJpT0xTZ1p0dm82ZTlhRFBVZlVPNEltQnZXay94Y2E2c2F2cnozZmNSYXBDdWo5dHBIai9obmRPRFZyVjMKM2QrNXJ4VTYzOW9TSE9DT00zekkrQ3RFYWZLUE93ckFRUUZzNTcySVJqcGFYWFl5N2xKOHRuYTRwYlB1eVhVLwpnbmRGTkJTYmZtWDZDbHlBdGVHdmFEWjk2bEViOWpsSjAza25sTlpXTFFLQmdRRGZWYkVhbDFSZlY1TDVYcHpoCmF1aW44SGRiUDlNYllIbVZPeFB6YjZaTnRpWWp2Ykx3eFU0M1Z6M3ErcVhLWnhxRC91bjhWeXNFMlorUEVORE8Ka3c3dHNDQ1BHQ2gvakNmSnVsQVExNHdYdFNoN2pQMUtMWUJ4cXM4ZzZ6U0xSNEFmc2g5L1RWV2h2VHdOQlRIQwp0b2xKVTFOMmR1aFo4ZGJtMmRjb3FLYVN1d0tCZ1FESWs1Q1l5ZDFKWWlpWjF3ZHhLUzdadHlFcmJrUW1aWkNsCmVzMlYxRlBHVm1QN3hpZG1ucFRUdHRtOEJoeUpSQlVXc3NBaDdldFNJNWNnSCtJdHBNdm5QNGpGZHNPMFhkbU8KeTFuMVJTKzBlVG5OMW5iNFRCaHkxVWJWQm1aWHJiWDdFUExhenYwQ2Rqc3pHOXJkb09UWVkrdnNNdG9vMTBGMQpPalYxT0tFMi93S0JnQ0d5TENaMjdxUHo4cGp0VFg0MVF5VVRndTZoa3BodTFlbE9JSlI2SS8xVm5pdUdVNWxBCks2enQzTW0zUjR4aVFmM29XQ1ZhZ1lNWjBwa2pVRjNha2tZS2JOOHFKZklZazJnOFZCZzJiVXltYUpVN2tIdkEKb2NDRXBQdXlnUnNDanJJNWpjY0hSQVJES094Ti9GUUVkbkk1d0QzL2NzOGZUZTFHc00vUm9sQkJBb0dBVTVkMApUc2pxYVhmNE5jMHc4ODlYRUROTEpwK0kxWHZFb2NLaFJZMDg4TTcyVW1yTjV1MjJWdG5BdXFUTlpjT3pDa2VxCjNUa2J0cHJRay9uVnVISVM3S2hFNXc3TkZ6RjV4eElteHBwei9FSDlmalNnVm5EWVM1dHBMc1RCQ0UrRUpVTjIKQXd6NjB2alZTVUtWbjRJN2ZaZC9MbXd2RVpCTVhuL0k0YmFkTVo4Q2dZQk1rbjRtU2hmeXVRK3ZORHNqQVZybwoxTkJoY0hiRUZlZnExajQ5Y05iU05UTnVkenpmTHhuWVdrNld4Y3VhYmxtUi9PVnFWWjg5aTliblQxYy9zZ1p5Cm9qUXdCZnVNTlkyeVVXMGZsSkFwL1NOSldmaDJ0TS90N2pSN1hJaVViMk95NlNTN3h3WGkyUFJlRVBKZ214aDgKd25yQWRCZzdoNHovSGg3Q0ROT1l3UT09Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K",
+    "SELFSIGNEDROOTCA": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURyRENDQXBTZ0F3SUJBZ0lKQU9HMENxdWl5disyTUEwR0NTcUdTSWIzRFFFQkN3VUFNRUl4Q3pBSkJnTlYKQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RmpBVUJnTlZCQU1NRFV4VQpMVTVQUVUxU1gzSnZiM1F3SUJjTk1qTXhNREEwTURjME5UVTVXaGdQTWpBMk1qQXlNREV3TnpRMU5UbGFNRUl4CkN6QUpCZ05WQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4RmpBVUJnTlYKQkFNTURVeFVMVTVQUVUxU1gzSnZiM1F3Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLQW9JQgpBUURFU3NvbFJzaWV4b1JmNGd0emxwTldnR21aaGE0L0JhR3RMVlZRdTBRYnkwRHI2QVlKODMvanRmSS9USDFrCnU1YVBUbWgrVDdZaFBzSnNGYWVPTXAyUk5NcU9WTGY4MmxUMzFhUitzVjVGSmhxaUNobzZrOVgwMk05SDRyaVMKK0ZmODFuRlROaXJZcTVKdk9iN2JhNzBFTWdXbWJSVEM1ZVZVa1lranB1clF6bnRmTXNSRjVQSXpMWDVQa1czaAp0M1loZ29icHZUTnhhN3NjK054M2dwREFBTitFRVdHVFJyYWVjaFhXVXJvUS9zc3ZPalBpVlZjcWw3RU4wN2luCkIxV0o5Tk43MWVQRkphT1hNUW96R1hGTW5VbHZyZUFlUGRQbnR3b25YZ2prcktybG53VTRHL3lCc2pPNkpCQVMKT0pIL3d1a2JmR3hmenhHd3JPTzEyTzI1QWdNQkFBR2pnYUl3Z1o4d2JRWURWUjBSQkdZd1pJSUpiRzlqWVd4bwpiM04waHdSL0FBQUJoeEFBQUFBQUFBQUFBQUFBQUFBQUFBQUJnZ2hNVkMxT1QwRk5Vb0lYVEZRdFRrOUJUVkl1CmEyRjFabTFoYmkxeVpDNWpiMjJIQktuK3lQeUhCS3dRSGd5SEVQNkFBQUFBQUFBQStzUTBEbWpLeFljd0hRWUQKVlIwT0JCWUVGT0UzS1djYzFkQmgycDdPenNKZmpidVFvQ3B6TUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3RFFZSgpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFLWFRkR3VDNytZdmsxUUZON1U3L3FYRmJlamgxbHhnRjBQNnVLaGZ0VXd0CnBKdURRdm9xenk0MlBWTGF0Qk1xZmt6K09rOG5sbm5KS2ZFNytXRTBJRElLUmpjK1F6V0xwUUg3cWdTcThqK0sKYUJXUGRvMXBzNVRuNXY5dWZFSWNCMVBCQVNZbCtodHlKNitteEJUR0pGcmtXK0MydEpoa0hkd0xySTV1bDJ1NQpTR2JRQk9VdUlvRFNQQUFHL3VMMnIxazVSeUhEQzdEUGRlaXZMKzZJKy82ZVhjNmFOQWxiMnlWUGZXaW50SW1PCnBncXhSWHEzNU1PZVR1Y0ZoNXNwelhoQmJEUTVNSjF2K1loaVZuSjRxNzE1UU5xSzQrMm83MVhoUnQ2UnI3RUQKTzRBMWY4N3VmeVdDcjFNWExxNTZleS9nN1lJZnk5WTVBQXRBMlE2aVdpQT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=",
+    "SELFSIGNEDROOTCAKEY": "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2d0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktrd2dnU2xBZ0VBQW9JQkFRRERzOE5NSkJCRFlDZVQKUlJIY2s4MEZpUkU4c2pLSERVSnk1TFYzdCtrc3RlWDZGanZ2OVlKelNrSjE4YjlqcFFUUTVlcHFmRjAvaE4yZgovSUNmdEhzZ3kwbTlYMjM1dTNWYU1KZnhaWFFSelhBZFQ4aFU3WHJvQ1NMdHFNL1Z2dlp3VFFuUjI3OG1hSTRLCnRTeUNCM1VQdGl2MSs2Z0luWGN0d2hjU0lYcnZMMVBZb2tHcWl4dVZIWkljSUFVMU8rTnZHOGRkWmNaRWRrTVMKQ2lTUEJPOWtHR0FkcmdTWUkxdTlzUFNFY3ZxbloyYndxN09JdDRwWkppYmdwekJ1M2JUcGRGRFNjeWZPRmN0bApDK3l4NzZXbjJXVnVZRzcxTm9SbmdDRXI3UW5QQTBNMTlRbStXK0pFaVlybGNUek5tVkF6OEFpbnZDQUlVTUFaCkhhOHg5S25CQWdNQkFBRUNnZ0VCQUp5UFdnUzJzU0FGYzRPWWRQS2VkeDBmaTErZ08xWFpZTGhqaVYwdUR1ZEsKMmFHWldmZmMwN0NCenV0bUs3TitsM3k3QWk2UU1WVVlhT2lOYXlUWWtNd3FkV0ovVG83RHpkMEtGUFAwTXNmdgpMdXIwSVpMM3JTU2w4b0JvVldSczhkL2pjYUNtaUtRa2JzWFlMTFFWWFN2bGxBT2tnTWZybVNWTktZSENzUU5ZCjFLYzNnb21RMlc5emZGei9OQnFuNE04SnlmWGVWK1BOWit5SnlLeTY0YTRPM1k3aktrN0dFYnp4cW1jS3REME4KOGg5ZVQvT2trL1BlY2lVektaTzZpQ3JMdUFudkhWbnk4OHZEOEhqLy80TmkwMW1xeUNOa0NSdDgwL1VYckluawovb3RqWlR5UWVDbHZHT3lTa21rUmJ0VHdZY3NIN2h5YXcrVyt6RDVpNEhFQ2dZRUE5ZWFOdS9zZ0ZwZDc0blVFCmF0Wm5rTHBycEpnUW9sbm1nYnhLTCtIM1dRZkRPcWpNTzc5THZVTzdDalROTGsvSXl1V1MrNXc3Um9LakZEQXoKT1VVQzl4bThFd1luK2d3ZC8xQVRzSk40Qy9vL2NPWVMxS0FuSDZXakpwR1d1YlJWRWhjMEF0ajBubTRWamNtRgpwL2ZIUlcwZkkwQjNHL0k0bTZxT0VNNTMySVVDZ1lFQXk3MXAzcWk4aXVqZ0RoTHBpZ3NGYlZQRU84QzhnOTRKCkpjNzRzOXE1V080MzBuY0ZvTkYxSjY3UFcrcG5BNDJlRTVLV1N1YWwyODJPRldra3BvVVJ4Q05OelZ2V1dNUFkKcW01YStubWJiRUJxWTJpVU9BR3d3Zm9lUVR1ZUhiN0UzWXliZnFiV01aSlhlekIxc1BpK05DdlBoNzFZUnlPYwpTR3pqUUZJWmJ3MENnWUJoL3ozZytwV3hLekc5OERDUWUxM091ZHlJUGVuekthekphMGFOaXBwT3F0OU5FMVJCClExMWwwZ1pLYlB5UVJrK1pQS0MxRVhBMkMzMytYNjhxVmF4MjJaU3dhRFdxV3dYaGFBSlF6cFI3QVlJaTlpM3UKK3R4Y3FtQTQwTENtMVkxSnBtR2QrT1NUOXY4MEFHbjVwSytQcFl0Uk96Rzh1MjEvN0JxdDYvcXJHUUtCZ1FDYwpMQ2xISUJqR2NoT3ROaG9HVXNScU5WZXFaZWNiUGN2TlM0V2dkL3l6aW9jSHNXeURCWXZFUzE5dm1aSTFTd3pzCisrUndyYlJkZEllQktnT0tFVjY0OWtiaEw1QnlvazBtOTBpTnowR3dEUUNBQ3QzeXdIajVkL3hSREozN053dzQKdDF0S0RpRUtCcDlBTXJsRVdxZVIzak5LWFgyWnFsWlZ2Z0hFZ0NvMjBRS0JnUURlQ0ovazlaNGYyS0wyYzNJTwowMTI2dW45QkxwWGQ1UzFQNjhFVHpTRnluY1gzSkNJSDArUkhLS1VDTjc0em5tSVBsRFJLKzN4V0paNkVWS3htClhwL3JYZXFyTGpDaVRmSU84VlV3ai9PYm00akVzWXlibmhZaklJRnF2cDRuZ1Jod09WUW4rVnZPRFdZN0lkcDUKTGxvVDBJQ1V5bVlCSDIrVDd0Mkl4ajRoaUE9PQotLS0tLUVORCBQUklWQVRFIEtFWS0tLS0tCg==",
     "SESSIONSTORAGE": {},
     "SHOW_CONFIGURATION_HINTS": true,
     "SHOW_MAINTENANCE_MODE": true,
@@ -12831,6 +13220,16 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.GVL_PIST.fbPist": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL_PIST::fbPist",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.ARRAY_1..30_OF-FB_PIST"
+            },
+            "USEMAPPING": true
+        },
         "PLC1.MAIN.fbCLEAN.bSkip": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -13993,6 +14392,7 @@
                 "PLC1.GVL.stPISTON_PARAM.9": 3,
                 "PLC1.GVL_EVENT_LOGS.fbEventLogger.EventBuffer": 3,
                 "PLC1.GVL_EVENT_LOGS.fbEventLogger.EventBufferIndex": 3,
+                "PLC1.GVL_PIST.fbPist": 3,
                 "PLC1.MAIN.fbCLEAN.bSkip": 3,
                 "PLC1.MAIN.fbDROP": 3,
                 "PLC1.MAIN.fbMAIN_CONV.bStepFW": 3,
