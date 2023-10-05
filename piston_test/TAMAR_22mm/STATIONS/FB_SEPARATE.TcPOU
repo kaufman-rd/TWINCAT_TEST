@@ -4,13 +4,17 @@
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SEPARATE EXTENDS FB_STATION
 VAR_INPUT
 	b_BULL_SENSOR:BOOL:=FALSE;
-	piston_updown: REFERENCE TO FB_PISTON;
-	piston_colet: REFERENCE TO FB_PISTON;
-	piston_puller: REFERENCE TO FB_PISTON;
-	piston_tray: REFERENCE TO FB_PISTON;
-	piston_pins: REFERENCE TO FB_PISTON;
-	piston_tray_door: REFERENCE TO FB_PISTON;
-	piston_tray_push: REFERENCE TO FB_PISTON;
+	piston_updown: REFERENCE TO FB_PIST;
+	piston_colet1: REFERENCE TO FB_PIST;
+	piston_colet2: REFERENCE TO FB_PIST;
+	piston_colet3: REFERENCE TO FB_PIST;
+	piston_colet4: REFERENCE TO FB_PIST;
+	piston_puller: REFERENCE TO FB_PIST;
+	piston_tray: REFERENCE TO FB_PIST;
+	piston_pins: REFERENCE TO FB_PIST;
+	piston_tray_door: REFERENCE TO FB_PIST;
+	piston_tray_push: REFERENCE TO FB_PIST;
+	
 	
 END_VAR
 VAR_OUTPUT
@@ -18,6 +22,7 @@ VAR_OUTPUT
 	bError:BOOL:=FALSE;
 END_VAR
 VAR
+	
 	tDelay: TON;
 	bDELAY: BOOL:=FALSE;
 	E: INT;
@@ -25,18 +30,17 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[tDelay(IN:=bDELAY);
+      <ST><![CDATA[ tDelay(IN:=bDELAY);
 
 CASE eState OF
 	
 	E_STATION_STATE.homing:
-		piston_updown.A_DEFAULT();
-		piston_colet.A_DEFAULT();
-		piston_puller.A_DEFAULT();
-		piston_tray.A_DEFAULT();
-		piston_tray_push.A_DEFAULT();
-		piston_tray_door.A_DEFAULT();
-		piston_pins.A_DEFAULT();
+		piston_updown.A_INIT();
+		piston_colet1.A_INIT(); piston_colet2.A_INIT();piston_colet3.A_INIT();piston_colet4.A_INIT();
+		piston_tray.A_INIT();
+		piston_tray_push.A_INIT();
+		piston_tray_door.A_INIT();
+		piston_pins.A_INIT();
 		eState:= E_STATION_STATE.idle;
 		bHomed:=TRUE;
 		bError:=FALSE;
@@ -57,52 +61,48 @@ CASE eState OF
 		END_IF
 		
 	E_STATION_STATE.do_action2:
-		//tDELAY.PT:=T#0.1S;
-		//bDELAY:=TRUE;
-			//bDELAY:=FALSE;
-		IF piston_updown.PistonStatus= ePistonStatus.OPENED THEN
-			piston_colet.A_OPEN();
+		
+		IF piston_updown.PistStatus= E_PIST_STATUS.OPENED THEN
+			piston_colet1.A_OPEN();
 			eState:=E_STATION_STATE.do_action3;
 		END_IF
 	
 	E_STATION_STATE.do_action3:
-		IF piston_colet.PistonStatus= ePistonStatus.OPENED  THEN
+		IF piston_colet1.PistStatus= E_PIST_STATUS.OPENED  THEN
 			piston_updown.A_CLOSE();
-			piston_puller.A_OPEN();
 			piston_tray.A_OPEN();
 			eState:=E_STATION_STATE.do_action4;
 		END_IF
 	
 	E_STATION_STATE.do_action4:
-		IF piston_puller.PistonStatus= ePistonStatus.OPENED  THEN
-			piston_colet.A_CLOSE();
+		IF TRUE THEN
+			piston_colet1.A_CLOSE();
 			piston_tray.A_OPEN();
 			eState:=E_STATION_STATE.do_action5;
 		END_IF
 	 
 	E_STATION_STATE.do_action5:
-		IF piston_tray.PistonStatus= ePistonStatus.OPENED AND piston_colet.PistonStatus= ePistonStatus.CLOSED AND piston_updown.PistonStatus= ePistonStatus.CLOSED  THEN
+		IF piston_tray.PistStatus= E_PIST_STATUS.OPENED AND piston_colet1.PistStatus= E_PIST_STATUS.CLOSED AND piston_updown.PistStatus= E_PIST_STATUS.CLOSED  THEN
 			piston_pins.A_OPEN();
 			eState:=E_STATION_STATE.do_action6;
 		END_IF
 
 	E_STATION_STATE.do_action6:
-		IF piston_pins.PistonStatus= ePistonStatus.OPENED THEN
+		IF piston_pins.PistStatus= E_PIST_STATUS.OPENED THEN
 			piston_tray_push.A_OPEN();
 			piston_tray_door.A_OPEN();
 			eState:=E_STATION_STATE.do_action7;
 		END_IF
 	
 	E_STATION_STATE.do_action7:
-		IF piston_tray_push.PistonStatus= ePistonStatus.OPENED AND piston_tray_door.PistonStatus= ePistonStatus.OPENED  THEN
+		IF piston_tray_push.PistStatus= E_PIST_STATUS.OPENED AND piston_tray_door.PistStatus= E_PIST_STATUS.OPENED  THEN
 			piston_tray_push.A_CLOSE();
 			piston_tray_door.A_CLOSE();
-			piston_puller.A_CLOSE();
 			eState:=E_STATION_STATE.do_action8;
 		END_IF	
 		
 	E_STATION_STATE.do_action8:
-		IF piston_tray_push.PistonStatus= ePistonStatus.CLOSED AND piston_tray_door.PistonStatus= ePistonStatus.CLOSED  THEN
+		IF piston_tray_push.PistStatus= E_PIST_STATUS.CLOSED AND piston_tray_door.PistStatus= E_PIST_STATUS.CLOSED  THEN
 			piston_tray.A_CLOSE();
 			piston_pins.A_CLOSE();
 			eState:=E_STATION_STATE.do_action9;
@@ -110,7 +110,7 @@ CASE eState OF
 			
 	E_STATION_STATE.do_action9:
 		
-		IF piston_tray.PistonStatus= ePistonStatus.CLOSED  THEN
+		IF piston_tray.PistStatus= E_PIST_STATUS.CLOSED  THEN
 			eState:=E_STATION_STATE.done;
 		END_IF	
 		
@@ -124,7 +124,11 @@ CASE eState OF
 END_CASE]]></ST>
     </Implementation>
     <LineIds Name="FB_SEPARATE">
-      <LineId Id="3" Count="95" />
+      <LineId Id="3" Count="6" />
+      <LineId Id="11" Count="23" />
+      <LineId Id="37" Count="8" />
+      <LineId Id="47" Count="27" />
+      <LineId Id="76" Count="22" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>

@@ -33,6 +33,7 @@ VAR_GLOBAL
 	fbCART: ARRAY[1..18] OF FB_CART;
 	Axis_MAIN:FB_Axis;
 	Axis_SUPPLY:FB_Axis;
+	Axis_JACK1:FB_Axis;
 	
 	posArrX:ARRAY[1..36] OF INT;
 	posArrY:ARRAY[1..36] OF INT;

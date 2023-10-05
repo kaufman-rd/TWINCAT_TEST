@@ -3,6 +3,10 @@
   <POU Name="FB_PIST" Id="{d686fff2-be69-4be9-be07-961307b74eb8}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_PIST
 VAR_INPUT
+	bCMD_OPEN: BOOL;
+	bMANUAL: BOOL:=FALSE;
+	bSEN_OPEN: BOOL;
+	bSEN_CLOSE: BOOL;
 	bInit: BOOL:=FALSE;
 	open_time: TIME;
 	close_time: TIME;
@@ -26,14 +30,12 @@ VAR_OUTPUT
 END_VAR
 VAR
 	
-	bCMD_OPEN: BOOL;
-	bMANUAL: BOOL:=FALSE;
+	
 	bCMD_OPEN_SWR: BOOL;
 	bCMD_CLOSE_SWR: BOOL;
 	
 	bSTARTUP: BOOL:=FALSE;
-	bSEN_OPEN: BOOL;
-	bSEN_CLOSE: BOOL;
+	
 	bStepDone: BOOL;
 END_VAR
 ]]></Declaration>

@@ -9,10 +9,12 @@ END_VAR
     <Implementation>
       <ST><![CDATA[Axis_MAIN(sName:='MAIN');
 Axis_SUPPLY(sNAme:='SUPPLY');
+Axis_JACK1(sNAme:='JACK1');
 ]]></ST>
     </Implementation>
     <LineIds Name="MOTORS">
       <LineId Id="3" Count="1" />
+      <LineId Id="9" Count="0" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>

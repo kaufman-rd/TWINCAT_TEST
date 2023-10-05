@@ -54,6 +54,12 @@
   ],
   "userControls": [
     {
+      "url": "Controls/G_PIST.usercontrol"
+    },
+    {
+      "url": "Controls/G_SEPARATE.usercontrol"
+    },
+    {
       "url": "Controls/PULLER.usercontrol"
     },
     {
@@ -85,9 +91,6 @@
     },
     {
       "url": "Controls/G_PISTON.usercontrol"
-    },
-    {
-      "url": "Controls/G_PIST.usercontrol"
     }
   ],
   "content": [

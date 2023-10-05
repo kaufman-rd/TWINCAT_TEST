@@ -1201,7 +1201,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{AD6E4C48-5E61-47B3-958D-58FBAEF446F5}" Name="TAMAR_22mm" PrjFilePath="..\..\TAMAR_22mm\TAMAR_22mm.plcproj" TmcFilePath="..\..\TAMAR_22mm\TAMAR_22mm.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TAMAR_22mm\TAMAR_22mm.tmc" TmcHash="{BAD31780-0265-9B14-12F8-A35952FCD5AC}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TAMAR_22mm\TAMAR_22mm.tmc" TmcHash="{DC3715AA-44F6-7BE1-7988-59F12AD05DF6}">
 			<Name>TAMAR_22mm Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
@@ -1396,6 +1396,10 @@ External Setpoint Generation:
 					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 				</Var>
 				<Var>
+					<Name>GVL.Axis_JACK1.Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
 					<Name>GVL_IO.inputs</Name>
 					<Type GUID="{96DC9E77-F6A0-5721-228F-2FA22F8ECD98}">ARRAY [1..4] OF EL1809</Type>
 				</Var>
@@ -1408,6 +1412,10 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>GVL.Axis_SUPPLY.Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.Axis_JACK1.Axis.PlcToNc</Name>
 					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
@@ -1510,6 +1518,10 @@ External Setpoint Generation:
 			<OwnerB Name="TIID^Device 3 (EtherCAT)^Term 1 (EK1100)^Term 4 (EL6224)">
 				<Link VarA="PlcTask Outputs^GVL_IO.uIOLINK1" VarB="IO-Link Port1_out^GVL_IO.uIOLINK1"/>
 				<Link VarA="PlcTask Outputs^GVL_IO.uIOLINK2" VarB="IO-Link Port2_out^GVL_IO.uIOLINK2"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^JACK1">
+				<Link VarA="PlcTask Inputs^GVL.Axis_JACK1.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL.Axis_JACK1.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^MAIN">
 				<Link VarA="PlcTask Inputs^GVL.Axis_MAIN.Axis.NcToPlc" VarB="Outputs^ToPlc"/>

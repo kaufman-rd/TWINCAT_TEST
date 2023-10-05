@@ -52,27 +52,31 @@ END_IF
 //uIOLINK1.11:=1;
 
 rAnalogIn:=F_Linear(nanlogIn1,200,31170,0,2000);
-PISTONS_CYCLE();
+//PISTONS_CYCLE();
 A_PISTON_ERROR_CHECK();
 fbMAIN_CONV(fbAxis:=Axis_MAIN);
 fbSUPPLY_CONV(fbAxis:=Axis_SUPPLY);
-fbSEPARATION1(piston_updown:=  fbPiston[3],
-			  piston_colet:=  fbPiston[4],
-			  piston_puller:=  fbPiston[5],
-			  piston_tray:=  fbPiston[6],
-			  piston_pins:=  fbPiston[7],
-			  piston_tray_door:=  fbPiston[17],
-			  piston_tray_push:=  fbPiston[16],
+fbSEPARATION1(piston_updown:=  fbPist[12],
+			  piston_colet1:=  fbPist[14],
+			   piston_colet2:=  fbPist[15],
+			    piston_colet3:=  fbPist[16],
+				 piston_colet4:=  fbPist[30],
+			  piston_tray:=  fbPist[17],
+			  piston_pins:=  fbPist[13],
+			  piston_tray_door:=  fbPist[19],
+			  piston_tray_push:=  fbPist[18],
 			  eState:= eSEPARATE1,
 			  station_num:=separate1_station_num);
-		
-fbSEPARATION2(piston_updown:=  fbPiston[8],
-			  piston_colet:=  fbPiston[9],
-			  piston_puller:=  fbPiston[10],
-			  piston_tray:=  fbPiston[11],
-			  piston_pins:=  fbPiston[12],
-			   piston_tray_door:=  fbPiston[19],
-			  piston_tray_push:=  fbPiston[18],
+	
+fbSEPARATION2(piston_updown:=  fbPist[20],
+			  piston_colet1:=  fbPist[22],
+			   piston_colet2:=  fbPist[23],
+			    piston_colet3:=  fbPist[24],
+				 piston_colet4:=  fbPist[25],
+			  piston_tray:=  fbPist[26],
+			  piston_pins:=  fbPist[21],
+			   piston_tray_door:=  fbPist[28],
+			  piston_tray_push:=  fbPist[27],
 			  eState:= eSEPARATE2,
  			  station_num:=separate2_station_num);	
 	
@@ -303,7 +307,11 @@ END_FOR;
       <LineId Id="306" Count="1" />
       <LineId Id="348" Count="0" />
       <LineId Id="248" Count="0" />
-      <LineId Id="3" Count="30" />
+      <LineId Id="3" Count="6" />
+      <LineId Id="430" Count="2" />
+      <LineId Id="11" Count="8" />
+      <LineId Id="433" Count="2" />
+      <LineId Id="21" Count="12" />
       <LineId Id="389" Count="0" />
       <LineId Id="34" Count="115" />
       <LineId Id="158" Count="13" />

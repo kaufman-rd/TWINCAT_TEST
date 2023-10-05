@@ -3334,7 +3334,7 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[ 
+        <ST><![CDATA[  
 CASE stepFW_state OF
 	
 	0:

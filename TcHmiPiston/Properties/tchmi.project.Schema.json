@@ -144,6 +144,22 @@
       "frameworkUserControlConfig": "Controls\\G_PIST.usercontrol.json",
       "id": "tchmi:project#/definitions/G_PIST",
       "type": "object"
+    },
+    "SEP_NEW": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "Controls\\SEP_NEW.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/SEP_NEW"
+    },
+    "G_SEPARATE": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "Controls\\G_SEPARATE.usercontrol.json",
+      "id": "tchmi:project#/definitions/G_SEPARATE",
+      "type": "object"
     }
   }
 }

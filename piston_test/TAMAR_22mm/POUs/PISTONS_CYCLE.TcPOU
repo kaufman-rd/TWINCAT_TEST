@@ -199,32 +199,32 @@ END_VAR
 	stPISTON_PARAM[22].timeoutClose:=T#3S;
 	stPISTON_PARAM[22].ePISTON_TYPE:= 0;
 	
-	FOR counter:=1 TO iNUMBER_OF_PISTONS BY 1 DO
-		fbPiston[counter](stPISTON:=stPISTON_PARAM[counter]);
-	END_FOR;
+	//FOR counter:=1 TO iNUMBER_OF_PISTONS BY 1 DO
+		//fbPiston[counter](stPISTON:=stPISTON_PARAM[counter]);
+	//END_FOR;
 	
 	bSTARTUP:=TRUE;
 END_IF
 
 MANUALcOUNTER:=0;
 FOR counter:=1 TO iNUMBER_OF_PISTONS BY 1 DO
-	IF fbPiston[counter].bMANUAL THEN
-		bManual_mode:=TRUE;
-		manualCounter:= manualCounter+1;
-	END_IF
+	//IF fbPiston[counter].bMANUAL THEN
+	//	bManual_mode:=TRUE;
+	//	manualCounter:= manualCounter+1;
+//	END_IF
 	//fbPiston[counter]();
 END_FOR;
 
 IF manualCounter = 0 THEN
 	bManual_mode:=FALSE;
 END_IF
-feeder();
-clean();
-dispose();
-feeder();
-drop();
-separate1();
-separate2();
+//feeder();
+//clean();
+//dispose();
+//feeder();
+//drop();
+//separate1();
+//separate2();
 ]]></ST>
     </Implementation>
     <Action Name="clean" Id="{998887aa-8d3b-493b-b070-47ca70dc233d}">
