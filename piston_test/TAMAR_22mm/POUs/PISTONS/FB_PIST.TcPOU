@@ -3,6 +3,7 @@
   <POU Name="FB_PIST" Id="{d686fff2-be69-4be9-be07-961307b74eb8}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_PIST
 VAR_INPUT
+	bNeutral: BOOL:=FALSE;
 	bCMD_OPEN: BOOL;
 	bMANUAL: BOOL:=FALSE;
 	bSEN_OPEN: BOOL;
@@ -59,6 +60,8 @@ CASE pistStatus OF
 	E_PIST_STATUS.INIT:
 	bInit:=FALSE;
 	SFCReset:=TRUE;
+	
+	
 	IF bCMD_OPEN THEN
 		SFCReset:=FALSE;
 		pistStatus:=E_PIST_STATUS.OPENING;
@@ -67,20 +70,47 @@ CASE pistStatus OF
 		pistStatus:=E_PIST_STATUS.CLOSING;
 	END_IF
 	
+	E_PIST_STATUS.NEUTRALIZE:
+		bVALVE_CLOSE:=FALSE;
+		bVALVE_OPEN :=FALSE;
+		pistStatus:=E_PIST_STATUS.NEUTRAL;
+		
 	E_PIST_STATUS.OPENING:
 		open_pist();
 		
 	E_PIST_STATUS.CLOSING:
 		close_pist();
 	
+	
 	E_PIST_STATUS.OPENED:	
-	IF NOT bCMD_OPEN THEN
-		pistStatus:=E_PIST_STATUS.CLOSING;
+	IF NOT bNeutral THEN
+		IF NOT bCMD_OPEN THEN
+			pistStatus:=E_PIST_STATUS.CLOSING;
+		END_IF
+	ELSE
+		SFCReset:=FALSE;
+		pistStatus:=E_PIST_STATUS.NEUTRALIZE;
 	END_IF
 	
 	E_PIST_STATUS.CLOSED:	
-	IF bCMD_OPEN THEN
-		pistStatus:=E_PIST_STATUS.OPENING;
+	IF NOT bNeutral THEN
+		IF bCMD_OPEN THEN
+			pistStatus:=E_PIST_STATUS.OPENING;
+		END_IF
+	ELSE
+		SFCReset:=FALSE;
+		pistStatus:=E_PIST_STATUS.NEUTRALIZE;
+	END_IF
+	
+	E_PIST_STATUS.NEUTRAL:	
+	IF NOT bNeutral THEN
+		IF bCMD_OPEN THEN
+			SFCReset:=FALSE;
+			pistStatus:=E_PIST_STATUS.OPENING;
+		ELSE
+			SFCReset:=FALSE;
+			pistStatus:=E_PIST_STATUS.CLOSING;
+		END_IF
 	END_IF
 	
 	E_PIST_STATUS.ERROR:
@@ -262,6 +292,26 @@ END_IF]]></ST>
         </XmlArchive>
       </ObjectProperties>
     </Action>
+    <Action Name="_aNEUTRAL_entry" Id="{d38fe955-0495-4c12-8b6f-572c45e19701}">
+      <Implementation>
+        <ST><![CDATA[pistStatus:=E_PIST_STATUS.NEUTRAL;
+bVALVE_CLOSE:=FALSE;
+bVALVE_OPEN:=FALSE;]]></ST>
+      </Implementation>
+      <ObjectProperties>
+        <XmlArchive>
+          <Data>
+            <o xml:space="preserve" t="ActionObjectDuplicationModeProperty">
+              <v n="Embedded">true</v>
+            </o>
+          </Data>
+          <TypeList>
+            <Type n="ActionObjectDuplicationModeProperty">{6a58c9ae-b0e2-4127-8d9c-cbfc36a09580}</Type>
+            <Type n="Boolean">System.Boolean</Type>
+          </TypeList>
+        </XmlArchive>
+      </ObjectProperties>
+    </Action>
     <Action Name="_aOPEN_active" Id="{02819be6-7129-42a9-b3bb-2f875d412dc3}">
       <Implementation>
         <ST><![CDATA[IF eType=E_PIST_TYPE.NO_SENSORS OR eType=E_PIST_TYPE.ONLY_CLOSE THEN
@@ -341,9 +391,28 @@ END_IF]]></ST>
         </XmlArchive>
       </ObjectProperties>
     </Action>
+    <Action Name="_aUNNEUTRAL_entry" Id="{3ba85b2a-d3a0-496f-899f-3ace910ed770}">
+      <Implementation>
+        <ST><![CDATA[bNeutral:=FALSE;]]></ST>
+      </Implementation>
+      <ObjectProperties>
+        <XmlArchive>
+          <Data>
+            <o xml:space="preserve" t="ActionObjectDuplicationModeProperty">
+              <v n="Embedded">true</v>
+            </o>
+          </Data>
+          <TypeList>
+            <Type n="ActionObjectDuplicationModeProperty">{6a58c9ae-b0e2-4127-8d9c-cbfc36a09580}</Type>
+            <Type n="Boolean">System.Boolean</Type>
+          </TypeList>
+        </XmlArchive>
+      </ObjectProperties>
+    </Action>
     <Action Name="A_CLOSE" Id="{208f374d-f0e0-4104-ac27-2607f1b47699}">
       <Implementation>
-        <ST><![CDATA[bCMD_OPEN_SWR:=FALSE;]]></ST>
+        <ST><![CDATA[bCMD_OPEN_SWR:=FALSE;
+bNeutral:=FALSE;]]></ST>
       </Implementation>
     </Action>
     <Action Name="A_INIT" Id="{d8f097a9-85bd-44b3-9aef-23c87213367b}">
@@ -351,9 +420,20 @@ END_IF]]></ST>
         <ST><![CDATA[bInit:=TRUE;]]></ST>
       </Implementation>
     </Action>
+    <Action Name="A_NEUTRAL" Id="{572e1bcb-28c5-455a-97b0-36d825de2cb5}">
+      <Implementation>
+        <ST><![CDATA[bNeutral:=TRUE;]]></ST>
+      </Implementation>
+    </Action>
     <Action Name="A_OPEN" Id="{36193303-04ef-473d-b4cc-ee9b95d5e93c}">
       <Implementation>
-        <ST><![CDATA[bCMD_OPEN_SWR:=TRUE;]]></ST>
+        <ST><![CDATA[bCMD_OPEN_SWR:=TRUE;
+bNeutral:=FALSE;]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="A_UNNEUTRAL" Id="{b941a90d-dfef-44dc-8159-c2698c93deec}">
+      <Implementation>
+        <ST><![CDATA[bNeutral:=FALSE;]]></ST>
       </Implementation>
     </Action>
     <Action Name="close_pist" Id="{a2391c5f-2c30-4fc8-a361-072a632167c7}">
@@ -2015,7 +2095,33 @@ END_IF]]></ST>
       <LineId Id="49" Count="4" />
       <LineId Id="46" Count="0" />
       <LineId Id="54" Count="0" />
-      <LineId Id="57" Count="31" />
+      <LineId Id="57" Count="2" />
+      <LineId Id="171" Count="1" />
+      <LineId Id="60" Count="7" />
+      <LineId Id="186" Count="1" />
+      <LineId Id="209" Count="0" />
+      <LineId Id="174" Count="0" />
+      <LineId Id="210" Count="0" />
+      <LineId Id="68" Count="4" />
+      <LineId Id="179" Count="0" />
+      <LineId Id="73" Count="1" />
+      <LineId Id="190" Count="0" />
+      <LineId Id="75" Count="2" />
+      <LineId Id="191" Count="1" />
+      <LineId Id="194" Count="0" />
+      <LineId Id="193" Count="0" />
+      <LineId Id="78" Count="1" />
+      <LineId Id="195" Count="0" />
+      <LineId Id="80" Count="2" />
+      <LineId Id="196" Count="2" />
+      <LineId Id="83" Count="0" />
+      <LineId Id="199" Count="1" />
+      <LineId Id="211" Count="0" />
+      <LineId Id="202" Count="5" />
+      <LineId Id="201" Count="0" />
+      <LineId Id="212" Count="0" />
+      <LineId Id="208" Count="0" />
+      <LineId Id="84" Count="4" />
       <LineId Id="56" Count="0" />
       <LineId Id="55" Count="0" />
     </LineIds>
@@ -2069,6 +2175,10 @@ END_IF]]></ST>
       <LineId Id="4" Count="0" />
       <LineId Id="3" Count="0" />
     </LineIds>
+    <LineIds Name="FB_PIST._aNEUTRAL_entry">
+      <LineId Id="2" Count="1" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
     <LineIds Name="FB_PIST._aOPEN_active">
       <LineId Id="6" Count="0" />
       <LineId Id="13" Count="0" />
@@ -2099,13 +2209,22 @@ END_IF]]></ST>
       <LineId Id="4" Count="0" />
       <LineId Id="3" Count="0" />
     </LineIds>
-    <LineIds Name="FB_PIST.A_CLOSE">
+    <LineIds Name="FB_PIST._aUNNEUTRAL_entry">
       <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_PIST.A_CLOSE">
+      <LineId Id="1" Count="1" />
     </LineIds>
     <LineIds Name="FB_PIST.A_INIT">
       <LineId Id="1" Count="0" />
     </LineIds>
+    <LineIds Name="FB_PIST.A_NEUTRAL">
+      <LineId Id="1" Count="0" />
+    </LineIds>
     <LineIds Name="FB_PIST.A_OPEN">
+      <LineId Id="1" Count="1" />
+    </LineIds>
+    <LineIds Name="FB_PIST.A_UNNEUTRAL">
       <LineId Id="1" Count="0" />
     </LineIds>
   </POU>
