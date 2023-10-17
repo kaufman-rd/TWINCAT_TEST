@@ -1201,7 +1201,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{AD6E4C48-5E61-47B3-958D-58FBAEF446F5}" Name="TAMAR_22mm" PrjFilePath="..\..\TAMAR_22mm\TAMAR_22mm.plcproj" TmcFilePath="..\..\TAMAR_22mm\TAMAR_22mm.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TAMAR_22mm\TAMAR_22mm.tmc" TmcHash="{4894E02A-9C06-ADE1-7737-70815ABFC6C7}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TAMAR_22mm\TAMAR_22mm.tmc" TmcHash="{706BD812-67A5-0027-0369-A8BC91614130}">
 			<Name>TAMAR_22mm Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
@@ -1210,182 +1210,6 @@ External Setpoint Generation:
 					<Name>GVL.nanlogIn1</Name>
 					<Comment><![CDATA[======================================== IO =====================================]]></Comment>
 					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[1].bSEN_OPEN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[1].bSEN_CLOSE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[2].bSEN_OPEN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[2].bSEN_CLOSE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[3].bSEN_OPEN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[3].bSEN_CLOSE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[4].bSEN_OPEN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[4].bSEN_CLOSE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[5].bSEN_OPEN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[5].bSEN_CLOSE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[6].bSEN_OPEN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[6].bSEN_CLOSE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[7].bSEN_OPEN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[7].bSEN_CLOSE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[8].bSEN_OPEN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[8].bSEN_CLOSE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[9].bSEN_OPEN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[9].bSEN_CLOSE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[10].bSEN_OPEN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[10].bSEN_CLOSE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[11].bSEN_OPEN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[11].bSEN_CLOSE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[12].bSEN_OPEN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[12].bSEN_CLOSE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[13].bSEN_OPEN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[13].bSEN_CLOSE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[14].bSEN_OPEN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[14].bSEN_CLOSE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[15].bSEN_OPEN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[15].bSEN_CLOSE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[16].bSEN_OPEN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[16].bSEN_CLOSE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[17].bSEN_OPEN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[17].bSEN_CLOSE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[18].bSEN_OPEN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[18].bSEN_CLOSE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[19].bSEN_OPEN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[19].bSEN_CLOSE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[20].bSEN_OPEN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[20].bSEN_CLOSE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[21].bSEN_OPEN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[21].bSEN_CLOSE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[22].bSEN_OPEN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.fbPiston[22].bSEN_CLOSE</Name>
-					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL.Axis_MAIN.Axis.NcToPlc</Name>
@@ -1402,6 +1226,10 @@ External Setpoint Generation:
 				<Var>
 					<Name>GVL_IO.inputs</Name>
 					<Type GUID="{96DC9E77-F6A0-5721-228F-2FA22F8ECD98}">ARRAY [1..4] OF EL1809</Type>
+				</Var>
+				<Var>
+					<Name>GVL.Axis_JACK2.Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="2" AreaNo="1">
@@ -1429,6 +1257,10 @@ External Setpoint Generation:
 				<Var>
 					<Name>GVL_IO.outputs</Name>
 					<Type GUID="{AE42295A-FA61-D866-7AF2-697174CE4838}">ARRAY [1..2] OF EL2869</Type>
+				</Var>
+				<Var>
+					<Name>GVL.Axis_JACK2.Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 			</Vars>
 			<UnrestoredVarLinks ImportTime="2023-07-23T16:51:00">
@@ -1522,6 +1354,10 @@ External Setpoint Generation:
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^JACK1">
 				<Link VarA="PlcTask Inputs^GVL.Axis_JACK1.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^GVL.Axis_JACK1.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^JACK2">
+				<Link VarA="PlcTask Inputs^GVL.Axis_JACK2.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL.Axis_JACK2.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^MAIN">
 				<Link VarA="PlcTask Inputs^GVL.Axis_MAIN.Axis.NcToPlc" VarB="Outputs^ToPlc"/>

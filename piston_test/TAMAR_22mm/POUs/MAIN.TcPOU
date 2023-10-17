@@ -25,6 +25,8 @@ VAR
 	bHomed:BOOL:=FALSE;
 	fbSEPARATION1: FB_SEPARATE;		
 	fbSEPARATION2: FB_SEPARATE;	
+	fb_SEPARATE1: _SEPARATE;
+	fb_SEPARATE2: _SEPARATE;
 	fbCLEAN: FB_CLEAN;
 	fbDROP: FB_DROP;
 	fbSUPPLY: FB_SUPPLY;
@@ -32,7 +34,8 @@ VAR
 	fbSUPPLY_CONV: FB_SUPPLY_CONV;
 	
 	
-	action_timeout: TON:=(PT:=T#20S);
+	
+	action_timeout: TON:=(PT:=T#20S); 
 	move_timeout: TON;
 	bTIMEOUT:BOOL:=FALSE;
 	
@@ -56,7 +59,8 @@ rAnalogIn:=F_Linear(nanlogIn1,200,31170,0,2000);
 A_PISTON_ERROR_CHECK();
 fbMAIN_CONV(fbAxis:=Axis_MAIN);
 fbSUPPLY_CONV(fbAxis:=Axis_SUPPLY);
-fbSEPARATION1(piston_updown:=  fbPist[12],
+
+fb_SEPARATE1(piston_updown:=  fbPist[12],
 			  piston_colet1:=  fbPist[14],
 			   piston_colet2:=  fbPist[15],
 			    piston_colet3:=  fbPist[16],
@@ -65,10 +69,12 @@ fbSEPARATION1(piston_updown:=  fbPist[12],
 			  piston_pins:=  fbPist[13],
 			  piston_tray_door:=  fbPist[19],
 			  piston_tray_push:=  fbPist[18],
-			  eState:= eSEPARATE1,
+			  eState:= e_SEPARATE1,
+			  fbAxis:=Axis_JACK1,
 			  station_num:=separate1_station_num);
 	
-fbSEPARATION2(piston_updown:=  fbPist[20],
+
+fb_SEPARATE2(piston_updown:=  fbPist[20],
 			  piston_colet1:=  fbPist[22],
 			   piston_colet2:=  fbPist[23],
 			    piston_colet3:=  fbPist[24],
@@ -77,15 +83,16 @@ fbSEPARATION2(piston_updown:=  fbPist[20],
 			  piston_pins:=  fbPist[21],
 			   piston_tray_door:=  fbPist[28],
 			  piston_tray_push:=  fbPist[27],
-			  eState:= eSEPARATE2,
- 			  station_num:=separate2_station_num);	
+			  eState:= e_SEPARATE2,
+			  fbAxis:=Axis_JACK2,
+ 			  station_num:=separate2_station_num);			  
+
 	
 fbCLEAN(pClean:=  fbPist[6]);
 fbDROP(pPush:=  fbPist[9],pOpen1:=  fbPist[10],pOpen2:=  fbPist[11]);
 fbSUPPLY(pPush:=fbPist[1],pLock1:=fbPist[2],pLock2:=fbPist[3],pOpen1:=fbPist[4],pOpen2:=fbPist[5]);
 prg_CSV_V2();
 MOTORS();
-JACK_CYCLE();
 PIST_CYCLE();
 rtrigRESET(CLK:= b_RESET, Q=> );
 rtrigE_STOP(CLK:= b_E_STOP, Q=> );
@@ -99,16 +106,16 @@ action_timeout(IN:=bTIMEOUT);
 CASE eMAIN_STATE OF
 	E_MAIN_STATE.homing:   // homing fo all stations
 		eSUPPLY := E_STATION_STATE.homing;
-		eSEPARATE1 := E_STATION_STATE.homing;
-		eSEPARATE2 := E_STATION_STATE.homing;
+		e_SEPARATE1 := E_STATION_STATE.homing;
+		e_SEPARATE2 := E_STATION_STATE.homing;
 		eCLEAN := E_STATION_STATE.homing;
 		eDROP := E_STATION_STATE.homing;
 		eMAIN_CONVAYOR_STATE := E_CONVAYOR_STATE.homing;
 		eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.homing;
-		IF fbSEPARATION1.bHomed AND fbSEPARATION2.bHomed THEN
+		//IF fbSEPARATION1.bHomed AND fbSEPARATION2.bHomed THEN
 			eMAIN_STATE:=E_MAIN_STATE.idle;
 			bHomed:=TRUE;
-		END_IF
+		//END_IF
 		
 	E_MAIN_STATE.uninit:
 		IF NOT bHomed THEN
@@ -117,8 +124,9 @@ CASE eMAIN_STATE OF
 			bTIMEOUT:=FALSE;
 			bPAUSE_MAIN:=FALSE;
 			eSUPPLY := E_STATION_STATE.unInit;
-			eSEPARATE1 := E_STATION_STATE.unInit;
-			eSEPARATE2 := E_STATION_STATE.unInit;
+			//eSEPARATE1 := E_STATION_STATE.unInit;
+			e_SEPARATE1 := E_STATION_STATE.unInit;
+			e_SEPARATE2 := E_STATION_STATE.unInit;
 			eCLEAN := E_STATION_STATE.unInit;
 			eDROP := E_STATION_STATE.unInit;
 			eMAIN_CONVAYOR_STATE := E_CONVAYOR_STATE.unInit;
@@ -149,11 +157,11 @@ CASE eMAIN_STATE OF
 			IF eSUPPLY = E_STATION_STATE.idle THEN     
 				eSUPPLY := E_STATION_STATE.do_action1;
 			END_IF
-			IF eSEPARATE1 = E_STATION_STATE.idle THEN
-				eSEPARATE1 := E_STATION_STATE.do_action1;
+			IF e_SEPARATE1 = E_STATION_STATE.idle THEN
+				e_SEPARATE1 := E_STATION_STATE.do_action1;
 			END_IF
-			IF eSEPARATE2 = E_STATION_STATE.idle THEN
-				eSEPARATE2 := E_STATION_STATE.do_action1;
+			IF e_SEPARATE2 = E_STATION_STATE.idle THEN
+				e_SEPARATE2 := E_STATION_STATE.do_action1;
 			END_IF
 			IF eCLEAN = E_STATION_STATE.idle THEN
 				eCLEAN := E_STATION_STATE.do_action1;
@@ -162,10 +170,10 @@ CASE eMAIN_STATE OF
 				eDROP := E_STATION_STATE.do_action1;
 			END_IF
 		END_IF
-		IF (eSEPARATE1 = E_STATION_STATE.done AND eSEPARATE2 = E_STATION_STATE.done AND eSUPPLY = E_STATION_STATE.done  AND eCLEAN = E_STATION_STATE.done AND eDROP = E_STATION_STATE.done) THEN
+		IF (e_SEPARATE1 = E_STATION_STATE.done AND e_SEPARATE2 = E_STATION_STATE.done AND eSUPPLY = E_STATION_STATE.done  AND eCLEAN = E_STATION_STATE.done AND eDROP = E_STATION_STATE.done) THEN
 			eSUPPLY := E_STATION_STATE.idle;
-			eSEPARATE1 := E_STATION_STATE.idle;
-			eSEPARATE2 := E_STATION_STATE.idle;
+			e_SEPARATE1 := E_STATION_STATE.idle;
+			e_SEPARATE2 := E_STATION_STATE.idle;
 			eCLEAN := E_STATION_STATE.idle;
 			eDROP := E_STATION_STATE.idle;
 			eMAIN_STATE:=E_MAIN_STATE.move_next;
@@ -194,8 +202,8 @@ CASE eMAIN_STATE OF
 		IF ftrigRERUN.Q THEN
 			eMAIN_STATE:=temp_state;
 			eSUPPLY:=temp_supply_state;
-			eSEPARATE1:=temp_sep1_state;
-			eSEPARATE2:=temp_sep2_state;
+			e_SEPARATE1:=temp_sep1_state;
+			e_SEPARATE2:=temp_sep2_state;
 			eCLEAN:=temp_clean_state;
 			eDROP:=temp_drop_state;
 			eMAIN_CONVAYOR_STATE:=temp_conv_state;
@@ -223,31 +231,27 @@ IF rtrigE_STOP.Q THEN
 END_IF
 
 IF rtrigINIT.Q THEN
-	//eSUPPLY := E_STATION_STATE.estop;
-	//eSEPARATE1 := E_STATION_STATE.estop;
-	//eSEPARATE2 := E_STATION_STATE.estop;
-	//eCLEAN := E_STATION_STATE.error;
-	//eDROP := E_STATION_STATE.error;
-	eMAIN_CONVAYOR_STATE := E_CONVAYOR_STATE.estop;
-	eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.estop;
-	b_E_STOP:=FALSE;
-	bSafety_error:=FALSE;
+	
+	//eMAIN_CONVAYOR_STATE := E_CONVAYOR_STATE.estop;
+	//eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.estop;
+	//b_E_STOP:=FALSE;
+	//bSafety_error:=FALSE;
 	eMAIN_STATE:=E_MAIN_STATE.uninit;
 END_IF
 
 IF rtrigPAUSE.Q THEN
 	temp_state:=eMAIN_STATE;
 	temp_supply_state:=eSUPPLY;
-	temp_sep1_state:=eSEPARATE1;
-	temp_sep2_state:=eSEPARATE2;
+	temp_sep1_state:=e_SEPARATE1;
+	temp_sep2_state:=e_SEPARATE2;
 	temp_clean_state:=eCLEAN;
 	temp_drop_state:=eDROP;
 	temp_conv_state:=eMAIN_CONVAYOR_STATE;
 	temp_supconv_state:=eSUPPLY_CONVAYOR_STATE;
 	eMAIN_STATE:=E_MAIN_STATE.pause;
 	eSUPPLY:=E_STATION_STATE.pause;
-	eSEPARATE1:=E_STATION_STATE.pause;
-	eSEPARATE2:=E_STATION_STATE.pause;
+	e_SEPARATE1:=E_STATION_STATE.pause;
+	e_SEPARATE2:=E_STATION_STATE.pause;
 	eMAIN_CONVAYOR_STATE:=E_CONVAYOR_STATE.pause;
 	eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.pause;
 	eCLEAN:=E_STATION_STATE.pause;
@@ -282,7 +286,7 @@ END_IF
     <Action Name="A_PISTON_ERROR_CHECK" Id="{31fa973b-2552-4508-9ddd-0d789e896870}">
       <Implementation>
         <ST><![CDATA[FOR counter:=1 TO iNUMBER_OF_PISTONS BY 1 DO
-	IF fbPiston[counter].PistonStatus = ePistonStatus.ERROR THEN
+	IF fbPist[counter].PistStatus = E_PIST_STATUS.ERROR THEN
 		eMAIN_STATE:=E_MAIN_STATE.error;
 		
 	END_IF
@@ -307,18 +311,29 @@ END_FOR;
       <LineId Id="306" Count="1" />
       <LineId Id="348" Count="0" />
       <LineId Id="248" Count="0" />
-      <LineId Id="3" Count="6" />
-      <LineId Id="430" Count="2" />
-      <LineId Id="11" Count="8" />
-      <LineId Id="433" Count="2" />
-      <LineId Id="21" Count="12" />
+      <LineId Id="3" Count="4" />
+      <LineId Id="521" Count="0" />
+      <LineId Id="523" Count="9" />
+      <LineId Id="578" Count="0" />
+      <LineId Id="522" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="589" Count="0" />
+      <LineId Id="579" Count="9" />
+      <LineId Id="590" Count="0" />
+      <LineId Id="477" Count="1" />
+      <LineId Id="27" Count="5" />
       <LineId Id="389" Count="0" />
-      <LineId Id="34" Count="115" />
+      <LineId Id="34" Count="11" />
+      <LineId Id="534" Count="0" />
+      <LineId Id="47" Count="17" />
+      <LineId Id="535" Count="0" />
+      <LineId Id="65" Count="84" />
       <LineId Id="158" Count="13" />
       <LineId Id="173" Count="0" />
       <LineId Id="259" Count="0" />
       <LineId Id="262" Count="0" />
-      <LineId Id="175" Count="29" />
+      <LineId Id="175" Count="2" />
+      <LineId Id="182" Count="22" />
       <LineId Id="263" Count="0" />
       <LineId Id="265" Count="0" />
       <LineId Id="205" Count="3" />

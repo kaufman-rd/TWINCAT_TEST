@@ -18,6 +18,36 @@
     <Released>false</Released>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Checks\CheckBounds.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Checks\CheckDivDInt.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Checks\CheckDivLInt.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Checks\CheckDivLReal.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Checks\CheckDivReal.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Checks\CheckLRangeSigned.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Checks\CheckLRangeUnsigned.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Checks\CheckPointer.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Checks\CheckRangeSigned.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Checks\CheckRangeUnsigned.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\ePistonStatus.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -102,20 +132,10 @@
     <Compile Include="POUs\FB_PISTON.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\JACK\E_JACK_STATUS.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\JACK\FB_JACK.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\JACK\GVL_JACKS.TcGVL">
-      <SubType>Code</SubType>
-      <LinkAlways>true</LinkAlways>
-    </Compile>
-    <Compile Include="POUs\JACK\JACK_CYCLE.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MAIN_2.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MOTORS.TcPOU">
@@ -176,8 +196,8 @@
     <Folder Include="GVLs" />
     <Folder Include="Functions" />
     <Folder Include="IO" />
+    <Folder Include="Checks" />
     <Folder Include="POUs\AXES" />
-    <Folder Include="POUs\JACK" />
     <Folder Include="POUs\PISTONS" />
     <Folder Include="STATIONS" />
     <Folder Include="VISUs" />

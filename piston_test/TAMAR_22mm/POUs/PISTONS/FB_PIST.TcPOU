@@ -58,8 +58,7 @@ CASE pistStatus OF
 	END_IF
 	
 	E_PIST_STATUS.INIT:
-	bInit:=FALSE;
-	SFCReset:=TRUE;
+	//
 	
 	
 	IF bCMD_OPEN THEN
@@ -121,7 +120,8 @@ CASE pistStatus OF
 		
 END_CASE]]></ST>
     </Implementation>
-    <Action Name="_aCHECK_active_1" Id="{284b5af9-cde0-4865-9495-f3b272edbe9e}">
+    <Folder Name="ACT" Id="{db0d8ca7-77e5-48f8-82e9-2b62be5d4009}" />
+    <Action Name="_aCHECK_active_1" Id="{284b5af9-cde0-4865-9495-f3b272edbe9e}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[IF bDepened_open1 AND bDepened_open2 THEN
 	bStepDone:=TRUE;
@@ -146,7 +146,7 @@ END_IF
         </XmlArchive>
       </ObjectProperties>
     </Action>
-    <Action Name="_aCHECK_active_1_1" Id="{df789243-b467-4234-b6fc-624f388e7bd6}">
+    <Action Name="_aCHECK_active_1_1" Id="{df789243-b467-4234-b6fc-624f388e7bd6}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[IF bDepened_close1 AND bDepened_close2 THEN
 	bStepDone:=TRUE;
@@ -171,7 +171,7 @@ END_IF
         </XmlArchive>
       </ObjectProperties>
     </Action>
-    <Action Name="_aCHECK_entry" Id="{fe1d960e-bcd7-4124-b49a-0ef3c820d872}">
+    <Action Name="_aCHECK_entry" Id="{fe1d960e-bcd7-4124-b49a-0ef3c820d872}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[bStepDone:=FALSE;
 bERROR:=FALSE;
@@ -192,7 +192,7 @@ bError_Condition_open:=FALSE;
         </XmlArchive>
       </ObjectProperties>
     </Action>
-    <Action Name="_aCHECK_entry_1" Id="{fc3e687d-f764-4ba5-bbe7-6af28bbd4082}">
+    <Action Name="_aCHECK_entry_1" Id="{fc3e687d-f764-4ba5-bbe7-6af28bbd4082}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[bStepDone:=FALSE;
 bERROR:=FALSE;
@@ -213,7 +213,7 @@ bError_Condition_close:=FALSE;
         </XmlArchive>
       </ObjectProperties>
     </Action>
-    <Action Name="_aCLOSE_active" Id="{dec86915-94d9-4792-99d6-d46a5318759f}">
+    <Action Name="_aCLOSE_active" Id="{dec86915-94d9-4792-99d6-d46a5318759f}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[IF eType=E_PIST_TYPE.NO_SENSORS OR eType=E_PIST_TYPE.ONLY_OPEN THEN
 	IF CLOSE.t>close_time THEN
@@ -250,7 +250,7 @@ END_IF
         </XmlArchive>
       </ObjectProperties>
     </Action>
-    <Action Name="_aCLOSE_entry" Id="{19d91e9b-25a3-4c14-bdc6-e600b00c5372}">
+    <Action Name="_aCLOSE_entry" Id="{19d91e9b-25a3-4c14-bdc6-e600b00c5372}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[bStepDone:=FALSE;
 bVALVE_CLOSE:=TRUE;
@@ -270,7 +270,7 @@ bVALVE_OPEN:=FALSE;]]></ST>
         </XmlArchive>
       </ObjectProperties>
     </Action>
-    <Action Name="_aCLOSE_exit" Id="{2ec6a691-8829-45d8-b599-498d07a33121}">
+    <Action Name="_aCLOSE_exit" Id="{2ec6a691-8829-45d8-b599-498d07a33121}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[IF NOT bERROR THEN
 	pistStatus:=E_PIST_STATUS.CLOSED;
@@ -292,7 +292,7 @@ END_IF]]></ST>
         </XmlArchive>
       </ObjectProperties>
     </Action>
-    <Action Name="_aNEUTRAL_entry" Id="{d38fe955-0495-4c12-8b6f-572c45e19701}">
+    <Action Name="_aNEUTRAL_entry" Id="{d38fe955-0495-4c12-8b6f-572c45e19701}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[pistStatus:=E_PIST_STATUS.NEUTRAL;
 bVALVE_CLOSE:=FALSE;
@@ -312,7 +312,7 @@ bVALVE_OPEN:=FALSE;]]></ST>
         </XmlArchive>
       </ObjectProperties>
     </Action>
-    <Action Name="_aOPEN_active" Id="{02819be6-7129-42a9-b3bb-2f875d412dc3}">
+    <Action Name="_aOPEN_active" Id="{02819be6-7129-42a9-b3bb-2f875d412dc3}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[IF eType=E_PIST_TYPE.NO_SENSORS OR eType=E_PIST_TYPE.ONLY_CLOSE THEN
 	IF OPEN.t>open_time THEN
@@ -349,7 +349,7 @@ END_IF
         </XmlArchive>
       </ObjectProperties>
     </Action>
-    <Action Name="_aOPEN_entry" Id="{82465bc6-834f-43a1-91a1-7e8224f8ef21}">
+    <Action Name="_aOPEN_entry" Id="{82465bc6-834f-43a1-91a1-7e8224f8ef21}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[bStepDone:=FALSE;
 bVALVE_OPEN:=TRUE;
@@ -369,7 +369,7 @@ bVALVE_CLOSE:=FALSE;]]></ST>
         </XmlArchive>
       </ObjectProperties>
     </Action>
-    <Action Name="_aOPEN_exit" Id="{867b2cf1-a166-458b-a99a-ad608a4e8e2d}">
+    <Action Name="_aOPEN_exit" Id="{867b2cf1-a166-458b-a99a-ad608a4e8e2d}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[IF NOT bERROR THEN
 	pistStatus:=E_PIST_STATUS.OPENED;
@@ -391,7 +391,7 @@ END_IF]]></ST>
         </XmlArchive>
       </ObjectProperties>
     </Action>
-    <Action Name="_aUNNEUTRAL_entry" Id="{3ba85b2a-d3a0-496f-899f-3ace910ed770}">
+    <Action Name="_aUNNEUTRAL_entry" Id="{3ba85b2a-d3a0-496f-899f-3ace910ed770}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[bNeutral:=FALSE;]]></ST>
       </Implementation>
@@ -409,34 +409,37 @@ END_IF]]></ST>
         </XmlArchive>
       </ObjectProperties>
     </Action>
-    <Action Name="A_CLOSE" Id="{208f374d-f0e0-4104-ac27-2607f1b47699}">
+    <Action Name="A_CLOSE" Id="{208f374d-f0e0-4104-ac27-2607f1b47699}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[bCMD_OPEN_SWR:=FALSE;
 bNeutral:=FALSE;]]></ST>
       </Implementation>
     </Action>
-    <Action Name="A_INIT" Id="{d8f097a9-85bd-44b3-9aef-23c87213367b}">
+    <Action Name="A_INIT" Id="{d8f097a9-85bd-44b3-9aef-23c87213367b}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[bInit:=TRUE;]]></ST>
+        <ST><![CDATA[bInit:=TRUE;
+bNeutral:=FALSE;
+bCMD_OPEN:=bDefaultState;
+bCMD_OPEN_SWR:=bDefaultState;]]></ST>
       </Implementation>
     </Action>
-    <Action Name="A_NEUTRAL" Id="{572e1bcb-28c5-455a-97b0-36d825de2cb5}">
+    <Action Name="A_NEUTRAL" Id="{572e1bcb-28c5-455a-97b0-36d825de2cb5}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[bNeutral:=TRUE;]]></ST>
       </Implementation>
     </Action>
-    <Action Name="A_OPEN" Id="{36193303-04ef-473d-b4cc-ee9b95d5e93c}">
+    <Action Name="A_OPEN" Id="{36193303-04ef-473d-b4cc-ee9b95d5e93c}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[bCMD_OPEN_SWR:=TRUE;
 bNeutral:=FALSE;]]></ST>
       </Implementation>
     </Action>
-    <Action Name="A_UNNEUTRAL" Id="{b941a90d-dfef-44dc-8159-c2698c93deec}">
+    <Action Name="A_UNNEUTRAL" Id="{b941a90d-dfef-44dc-8159-c2698c93deec}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[bNeutral:=FALSE;]]></ST>
       </Implementation>
     </Action>
-    <Action Name="close_pist" Id="{a2391c5f-2c30-4fc8-a361-072a632167c7}">
+    <Action Name="close_pist" Id="{a2391c5f-2c30-4fc8-a361-072a632167c7}" FolderPath="ACT\">
       <Implementation>
         <SFC>
           <XmlArchive>
@@ -1260,7 +1263,7 @@ bNeutral:=FALSE;]]></ST>
         </XmlArchive>
       </ObjectProperties>
     </Action>
-    <Action Name="open_pist" Id="{963a9786-4727-40d2-b7a5-fddef60a1935}">
+    <Action Name="open_pist" Id="{963a9786-4727-40d2-b7a5-fddef60a1935}" FolderPath="ACT\">
       <Implementation>
         <SFC>
           <XmlArchive>
@@ -2095,7 +2098,8 @@ bNeutral:=FALSE;]]></ST>
       <LineId Id="49" Count="4" />
       <LineId Id="46" Count="0" />
       <LineId Id="54" Count="0" />
-      <LineId Id="57" Count="2" />
+      <LineId Id="57" Count="0" />
+      <LineId Id="59" Count="0" />
       <LineId Id="171" Count="1" />
       <LineId Id="60" Count="7" />
       <LineId Id="186" Count="1" />
@@ -2216,7 +2220,9 @@ bNeutral:=FALSE;]]></ST>
       <LineId Id="1" Count="1" />
     </LineIds>
     <LineIds Name="FB_PIST.A_INIT">
-      <LineId Id="1" Count="0" />
+      <LineId Id="1" Count="1" />
+      <LineId Id="4" Count="0" />
+      <LineId Id="3" Count="0" />
     </LineIds>
     <LineIds Name="FB_PIST.A_NEUTRAL">
       <LineId Id="1" Count="0" />

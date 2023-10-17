@@ -51,7 +51,6 @@ CASE eState OF
 	E_STATION_STATE.idle:
 		bRUNNING:=FALSE;
 		
-
 	E_STATION_STATE.do_action1://delay and lower device
 		IF NOT bSkip THEN
 			piston_updown.A_OPEN();
@@ -125,7 +124,8 @@ END_CASE]]></ST>
     </Implementation>
     <LineIds Name="FB_SEPARATE">
       <LineId Id="3" Count="6" />
-      <LineId Id="11" Count="23" />
+      <LineId Id="11" Count="13" />
+      <LineId Id="26" Count="8" />
       <LineId Id="37" Count="8" />
       <LineId Id="47" Count="27" />
       <LineId Id="76" Count="22" />
