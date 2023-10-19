@@ -38,7 +38,7 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-
+act();
 
 CASE eState OF
 	
@@ -61,8 +61,6 @@ CASE eState OF
 		fbAxis.bReset:=FALSE;
 		
 	E_STATION_STATE.uninit:
-		SFCReset:=TRUE;
-		SFCInit:=TRUE;
 		eState:= E_STATION_STATE.homing;
 		fbAxis.bDo_Step_FW:=FALSE;
 		fbAxis.bMoveRel:=FALSE;
@@ -71,22 +69,19 @@ CASE eState OF
 		fbAxis.bReset:=FALSE;
 
 	E_STATION_STATE.idle:
-		SFCReset:=FALSE;
-		SFCInit:=FALSE;
-		bRUNNING:=FALSE;
+		//idle
 		
 	E_STATION_STATE.do_action1://delay and lower device
-		//SFCReset:=FALSE;
-		act();
+		//main action
 		
 	E_STATION_STATE.done:
-		SFCReset:=TRUE;
+		//dd
 	 
 	E_STATION_STATE.pause:
 		//paused
 	
 	E_STATION_STATE.error:
-		//paused
+		//error
 	
 	E_STATION_STATE.estop:
 		fbAxis.stepFW_state:=0;
@@ -119,9 +114,11 @@ END_CASE]]></ST>
     <Action Name="_aCLOSE_COLET_1_4_entry" Id="{f0d544cd-22bf-4975-bb02-e00bc67879c5}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[bDone:=FALSE;
-piston_colet1.A_OPEN();
-piston_colet4.A_OPEN();
-piston_pins.A_OPEN();
+IF NOT (eState = E_STATION_STATE.pause) THEN
+	piston_colet1.A_OPEN();
+	piston_colet4.A_OPEN();
+	piston_pins.A_OPEN();
+END_IF
 ]]></ST>
       </Implementation>
       <ObjectProperties>
@@ -165,8 +162,10 @@ piston_pins.A_OPEN();
     <Action Name="_aCLOSE_COLET_entry" Id="{3a15b879-37b5-48be-bd24-8c84beec22df}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[bDone:=FALSE;
-piston_colet2.A_OPEN();
-piston_colet3.A_OPEN();]]></ST>
+IF NOT (eState = E_STATION_STATE.pause) THEN
+	piston_colet2.A_OPEN();
+	piston_colet3.A_OPEN();
+END_IF]]></ST>
       </Implementation>
       <ObjectProperties>
         <XmlArchive>
@@ -184,7 +183,7 @@ piston_colet3.A_OPEN();]]></ST>
     </Action>
     <Action Name="_aIDLE_active" Id="{af40f943-e48b-4482-bb18-e5fb59e1ef74}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[IF e_SEPARATE1 = E_STATION_STATE.do_action1 THEN
+        <ST><![CDATA[IF eState = E_STATION_STATE.do_action1 THEN
 	bDone:=TRUE;
 	
 END_IF]]></ST>
@@ -248,8 +247,10 @@ END_IF]]></ST>
     <Action Name="_aJACK_UP1_entry" Id="{e2ff9f94-709e-49ce-9afa-1abc1b23db96}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[bDone:=FALSE;
-piston_updown.A_NEUTRAL();
-fbAxis.bDo_Step_FW:=TRUE;]]></ST>
+IF NOT (eState = E_STATION_STATE.pause) THEN
+	piston_updown.A_NEUTRAL();
+	fbAxis.bDo_Step_FW:=TRUE;
+END_IF]]></ST>
       </Implementation>
       <ObjectProperties>
         <XmlArchive>
@@ -291,7 +292,9 @@ END_IF]]></ST>
     <Action Name="_aJACK_UP2_entry" Id="{45a0ca18-f995-4302-ba88-4c25db84b817}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[bDone:=FALSE;
-fbAxis.bDo_Step_FW:=TRUE;]]></ST>
+IF NOT (eState = E_STATION_STATE.pause) THEN
+	fbAxis.bDo_Step_FW:=TRUE;
+END_IF]]></ST>
       </Implementation>
       <ObjectProperties>
         <XmlArchive>
@@ -313,7 +316,7 @@ fbAxis.bDo_Step_FW:=TRUE;]]></ST>
 		bERROR:=TRUE;
 END_IF
 
-IF piston_updown.pistStatus= E_PIST_STATUS.OPENED THEN
+IF piston_updown.pistStatus= E_PIST_STATUS.OPENED   THEN
 	bDone:=TRUE;
 END_IF
 
@@ -336,8 +339,8 @@ END_IF
     <Action Name="_aLOWER_LIFT_entry" Id="{81f257de-9e43-4a8c-997a-59be3c9b9359}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[bDone:=FALSE;
-IF NOT bSkip THEN
-	piston_updown.A_OPEN();
+IF NOT bSkip AND NOT (eState = E_STATION_STATE.pause) THEN
+	piston_updown.A_OPEN();	
 ELSE
 	eState:=E_STATION_STATE.done;
 END_IF
@@ -384,10 +387,12 @@ END_IF]]></ST>
     <Action Name="_aOPEN_COLETS_entry" Id="{ca5e7a84-cd7d-4cc6-9d57-6be88a5d0e94}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[bDone:=FALSE;
-piston_colet2.A_CLOSE();
-piston_colet3.A_CLOSE();
-piston_colet1.A_CLOSE();
-piston_colet4.A_CLOSE();]]></ST>
+IF NOT (eState = E_STATION_STATE.pause) THEN
+	piston_colet2.A_CLOSE();
+	piston_colet3.A_CLOSE();
+	piston_colet1.A_CLOSE();
+	piston_colet4.A_CLOSE();
+END_IF]]></ST>
       </Implementation>
       <ObjectProperties>
         <XmlArchive>
@@ -430,7 +435,9 @@ END_IF]]></ST>
     <Action Name="_aPINS_DOWN_entry" Id="{086fff13-3831-48fc-81c7-883890abed30}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[bDone:=FALSE;
-piston_pins.A_OPEN();
+IF NOT (eState = E_STATION_STATE.pause) THEN
+	piston_pins.A_OPEN();
+END_IF
 ]]></ST>
       </Implementation>
       <ObjectProperties>
@@ -474,7 +481,9 @@ END_IF]]></ST>
     <Action Name="_aPINS_UP_entry" Id="{01423d15-a6ae-45b9-8427-f2babbaf4eb7}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[bDone:=FALSE;
-piston_pins.A_CLOSE();]]></ST>
+IF NOT (eState = E_STATION_STATE.pause) THEN
+	piston_pins.A_CLOSE();
+END_IF]]></ST>
       </Implementation>
       <ObjectProperties>
         <XmlArchive>
@@ -517,7 +526,9 @@ END_IF]]></ST>
     <Action Name="_aRAISE_LIFT_entry" Id="{c0715746-6732-43ef-96ea-ec4f55ac6c85}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[bDone:=FALSE;
-piston_updown.A_CLOSE();
+IF NOT (eState = E_STATION_STATE.pause) THEN
+	piston_updown.A_CLOSE();
+END_IF
 ]]></ST>
       </Implementation>
       <ObjectProperties>
@@ -561,7 +572,9 @@ END_IF]]></ST>
     <Action Name="_aTRAY_entry" Id="{e1b1d132-5545-478a-8894-bd1a2ee594ba}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[bDone:=FALSE;
-piston_tray.A_OPEN();
+IF NOT (eState = E_STATION_STATE.pause) THEN
+	piston_tray.A_OPEN();
+END_IF
 ]]></ST>
       </Implementation>
       <ObjectProperties>
@@ -2718,7 +2731,7 @@ bDone:=TRUE;]]></ST>
                                                                                                   <o>
                                                                                                     <v n="AttributeId">{38391c6d-6d4a-42f8-8ee7-9f45e5adafa8}</v>
                                                                                                     <o n="Value" t="StringValue">
-                                                                                                      <v n="Value">"bInit"</v>
+                                                                                                      <v n="Value">"bINIT_MAIN"</v>
                                                                                                       <v n="DefaultValue">""</v>
                                                                                                     </o>
                                                                                                     <v n="Id">711L</v>
@@ -3676,7 +3689,7 @@ bDone:=TRUE;]]></ST>
                                                                                                               <o>
                                                                                                                 <v n="AttributeId">{38391c6d-6d4a-42f8-8ee7-9f45e5adafa8}</v>
                                                                                                                 <o n="Value" t="StringValue">
-                                                                                                                  <v n="Value">"bInit"</v>
+                                                                                                                  <v n="Value">"bINIT_MAIN"</v>
                                                                                                                   <v n="DefaultValue">""</v>
                                                                                                                 </o>
                                                                                                                 <v n="Id">773L</v>
@@ -4073,7 +4086,7 @@ bDone:=TRUE;]]></ST>
                                                                                                   <o>
                                                                                                     <v n="AttributeId">{38391c6d-6d4a-42f8-8ee7-9f45e5adafa8}</v>
                                                                                                     <o n="Value" t="StringValue">
-                                                                                                      <v n="Value">"bInit"</v>
+                                                                                                      <v n="Value">"bINIT_MAIN"</v>
                                                                                                       <v n="DefaultValue">""</v>
                                                                                                     </o>
                                                                                                     <v n="Id">567L</v>
@@ -4470,7 +4483,7 @@ bDone:=TRUE;]]></ST>
                                                                                       <o>
                                                                                         <v n="AttributeId">{38391c6d-6d4a-42f8-8ee7-9f45e5adafa8}</v>
                                                                                         <o n="Value" t="StringValue">
-                                                                                          <v n="Value">"bInit"</v>
+                                                                                          <v n="Value">"bINIT_MAIN"</v>
                                                                                           <v n="DefaultValue">""</v>
                                                                                         </o>
                                                                                         <v n="Id">486L</v>
@@ -4867,7 +4880,7 @@ bDone:=TRUE;]]></ST>
                                                                           <o>
                                                                             <v n="AttributeId">{38391c6d-6d4a-42f8-8ee7-9f45e5adafa8}</v>
                                                                             <o n="Value" t="StringValue">
-                                                                              <v n="Value">"bInit"</v>
+                                                                              <v n="Value">"bINIT_MAIN"</v>
                                                                               <v n="DefaultValue">""</v>
                                                                             </o>
                                                                             <v n="Id">424L</v>
@@ -5264,7 +5277,7 @@ bDone:=TRUE;]]></ST>
                                                               <o>
                                                                 <v n="AttributeId">{38391c6d-6d4a-42f8-8ee7-9f45e5adafa8}</v>
                                                                 <o n="Value" t="StringValue">
-                                                                  <v n="Value">"bInit"</v>
+                                                                  <v n="Value">"bINIT_MAIN"</v>
                                                                   <v n="DefaultValue">""</v>
                                                                 </o>
                                                                 <v n="Id">304L</v>
@@ -5661,7 +5674,7 @@ bDone:=TRUE;]]></ST>
                                                   <o>
                                                     <v n="AttributeId">{38391c6d-6d4a-42f8-8ee7-9f45e5adafa8}</v>
                                                     <o n="Value" t="StringValue">
-                                                      <v n="Value">"bInit"</v>
+                                                      <v n="Value">"bINIT_MAIN"</v>
                                                       <v n="DefaultValue">""</v>
                                                     </o>
                                                     <v n="Id">177L</v>
@@ -6058,7 +6071,7 @@ bDone:=TRUE;]]></ST>
                                       <o>
                                         <v n="AttributeId">{38391c6d-6d4a-42f8-8ee7-9f45e5adafa8}</v>
                                         <o n="Value" t="StringValue">
-                                          <v n="Value">"bInit"</v>
+                                          <v n="Value">"bINIT_MAIN"</v>
                                           <v n="DefaultValue">""</v>
                                         </o>
                                         <v n="Id">76L</v>
@@ -6686,20 +6699,15 @@ bDone:=TRUE;]]></ST>
       <LineId Id="146" Count="1" />
       <LineId Id="149" Count="1" />
       <LineId Id="148" Count="0" />
-      <LineId Id="60" Count="0" />
-      <LineId Id="197" Count="1" />
-      <LineId Id="61" Count="0" />
+      <LineId Id="60" Count="1" />
       <LineId Id="152" Count="3" />
       <LineId Id="151" Count="0" />
-      <LineId Id="62" Count="1" />
-      <LineId Id="138" Count="0" />
-      <LineId Id="199" Count="0" />
-      <LineId Id="64" Count="2" />
-      <LineId Id="131" Count="0" />
+      <LineId Id="62" Count="4" />
       <LineId Id="145" Count="0" />
       <LineId Id="141" Count="0" />
       <LineId Id="135" Count="0" />
-      <LineId Id="139" Count="1" />
+      <LineId Id="234" Count="0" />
+      <LineId Id="140" Count="0" />
       <LineId Id="132" Count="1" />
       <LineId Id="142" Count="2" />
       <LineId Id="156" Count="0" />
@@ -6712,9 +6720,13 @@ bDone:=TRUE;]]></ST>
       <LineId Id="1" Count="1" />
     </LineIds>
     <LineIds Name="_SEPARATE._aCLOSE_COLET_1_4_entry">
-      <LineId Id="2" Count="1" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="6" Count="0" />
+      <LineId Id="3" Count="0" />
       <LineId Id="1" Count="0" />
-      <LineId Id="4" Count="1" />
+      <LineId Id="4" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aCLOSE_COLET_active">
       <LineId Id="4" Count="2" />
@@ -6722,7 +6734,10 @@ bDone:=TRUE;]]></ST>
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aCLOSE_COLET_entry">
-      <LineId Id="1" Count="2" />
+      <LineId Id="1" Count="0" />
+      <LineId Id="4" Count="0" />
+      <LineId Id="2" Count="1" />
+      <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aIDLE_active">
       <LineId Id="3" Count="0" />
@@ -6741,8 +6756,10 @@ bDone:=TRUE;]]></ST>
     </LineIds>
     <LineIds Name="_SEPARATE._aJACK_UP1_entry">
       <LineId Id="1" Count="0" />
+      <LineId Id="4" Count="0" />
       <LineId Id="3" Count="0" />
       <LineId Id="2" Count="0" />
+      <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aJACK_UP2_active">
       <LineId Id="2" Count="3" />
@@ -6750,8 +6767,9 @@ bDone:=TRUE;]]></ST>
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aJACK_UP2_entry">
-      <LineId Id="2" Count="0" />
+      <LineId Id="2" Count="1" />
       <LineId Id="1" Count="0" />
+      <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aLOWER_LIFT_active">
       <LineId Id="15" Count="1" />
@@ -6765,7 +6783,9 @@ bDone:=TRUE;]]></ST>
     </LineIds>
     <LineIds Name="_SEPARATE._aLOWER_LIFT_entry">
       <LineId Id="1" Count="0" />
-      <LineId Id="4" Count="3" />
+      <LineId Id="4" Count="0" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="6" Count="1" />
       <LineId Id="3" Count="0" />
       <LineId Id="2" Count="0" />
     </LineIds>
@@ -6775,10 +6795,13 @@ bDone:=TRUE;]]></ST>
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aOPEN_COLETS_entry">
-      <LineId Id="2" Count="1" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="6" Count="0" />
+      <LineId Id="3" Count="0" />
       <LineId Id="1" Count="0" />
       <LineId Id="5" Count="0" />
       <LineId Id="4" Count="0" />
+      <LineId Id="7" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aPINS_DOWN_active">
       <LineId Id="2" Count="4" />
@@ -6786,7 +6809,10 @@ bDone:=TRUE;]]></ST>
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aPINS_DOWN_entry">
-      <LineId Id="2" Count="1" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="4" Count="0" />
+      <LineId Id="3" Count="0" />
+      <LineId Id="5" Count="0" />
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aPINS_UP_active">
@@ -6795,8 +6821,9 @@ bDone:=TRUE;]]></ST>
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aPINS_UP_entry">
-      <LineId Id="2" Count="0" />
+      <LineId Id="2" Count="1" />
       <LineId Id="1" Count="0" />
+      <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aRAISE_LIFT_active">
       <LineId Id="2" Count="4" />
@@ -6805,7 +6832,9 @@ bDone:=TRUE;]]></ST>
     </LineIds>
     <LineIds Name="_SEPARATE._aRAISE_LIFT_entry">
       <LineId Id="2" Count="0" />
+      <LineId Id="5" Count="0" />
       <LineId Id="4" Count="0" />
+      <LineId Id="6" Count="0" />
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aTRAY_active">
@@ -6814,7 +6843,10 @@ bDone:=TRUE;]]></ST>
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aTRAY_entry">
-      <LineId Id="2" Count="1" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="4" Count="0" />
+      <LineId Id="3" Count="0" />
+      <LineId Id="5" Count="0" />
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aTRAY_JACK_BACK_active">

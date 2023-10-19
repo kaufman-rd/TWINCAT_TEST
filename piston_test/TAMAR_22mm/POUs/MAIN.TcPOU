@@ -234,8 +234,8 @@ IF rtrigINIT.Q THEN
 	
 	//eMAIN_CONVAYOR_STATE := E_CONVAYOR_STATE.estop;
 	//eSUPPLY_CONVAYOR_STATE:=E_CONVAYOR_STATE.estop;
-	//b_E_STOP:=FALSE;
-	//bSafety_error:=FALSE;
+	b_E_STOP:=FALSE;
+	bSafety_error:=FALSE;
 	eMAIN_STATE:=E_MAIN_STATE.uninit;
 END_IF
 
