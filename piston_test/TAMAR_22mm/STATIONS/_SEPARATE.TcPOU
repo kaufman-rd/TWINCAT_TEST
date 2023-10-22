@@ -94,8 +94,9 @@ END_CASE]]></ST>
     <Folder Name="ACT" Id="{85bdc405-ef8a-4ef0-bec7-0df14e5fed51}" />
     <Action Name="_aCLOSE_COLET_1_4_active" Id="{04875a07-6118-4ff1-8c19-c49e1593d52a}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[bDone:=TRUE;
-]]></ST>
+        <ST><![CDATA[IF  NOT (eState = E_STATION_STATE.pause) THEN
+bDone:=TRUE;
+END_IF]]></ST>
       </Implementation>
       <ObjectProperties>
         <XmlArchive>
@@ -113,12 +114,14 @@ END_CASE]]></ST>
     </Action>
     <Action Name="_aCLOSE_COLET_1_4_entry" Id="{f0d544cd-22bf-4975-bb02-e00bc67879c5}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[bDone:=FALSE;
-IF NOT (eState = E_STATION_STATE.pause) THEN
-	piston_colet1.A_OPEN();
-	piston_colet4.A_OPEN();
-	piston_pins.A_OPEN();
-END_IF
+        <ST><![CDATA[
+	bDone:=FALSE;
+	IF NOT (eState = E_STATION_STATE.pause) THEN
+		piston_colet1.A_OPEN();
+		piston_colet4.A_OPEN();
+		piston_pins.A_OPEN();
+		
+	END_IF
 ]]></ST>
       </Implementation>
       <ObjectProperties>
@@ -137,13 +140,13 @@ END_IF
     </Action>
     <Action Name="_aCLOSE_COLET_active" Id="{973f3047-ddb6-495b-bc23-4e92976e27ee}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[
+        <ST><![CDATA[IF NOT (eState = E_STATION_STATE.pause) THEN
 
 //IF piston_colet1.pistStatus= E_PIST_STATUS.OPENED AND piston_colet2.pistStatus= E_PIST_STATUS.OPENED THEN
 	bDone:=TRUE;
 //END_IF
 
-]]></ST>
+END_IF]]></ST>
       </Implementation>
       <ObjectProperties>
         <XmlArchive>
@@ -161,11 +164,14 @@ END_IF
     </Action>
     <Action Name="_aCLOSE_COLET_entry" Id="{3a15b879-37b5-48be-bd24-8c84beec22df}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[bDone:=FALSE;
-IF NOT (eState = E_STATION_STATE.pause) THEN
-	piston_colet2.A_OPEN();
-	piston_colet3.A_OPEN();
-END_IF]]></ST>
+        <ST><![CDATA[
+	bDone:=FALSE;
+	IF NOT (eState = E_STATION_STATE.pause) THEN
+		piston_colet2.A_OPEN();
+		piston_colet3.A_OPEN();
+		
+	END_IF
+]]></ST>
       </Implementation>
       <ObjectProperties>
         <XmlArchive>
@@ -183,7 +189,7 @@ END_IF]]></ST>
     </Action>
     <Action Name="_aIDLE_active" Id="{af40f943-e48b-4482-bb18-e5fb59e1ef74}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[IF eState = E_STATION_STATE.do_action1 THEN
+        <ST><![CDATA[IF eState = E_STATION_STATE.do_action1 THEN 
 	bDone:=TRUE;
 	
 END_IF]]></ST>
@@ -223,7 +229,7 @@ END_IF]]></ST>
     </Action>
     <Action Name="_aJACK_UP1_active" Id="{9ff3f380-dce0-4cbf-b2bd-4b2cd0955ccc}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[IF JACK_UP1.t>step_timeout THEN
+        <ST><![CDATA[IF JACK_UP1.t>step_timeout AND NOT (eState = E_STATION_STATE.pause)THEN
 		bERROR:=TRUE;
 END_IF
 IF fbAxis.RELATIVE.Done THEN
@@ -246,11 +252,14 @@ END_IF]]></ST>
     </Action>
     <Action Name="_aJACK_UP1_entry" Id="{e2ff9f94-709e-49ce-9afa-1abc1b23db96}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[bDone:=FALSE;
-IF NOT (eState = E_STATION_STATE.pause) THEN
-	piston_updown.A_NEUTRAL();
-	fbAxis.bDo_Step_FW:=TRUE;
-END_IF]]></ST>
+        <ST><![CDATA[
+	bDone:=FALSE;
+	IF NOT (eState = E_STATION_STATE.pause) THEN
+		piston_updown.A_NEUTRAL();
+		fbAxis.bDo_Step_FW:=TRUE;
+		
+	END_IF
+]]></ST>
       </Implementation>
       <ObjectProperties>
         <XmlArchive>
@@ -268,7 +277,7 @@ END_IF]]></ST>
     </Action>
     <Action Name="_aJACK_UP2_active" Id="{5fa746e2-bbe2-4608-b163-e36a11e222b8}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[IF JACK_UP2.t>step_timeout THEN
+        <ST><![CDATA[IF JACK_UP2.t>step_timeout AND NOT (eState = E_STATION_STATE.pause) THEN
 		bERROR:=TRUE;
 END_IF
 IF fbAxis.RELATIVE.Done THEN
@@ -291,10 +300,13 @@ END_IF]]></ST>
     </Action>
     <Action Name="_aJACK_UP2_entry" Id="{45a0ca18-f995-4302-ba88-4c25db84b817}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[bDone:=FALSE;
-IF NOT (eState = E_STATION_STATE.pause) THEN
-	fbAxis.bDo_Step_FW:=TRUE;
-END_IF]]></ST>
+        <ST><![CDATA[
+	bDone:=FALSE;
+	IF NOT (eState = E_STATION_STATE.pause) THEN
+		fbAxis.bDo_Step_FW:=TRUE;
+		
+	END_IF
+]]></ST>
       </Implementation>
       <ObjectProperties>
         <XmlArchive>
@@ -312,7 +324,7 @@ END_IF]]></ST>
     </Action>
     <Action Name="_aLOWER_LIFT_active" Id="{1c5f6484-78e2-4838-8619-33c6be408816}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[IF LOWER_LIFT.t>step_timeout THEN
+        <ST><![CDATA[IF LOWER_LIFT.t>step_timeout AND NOT (eState = E_STATION_STATE.pause) THEN
 		bERROR:=TRUE;
 END_IF
 
@@ -338,12 +350,14 @@ END_IF
     </Action>
     <Action Name="_aLOWER_LIFT_entry" Id="{81f257de-9e43-4a8c-997a-59be3c9b9359}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[bDone:=FALSE;
-IF NOT bSkip AND NOT (eState = E_STATION_STATE.pause) THEN
-	piston_updown.A_OPEN();	
-ELSE
-	eState:=E_STATION_STATE.done;
-END_IF
+        <ST><![CDATA[
+	bDone:=FALSE;
+	IF NOT bSkip AND NOT (eState = E_STATION_STATE.pause) THEN
+		piston_updown.A_OPEN();	
+		
+	ELSE
+		eState:=E_STATION_STATE.done;
+	END_IF
 ]]></ST>
       </Implementation>
       <ObjectProperties>
@@ -362,7 +376,7 @@ END_IF
     </Action>
     <Action Name="_aOPEN_COLETS_active" Id="{37f536be-af98-413b-8869-c66286beaae5}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[IF OPEN_COLETS.t>step_timeout THEN
+        <ST><![CDATA[IF OPEN_COLETS.t>step_timeout AND NOT (eState = E_STATION_STATE.pause) THEN
 		bERROR:=TRUE;
 END_IF
 
@@ -386,13 +400,16 @@ END_IF]]></ST>
     </Action>
     <Action Name="_aOPEN_COLETS_entry" Id="{ca5e7a84-cd7d-4cc6-9d57-6be88a5d0e94}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[bDone:=FALSE;
-IF NOT (eState = E_STATION_STATE.pause) THEN
-	piston_colet2.A_CLOSE();
-	piston_colet3.A_CLOSE();
-	piston_colet1.A_CLOSE();
-	piston_colet4.A_CLOSE();
-END_IF]]></ST>
+        <ST><![CDATA[
+	bDone:=FALSE;
+	IF NOT (eState = E_STATION_STATE.pause) THEN
+		piston_colet2.A_CLOSE();
+		piston_colet3.A_CLOSE();
+		piston_colet1.A_CLOSE();
+		piston_colet4.A_CLOSE();
+		
+	END_IF
+]]></ST>
       </Implementation>
       <ObjectProperties>
         <XmlArchive>
@@ -410,7 +427,7 @@ END_IF]]></ST>
     </Action>
     <Action Name="_aPINS_DOWN_active" Id="{5ae94f0d-bd82-4f9f-bce9-77ae8546598d}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[IF PINS_DOWN.t>step_timeout THEN
+        <ST><![CDATA[IF PINS_DOWN.t>step_timeout AND NOT (eState = E_STATION_STATE.pause) THEN
 		bERROR:=TRUE;
 END_IF
 
@@ -434,10 +451,12 @@ END_IF]]></ST>
     </Action>
     <Action Name="_aPINS_DOWN_entry" Id="{086fff13-3831-48fc-81c7-883890abed30}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[bDone:=FALSE;
-IF NOT (eState = E_STATION_STATE.pause) THEN
-	piston_pins.A_OPEN();
-END_IF
+        <ST><![CDATA[
+	bDone:=FALSE;
+	IF NOT (eState = E_STATION_STATE.pause) THEN
+		piston_pins.A_OPEN();
+	END_IF
+
 ]]></ST>
       </Implementation>
       <ObjectProperties>
@@ -456,7 +475,7 @@ END_IF
     </Action>
     <Action Name="_aPINS_UP_active" Id="{182c0292-75a2-4eb5-a792-3bd9fec3f93e}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[IF PINS_UP.t>step_timeout THEN
+        <ST><![CDATA[IF PINS_UP.t>step_timeout AND NOT (eState = E_STATION_STATE.pause) THEN
 		bERROR:=TRUE;
 END_IF
 
@@ -480,10 +499,12 @@ END_IF]]></ST>
     </Action>
     <Action Name="_aPINS_UP_entry" Id="{01423d15-a6ae-45b9-8427-f2babbaf4eb7}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[bDone:=FALSE;
-IF NOT (eState = E_STATION_STATE.pause) THEN
-	piston_pins.A_CLOSE();
-END_IF]]></ST>
+        <ST><![CDATA[
+	bDone:=FALSE;
+	IF NOT (eState = E_STATION_STATE.pause) THEN
+		piston_pins.A_CLOSE();
+	END_IF
+]]></ST>
       </Implementation>
       <ObjectProperties>
         <XmlArchive>
@@ -501,7 +522,7 @@ END_IF]]></ST>
     </Action>
     <Action Name="_aRAISE_LIFT_active" Id="{f781ea8a-d611-41fa-bf36-752be68f618f}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[IF RAISE_LIFT.t>step_timeout THEN
+        <ST><![CDATA[IF RAISE_LIFT.t>step_timeout AND NOT (eState = E_STATION_STATE.pause) THEN
 		bERROR:=TRUE;
 END_IF
 
@@ -525,10 +546,12 @@ END_IF]]></ST>
     </Action>
     <Action Name="_aRAISE_LIFT_entry" Id="{c0715746-6732-43ef-96ea-ec4f55ac6c85}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[bDone:=FALSE;
-IF NOT (eState = E_STATION_STATE.pause) THEN
-	piston_updown.A_CLOSE();
-END_IF
+        <ST><![CDATA[
+	bDone:=FALSE;
+	IF NOT (eState = E_STATION_STATE.pause) THEN
+		piston_updown.A_CLOSE();
+	END_IF
+
 ]]></ST>
       </Implementation>
       <ObjectProperties>
@@ -547,7 +570,7 @@ END_IF
     </Action>
     <Action Name="_aTRAY_active" Id="{16938058-a5c2-46c8-81e5-edb1e59082fc}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[IF TRAY.t>step_timeout THEN
+        <ST><![CDATA[IF TRAY.t>step_timeout AND NOT (eState = E_STATION_STATE.pause) THEN
 		bERROR:=TRUE;
 END_IF
 
@@ -571,10 +594,12 @@ END_IF]]></ST>
     </Action>
     <Action Name="_aTRAY_entry" Id="{e1b1d132-5545-478a-8894-bd1a2ee594ba}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[bDone:=FALSE;
-IF NOT (eState = E_STATION_STATE.pause) THEN
-	piston_tray.A_OPEN();
-END_IF
+        <ST><![CDATA[
+	bDone:=FALSE;
+	IF NOT (eState = E_STATION_STATE.pause) THEN
+		piston_tray.A_OPEN();
+	END_IF
+
 ]]></ST>
       </Implementation>
       <ObjectProperties>
@@ -591,10 +616,12 @@ END_IF
         </XmlArchive>
       </ObjectProperties>
     </Action>
-    <Action Name="_aTRAY_JACK_BACK_active" Id="{ec1ead27-56b8-4560-959a-ffdb827fb9c7}">
+    <Action Name="_aTRAY_JACK_BACK_active" Id="{ec1ead27-56b8-4560-959a-ffdb827fb9c7}" FolderPath="ACT\">
       <Implementation>
-        <ST><![CDATA[eState:= E_STATION_STATE.done;
-bDone:=TRUE;]]></ST>
+        <ST><![CDATA[IF NOT (eState = E_STATION_STATE.pause) THEN
+	eState:= E_STATION_STATE.done;
+	bDone:=TRUE;
+END_IF]]></ST>
       </Implementation>
       <ObjectProperties>
         <XmlArchive>
@@ -610,7 +637,7 @@ bDone:=TRUE;]]></ST>
         </XmlArchive>
       </ObjectProperties>
     </Action>
-    <Action Name="_aUNINIT_entry" Id="{3524b8ee-e3dc-4082-b5dd-f8d85280042e}">
+    <Action Name="_aUNINIT_entry" Id="{3524b8ee-e3dc-4082-b5dd-f8d85280042e}" FolderPath="ACT\">
       <Implementation>
         <ST><![CDATA[bDone:=TRUE;]]></ST>
       </Implementation>
@@ -6717,14 +6744,17 @@ bDone:=TRUE;]]></ST>
       <LineId Id="9" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aCLOSE_COLET_1_4_active">
+      <LineId Id="3" Count="0" />
       <LineId Id="1" Count="1" />
     </LineIds>
     <LineIds Name="_SEPARATE._aCLOSE_COLET_1_4_entry">
+      <LineId Id="8" Count="0" />
       <LineId Id="2" Count="0" />
       <LineId Id="6" Count="0" />
       <LineId Id="3" Count="0" />
       <LineId Id="1" Count="0" />
       <LineId Id="4" Count="0" />
+      <LineId Id="9" Count="0" />
       <LineId Id="7" Count="0" />
       <LineId Id="5" Count="0" />
     </LineIds>
@@ -6734,10 +6764,13 @@ bDone:=TRUE;]]></ST>
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aCLOSE_COLET_entry">
+      <LineId Id="6" Count="0" />
       <LineId Id="1" Count="0" />
       <LineId Id="4" Count="0" />
       <LineId Id="2" Count="1" />
+      <LineId Id="8" Count="0" />
       <LineId Id="5" Count="0" />
+      <LineId Id="7" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aIDLE_active">
       <LineId Id="3" Count="0" />
@@ -6755,11 +6788,14 @@ bDone:=TRUE;]]></ST>
       <LineId Id="10" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aJACK_UP1_entry">
+      <LineId Id="6" Count="0" />
       <LineId Id="1" Count="0" />
       <LineId Id="4" Count="0" />
       <LineId Id="3" Count="0" />
       <LineId Id="2" Count="0" />
+      <LineId Id="8" Count="0" />
       <LineId Id="5" Count="0" />
+      <LineId Id="7" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aJACK_UP2_active">
       <LineId Id="2" Count="3" />
@@ -6767,9 +6803,12 @@ bDone:=TRUE;]]></ST>
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aJACK_UP2_entry">
+      <LineId Id="5" Count="0" />
       <LineId Id="2" Count="1" />
       <LineId Id="1" Count="0" />
+      <LineId Id="7" Count="0" />
       <LineId Id="4" Count="0" />
+      <LineId Id="6" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aLOWER_LIFT_active">
       <LineId Id="15" Count="1" />
@@ -6782,9 +6821,11 @@ bDone:=TRUE;]]></ST>
       <LineId Id="13" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aLOWER_LIFT_entry">
+      <LineId Id="9" Count="0" />
       <LineId Id="1" Count="0" />
       <LineId Id="4" Count="0" />
       <LineId Id="8" Count="0" />
+      <LineId Id="11" Count="0" />
       <LineId Id="6" Count="1" />
       <LineId Id="3" Count="0" />
       <LineId Id="2" Count="0" />
@@ -6795,13 +6836,16 @@ bDone:=TRUE;]]></ST>
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aOPEN_COLETS_entry">
+      <LineId Id="8" Count="0" />
       <LineId Id="2" Count="0" />
       <LineId Id="6" Count="0" />
       <LineId Id="3" Count="0" />
       <LineId Id="1" Count="0" />
       <LineId Id="5" Count="0" />
       <LineId Id="4" Count="0" />
+      <LineId Id="10" Count="0" />
       <LineId Id="7" Count="0" />
+      <LineId Id="9" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aPINS_DOWN_active">
       <LineId Id="2" Count="4" />
@@ -6809,10 +6853,12 @@ bDone:=TRUE;]]></ST>
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aPINS_DOWN_entry">
+      <LineId Id="6" Count="0" />
       <LineId Id="2" Count="0" />
       <LineId Id="4" Count="0" />
       <LineId Id="3" Count="0" />
       <LineId Id="5" Count="0" />
+      <LineId Id="7" Count="0" />
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aPINS_UP_active">
@@ -6821,9 +6867,11 @@ bDone:=TRUE;]]></ST>
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aPINS_UP_entry">
+      <LineId Id="5" Count="0" />
       <LineId Id="2" Count="1" />
       <LineId Id="1" Count="0" />
       <LineId Id="4" Count="0" />
+      <LineId Id="6" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aRAISE_LIFT_active">
       <LineId Id="2" Count="4" />
@@ -6831,10 +6879,12 @@ bDone:=TRUE;]]></ST>
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aRAISE_LIFT_entry">
+      <LineId Id="7" Count="0" />
       <LineId Id="2" Count="0" />
       <LineId Id="5" Count="0" />
       <LineId Id="4" Count="0" />
       <LineId Id="6" Count="0" />
+      <LineId Id="8" Count="0" />
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aTRAY_active">
@@ -6843,14 +6893,18 @@ bDone:=TRUE;]]></ST>
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aTRAY_entry">
+      <LineId Id="6" Count="0" />
       <LineId Id="2" Count="0" />
       <LineId Id="4" Count="0" />
       <LineId Id="3" Count="0" />
       <LineId Id="5" Count="0" />
+      <LineId Id="7" Count="0" />
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aTRAY_JACK_BACK_active">
+      <LineId Id="3" Count="0" />
       <LineId Id="1" Count="1" />
+      <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="_SEPARATE._aUNINIT_entry">
       <LineId Id="1" Count="0" />

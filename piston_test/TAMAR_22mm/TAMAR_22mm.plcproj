@@ -135,9 +135,6 @@
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\MAIN_2.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\MOTORS.TcPOU">
       <SubType>Code</SubType>
     </Compile>

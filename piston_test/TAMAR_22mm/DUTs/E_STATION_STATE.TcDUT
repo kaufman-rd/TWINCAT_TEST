@@ -5,8 +5,9 @@
 {attribute 'strict'}
 TYPE E_STATION_STATE :
 (
-	uninit,
+	uninit:=0,
 	idle,
+	homing,
 	do_action1,
 	do_action2,
 	do_action3,
@@ -25,7 +26,6 @@ TYPE E_STATION_STATE :
 	done,
 	pause,
 	error,
-	homing,
 	estop
 );
 END_TYPE
