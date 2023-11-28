@@ -1200,8 +1200,8 @@ External Setpoint Generation:
 			</ArrayInfo>
 		</DataType>
 	</DataTypes>
-	<Project GUID="{AD6E4C48-5E61-47B3-958D-58FBAEF446F5}" Name="TAMAR_22mm" PrjFilePath="..\..\TAMAR_22mm\TAMAR_22mm.plcproj" TmcFilePath="..\..\TAMAR_22mm\TAMAR_22mm.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TAMAR_22mm\TAMAR_22mm.tmc" TmcHash="{0E032E22-8A00-BFF7-A416-865278938D1C}">
+	<Project GUID="{AD6E4C48-5E61-47B3-958D-58FBAEF446F5}" Name="TAMAR_22mm" PrjFilePath="..\..\TAMAR_22mm\TAMAR_22mm.plcproj" TmcFilePath="..\..\TAMAR_22mm\TAMAR_22mm.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" CopyTmcToTarget="true" SymbolicMapping="true">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TAMAR_22mm\TAMAR_22mm.tmc" TmcHash="{644A8778-95D7-DF53-F4B8-CB6842392F3A}">
 			<Name>TAMAR_22mm Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">

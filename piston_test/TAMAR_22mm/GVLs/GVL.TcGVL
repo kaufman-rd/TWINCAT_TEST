@@ -3,8 +3,13 @@
   <GVL Name="GVL" Id="{7f0b71c9-3b96-49cc-b550-51f310230bab}">
     <Declaration><![CDATA[ //{attribute 'qualified_only'}
 VAR_GLOBAL
+	{attribute 'OPC.UA.DA' := '1'}
+	rVal11:REAL;
+	{attribute 'OPC.UA.DA' := '1'}
+	rVal2:REAL;
+	{attribute 'OPC.UA.DA' := '1'}
+	bTest:BOOL;
 	
-
 	
 	bValve: ARRAY[1..64] OF BOOL;
 	//======================================== IO =====================================
